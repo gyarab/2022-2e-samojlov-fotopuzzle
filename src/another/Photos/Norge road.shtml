@@ -1,0 +1,4329 @@
+
+<!DOCTYPE html>
+<html>
+<head> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta http-equiv="Content-Language" content="ru" />
+<meta charset="windows-1251" />
+<meta name="viewport" content="width=device-width">
+<script src="http://static.gazeta.ru/nm2012/js/jquery/jquery-1.8.2.min.js"></script>
+<script src="http://static.gazeta.ru/nm2012/js/jquery/jquery.cookie.js"></script>
+<script type='text/javascript'>
+var crtg_nid = '4024';
+var crtg_cookiename = 'crtg_rta';
+var crtg_varname = 'crtg_content';
+function crtg_getCookie(c_name){ var i,x,y,ARRCookies=document.cookie.split(";");for(i=0;i<ARRCookies.length;i++){x=ARRCookies[i].substr(0,ARRCookies[i].indexOf("="));y=ARRCookies[i].substr(ARRCookies[i].indexOf("=")+1);x=x.replace(/^\s+|\s+$/g,"");if(x==c_name){return unescape(y);} }return'';}
+var crtg_content = crtg_getCookie(crtg_cookiename);
+var crtg_rnd=Math.floor(Math.random()*99999999999);
+(function(){
+var crtg_url=location.protocol+'//rtax.criteo.com/delivery/rta/rta.js?netId='+escape(crtg_nid);
+crtg_url +='&cookieName='+escape(crtg_cookiename);
+crtg_url +='&rnd='+crtg_rnd;
+crtg_url +='&varName=' + escape(crtg_varname);
+var crtg_script=document.createElement('script');crtg_script.type='text/javascript';crtg_script.src=crtg_url;crtg_script.async=true;
+if(document.getElementsByTagName("head").length>0)document.getElementsByTagName("head")[0].appendChild(crtg_script);
+else if(document.getElementsByTagName("body").length>0)document.getElementsByTagName("body")[0].appendChild(crtg_script);
+})();
+</script>
+<script type="text/javascript" src="//montblanc.rambler.ru/static/js/montblanc.js"></script>
+<script src="//lib.rl0.ru/adfox/7/adfox.custom.min.js" type="text/javascript"></script>
+<script src="http://static.gazeta.ru/nm2012/js/adv/adfox.asyn.code.ver3.js"></script>
+<script src="http://static.gazeta.ru/nm2012/js/adv/adfox.asyn.code.scroll.js"></script>
+<script>
+Adf.init.begun();
+</script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta http-equiv="Content-Language" content="ru" />
+<meta charset="windows-1251" />
+
+
+
+
+<link rel="canonical" href="http://www.gazeta.ru/auto/photo/krasiveishie_avtotrassy_mira.shtml" />
+
+<link rel="shortcut icon" href="http://static.gazeta.ru/nm2012/i/favicon.ico" type="image/x-icon">
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700|Open+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="/nm2015/css/common.v113.css" />
+<link rel="stylesheet" type="text/css" href="/nm2015/css/trash_css.v6.css" />
+<script src="/nm2015/js/jquery.resizeblock.js"></script>
+<script src="/nm2015/js/lib/media-match-master/media.match.min.js"></script>
+<script src="/nm2015/js/gazeta.media.query.js"></script>
+<script src="/nm2015/js/common.v43.js"></script>
+<script src="/nm2015/js/script.js"></script>
+<script src="/nm2015/js/clean_mm_addition.js"></script>
+ <!--
+photoreport
+-->
+<!-- place28294735,(none),,, -->  
+
+ 
+
+
+
+ <title> Красивейшие автотрассы мира - Газета.Ru | Фото </title>
+ <meta name="description" content="Издание Business Insider опубликовало снимки автотрасс, которые являются одними из самых красивых и необычных в мире." /> <meta property="og:description" content="Издание Business Insider опубликовало снимки автотрасс, которые являются одними из самых красивых и необычных в мире." /> <meta property="twitter:description" content="Издание Business Insider опубликовало снимки автотрасс, которые являются одними из самых красивых и необычных в мире." />
+<meta property="og:title" content="Фото: Красивейшие автотрассы мира" />
+<meta property="og:type" content="article" />   
+<meta property="fb:app_id" content="406317839387165" />
+<meta property="og:site_name" content="Газета.Ru"/>
+<meta property="og:url" content="http://www.gazeta.ru/auto/photo/krasiveishie_avtotrassy_mira.shtml" />
+<meta property="og:image" content=" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic905-895x505-17267.jpg" /><link rel="image_src" href=" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic905-895x505-17267.jpg" /><meta property="og:image:width" content="895" /><meta property="og:image:height" content="505" /><meta property="twitter:image" content=" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic905-895x505-17267.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Красивейшие автотрассы мира" />
+<meta property="twitter:site" content="@gazetaru" />
+<meta property="twitter:creator" content="@gazetaru" />
+<meta property="twitter:url" content="http://www.gazeta.ru/auto/photo/krasiveishie_avtotrassy_mira.shtml" />
+<meta property="twitter:app:name:iphone" content="Газета.Ru" />
+<meta property="twitter:app:id:iphone" content="401707326" />
+<meta property="twitter:app:url:iphone" content="http://www.gazeta.ru/auto/photo/krasiveishie_avtotrassy_mira.shtml" />
+<meta name="twitter:app:name:ipad" content="Газета.Ru HD" />
+<meta name="twitter:app:id:ipad" content="486481873" />
+<meta name="twitter:app:url:ipad" content="http://www.gazeta.ru/auto/photo/krasiveishie_avtotrassy_mira.shtml" />
+<meta name="twitter:app:name:googleplay" content="Газета.Ru" />
+<meta name="twitter:app:id:googleplay" content="ru.ideast.gazeta" />
+<meta name="twitter:app:url:googleplay" content="http://www.gazeta.ru/auto/photo/krasiveishie_avtotrassy_mira.shtml" />
+
+
+
+
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.gazeta.ru/auto/photo/krasiveishie_avtotrassy_mira.shtml" >
+
+<link rel="shortcut icon" href="http://static.gazeta.ru/nm2012/i/favicon.ico" type="image/x-icon">
+
+<!--[if lt IE 9]><script src="http://static.gazeta.ru/nm2012/js/html5shiv.js"></script><![endif]-->
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/nm2015/css/article.v10.css" />
+<script src="http://static.gazeta.ru/nm2012/js/ellipsis.js"></script>
+<script src="http://static.gazeta.ru/nm2012/js/touch.js"></script>
+<link rel="stylesheet" type="text/css" href="/nm2015/css/media.css">
+<link rel="stylesheet" type="text/css" href="/nm2015/css/photorep.css">
+
+
+
+</head>
+<body>
+<noindex>
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+   
+
+
+
+
+
+ 
+
+
+<div id="fullscreen">
+<script type="text/javascript">
+Adf.banner.show('fullscreen',
+{ 'p1': 'bevlm', 'p2': 'emiu', 'pct': 'a', 'pli': 'b', 'plp': 'c', 'pop': 'a' }
+);
+</script>
+</div>
+
+<div style="width: 100%"><center>
+
+
+
+
+
+
+
+
+ 
+
+<div class="adv adv_720x90 banner" id="adv_720x90" style="background:transparent;box-shadow:none">
+
+<div id="billboard">
+<script type="text/javascript">
+Adf.banner.show_b('billboard', {
+'p1': 'beely',
+'p2': 'y',
+'pct': 'a',
+'puid6': 'AUTO',
+'puid10': 'NO',
+'puid15': '',
+'puid18': '',
+},{
+'begun-block-id' : '411628464',
+'begun-auto-pad' : '294385246'
+});
+</script>
+</div>
+
+</div> 
+
+
+</center></div>
+<div class="counters">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KJBSQR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KJBSQR');</script>
+<!-- End Google Tag Manager -->
+<!--Google Analitics-->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-1268585-1']);
+_gaq.push(['_trackPageview']);
+/* Decrease bounce rate on first page */
+if (document.referrer.indexOf(location.hostname) < 0)
+setTimeout('_gaq.push([\'_trackEvent\', \'NoBounce\', \'Over 15 seconds\'])', 15000);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+//ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--Google Analitics end-->
+<!-- Yandex.Metrika counter -->
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
+<script type="text/javascript">
+try { var yaCounter230672 = new Ya.Metrika({id:230672,
+clickmap:true,
+trackLinks:true,
+accurateTrackBounce:true});
+} catch(e) { }
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/230672" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+(w[c] = w[c] || []).push(function() {
+try {
+w.yaCounter27775902 = new Ya.Metrika({id:27775902,
+clickmap:true,
+trackLinks:true,
+accurateTrackBounce:true});
+} catch(e) { }
+});
+var n = d.getElementsByTagName("script")[0],
+s = d.createElement("script"),
+f = function () { n.parentNode.insertBefore(s, n); };
+s.type = "text/javascript";
+s.async = true;
+s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+if (w.opera == "[object Opera]") {
+d.addEventListener("DOMContentLoaded", f, false);
+} else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/27775902" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!--LiveInternet counter--><script type="text/javascript"><!--
+new Image().src = "//counter.yadro.ru/hit;gazeta_all?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random();//--></script><!--/LiveInternet-->
+
+<noindex>
+
+
+
+<!-- tns-counter.ru -->
+<script language="JavaScript">
+var img = new Image();
+img.src = 'http://www.tns-counter.ru/V13a***R>' + document.referrer.replace(/\*/g,'%2a') + '*sup_ru/ru/CP1251/tmsec=gazeta_other/';
+</script>
+<noscript>
+<img src="http://www.tns-counter.ru/V13a****sup_ru/ru/CP1251/tmsec=gazeta_other/" width="1" height="1" alt="" />
+</noscript>
+<!--/ tns-counter.ru -->
+</noindex>
+
+
+<script>
+var _prum = [['id', '53bea6bdabe53df541e68fca'],
+['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+var s = document.getElementsByTagName('script')[0]
+, p = document.createElement('script');
+p.async = 'async';
+p.src = '//rum-static.pingdom.net/prum.min.js';
+s.parentNode.insertBefore(p, s);
+})();
+</script>
+
+<!-- Begin comScore Tag -->
+<script>
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "10463284" });
+(function() {
+var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+el.parentNode.insertBefore(s, el);
+})();
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=10463284&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+
+</div>
+</noindex>
+<header> 
+
+
+
+
+
+<div class="header">
+<div class="menu_top">
+<div class="left nav_top"> <a href="/eksport/">Экспорт</a> <a href="http://pets.gazeta.ru/">PETS</a>
+</div>
+<div class="right nav_search">
+<form name="search" action="/search.shtml">
+<input type="text" name="text" placeholder="Введите запрос" class="search">
+<input title="Искать" type="image" src="/nm2015/gzt/img/poisk.png" class="search_loupe" style="height: 12px; margin-top: 0;"/>
+<input type="hidden" name="p" value="search">
+<input type="hidden" name="how" value="pt">
+</form>
+</div>
+<div class="right nav_links">
+<span class="ml10"> 9 июня 2016, 16:03</span>
+<a href="/feedback/" title="Обратная связь" class="header_feedback"></a>
+<a href="/export_news.shtml" title="RSS" class="header_rss"></a>
+<b>18+</b>
+</div>
+</div>
+<div class="clear"></div>
+<!-- gfh f -->
+<div class="nav_weather">
+
+
+<div class="weather_header weather">
+<a rel="nofollow" href="http://weather.rambler.ru/v-moskve/" target="_blank" title="Сейчас в Москве +11 &#176;C, дождь
+Ветер С, 2 м/c
+Давление 737 мм рт. ст.
+Влажность воздуха 100%">
+<span class="city">Москва:</span>
+<img src="/nm2012/i/rain.svg" height="15">
+<span class="temp">+11&#176;C</span>
+</a>
+</div>
+
+
+<div class="nav_currency">
+
+<span class="currency"><a href="/business/quotes/"><img src="http://static.gazeta.ru/nm2012/i/quotes/finam_head.png" alt="Курсы валют"></a></span><a href="/business/quotes/"><span class="currency"><b>$</b> 64.24 (<span class="index_up">+0.656</span>)</span></a> <a href="/business/quotes/"><span class="currency"><b>&#8364;</b> 72.86 (<span class="index_up">+0.423</span>)</span></a>
+</div>
+</div>
+<div class="left ml10 logo">
+<a href="/" title="Газета.Ru"><img src="/nm2015//gzt/img/logo.png" alt="Газета.Ru" /></a>
+</div>
+<div class="clear"></div>
+<div class="header_adv">
+
+<!--ADFOX START-->
+<!--gazetaru_new-->
+<!--Площадка: Gazeta.ru / * / *-->
+<!--Тип баннера: Без заданных размеров-->
+<!--Расположение: Шапка-->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/224316/prepareCode?pp=eaf&amp;ps=bsjf&amp;p2=exns&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;dl='+dl+'&amp;pr1='+pr1);
+// -->
+</script>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+
+</div>
+<div class="clear"></div>
+</div>
+<div class="">
+  
+
+
+
+
+
+<div class="b-navbar m-navbar_level1">
+<nav>
+<ul> <li class=""> <a href="/politics/" class="stripe">Политика</a>
+</li> <li class=""> <a href="/business/" class="stripe">Бизнес</a>
+</li> <li class=""> <a href="/social/" class="stripe">Общество</a>
+</li> <li class=""> <a href="/army/" class="stripe">Армия</a>
+</li> <li class=""> <a href="/comments/" class="stripe">Мнения</a>
+</li> <li class=""> <a href="/culture/" class="stripe">Культура</a>
+</li> <li class=""> <a href="/science/" class="stripe">Наука</a>
+</li> <li class=""> <a href="/tech/" class="stripe">Технологии</a>
+</li> <li class=" current m-bubble_arrow"> <a href="/auto/" class="stripe">Авто</a>
+</li> <li class=""> <a href="/lifestyle/" class="stripe">Стиль жизни</a>
+</li> <li class=""> <a href="/sport/" class="stripe">Спорт</a>
+</li>
+</ul>
+</nav>
+</div> 
+<!--rubric navbar_url: /nm2015/ssi/navbar/auto.shtml?p=navbar -->
+<!--rubric id: navbar7836875_9 -->
+
+
+
+
+  
+
+
+
+<div class="b-navbar m-navbar_level2">
+<nav>
+<ul> <li class=""> <a href="/auto/test-drive/" class="stripe">Тест-драйвы</a>
+</li> <li class=""> <a href="/auto/zakon-i-pravo/" class="stripe">Закон и право</a>
+</li> <li class=""> <a href="/auto/gorod/" class="stripe">Город</a>
+</li> <li class=""> <a href="/auto/avtomehanika/" class="stripe">АвтоМеханика</a>
+</li> <li class=""> <a href="/auto/proishestviya/" class="stripe">Происшествия</a>
+</li> <li class=""> <a href="/auto/dorogi/" class="stripe">Дороги</a>
+</li> <li class=""> <a href="/auto/avtorynok/" class="stripe">АвтоРынок</a>
+</li> <li class=""> <a href="/auto/strahovaniye/" class="stripe">Страхование</a>
+</li>
+<li class="li_left_photo active" style="margin-top: -10px;"><a href="/auto/photo/" title="Фоторепортажи"></a></li>
+<li class="li_left_video " style="margin-top: -10px;"><a href="/auto/video/" title="Видео"></a></li>
+</ul>
+</nav>
+</div> 
+<!--rubric navbar_url:  -->
+<!--rubric id:  -->
+
+ 
+
+ 
+</div>
+<div class="row"><div id="adv_panel" class="full">
+
+
+<!--ADFOX START-->
+<!--gazetaru_new-->
+<!--Площадка: Gazeta.ru / * / *-->
+<!--Тип баннера: Перетяжка 100%-->
+<!--Расположение: верх страницы 2-->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+(function(){
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/224316/prepareCode?pp=dzq&amp;ps=bsjf&amp;p2=y&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;dl='+dl+'&amp;pr1='+pr1);
+})();
+// -->
+</script>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+
+
+</div></div>
+<script>
+set_resizeblock_handler('#adv_panel', function () {
+if( $(this).height() )
+$(this).css('padding', '10px 5px 10px 5px');
+});
+</script>
+</header>
+<main>
+<article class="main_article" data-url="http://www.gazeta.ru/auto/photo/krasiveishie_avtotrassy_mira.shtml"> <div id="article_title" class="block">
+<div>
+<div class="topic">
+
+<a href="/photo/">Фоторепортаж</a>
+
+
+&nbsp;&nbsp;//&nbsp;&nbsp; <a href="/auto/photo/">Автомобили</a>
+
+</div>
+<h2 class="h_1 mt5 mb10">Красивейшие автотрассы мира</h2>
+<h1 class="sub_header mt15 mb10">Издание Business Insider опубликовало снимки автотрасс, которые являются одними из самых красивых и необычных в мире.
+Одни примечательны своими бесподобными видами, другие имеют сложный и прихотливый рисунок, который доставляет массу хлопот водителям.
+Однако есть нечто общее, что их объединяет: они не скоро забываются.
+В списке оказались 28 трасс, от горной дороги в Абу-Даби до маршрутов в Швейцарских Альпах. Все они отличаются бесподобной красотой и необычностью.</h1>
+<div class="article_auth">
+<span class="date_time">09.06.2016, 11:39</span>
+</div>
+</div>
+</div>
+<div id="full_screen">
+<!-- #Media_pic, название. источник -->
+<div class="pd10 pl20 b-photoreport_article" data-id_photorep="8294735">
+<style>
+@media only screen and (max-width: 1260px) {
+#photoreport_body {
+width:630px;
+float: left;
+}
+#right {
+position: relative;
+width: 315px;
+float: left;
+margin-left: 0;
+}
+}
+</style> 
+
+<script src="/nm2015/js/photoreport.js"></script>
+
+
+ <script>
+$(document).ready(function(){ var pictures=[
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic905-895x505-17267.jpg",pic830:" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic830-830x460-25581.jpg",pic830c:" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic830-830x460-25581.jpg",pic685:" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic685-685x390-9426.jpg",pic620:" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic620-620x350-22204.jpg",pic580:" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic580-580x330-75296.jpg",pic410:" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic410-410x230-30994.jpg",pic305:" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic305-305x175-78018.jpg",pic265:" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic265-265x150-48956.jpg",pic150:" http://img.gazeta.ru/files3/921/8294921/upload-1828251-pic150-150x100-98027.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Trollstigen Road, Норвегия",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/741/8294741/upload-1828273-pic905-895x505-36986.jpg",pic830:" http://img.gazeta.ru/files3/741/8294741/upload-1828273-pic830-830x460-29938.jpg",pic830c:" http://img.gazeta.ru/files3/741/8294741/upload-1828273-pic830-830x460-29938.jpg",pic685:" http://img.gazeta.ru/files3/741/8294741/upload-1828273-pic685-685x390-38184.jpg",pic620:" http://img.gazeta.ru/files3/741/8294741/upload-1828273-pic620-620x350-47358.jpg",pic580:" http://img.gazeta.ru/files3/741/8294741/upload-1828273-pic580-580x330-58629.jpg",pic410:" http://img.gazeta.ru/files3/741/8294741/upload-1828273-pic410-410x230-71277.jpg",pic305:" http://img.gazeta.ru/files3/741/8294741/upload-1828273-pic305-305x175-91784.jpg",pic265:" http://img.gazeta.ru/files3/741/8294741/upload-1828273-pic265-265x150-15929.jpg",pic150:" http://img.gazeta.ru/files3/741/8294741/upload-1828273-pic150-150x100-66462.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Атлантик-роуд, Норвегия",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/747/8294747/upload-1828272-pic905-895x505-33297.jpg",pic830:" http://img.gazeta.ru/files3/747/8294747/upload-1828272-pic830-830x460-14828.jpg",pic830c:" http://img.gazeta.ru/files3/747/8294747/upload-1828272-pic830-830x460-14828.jpg",pic685:" http://img.gazeta.ru/files3/747/8294747/upload-1828272-pic685-685x390-65531.jpg",pic620:" http://img.gazeta.ru/files3/747/8294747/upload-1828272-pic620-620x350-54004.jpg",pic580:" http://img.gazeta.ru/files3/747/8294747/upload-1828272-pic580-580x330-96118.jpg",pic410:" http://img.gazeta.ru/files3/747/8294747/upload-1828272-pic410-410x230-41617.jpg",pic305:" http://img.gazeta.ru/files3/747/8294747/upload-1828272-pic305-305x175-80231.jpg",pic265:" http://img.gazeta.ru/files3/747/8294747/upload-1828272-pic265-265x150-72399.jpg",pic150:" http://img.gazeta.ru/files3/747/8294747/upload-1828272-pic150-150x100-12113.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Overseas Highway во Флориде, США",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/753/8294753/upload-1828271-pic905-895x505-86702.jpg",pic830:" http://img.gazeta.ru/files3/753/8294753/upload-1828271-pic830-830x460-12857.jpg",pic830c:" http://img.gazeta.ru/files3/753/8294753/upload-1828271-pic830-830x460-12857.jpg",pic685:" http://img.gazeta.ru/files3/753/8294753/upload-1828271-pic685-685x390-2253.jpg",pic620:" http://img.gazeta.ru/files3/753/8294753/upload-1828271-pic620-620x350-70658.jpg",pic580:" http://img.gazeta.ru/files3/753/8294753/upload-1828271-pic580-580x330-70367.jpg",pic410:" http://img.gazeta.ru/files3/753/8294753/upload-1828271-pic410-410x230-62260.jpg",pic305:" http://img.gazeta.ru/files3/753/8294753/upload-1828271-pic305-305x175-44423.jpg",pic265:" http://img.gazeta.ru/files3/753/8294753/upload-1828271-pic265-265x150-22562.jpg",pic150:" http://img.gazeta.ru/files3/753/8294753/upload-1828271-pic150-150x100-60058.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Going-to-the-Sun Road в Монтане, США",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/765/8294765/upload-1828270-pic905-895x505-59636.jpg",pic830:" http://img.gazeta.ru/files3/765/8294765/upload-1828270-pic830-830x460-8596.jpg",pic830c:" http://img.gazeta.ru/files3/765/8294765/upload-1828270-pic830-830x460-8596.jpg",pic685:" http://img.gazeta.ru/files3/765/8294765/upload-1828270-pic685-685x390-15393.jpg",pic620:" http://img.gazeta.ru/files3/765/8294765/upload-1828270-pic620-620x350-52052.jpg",pic580:" http://img.gazeta.ru/files3/765/8294765/upload-1828270-pic580-580x330-88366.jpg",pic410:" http://img.gazeta.ru/files3/765/8294765/upload-1828270-pic410-410x230-86307.jpg",pic305:" http://img.gazeta.ru/files3/765/8294765/upload-1828270-pic305-305x175-25829.jpg",pic265:" http://img.gazeta.ru/files3/765/8294765/upload-1828270-pic265-265x150-89635.jpg",pic150:" http://img.gazeta.ru/files3/765/8294765/upload-1828270-pic150-150x100-27376.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Lake Shore Drive в Чикаго, США",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/777/8294777/upload-1828269-pic905-895x505-78870.jpg",pic830:" http://img.gazeta.ru/files3/777/8294777/upload-1828269-pic830-830x460-52329.jpg",pic830c:" http://img.gazeta.ru/files3/777/8294777/upload-1828269-pic830-830x460-52329.jpg",pic685:" http://img.gazeta.ru/files3/777/8294777/upload-1828269-pic685-685x390-12942.jpg",pic620:" http://img.gazeta.ru/files3/777/8294777/upload-1828269-pic620-620x350-19058.jpg",pic580:" http://img.gazeta.ru/files3/777/8294777/upload-1828269-pic580-580x330-38613.jpg",pic410:" http://img.gazeta.ru/files3/777/8294777/upload-1828269-pic410-410x230-41812.jpg",pic305:" http://img.gazeta.ru/files3/777/8294777/upload-1828269-pic305-305x175-40709.jpg",pic265:" http://img.gazeta.ru/files3/777/8294777/upload-1828269-pic265-265x150-23252.jpg",pic150:" http://img.gazeta.ru/files3/777/8294777/upload-1828269-pic150-150x100-25937.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Ruta 40, Аргентина\n",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/783/8294783/upload-1828268-pic905-895x505-39283.jpg",pic830:" http://img.gazeta.ru/files3/783/8294783/upload-1828268-pic830-830x460-81998.jpg",pic830c:" http://img.gazeta.ru/files3/783/8294783/upload-1828268-pic830-830x460-81998.jpg",pic685:" http://img.gazeta.ru/files3/783/8294783/upload-1828268-pic685-685x390-24461.jpg",pic620:" http://img.gazeta.ru/files3/783/8294783/upload-1828268-pic620-620x350-60130.jpg",pic580:" http://img.gazeta.ru/files3/783/8294783/upload-1828268-pic580-580x330-79997.jpg",pic410:" http://img.gazeta.ru/files3/783/8294783/upload-1828268-pic410-410x230-23974.jpg",pic305:" http://img.gazeta.ru/files3/783/8294783/upload-1828268-pic305-305x175-31562.jpg",pic265:" http://img.gazeta.ru/files3/783/8294783/upload-1828268-pic265-265x150-40511.jpg",pic150:" http://img.gazeta.ru/files3/783/8294783/upload-1828268-pic150-150x100-45180.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Valley of Fire State Park в Неваде, США",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/795/8294795/upload-1828267-pic905-895x505-4801.jpg",pic830:" http://img.gazeta.ru/files3/795/8294795/upload-1828267-pic830-830x460-60909.jpg",pic830c:" http://img.gazeta.ru/files3/795/8294795/upload-1828267-pic830-830x460-60909.jpg",pic685:" http://img.gazeta.ru/files3/795/8294795/upload-1828267-pic685-685x390-34305.jpg",pic620:" http://img.gazeta.ru/files3/795/8294795/upload-1828267-pic620-620x350-95828.jpg",pic580:" http://img.gazeta.ru/files3/795/8294795/upload-1828267-pic580-580x330-62401.jpg",pic410:" http://img.gazeta.ru/files3/795/8294795/upload-1828267-pic410-410x230-36728.jpg",pic305:" http://img.gazeta.ru/files3/795/8294795/upload-1828267-pic305-305x175-22421.jpg",pic265:" http://img.gazeta.ru/files3/795/8294795/upload-1828267-pic265-265x150-96298.jpg",pic150:" http://img.gazeta.ru/files3/795/8294795/upload-1828267-pic150-150x100-7756.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Дорога в небо, Трансальпина, Румыния",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/801/8294801/upload-1828266-pic905-895x505-7508.jpg",pic830:" http://img.gazeta.ru/files3/801/8294801/upload-1828266-pic830-830x460-66685.jpg",pic830c:" http://img.gazeta.ru/files3/801/8294801/upload-1828266-pic830-830x460-66685.jpg",pic685:" http://img.gazeta.ru/files3/801/8294801/upload-1828266-pic685-685x390-54993.jpg",pic620:" http://img.gazeta.ru/files3/801/8294801/upload-1828266-pic620-620x350-50327.jpg",pic580:" http://img.gazeta.ru/files3/801/8294801/upload-1828266-pic580-580x330-21617.jpg",pic410:" http://img.gazeta.ru/files3/801/8294801/upload-1828266-pic410-410x230-85403.jpg",pic305:" http://img.gazeta.ru/files3/801/8294801/upload-1828266-pic305-305x175-90465.jpg",pic265:" http://img.gazeta.ru/files3/801/8294801/upload-1828266-pic265-265x150-87194.jpg",pic150:" http://img.gazeta.ru/files3/801/8294801/upload-1828266-pic150-150x100-40602.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"The Blue Ridge Parkway в Вирджинии, США",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/813/8294813/upload-1828265-pic905-895x505-65370.jpg",pic830:" http://img.gazeta.ru/files3/813/8294813/upload-1828265-pic830-830x460-10022.jpg",pic830c:" http://img.gazeta.ru/files3/813/8294813/upload-1828265-pic830-830x460-10022.jpg",pic685:" http://img.gazeta.ru/files3/813/8294813/upload-1828265-pic685-685x390-5584.jpg",pic620:" http://img.gazeta.ru/files3/813/8294813/upload-1828265-pic620-620x350-89392.jpg",pic580:" http://img.gazeta.ru/files3/813/8294813/upload-1828265-pic580-580x330-2527.jpg",pic410:" http://img.gazeta.ru/files3/813/8294813/upload-1828265-pic410-410x230-80739.jpg",pic305:" http://img.gazeta.ru/files3/813/8294813/upload-1828265-pic305-305x175-29474.jpg",pic265:" http://img.gazeta.ru/files3/813/8294813/upload-1828265-pic265-265x150-74273.jpg",pic150:" http://img.gazeta.ru/files3/813/8294813/upload-1828265-pic150-150x100-7813.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"The Denali Highway в Аляске, США",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/819/8294819/upload-1828264-pic905-895x505-47182.jpg",pic830:" http://img.gazeta.ru/files3/819/8294819/upload-1828264-pic830-830x460-31353.jpg",pic830c:" http://img.gazeta.ru/files3/819/8294819/upload-1828264-pic830-830x460-31353.jpg",pic685:" http://img.gazeta.ru/files3/819/8294819/upload-1828264-pic685-685x390-58873.jpg",pic620:" http://img.gazeta.ru/files3/819/8294819/upload-1828264-pic620-620x350-85016.jpg",pic580:" http://img.gazeta.ru/files3/819/8294819/upload-1828264-pic580-580x330-71496.jpg",pic410:" http://img.gazeta.ru/files3/819/8294819/upload-1828264-pic410-410x230-73746.jpg",pic305:" http://img.gazeta.ru/files3/819/8294819/upload-1828264-pic305-305x175-72854.jpg",pic265:" http://img.gazeta.ru/files3/819/8294819/upload-1828264-pic265-265x150-59509.jpg",pic150:" http://img.gazeta.ru/files3/819/8294819/upload-1828264-pic150-150x100-79285.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"The Jebel Hafeet Mountain Road, Абу-Даби\n",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/825/8294825/upload-1828263-pic905-895x505-89354.jpg",pic830:" http://img.gazeta.ru/files3/825/8294825/upload-1828263-pic830-830x460-46547.jpg",pic830c:" http://img.gazeta.ru/files3/825/8294825/upload-1828263-pic830-830x460-46547.jpg",pic685:" http://img.gazeta.ru/files3/825/8294825/upload-1828263-pic685-685x390-43822.jpg",pic620:" http://img.gazeta.ru/files3/825/8294825/upload-1828263-pic620-620x350-86841.jpg",pic580:" http://img.gazeta.ru/files3/825/8294825/upload-1828263-pic580-580x330-14201.jpg",pic410:" http://img.gazeta.ru/files3/825/8294825/upload-1828263-pic410-410x230-28956.jpg",pic305:" http://img.gazeta.ru/files3/825/8294825/upload-1828263-pic305-305x175-8425.jpg",pic265:" http://img.gazeta.ru/files3/825/8294825/upload-1828263-pic265-265x150-3111.jpg",pic150:" http://img.gazeta.ru/files3/825/8294825/upload-1828263-pic150-150x100-20361.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Great Ocean Road, Австралия\n",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/831/8294831/upload-1828262-pic905-895x505-50051.jpg",pic830:" http://img.gazeta.ru/files3/831/8294831/upload-1828262-pic830-830x460-23286.jpg",pic830c:" http://img.gazeta.ru/files3/831/8294831/upload-1828262-pic830-830x460-23286.jpg",pic685:" http://img.gazeta.ru/files3/831/8294831/upload-1828262-pic685-685x390-69980.jpg",pic620:" http://img.gazeta.ru/files3/831/8294831/upload-1828262-pic620-620x350-61296.jpg",pic580:" http://img.gazeta.ru/files3/831/8294831/upload-1828262-pic580-580x330-67558.jpg",pic410:" http://img.gazeta.ru/files3/831/8294831/upload-1828262-pic410-410x230-68008.jpg",pic305:" http://img.gazeta.ru/files3/831/8294831/upload-1828262-pic305-305x175-53691.jpg",pic265:" http://img.gazeta.ru/files3/831/8294831/upload-1828262-pic265-265x150-61484.jpg",pic150:" http://img.gazeta.ru/files3/831/8294831/upload-1828262-pic150-150x100-41111.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Garden Route, Южная Африка",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/837/8294837/upload-1828261-pic905-895x505-8556.jpg",pic830:" http://img.gazeta.ru/files3/837/8294837/upload-1828261-pic830-830x460-35486.jpg",pic830c:" http://img.gazeta.ru/files3/837/8294837/upload-1828261-pic830-830x460-35486.jpg",pic685:" http://img.gazeta.ru/files3/837/8294837/upload-1828261-pic685-685x390-62637.jpg",pic620:" http://img.gazeta.ru/files3/837/8294837/upload-1828261-pic620-620x350-54002.jpg",pic580:" http://img.gazeta.ru/files3/837/8294837/upload-1828261-pic580-580x330-96153.jpg",pic410:" http://img.gazeta.ru/files3/837/8294837/upload-1828261-pic410-410x230-189.jpg",pic305:" http://img.gazeta.ru/files3/837/8294837/upload-1828261-pic305-305x175-85879.jpg",pic265:" http://img.gazeta.ru/files3/837/8294837/upload-1828261-pic265-265x150-17560.jpg",pic150:" http://img.gazeta.ru/files3/837/8294837/upload-1828261-pic150-150x100-60202.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Pacific Coast Highway в Калифорнии, США",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/849/8294849/upload-1828260-pic905-895x505-6640.jpg",pic830:" http://img.gazeta.ru/files3/849/8294849/upload-1828260-pic830-830x460-85704.jpg",pic830c:" http://img.gazeta.ru/files3/849/8294849/upload-1828260-pic830-830x460-85704.jpg",pic685:" http://img.gazeta.ru/files3/849/8294849/upload-1828260-pic685-685x390-86578.jpg",pic620:" http://img.gazeta.ru/files3/849/8294849/upload-1828260-pic620-620x350-9571.jpg",pic580:" http://img.gazeta.ru/files3/849/8294849/upload-1828260-pic580-580x330-69803.jpg",pic410:" http://img.gazeta.ru/files3/849/8294849/upload-1828260-pic410-410x230-42779.jpg",pic305:" http://img.gazeta.ru/files3/849/8294849/upload-1828260-pic305-305x175-78862.jpg",pic265:" http://img.gazeta.ru/files3/849/8294849/upload-1828260-pic265-265x150-80740.jpg",pic150:" http://img.gazeta.ru/files3/849/8294849/upload-1828260-pic150-150x100-10831.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"The Cabot Trail, Канада",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/855/8294855/upload-1828259-pic905-895x505-28537.jpg",pic830:" http://img.gazeta.ru/files3/855/8294855/upload-1828259-pic830-830x460-29028.jpg",pic830c:" http://img.gazeta.ru/files3/855/8294855/upload-1828259-pic830-830x460-29028.jpg",pic685:" http://img.gazeta.ru/files3/855/8294855/upload-1828259-pic685-685x390-2927.jpg",pic620:" http://img.gazeta.ru/files3/855/8294855/upload-1828259-pic620-620x350-36626.jpg",pic580:" http://img.gazeta.ru/files3/855/8294855/upload-1828259-pic580-580x330-21779.jpg",pic410:" http://img.gazeta.ru/files3/855/8294855/upload-1828259-pic410-410x230-9340.jpg",pic305:" http://img.gazeta.ru/files3/855/8294855/upload-1828259-pic305-305x175-80382.jpg",pic265:" http://img.gazeta.ru/files3/855/8294855/upload-1828259-pic265-265x150-44387.jpg",pic150:" http://img.gazeta.ru/files3/855/8294855/upload-1828259-pic150-150x100-51754.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Ring Road",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/867/8294867/upload-1828258-pic905-895x505-81730.jpg",pic830:" http://img.gazeta.ru/files3/867/8294867/upload-1828258-pic830-830x460-66822.jpg",pic830c:" http://img.gazeta.ru/files3/867/8294867/upload-1828258-pic830-830x460-66822.jpg",pic685:" http://img.gazeta.ru/files3/867/8294867/upload-1828258-pic685-685x390-17351.jpg",pic620:" http://img.gazeta.ru/files3/867/8294867/upload-1828258-pic620-620x350-91450.jpg",pic580:" http://img.gazeta.ru/files3/867/8294867/upload-1828258-pic580-580x330-72141.jpg",pic410:" http://img.gazeta.ru/files3/867/8294867/upload-1828258-pic410-410x230-60973.jpg",pic305:" http://img.gazeta.ru/files3/867/8294867/upload-1828258-pic305-305x175-51159.jpg",pic265:" http://img.gazeta.ru/files3/867/8294867/upload-1828258-pic265-265x150-72515.jpg",pic150:" http://img.gazeta.ru/files3/867/8294867/upload-1828258-pic150-150x100-26990.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"The Milford Road, Новая Зеландия\n",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/873/8294873/upload-1828257-pic905-895x505-38794.jpg",pic830:" http://img.gazeta.ru/files3/873/8294873/upload-1828257-pic830-830x460-20722.jpg",pic830c:" http://img.gazeta.ru/files3/873/8294873/upload-1828257-pic830-830x460-20722.jpg",pic685:" http://img.gazeta.ru/files3/873/8294873/upload-1828257-pic685-685x390-5397.jpg",pic620:" http://img.gazeta.ru/files3/873/8294873/upload-1828257-pic620-620x350-49200.jpg",pic580:" http://img.gazeta.ru/files3/873/8294873/upload-1828257-pic580-580x330-15171.jpg",pic410:" http://img.gazeta.ru/files3/873/8294873/upload-1828257-pic410-410x230-13380.jpg",pic305:" http://img.gazeta.ru/files3/873/8294873/upload-1828257-pic305-305x175-68557.jpg",pic265:" http://img.gazeta.ru/files3/873/8294873/upload-1828257-pic265-265x150-83331.jpg",pic150:" http://img.gazeta.ru/files3/873/8294873/upload-1828257-pic150-150x100-63939.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Трасса между Ниццей и Монако",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/879/8294879/upload-1828256-pic905-895x505-67646.jpg",pic830:" http://img.gazeta.ru/files3/879/8294879/upload-1828256-pic830-830x460-57355.jpg",pic830c:" http://img.gazeta.ru/files3/879/8294879/upload-1828256-pic830-830x460-57355.jpg",pic685:" http://img.gazeta.ru/files3/879/8294879/upload-1828256-pic685-685x390-20882.jpg",pic620:" http://img.gazeta.ru/files3/879/8294879/upload-1828256-pic620-620x350-48256.jpg",pic580:" http://img.gazeta.ru/files3/879/8294879/upload-1828256-pic580-580x330-43145.jpg",pic410:" http://img.gazeta.ru/files3/879/8294879/upload-1828256-pic410-410x230-62785.jpg",pic305:" http://img.gazeta.ru/files3/879/8294879/upload-1828256-pic305-305x175-1168.jpg",pic265:" http://img.gazeta.ru/files3/879/8294879/upload-1828256-pic265-265x150-12710.jpg",pic150:" http://img.gazeta.ru/files3/879/8294879/upload-1828256-pic150-150x100-58177.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"The Historic Columbia River Highway, Колумбия\n",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/891/8294891/upload-1828255-pic905-895x505-17336.jpg",pic830:" http://img.gazeta.ru/files3/891/8294891/upload-1828255-pic830-830x460-32821.jpg",pic830c:" http://img.gazeta.ru/files3/891/8294891/upload-1828255-pic830-830x460-32821.jpg",pic685:" http://img.gazeta.ru/files3/891/8294891/upload-1828255-pic685-685x390-62550.jpg",pic620:" http://img.gazeta.ru/files3/891/8294891/upload-1828255-pic620-620x350-50722.jpg",pic580:" http://img.gazeta.ru/files3/891/8294891/upload-1828255-pic580-580x330-99648.jpg",pic410:" http://img.gazeta.ru/files3/891/8294891/upload-1828255-pic410-410x230-72194.jpg",pic305:" http://img.gazeta.ru/files3/891/8294891/upload-1828255-pic305-305x175-23068.jpg",pic265:" http://img.gazeta.ru/files3/891/8294891/upload-1828255-pic265-265x150-30956.jpg",pic150:" http://img.gazeta.ru/files3/891/8294891/upload-1828255-pic150-150x100-56061.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Трасса на Майорке, Испания\n",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/897/8294897/upload-1828254-pic905-895x505-67019.jpg",pic830:" http://img.gazeta.ru/files3/897/8294897/upload-1828254-pic830-830x460-53966.jpg",pic830c:" http://img.gazeta.ru/files3/897/8294897/upload-1828254-pic830-830x460-53966.jpg",pic685:" http://img.gazeta.ru/files3/897/8294897/upload-1828254-pic685-685x390-18835.jpg",pic620:" http://img.gazeta.ru/files3/897/8294897/upload-1828254-pic620-620x350-23448.jpg",pic580:" http://img.gazeta.ru/files3/897/8294897/upload-1828254-pic580-580x330-73874.jpg",pic410:" http://img.gazeta.ru/files3/897/8294897/upload-1828254-pic410-410x230-66012.jpg",pic305:" http://img.gazeta.ru/files3/897/8294897/upload-1828254-pic305-305x175-10210.jpg",pic265:" http://img.gazeta.ru/files3/897/8294897/upload-1828254-pic265-265x150-20501.jpg",pic150:" http://img.gazeta.ru/files3/897/8294897/upload-1828254-pic150-150x100-48138.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Stelvio Pass, Италия\n",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/903/8294903/upload-1828253-pic905-895x505-25172.jpg",pic830:" http://img.gazeta.ru/files3/903/8294903/upload-1828253-pic830-830x460-14920.jpg",pic830c:" http://img.gazeta.ru/files3/903/8294903/upload-1828253-pic830-830x460-14920.jpg",pic685:" http://img.gazeta.ru/files3/903/8294903/upload-1828253-pic685-685x390-48752.jpg",pic620:" http://img.gazeta.ru/files3/903/8294903/upload-1828253-pic620-620x350-8487.jpg",pic580:" http://img.gazeta.ru/files3/903/8294903/upload-1828253-pic580-580x330-60175.jpg",pic410:" http://img.gazeta.ru/files3/903/8294903/upload-1828253-pic410-410x230-83908.jpg",pic305:" http://img.gazeta.ru/files3/903/8294903/upload-1828253-pic305-305x175-18162.jpg",pic265:" http://img.gazeta.ru/files3/903/8294903/upload-1828253-pic265-265x150-16927.jpg",pic150:" http://img.gazeta.ru/files3/903/8294903/upload-1828253-pic150-150x100-29604.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Highway 61 из Миннесоты к канадской границе, США",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/915/8294915/upload-1828252-pic905-895x505-62060.jpg",pic830:" http://img.gazeta.ru/files3/915/8294915/upload-1828252-pic830-830x460-72625.jpg",pic830c:" http://img.gazeta.ru/files3/915/8294915/upload-1828252-pic830-830x460-72625.jpg",pic685:" http://img.gazeta.ru/files3/915/8294915/upload-1828252-pic685-685x390-54294.jpg",pic620:" http://img.gazeta.ru/files3/915/8294915/upload-1828252-pic620-620x350-3236.jpg",pic580:" http://img.gazeta.ru/files3/915/8294915/upload-1828252-pic580-580x330-72483.jpg",pic410:" http://img.gazeta.ru/files3/915/8294915/upload-1828252-pic410-410x230-66119.jpg",pic305:" http://img.gazeta.ru/files3/915/8294915/upload-1828252-pic305-305x175-66216.jpg",pic265:" http://img.gazeta.ru/files3/915/8294915/upload-1828252-pic265-265x150-1098.jpg",pic150:" http://img.gazeta.ru/files3/915/8294915/upload-1828252-pic150-150x100-46412.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Chapman's Peak Drive, Южная Африка",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/927/8294927/upload-1828250-pic905-895x505-76121.jpg",pic830:" http://img.gazeta.ru/files3/927/8294927/upload-1828250-pic830-830x460-65570.jpg",pic830c:" http://img.gazeta.ru/files3/927/8294927/upload-1828250-pic830-830x460-65570.jpg",pic685:" http://img.gazeta.ru/files3/927/8294927/upload-1828250-pic685-685x390-65666.jpg",pic620:" http://img.gazeta.ru/files3/927/8294927/upload-1828250-pic620-620x350-70197.jpg",pic580:" http://img.gazeta.ru/files3/927/8294927/upload-1828250-pic580-580x330-55002.jpg",pic410:" http://img.gazeta.ru/files3/927/8294927/upload-1828250-pic410-410x230-76509.jpg",pic305:" http://img.gazeta.ru/files3/927/8294927/upload-1828250-pic305-305x175-34830.jpg",pic265:" http://img.gazeta.ru/files3/927/8294927/upload-1828250-pic265-265x150-16250.jpg",pic150:" http://img.gazeta.ru/files3/927/8294927/upload-1828250-pic150-150x100-7598.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Conor Pass, Ирландия\n",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/939/8294939/upload-1828249-pic905-895x505-89036.jpg",pic830:" http://img.gazeta.ru/files3/939/8294939/upload-1828249-pic830-830x460-99508.jpg",pic830c:" http://img.gazeta.ru/files3/939/8294939/upload-1828249-pic830-830x460-99508.jpg",pic685:" http://img.gazeta.ru/files3/939/8294939/upload-1828249-pic685-685x390-58672.jpg",pic620:" http://img.gazeta.ru/files3/939/8294939/upload-1828249-pic620-620x350-43982.jpg",pic580:" http://img.gazeta.ru/files3/939/8294939/upload-1828249-pic580-580x330-34592.jpg",pic410:" http://img.gazeta.ru/files3/939/8294939/upload-1828249-pic410-410x230-26061.jpg",pic305:" http://img.gazeta.ru/files3/939/8294939/upload-1828249-pic305-305x175-38955.jpg",pic265:" http://img.gazeta.ru/files3/939/8294939/upload-1828249-pic265-265x150-61193.jpg",pic150:" http://img.gazeta.ru/files3/939/8294939/upload-1828249-pic150-150x100-58157.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Touge Roads, Япония\n",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/945/8294945/upload-1828248-pic905-895x505-53124.jpg",pic830:" http://img.gazeta.ru/files3/945/8294945/upload-1828248-pic830-830x460-282.jpg",pic830c:" http://img.gazeta.ru/files3/945/8294945/upload-1828248-pic830-830x460-282.jpg",pic685:" http://img.gazeta.ru/files3/945/8294945/upload-1828248-pic685-685x390-18361.jpg",pic620:" http://img.gazeta.ru/files3/945/8294945/upload-1828248-pic620-620x350-14855.jpg",pic580:" http://img.gazeta.ru/files3/945/8294945/upload-1828248-pic580-580x330-18078.jpg",pic410:" http://img.gazeta.ru/files3/945/8294945/upload-1828248-pic410-410x230-8831.jpg",pic305:" http://img.gazeta.ru/files3/945/8294945/upload-1828248-pic305-305x175-82860.jpg",pic265:" http://img.gazeta.ru/files3/945/8294945/upload-1828248-pic265-265x150-75295.jpg",pic150:" http://img.gazeta.ru/files3/945/8294945/upload-1828248-pic150-150x100-83807.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"The San Bernardino Pass в Швейцарских Альпах",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/957/8294957/upload-1828247-pic905-895x505-74765.jpg",pic830:" http://img.gazeta.ru/files3/957/8294957/upload-1828247-pic830-830x460-11102.jpg",pic830c:" http://img.gazeta.ru/files3/957/8294957/upload-1828247-pic830-830x460-11102.jpg",pic685:" http://img.gazeta.ru/files3/957/8294957/upload-1828247-pic685-685x390-3794.jpg",pic620:" http://img.gazeta.ru/files3/957/8294957/upload-1828247-pic620-620x350-35094.jpg",pic580:" http://img.gazeta.ru/files3/957/8294957/upload-1828247-pic580-580x330-52773.jpg",pic410:" http://img.gazeta.ru/files3/957/8294957/upload-1828247-pic410-410x230-54188.jpg",pic305:" http://img.gazeta.ru/files3/957/8294957/upload-1828247-pic305-305x175-79281.jpg",pic265:" http://img.gazeta.ru/files3/957/8294957/upload-1828247-pic265-265x150-5278.jpg",pic150:" http://img.gazeta.ru/files3/957/8294957/upload-1828247-pic150-150x100-8457.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Scenic Byway в Аризоне, США",picsign_url:""
+},
+
+
+
+
+                                               
+
+{pic905:" http://img.gazeta.ru/files3/963/8294963/upload-1828246-pic905-895x505-42734.jpg",pic830:" http://img.gazeta.ru/files3/963/8294963/upload-1828246-pic830-830x460-70853.jpg",pic830c:" http://img.gazeta.ru/files3/963/8294963/upload-1828246-pic830-830x460-70853.jpg",pic685:" http://img.gazeta.ru/files3/963/8294963/upload-1828246-pic685-685x390-86916.jpg",pic620:" http://img.gazeta.ru/files3/963/8294963/upload-1828246-pic620-620x350-1461.jpg",pic580:" http://img.gazeta.ru/files3/963/8294963/upload-1828246-pic580-580x330-87007.jpg",pic410:" http://img.gazeta.ru/files3/963/8294963/upload-1828246-pic410-410x230-70151.jpg",pic305:" http://img.gazeta.ru/files3/963/8294963/upload-1828246-pic305-305x175-57765.jpg",pic265:" http://img.gazeta.ru/files3/963/8294963/upload-1828246-pic265-265x150-44917.jpg",pic150:" http://img.gazeta.ru/files3/963/8294963/upload-1828246-pic150-150x100-35926.jpg",pic4_zoom:"",js_pic_author:"",js_picsrc:"Business Insider",js_description:"Трасса в Вильмингтоне, США",picsign_url:""
+} ];  var associated_photoreps = [ {
+id: "8281709", pic265:"http://img.gazeta.ru/files3/721/8281721/upload-RIAN_02861855.HR.ru-pic265-265x150-66541.jpg", rep_description:"&quot;Вежливые люди&quot; вернулись в Крым",
+rep_url:"/social/photo/vezhlivye_lyudi_vernulis_v_krym.shtml"
+}, {
+id: "8281349", pic265:"http://img.gazeta.ru/files3/355/8281355/upload-01-pic265-265x150-96570.jpg", rep_description:"24-летняя учительница забеременела от 13-летнего ученика",
+rep_url:"/social/photo/24-letnyaya_uchitelnitsa_zaberemenela_ot_13-letnego_uchenika.shtml"
+}, {
+id: "8291801", pic265:"http://img.gazeta.ru/files3/819/8291819/upload-03-pic265-265x150-57976.jpg", rep_description:"Наталья Водянова в пятый раз стала матерью",
+rep_url:"/lifestyle/travel/photo/natalya_vodyanova_v_pyatyi_raz_stala_materyu.shtml"
+}, {
+id: "8289041", pic265:"http://img.gazeta.ru/files3/83/8289083/upload-hi_120108763537-pic265-265x150-77586.jpg", rep_description:"Анне Курниковой -- 35",
+rep_url:"/sport/photo/anne_kurnikovoi_--_35.shtml"
+}, {
+id: "8282957", pic265:"http://img.gazeta.ru/files3/963/8282963/upload-01-pic265-265x150-63001.jpg", rep_description:"Названа самая сексуальная женщина года",
+rep_url:"/lifestyle/travel/photo/nazvana_samaya_seksualnaya_zhenshina_goda.shtml"
+}, {
+id: "8287739", pic265:"http://img.gazeta.ru/files3/805/8287805/upload-TASS_999318-pic265-265x150-77791.jpg", rep_description:"Умер актер Алексей Жарков",
+rep_url:"/culture/photo/umer_akter_aleksei_zharkov.shtml"
+}, {
+id: "8290013", pic265:"http://img.gazeta.ru/files3/19/8290019/upload-big-pic265-265x150-93059.jpg", rep_description:"Dolce vita и смерть под парусом",
+rep_url:"/social/photo/leila_sultangareeva.shtml"
+}, {
+id: "8288873", pic265:"http://img.gazeta.ru/files3/879/8288879/upload-000-pic265-265x150-12020.jpg", rep_description:"Глюк'oZa из мультиков",
+rep_url:"/culture/photo/glyukoza_iz_multikov.shtml"
+}, {
+id: "8287097", pic265:"http://img.gazeta.ru/files3/133/8287133/upload-07-pic265-265x150-22591.jpg", rep_description:"Надежда Савченко приехала в Донбасс",
+rep_url:"/politics/photo/nadezhda_savchenko_priehala_v_donbass.shtml"
+}, {
+id: "8293409", pic265:"http://img.gazeta.ru/files3/415/8293415/upload-01-pic265-265x150-67417.jpg", rep_description:"Самая известная стритрейсерша Москвы",
+rep_url:"/auto/photo/samaya_izvestnaya_stritreisersha_moskvy.shtml"
+}];
+photoreport_main(pictures, associated_photoreps, 8294735);
+
+})
+</script>
+<div class="wrap_main"> <span class="loupe"></span>
+<span class="spinner"></span>
+<div class="left_arrow deactivate"></div>
+<div class="right_arrow"></div>
+</div>
+<div class="photo_info">
+<div class="count_photoreport date_time" ></div>
+<div class="src">
+<span class="author date_time"></span>
+<div class="intro_photo txt_3"></div>
+</div>
+</div> <div class="preview">
+<div class="wrap_pre">
+<div class="slider"></div>
+</div>
+<div class="left_arrow deactivate"></div>
+<div class="right_arrow"></div>
+</div> <div class="w895 pu10 pd10">
+
+
+<div class="pu10 pd10 borderup borderdown">
+
+<div class="last_comment right but button_give_comments" style="min-width:0;"><rambler-comments-count xid="8294735"></rambler-comments-count></div>
+
+<div class="article-share-name">
+<ul class="social-button-block">
+<li class="fb-share social-button"><a rel="nofollow" title="Поделиться в Facebook" href="http://www.facebook.com/share.php?u=" target="_blank"><span class="fb_counter"></span></a></li>
+<li class="vk-share social-button"><a rel="nofollow" title="Поделиться в Vkontakte" href="http://vk.com/share.php?url=" target="_blank"><span class="vk_counter"></span></a></li>
+<li class="ok-share social-button"><a rel="nofollow" class="soc_ok" title="Поделиться в Одноклассники" href="http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=" target="_blank"><span class="ok_counter"></span></a></li>
+<li class="twi-share social-button" style="width: 30px;"><a rel="nofollow" class="soc_twi" title="Поделиться в Twitter" href="http://twitter.com/intent/tweet?url=" target="_blank" style="width: 30px; height: 30px;"></a></li>
+<li class="lj-share social-button"><a rel="nofollow" class="soc_lj" title="Поделиться в ЖЖ" href="" target="_blank" class="btn_soc_lj"></a></li>
+</ul>
+</div>
+<div id="comments" class="rambler-comments"></div>
+</div>
+<style>
+.button_give_comments div.empty_comment:after {
+content: 'комментарии';
+}
+.button_give_comments div.ii:after {
+content: ' комментарий';
+}
+.button_give_comments div.ija:after {
+content: ' комментария';
+}
+.button_give_comments div.iev:after {
+content: ' комментариев';
+}
+</style>
+<script>
+$(document).ready(function(){
+// 
+if(location.hash == "#comments"){
+
+
+rambler_comments('load', {
+xid:"8294735",
+appId: 3
+});
+
+
+$('.rambler-comments').show();
+$('.button_give_comments').hide();
+var destination = $('#comments').offset().top;
+$('body').animate( { scrollTop: destination }, 1100 );
+}else{
+
+
+rambler_comments('i18n', {comments_count_none: '<div class="empty_comment"></div>', 'comments_count_plural': ['<span><div class="ii">%s</div></span>', '<span><div class="ija">%s</div></span>', '<span><div class="iev">%s</div></span>']});
+rambler_comments('load_comments_count', {
+appId: 3
+});
+setTimeout(function(){
+if($('rambler-comments-count div.empty_comment')){
+clean_mm_addition();
+}
+}, 100);
+
+
+}
+});
+$('.button_give_comments').on('click', function() {
+location.hash = "comments";
+
+
+rambler_comments('load', {
+xid:"8294735",
+appId: 3
+});
+
+
+$('.rambler-comments').show();
+$(this).hide();
+var destination = $('#comments').offset().top;
+$('body').animate( { scrollTop: destination }, 1100 );
+});
+</script>
+</div>
+</div>
+<div id="small_screen">
+<div id="photoreport_body">
+<div class="article_context">  
+
+
+
+
+ <div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+ 
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8295443,url=/auto/photo/nachalsya_montazh_proletov_kerchenskogo_mosta.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/auto/photo/nachalsya_montazh_proletov_kerchenskogo_mosta.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src="(none)" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/auto/photo/">Автомобили</a>
+
+</h4>
+<a href="/auto/photo/nachalsya_montazh_proletov_kerchenskogo_mosta.shtml">
+<h2 class="h_4">
+Начался монтаж пролетов Керченского моста
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-09T15:08:04+04:00">
+
+15:08
+
+</time>
+</div>
+<div class="txt_3">
+Строители начали монтаж пролетов моста через Керченский пролив. Они приступили к сборке и монтажу...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8295269,url=/social/photo/bolshaya_poterya_dlya_rossiiskoi_aviatsii.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/social/photo/bolshaya_poterya_dlya_rossiiskoi_aviatsii.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/275/8295275/upload-TASS_16012296-pic305-305x175-63371.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/social/photo/">Общество</a>
+
+</h4>
+<a href="/social/photo/bolshaya_poterya_dlya_rossiiskoi_aviatsii.shtml">
+<h2 class="h_4">
+Большая потеря для российской авиации
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-09T14:02:19+04:00">
+
+14:02
+
+</time>
+</div>
+<div class="txt_3">
+Самолет Су-27 группы &laquo;Русские витязи&raquo; разбился в Пушкинском районе Подмосковья. Жертвой...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8295137,url=/social/photo/russkii_vityaz_razbilsya_v_podmoskovi.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/social/photo/russkii_vityaz_razbilsya_v_podmoskovi.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/173/8295173/upload-TASS_16012021-pic305-305x175-95338.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/social/photo/">Общество</a>
+
+</h4>
+<a href="/social/photo/russkii_vityaz_razbilsya_v_podmoskovi.shtml">
+<h2 class="h_4">
+&laquo;Русский витязь&raquo; разбился в Подмосковье
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-09T13:11:17+04:00">
+
+13:11
+
+</time>
+</div>
+<div class="txt_3">
+Самолет Су-27 группы &laquo;Русские витязи&raquo; разбился в Пушкинском районе Подмосковья во время...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8294525,url=/sport/photo/konya_na_skaku_ostanovit....shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/sport/photo/konya_na_skaku_ostanovit....shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/537/8294537/upload-RIAN_02866657.HR.ru-pic305-305x175-23998.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/sport/photo/">Спорт</a>
+
+</h4>
+<a href="/sport/photo/konya_na_skaku_ostanovit....shtml">
+<h2 class="h_4">
+У матросов нет вопросов
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-09T10:48:46+04:00">
+
+10:48
+
+</time>
+</div>
+<div class="txt_3">
+Матрос Тихоокеанского флота, член сборной России по армлифтингу Галина Кошурникова несет службу и...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8294345,url=/culture/photo/makflai_iz_budushego.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/culture/photo/makflai_iz_budushego.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/405/8294405/upload-g9kl1ha-pic305-305x175-39841.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/culture/photo/">Культура</a>
+
+</h4>
+<a href="/culture/photo/makflai_iz_budushego.shtml">
+<h2 class="h_4">
+Макфлай из будущего
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-09T09:54:29+04:00">
+
+09:54
+
+</time>
+</div>
+<div class="txt_3">
+9 июня исполняется 55 лет американскому актеру Майклу Джей Фоксу &mdash; самому известному...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8293871,url=/sport/photo/basket.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/sport/photo/basket.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/967/8293967/upload-TASS_16007569-pic305-305x175-82424.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/sport/photo/">Спорт</a>
+
+</h4>
+<a href="/sport/photo/basket.shtml">
+<h2 class="h_4">
+Баскетболисты ЦСКА в 23-й раз стали чемпионами России
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-09T08:21:13+04:00">
+
+08:21
+
+</time>
+</div>
+<div class="txt_3">
+ЦСКА в гостях одолел УНИКС в четвертом матче финальной серии плей-офф Единой лиги ВТБ и стал...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="row block">
+<div class="media100_600">
+
+
+
+
+ 
+<div class="adv_adsmart">
+<div align="center"> <div id="ban_100x240">
+<script type="text/javascript">
+Adf.banner.showScroll_b('ban_100x240', {
+'p1': 'bsfjc',
+'p2': 'fcuz',
+'pct': 'a',
+'puid6': 'AUTO',
+'puid10': 'NO',
+'puid15': '',
+'puid18': '',
+},
+{
+'begun-block-id' : '412477122',
+'begun-auto-pad' : '294385246'
+});
+</script>
+</div> </div>
+</div>
+
+ 
+
+
+</div>
+</div> <div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8293793,url=/culture/photo/natali_portman_-_35.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/culture/photo/natali_portman_-_35.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/847/8293847/upload-09-pic305-305x175-86293.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/culture/photo/">Культура</a>
+
+</h4>
+<a href="/culture/photo/natali_portman_-_35.shtml">
+<h2 class="h_4">
+Натали Портман &mdash; 35
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-09T01:02:53+04:00">
+
+01:02
+
+</time>
+</div>
+<div class="txt_3">
+Натали Портман прославилась очень рано &mdash; ей было всего 13 лет, когда она сыграла одну из...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8293409,url=/auto/photo/samaya_izvestnaya_stritreisersha_moskvy.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/auto/photo/samaya_izvestnaya_stritreisersha_moskvy.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/415/8293415/upload-01-pic305-305x175-31903.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/auto/photo/">Автомобили</a>
+
+</h4>
+<a href="/auto/photo/samaya_izvestnaya_stritreisersha_moskvy.shtml">
+<h2 class="h_4">
+Самая известная стритрейсерша Москвы
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-08T20:05:51+04:00">
+
+08.06.2016, 20:05
+
+</time>
+</div>
+<div class="txt_3">
+К своим 22 годам московская стритрейсерша Мара Багдасарян известна несколькими элитными спорткарами...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8293301,url=/sport/photo/sharapova_diskvalifitsirovana_na_dva_goda.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/sport/photo/sharapova_diskvalifitsirovana_na_dva_goda.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/307/8293307/upload-AP_297501879548-pic305-305x175-69144.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/sport/photo/">Спорт</a>
+
+</h4>
+<a href="/sport/photo/sharapova_diskvalifitsirovana_na_dva_goda.shtml">
+<h2 class="h_4">
+Шарапова дисквалифицирована на два года
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-08T18:48:33+04:00">
+
+08.06.2016, 18:48
+
+</time>
+</div>
+<div class="txt_3">
+Российская теннисистка Мария Шарапова дисквалифицирована на два года из-за нарушения антидопинговых...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8293109,url=/science/photo/vsemirnyi_den_okeanov_ocharovanie_plastika.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/science/photo/vsemirnyi_den_okeanov_ocharovanie_plastika.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/355/8293355/Washed-pic305-305x175-31235.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/science/photo/">Наука</a>
+
+</h4>
+<a href="/science/photo/vsemirnyi_den_okeanov_ocharovanie_plastika.shtml">
+<h2 class="h_4">
+Всемирный день океанов: очарование пластика
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-08T18:24:08+04:00">
+
+08.06.2016, 18:24
+
+</time>
+</div>
+<div class="txt_3">
+8 июня в мире отмечается Всемирный день океанов, учрежденный Генеральной Ассамблеей ООН в 2009 году...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8292485,url=/social/photo/savchenko_vstretilas_s_yaroshem_.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/social/photo/savchenko_vstretilas_s_yaroshem_.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/509/8292509/upload-08061603-pic305-305x175-33430.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/social/photo/">Общество</a>
+
+</h4>
+<a href="/social/photo/savchenko_vstretilas_s_yaroshem_.shtml">
+<h2 class="h_4">
+Савченко встретилась с Ярошем
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-08T16:28:38+04:00">
+
+08.06.2016, 16:28
+
+</time>
+</div>
+<div class="txt_3">
+Народный депутат Надежда Савченко вместе с бывшим лидером «Правого сектора» Дмитрием Ярошем посетили...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8291987,url=/army/photo/britanskii_korabl_soprovozhdaet_rossiiskuyu_podlodku_v_severnom_more.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/army/photo/britanskii_korabl_soprovozhdaet_rossiiskuyu_podlodku_v_severnom_more.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/993/8291993/upload-lodka-pic305-305x175-19757.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/army/photo/">Армия</a>
+
+</h4>
+<a href="/army/photo/britanskii_korabl_soprovozhdaet_rossiiskuyu_podlodku_v_severnom_more.shtml">
+<h2 class="h_4">
+Британский корабль сопровождает российскую подлодку в Северном море
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-08T13:12:59+04:00">
+
+08.06.2016, 13:12
+
+</time>
+</div>
+<div class="txt_3">
+Корабль ВМС Великобритании сопровождает российскую подлодку в Северном море, передает Sky News...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8291891,url=/social/photo/sud_priznal_pavlenskogo_vinovnym_.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/social/photo/sud_priznal_pavlenskogo_vinovnym_.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/927/8291927/upload-IMG_1191-pic305-305x175-25568.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/social/photo/">Общество</a>
+
+</h4>
+<a href="/social/photo/sud_priznal_pavlenskogo_vinovnym_.shtml">
+<h2 class="h_4">
+Павленского оштрафовали за поджог двери ФСБ и освободили
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-08T12:20:57+04:00">
+
+08.06.2016, 12:20
+
+</time>
+</div>
+<div class="txt_3">
+Мещанский суд Москвы признал художника Петра Павленского виновным в повреждении объекта культурного...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8291801,url=/lifestyle/travel/photo/natalya_vodyanova_v_pyatyi_raz_stala_materyu.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/lifestyle/travel/photo/natalya_vodyanova_v_pyatyi_raz_stala_materyu.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/819/8291819/upload-03-pic305-305x175-27502.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/lifestyle/travel/photo/">Стиль жизни</a>
+
+</h4>
+<a href="/lifestyle/travel/photo/natalya_vodyanova_v_pyatyi_raz_stala_materyu.shtml">
+<h2 class="h_4">
+Наталья Водянова в пятый раз стала матерью
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-08T11:37:33+04:00">
+
+08.06.2016, 11:37
+
+</time>
+</div>
+<div class="txt_3">
+Российская супермодель Наталья Водянова в пятый раз стала матерью. Для Водяновой и ее гражданского...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8291711,url=/army/photo/rossiya_predstavila_lainer_budushego_.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/army/photo/rossiya_predstavila_lainer_budushego_.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/723/8291723/upload-RIAN_02866158.HR.ru-pic305-305x175-93156.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/army/photo/">Армия</a>
+
+</h4>
+<a href="/army/photo/rossiya_predstavila_lainer_budushego_.shtml">
+<h2 class="h_4">
+Россия представила лайнер будущего
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-08T10:53:26+04:00">
+
+08.06.2016, 10:53
+
+</time>
+</div>
+<div class="txt_3">
+Корпорация «Иркут» провела торжественную церемонию выкатки первого самолета МС-21-300. Самолет...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8291501,url=/culture/photo/horoshei_zhena_otmechaet_yubilei.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/culture/photo/horoshei_zhena_otmechaet_yubilei.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/507/8291507/upload-01-pic305-305x175-73146.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/culture/photo/">Культура</a>
+
+</h4>
+<a href="/culture/photo/horoshei_zhena_otmechaet_yubilei.shtml">
+<h2 class="h_4">
+&laquo;Хорошая жена&raquo; отмечает юбилей
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-08T09:45:08+04:00">
+
+08.06.2016, 09:45
+
+</time>
+</div>
+<div class="txt_3">
+8 июня исполняется 50 лет американской актрисе Джулианне Маргулис. Она поздно начала...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8291321,url=/sport/photo/evro.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/sport/photo/evro.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/273/8291273/2372181_w2-pic305-305x175-8763.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/sport/photo/">Спорт</a>
+
+</h4>
+<a href="/sport/photo/evro.shtml">
+<h2 class="h_4">
+Символическая сборная чемпионатов Европы всех времен
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-07T23:11:57+04:00">
+
+07.06.2016, 23:11
+
+</time>
+</div>
+<div class="txt_3">
+УЕФА определил символическую сборную всех чемпионатов Европы. От сборной СССР в голосовании...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+<div class="uho block left">
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                            
+                             
+                   
+                              
+       
+ 
+ 
+ 
+
+
+<!-- alien id=8290955,url=/culture/photo/opublikovany_shkolnye_foto_dikaprio_i_drugih_zvezd.shtml,essence=photoreport,place=nm2015/v2/stripe_uho/s305,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="bgwhite adddecor  tile_float tile_float_small" > <div class="tile_inner_size"> <a href="/culture/photo/opublikovany_shkolnye_foto_dikaprio_i_drugih_zvezd.shtml" class="pic_href photo_href">
+<div class="dark-screen"></div>
+<img src=" http://img.gazeta.ru/files3/961/8290961/upload-01-pic305-305x175-69315.jpg" class="tile_pic pic305" style="display: block;">
+
+</a>
+<div class="pl20 pr20">
+<h4 class="topic pu5">
+
+<a href="/culture/photo/">Культура</a>
+
+</h4>
+<a href="/culture/photo/opublikovany_shkolnye_foto_dikaprio_i_drugih_zvezd.shtml">
+<h2 class="h_4">
+Опубликованы школьные фото ДиКаприо и других звезд
+</h2>
+<div class="article_auth pu5 pd5 txt_5">
+
+<time class="date_time txt_5" pubdate="2016-06-07T21:23:56+04:00">
+
+07.06.2016, 21:23
+
+</time>
+</div>
+<div class="txt_3">
+Бывшие учителя и одноклассники актера Леонардо ДиКаприо и других знаменитостей показали школьные...<span class="linkarrow"></span>
+</div>
+</a>
+<div class="oneline">&nbsp;</div>
+</div>
+ </div> </div>    </div>
+
+
+</div>
+</div>
+<div id="right" class="block">
+<center><div class="adv_news_240">
+
+
+
+
+
+
+
+
+
+ 
+
+<div class="adv_240x400 banner">
+<center>
+<noindex>
+<div id="ban_240x400">
+<script type="text/javascript">
+Adf.banner.show_b('ban_240x400', {
+'p1': 'beelv',
+'p2': 'emhk',
+'pct': 'a',
+'puid6': 'AUTO',
+'puid10': 'NO',
+'puid15': '',
+'puid18': '',
+'puid49': 'right',
+'puid50': 'new',
+'criteo': 'crslr240=1'
+},
+{
+'begun-block-id' : '411628718',
+'begun-auto-pad' : '294385246'
+});
+</script>
+<style type="text/css">
+#yandex_ad892168 .yap-title-block__text { font-size: 100% !important; }
+#yandex_ad892168 .yap-layout__logo { background-color: rgb(227, 232, 241); }
+</style>
+</div>
+</noindex></center></div>
+
+
+
+</div></center> <div class="md20">
+<div id="headlines">
+
+ <!-- place 7737449,/nm2012/elements/modules/7737449.shtml,nm2015/v2/headlines, --> 
+
+
+
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                          
+                                                                                                                                                                                 
+
+
+
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                                                         
+                   
+                                   
+
+ 
+  
+
+
+
+
+
+
+
+
+
+  
+   
+
+
+
+  
+ 
+
+ 
+
+
+
+ <div class="headlin bgwhite adddecor txt_3 tile_cent  mainfloat " > <div class="tile_inner_size"> 
+<div class="pl20 pr20">
+<div class="h_3 md20 pu20 ml55">Главное</div>
+<div class="headline_float">
+
+
+
+    
+
+
+
+
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                                                         
+                   
+                                   
+ 
+ 
+ 
+ 
+
+ 
+
+
+<!-- alien id=8682911,url=/headlines/8682911.shtml,essence=news,place=nm2015/v2/headlines/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div > 
+
+<div class="mb10" style="overflow: hidden;"><a href="/army/news/8742359.shtml"><img src=" http://img.gazeta.ru/files3/143/8259143/Nato-pic265-265x150-19618.jpg"></a></div>
+<div class="mb15 txtbold"><a href="/army/news/8742359.shtml">Пентагон: Россия за 60 часов могла бы разгромить НАТО<span class="linkarrow"></span></a></div>
+
+ </div>    
+</div>
+<div class="headline_float headline_right">
+
+
+    
+
+
+
+
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                               
+
+                
+                                                                                                         
+                   
+                                   
+ 
+ 
+ 
+  
+ 
+
+
+<!-- alien id=8683499,url=/headlines/8683499.shtml,essence=news,place=nm2015/v2/headlines/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div > 
+<div class="mb15"><a href="/politics/news/2016/06/09/n_8741507.shtml">Порошенко призывают назначить Савченко премьером<span class="linkarrow"></span></a></div>
+ </div>   
+
+
+    
+
+
+
+
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+                                          
+                
+                                                                                                         
+                   
+                                   
+ 
+ 
+ 
+  
+ 
+
+
+<!-- alien id=8739833,url=/headlines/8739833.shtml,essence=news,place=nm2015/v2/headlines/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div > 
+<div class="mb15"><a href="/business/news/2016/06/09/n_8741843.shtml">Медведев призвал отнестись с пониманием к действиям Минфина<span class="linkarrow"></span></a></div>
+ </div>    
+<div id="headline_bottom" class="txtclear" style="display: block;">
+
+
+    
+
+
+
+
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+                                          
+                
+                                                                                                         
+                   
+                                   
+ 
+ 
+ 
+  
+ 
+
+
+<!-- alien id=8721155,url=/headlines/8721155.shtml,essence=news,place=nm2015/v2/headlines/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div > 
+<div class="mb15"><a href="/social/news/2016/06/09/n_8741975.shtml">В Москве обокрали вице-президента банка<span class="linkarrow"></span></a></div>
+ </div>   
+
+
+    
+
+
+
+
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+                                          
+                
+                                                                                                         
+                   
+                                   
+ 
+ 
+ 
+  
+ 
+
+
+<!-- alien id=8595863,url=/headlines/8595863.shtml,essence=news,place=nm2015/v2/headlines/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div > 
+<div class="mb15"><a href="/business/news/2016/06/09/n_8740205.shtml">Путин поручил не создавать особые экономические зоны<span class="linkarrow"></span></a></div>
+ </div>   
+
+
+  
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+<!-- alien id=,url=,essence=news,place=nm2015/v2/headlines/place,uho=,potok=articles -->  </div>
+
+</div>
+</div> </div> </div>
+  
+ 
+
+</div>
+</div> <noindex>
+
+
+<div class="banner">
+<div class="bgwhite adddecor adv_grey adv_action">
+
+<!--ADFOX START-->
+<!--gazetaru_new-->
+<!--Площадка: Gazeta.ru / * / *-->
+<!--Тип баннера: Блок Анонс-->
+<!--Расположение: Нестандарт-->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/224316/prepareCode?pp=eac&amp;ps=bsjf&amp;p2=exno&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;dl='+dl+'&amp;pr1='+pr1);
+// -->
+</script>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+
+</div>
+</div>
+<div class="banner">
+<div class="bgwhite adddecor adv_grey">
+
+<!--ADFOX START-->
+<!--gazetaru_new-->
+<!--Площадка: Gazeta.ru / * / *-->
+<!--Тип баннера: Блок Анонс-->
+<!--Расположение: право -->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/224316/prepareCode?pp=ead&amp;ps=bsjf&amp;p2=exno&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;dl='+dl+'&amp;pr1='+pr1);
+// -->
+</script>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+
+</div>
+</div>
+<div class="banner">
+<div class="bgwhite adddecor adv_grey">
+<!--ADFOX START-->
+<!--gazetaru_new-->
+<!--Площадка: Gazeta.ru / * / *-->
+<!--Тип баннера: Блок Анонс-->
+<!--Расположение: центр -->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/224316/prepareCode?pp=eae&amp;ps=bsjf&amp;p2=exno&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;dl='+dl+'&amp;pr1='+pr1);
+// -->
+</script>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+
+</div>
+</div>
+<div class="banner">
+<div class="bgwhite adddecor adv_grey">
+
+<script>
+var is_gazeta_partners = 0;
+</script>
+<!--ADFOX START-->
+<!--gazetaru_new-->
+<!--Площадка: Gazeta.ru / * / *-->
+<!--Тип баннера: Партнерский блок-->
+<!--Расположение: право-->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/224316/prepareCode?pp=ead&amp;ps=bsjf&amp;p2=exnq&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;dl='+dl+'&amp;pr1='+pr1);
+// -->
+</script>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+<!--ADFOX START-->
+<!--gazetaru_new-->
+<!--Площадка: Gazeta.ru / * / *-->
+<!--Тип баннера: Партнерский блок-->
+<!--Расположение: центр-->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/224316/prepareCode?pp=eae&amp;ps=bsjf&amp;p2=exnq&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;dl='+dl+'&amp;pr1='+pr1);
+// -->
+</script>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+<!--ADFOX START-->
+<!--gazetaru_new-->
+<!--Площадка: Gazeta.ru / * / *-->
+<!--Тип баннера: Партнерский блок-->
+<!--Расположение: Нестандарт-->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/224316/prepareCode?pp=eac&amp;ps=bsjf&amp;p2=exnq&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;dl='+dl+'&amp;pr1='+pr1);
+// -->
+</script>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+<!--ADFOX START-->
+<!--gazetaru_new-->
+<!--Площадка: Gazeta.ru / * / *-->
+<!--Тип баннера: Партнерский блок-->
+<!--Расположение: лево-->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/224316/prepareCode?pp=eab&amp;ps=bsjf&amp;p2=exnq&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;dl='+dl+'&amp;pr1='+pr1);
+// -->
+</script>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+<!-- партнеры -->
+
+</div>
+</div>
+
+<div class="banner">
+<div class="bgwhite adddecor"><center>
+
+<div class="adv_news_300">
+<!--ADFOX START-->
+<div class="text-left" style="position: relative;"><center>
+<!--gazetaru_new-->
+<!--Площадка: Gazeta.ru / * / *-->
+<!--Тип баннера: 240x400js-->
+<!--Расположение: право-->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/224316/prepareCode?pp=ead&amp;ps=bsjf&amp;p2=exnl&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;dl='+dl+'&amp;pr1='+pr1);
+// -->
+</script>
+</center></div>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+</div>
+
+</center></div>
+</div>
+</noindex>
+<center><!-- #include virtual="/nm2015/adv/240x400_2.shtml" --></center>
+<!-- place 4858021,/nm2012/elements/modules/4858021.shtml,nm2015/special, --> 
+
+
+
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+                                          
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+   
+
+
+
+  
+ 
+
+ 
+
+
+
+ 
+<div id="read_also" class="txtclear md20 pl20 pr20 pb20 bgwhite adddecor txt_3 alsoleft">
+<div class="row">
+<div class="topic_b md20 pu20 ml55">Читайте также</div>
+
+
+  
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																									
+
+
+																																																
+																																																																																																																																																																																																																																																																																																																														
+																																																												
+																																																																																																																	
+		
+				
+		
+		 
+ 
+  
+ 
+
+
+<!-- alien id=8158781,url=/tmp/8158781.shtml,essence=special,place=nm2015/special/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="ml15 mb15" style="width:auto">
+<a href="http://www.gazeta.ru/tech/2016/06/04/8284775/my-hand-is-controlling-me.shtml">
+Исповедь раба «умного» браслета<span class="linkarrow"></span>
+</a>
+</div>
+   
+
+
+  
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																									
+
+
+																																																
+																																																																																																																																																																																																																																																																																																																														
+																																																												
+																																																																																																																	
+		
+				
+		
+		 
+ 
+  
+ 
+
+
+<!-- alien id=8287229,url=/tmp/8287229.shtml,essence=special,place=nm2015/special/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="ml15 mb15" style="width:auto">
+<a href="http://www.gazeta.ru/prcom/2016/06/03/8281391.shtml">
+Смартфон-конструктор LG G5se: Первое знакомство<span class="linkarrow"></span>
+</a>
+</div>
+   
+
+
+  
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																									
+
+
+																																																
+																																																																																																																																																																																																																																																																																																																														
+																																																												
+																																																																																																																	
+		
+				
+		
+		 
+ 
+  
+ 
+
+
+<!-- alien id=5744125,url=/tmp/5744125.shtml,essence=special,place=nm2015/special/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="ml15 mb15" style="width:auto">
+<a href="http://www.gazeta.ru/culture/2016/06/03/a_8281487.shtml">
+Книги на Красной площади<span class="linkarrow"></span>
+</a>
+</div>
+   
+
+
+  
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																									
+
+
+																																																
+																																																																																																																																																																																																																																																																																																																														
+																																																												
+																																																																																																																	
+		
+				
+		
+		 
+ 
+  
+ 
+
+
+<!-- alien id=8158757,url=/tmp/8158757.shtml,essence=special,place=nm2015/special/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="ml15 mb15" style="width:auto">
+<a href="http://www.gazeta.ru/culture/2016/06/01/a_8276033.shtml">
+«В Третьяковке музыка звучит по-новому»<span class="linkarrow"></span>
+</a>
+</div>
+   
+
+
+  
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																									
+
+
+																																																
+																																																																																																																																																																																																																																																																																																																														
+																																																												
+																																																																																																																	
+		
+				
+		
+		 
+ 
+  
+ 
+
+
+<!-- alien id=8158769,url=/tmp/8158769.shtml,essence=special,place=nm2015/special/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="ml15 mb15" style="width:auto">
+<a href="http://www.gazeta.ru/social/2016/06/03/8281463.shtml">
+Багет, берет и резиновые сапоги<span class="linkarrow"></span>
+</a>
+</div>
+   
+
+
+  
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																																																																																																																									
+
+
+																																																
+																																																																																																																																																																																																																																																																																																																														
+																																																												
+																																																																																																																	
+		
+				
+		
+		 
+ 
+  
+ 
+
+
+<!-- alien id=8158787,url=/tmp/8158787.shtml,essence=special,place=nm2015/special/place,uho=,potok=articles --> 
+ 
+ 
+
+ 
+
+
+
+ <div class="ml15 mb15" style="width:auto">
+<a href="http://www.gazeta.ru/business/2016/06/03/8282273.shtml">
+Украина манит россиян<span class="linkarrow"></span>
+</a>
+</div>
+   
+<img src="http://ads.adfox.ru/224316/getCode?p1=bngvu&p2=v&pe=b&pfc=vepy&pfb=deiwu&pr=erqbkqy">
+<br clear="all" />
+</div>
+</div>   
+
+
+<noindex>
+<div id="sticky_r1">
+<div id="unit_84259"><a href="http://smi2.net/">Новости СМИ2</a></div>
+</div>
+<script type="text/javascript" charset="utf-8">
+(function() {
+var sc = document.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
+sc.src = '//news.smi2.ru/data/js/84259.js'; sc.charset = 'utf-8';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sc, s);
+}());
+</script>
+</noindex>
+
+</div>
+<script>
+set_resizeblock_handler('#right .banner', function () {
+if( $(this).height() )
+$(this).css('margin-bottom', '20px');
+});
+</script>
+</div>
+</div>
+</article>
+</main>
+<footer> <div class="footer_mark"></div>
+<div class="b-navbar m-navbar_level1">
+<ul>
+<li><a href="/history.shtml" class="stripe">Архив</a></li>
+<li><a href="/about/" class="stripe">Редакция</a></li>
+<li><a href="/feedback/" class="stripe">Обратная связь</a></li>
+<li><a href="/conference/" class="stripe">Онлайн-конференции</a></li>
+<li><a href="/adbook/" class="stripe">Реклама</a></li>
+<li><a href="http://m.gazeta.ru/auto/photo/krasiveishie_avtotrassy_mira.shtml" class="stripe">Мобильная версия</a></li>
+</ul>
+</div>
+<div class="bottom_logo">
+<a href="/" title="Газета.Ru"><img src="/nm2015/gzt/img/logo_footer.png" /></a>
+<span>18+</span>
+</div>
+<div class="bottom_icons">
+<a rel="nofollow" href="http://www.facebook.com/gazeta.ru" title="Facebook" class="fb_i" target="_blank"></a>
+<a rel="nofollow" href="http://www.twitter.com/gazetaru" title="Twitter" class="tw_i" target="_blank"></a>
+<a rel="nofollow" href="http://vk.com/gazeta" title="ВКонтакте" class="vk_i" target="_blank"></a>
+<a rel="nofollow" href="https://plus.google.com/b/105541962280031022515/105541962280031022515/posts" title="Google+" class="gp_i" target="_blank"></a>
+<a rel="nofollow" href="http://www.odnoklassniki.ru/gazetaru" title="Одноклассники" class="ok_i" target="_blank"></a>
+<a rel="nofollow" href="http://www.youtube.com/user/gazetaru" title="Youtube" class="yt_i" target="_blank"></a>
+<a rel="nofollow" href="http://lj.gazeta.ru/" title="LiveJournal" class="lj_i" target="_blank"></a>
+</div>
+<ul class="bottom_partners">
+<li><a rel="nofollow" target="_blank" href="http://thomsonreuters.com/products_services/media/brand_guidelines/legal_notice/"><img src="http://static.gazeta.ru/nm2012/i/reuters_a2.png">Информация об&nbsp;ограничениях</a></li>
+<li><a rel="nofollow" target="_blank" href="http://www.1prime.ru"><img src="http://static.gazeta.ru/nm2012/i/prime_a2.png">Информация об&nbsp;ограничениях</a></li>
+<li><a rel="nofollow" target="_blank" href="/interfax.shtml"><img src="http://static.gazeta.ru/nm2012/i/interfax_a2.png">Информация об&nbsp;ограничениях</a></li>
+<li><a rel="nofollow" target="_blank" href="http://ria.ru/docs/about/copyright.html"><img src="http://static.gazeta.ru/nm2012/i/ria_a2.png">Информация об&nbsp;ограничениях</a></li>
+<li><a rel="nofollow" target="_blank" href="http://tass.ru/pravila-citirovaniya"><img src="http://static.gazeta.ru/nm2012/i/it_a3.png">Информация об&nbsp;ограничениях</a></li>
+<li><a rel="nofollow" target="_blank" href="/responsibility.shtml"><img src="http://static.gazeta.ru/nm2012/i/lj_a2.png">Отказ от&nbsp;ответственности</a></li>
+</ul>
+<div class="bottom_info">
+<p class="pb10">&copy; ЗАО &laquo;Газета.Ру&raquo; (1999-2016) - Главные новости дня</p>
+<p>Учредитель: ЗАО &laquo;Газета.Ру&raquo;</p>
+<p>Адрес учредителя: 125080, Россия, Москва, ул.Врубеля, д.4</p>
+<p>Адрес редакции и издателя: 117105, г. Москва, Варшавское шоссе, д.9, стр.1Б</p>
+<p>Телефон редакции: +7 (495) 980-80-28 | Факс: +7 (495) 980-90-73</p>
+<p>Главный редактор: Светлана Бабаева</p>
+<p class="pb10">Дизайн макет: <span class="txtgrey">Анатолий Терехов</span></p>
+<p class="pb10">Свидетельство о регистрации СМИ Эл № ФС77-63699 выдано федеральной службой по надзору в сфере связи, информационных технологий и массовых коммуникаций (Роскомнадзор) 16.11.2015 г.</p>
+<p>Редакция не несет ответственности за достоверность информации, содержащейся в рекламных объявлениях. Редакция не предоставляет справочной информации.</p>
+<p><a class="red" href="/credits.shtml" class="red">Информация об ограничениях</a></p>
+<p><a href="http://www.rambler.ru/">Партнер Рамблера</a></p>
+</div>
+<noindex>
+<div style="display:none;"> <div class="rating_counters">
+<div class="row">
+<div class="small-2 large-4 columns">&nbsp;
+</div>
+<div class="small-8 large-4 text-center columns">
+<div id='top100counter' style='float:left;'>
+<noscript>
+<a href="http://top100.rambler.ru/navi/46589/"><img src="http://counter.rambler.ru/top100.cnt?46589" alt="Rambler's Top100" border="0" /></a>
+</noscript>
+</div>
+<script type="text/javascript">
+var _top100q = _top100q || [];
+_top100q.push(["setAccount", "46589"]);
+_top100q.push(["trackPageviewByLogo", document.getElementById("top100counter")]);
+(function(){
+var top100 = document.createElement("script");top100.type = "text/javascript";
+top100.async = true;
+top100.src = ("https:" == document.location.protocol?"https:":"http:")+"//st.top100.ru/top100/top100.js";
+var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(top100, s);
+})();
+</script>
+<!--LiveInternet logo-->
+<a href="http://www.liveinternet.ru/click;gazeta_all" target="_blank">
+<img style="margin:0 60px;" src="//counter.yadro.ru/logo;gazeta_all?14.6" title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня" alt="" border="0" width="88" height="31"/>
+</a>
+<!--/LiveInternet-->
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">//<![CDATA[
+var a='',js=10;try{a+=';r='+escape(document.referrer);}catch(e){}try{a+=';j='+navigator.javaEnabled();js=11;}catch(e){}
+try{s=screen;a+=';s='+s.width+'*'+s.height;a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;}catch(e){}
+try{if(typeof((new Array).push('t'))==="number")js=13;}catch(e){}
+try{document.write('<a href="http://top.mail.ru/jump?from=8821">'+
+'<img src="http://d2.c2.b0.a0.top.mail.ru/counter?id=8821;t=109;js='+js+a+';rand='+Math.random()+
+'" alt="Рейтинг@Mail.ru" style="border:0;" height="18" width="88" \/><\/a>');}catch(e){}//]]></script>
+<noscript><p><a href="http://top.mail.ru/jump?from=8821">
+<img src="http://d2.c2.b0.a0.top.mail.ru/counter?js=na;id=8821;t=109"
+style="border:0;" height="18" width="88" alt="Рейтинг@Mail.ru" /></a></p></noscript>
+<!-- //Rating@Mail.ru counter -->
+</div>
+<div class="small-2 large-4 columns">&nbsp;
+</div>
+</div></div>
+</div> </div>
+<script type="text/javascript">
+if ( $( "div.tile_float" ) )
+{
+var tile_float = 0;
+$( "div.tile_float" ).each(function( index ) {
+thisH = $( this ).outerHeight();
+//console.log( index + ": " + $( this ).outerHeight() );
+if ( tile_float < thisH )
+{
+tile_float = thisH;
+}
+});
+$('div.tile_float').height(tile_float+10);
+}
+</script>
+<script language="Javascript">
+(new Image).src=("https:"==document.location.protocol?"https:":"http:")+"//autocontext.begun.ru/analytics?target_id=0&counter_id=0&url="+encodeURIComponent(document.URL)+"&ref="+encodeURIComponent(document.referrer)+"&rnd="+Math.random();
+</script>
+<script type="text/javascript">
+(function(){
+(new Image).src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//sync.rambler.ru/emily?partner_id=begun';
+})();
+</script>
+<script type="text/javascript">
+var ttsmi2_data = { siteid: 154, count: 'site' };
+(function() {
+var sc = document.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
+sc.src = '//target.smi2.net/client/target.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sc, s);
+}());
+</script>
+
+<!--AdFox START-->
+<!--sup-com-->
+<!--Площадка: Gazeta.ru / zaglushki / Тест пиксель-->
+<!--Категория: <не задана>-->
+<!--Тип баннера: 1x1js-->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var scrheight = '', scrwidth = '';
+if (self.screen) {
+scrwidth = screen.width;
+scrheight = screen.height;
+} else if (self.java) {
+var jkit = java.awt.Toolkit.getDefaultToolkit();
+var scrsize = jkit.getScreenSize();
+scrwidth = scrsize.width;
+scrheight = scrsize.height;
+}
+document.write('<scr' + 'ipt type="text/javascript" src="http://ads.adfox.ru/171817/prepareCode?p1=blhhy&amp;p2=enqu&amp;pct=a&amp;pfc=a&amp;pfb=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;puid3='+ _montblanc.get('4i', '') + '&amp;puid4=' + _montblanc.get('c6', '')+ '&amp;puid22='+_montblanc.get('y1', '')+ '&amp;pdw=' + scrwidth + '&amp;pdh=' + scrheight + '"><\/scr' + 'ipt>');
+// -->
+</script>
+<!--AdFox END-->
+
+<!--script type="text/javascript" src="https://relap.io/api/v1/plugin.js"></script-->
+
+
+<!--AdFox START-->
+<!--sup-com-->
+<!--Площадка: Gazeta.ru / main / async-->
+<!--Категория: <не задана>-->
+<!--Тип баннера: Код вставки-->
+<!-- ________________________AdFox Asynchronous code START__________________________ -->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+if (typeof(document.referrer) != 'undefined') {
+if (typeof(afReferrer) == 'undefined') {
+afReferrer = escape(document.referrer);
+}
+} else {
+afReferrer = '';
+}
+var addate = new Date();
+var scrheight = '', scrwidth = '';
+if (self.screen) {
+scrwidth = screen.width;
+scrheight = screen.height;
+} else if (self.java) {
+var jkit = java.awt.Toolkit.getDefaultToolkit();
+var scrsize = jkit.getScreenSize();
+scrwidth = scrsize.width;
+scrheight = scrsize.height;
+}
+var dl = escape(document.location);
+var pr1 = Math.floor(Math.random() * 1000000);
+document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+AdFox_getCodeScript(1,pr1,'//ads.adfox.ru/171817/prepareCode?p1=bnihj&amp;p2=exqv&amp;pct=a&amp;pfc=a&amp;pfb=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;puid1=&amp;puid2=&amp;puid3='+ _montblanc.get('4i', '') + '&amp;puid4=' + _montblanc.get('c6', '')+ '&amp;puid5=&amp;puid6=AUTO&amp;puid7=&amp;puid8=&amp;puid9=&amp;puid10=NO&amp;puid11=' + _montblanc.get('dd', '') + '&amp;puid12=&amp;puid13=&amp;puid14=&amp;puid15=&amp;puid16=&amp;puid17=&amp;puid18=&amp;puid19=&amp;puid20=&amp;puid21=&amp;puid22='+_montblanc.get('y1', '')+ '&amp;puid23=&amp;puid24=&amp;puid25=&amp;puid26=&amp;puid27=&amp;puid28=&amp;puid29=&amp;puid30=&amp;puid31=&amp;puid32=&amp;puid33=' + _montblanc.get('bj', '') + '&amp;puid34=&amp;puid35=&amp;puid36=&amp;puid37='+ _montblanc.get('k4', '') + '&amp;puid38=' + _montblanc.get('x3', '')+ '&amp;pdw=' + scrwidth + '&amp;pdh=' + scrheight + '&amp;dl='+dl+'&amp;pr1='+pr1);
+// -->
+</script>
+<!-- _________________________AdFox Asynchronous code END___________________________ -->
+
+<!--[if lt IE 9]>
+<script>
+$(function() {
+$('input, textarea').placeholder();
+});
+</script>
+<![endif]-->
+</noindex>
+</footer>
+</body>
+
+</html>

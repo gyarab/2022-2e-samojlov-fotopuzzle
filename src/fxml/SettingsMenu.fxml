@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="628.0" prefWidth="1095.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="puzzlegame.SettingsMenuKontroler">
+   <children>
+      <ImageView fx:id="IMGview2" fitHeight="161.0" fitWidth="167.0" layoutX="904.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/SettingsIcon.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutY="178.0" prefHeight="310.0" prefWidth="268.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" stylesheets="@../css/SettingsMenu.css" text="Choose difficulty:" GridPane.rowIndex="1" />
+            <RadioButton fx:id="easy" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#difficultyChanged" selected="true" stylesheets="@../css/SettingsMenu.css" text="Easy (3x3)" textFill="#2dff00" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="medium" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#difficultyChanged" stylesheets="@../css/SettingsMenu.css" text="Medium (5x5)" textFill="#dcff00" GridPane.rowIndex="3">
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="hard" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#difficultyChanged" stylesheets="@../css/SettingsMenu.css" text="Hard (7x7)" textFill="#ffad00" GridPane.rowIndex="4">
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="expert" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#difficultyChanged" stylesheets="@../css/SettingsMenu.css" text="Expert (10x10)" textFill="RED" GridPane.rowIndex="5">
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </GridPane>
+      <Button layoutX="-1.0" mnemonicParsing="false" onAction="#menuButtonClicked" prefHeight="107.0" prefWidth="268.0" stylesheets="@../css/SettingsMenu.css" text="MENU" />
+      <Label layoutX="283.0" layoutY="123.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="62.0" prefWidth="620.0" stylesheets="@../css/SettingsMenu.css" text="Choose picture:">
+         <padding>
+            <Insets left="50.0" />
+         </padding></Label>
+      <Line endX="-116.17852783203125" endY="671.0" layoutX="387.0" layoutY="-43.0" startX="-116.17852783203125" startY="43.0" strokeWidth="5.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.11073825503355704">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.4260721885742347">
+                     <color>
+                        <Color red="0.7631579041481018" green="0.05299707502126694" blue="0.3844054639339447" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9731543624161073">
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.15436241610738255">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.18120805369127516">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.32885906040268453">
+                     <color>
+                        <Color red="0.7631579041481018" green="0.05299707502126694" blue="0.3844054639339447" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.436241610738255">
+                     <color>
+                        <Color red="1.0" green="0.3607843220233917" blue="0.6705882549285889" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9731543624161073">
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Button fx:id="another" layoutX="877.0" layoutY="269.0" mnemonicParsing="false" onAction="#AnotherPictureClicked" prefHeight="52.0" prefWidth="208.0" stylesheets="@../css/AnotherButton.css" text="Choose another:" underline="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Line endX="-448.0" endY="211.0" layoutX="448.0" layoutY="-103.0" startX="463.5" startY="211.0" strokeWidth="5.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.11073825503355704">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.4260721885742347">
+                     <color>
+                        <Color red="0.7631579041481018" green="0.05299707502126694" blue="0.3844054639339447" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9731543624161073">
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.15436241610738255">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.18120805369127516">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.32885906040268453">
+                     <color>
+                        <Color red="0.7631579041481018" green="0.05299707502126694" blue="0.3844054639339447" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.436241610738255">
+                     <color>
+                        <Color red="1.0" green="0.3607843220233917" blue="0.6705882549285889" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9731543624161073">
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9333333373069763" green="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <BorderPane fx:id="mesto1" layoutX="283.0" layoutY="201.0" prefHeight="161.0" prefWidth="200.0">
+         <center>
+            <ImageView fx:id="Mesto1" fitHeight="187.0" fitWidth="309.0" onMouseClicked="#mesto1Clicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../../../Downloads/puzzle1.jpg" />
+               </image>
+            </ImageView>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="tygr" layoutX="281.0" layoutY="408.0" prefHeight="161.0" prefWidth="200.0" stylesheets="@../css/SettingsMenu.css">
+         <center>
+            <ImageView fx:id="Tygr" fitHeight="215.0" fitWidth="286.0" onMouseClicked="#tygrClicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../../../Downloads/puzzle2.jpg" />
+               </image>
+            </ImageView>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="liska" layoutX="593.0" layoutY="203.0" prefHeight="154.0" prefWidth="212.0">
+         <center>
+            <ImageView fx:id="Liska" fitHeight="195.0" fitWidth="243.0" onMouseClicked="#liskaClicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../../../Downloads/puzzle3.jpg" />
+               </image>
+            </ImageView>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="mesto2" layoutX="593.0" layoutY="408.0" prefHeight="161.0" prefWidth="200.0">
+         <center>
+            <ImageView fx:id="Mesto2" fitHeight="161.0" fitWidth="267.0" onMouseClicked="#mesto2Clicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../../../Downloads/puzzle4.jpg" />
+               </image>
+            </ImageView>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="imageNew" layoutX="900.0" layoutY="432.0" prefHeight="137.0" prefWidth="171.0">
+         <center>
+            <ImageView fx:id="IMgNew" fitHeight="134.0" fitWidth="171.0" onMouseClicked="#NewPhotoClicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+      <ImageView fx:id="CheckMark" fitHeight="71.0" fitWidth="73.0" layoutX="949.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checkmark.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
