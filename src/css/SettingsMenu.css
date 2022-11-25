@@ -1,0 +1,34 @@
+.label{
+    -fx-text-fill: linear-gradient(to right, #2dff00, #74ff00, #9eff00, #bfff00, #dcff00, #ebef00, #f7e000, #ffd000, #ffad00, #ff8700, #ff5b00, #ff0000);
+    -fx-font-size: 25;
+    -fx-background-color: #000000;
+-fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+.radio-button .radio {
+    -fx-border-width: 2px;
+    -fx-border-radius: 15px;
+    -fx-padding: 3.5px;
+}
+.radio-button .dot {
+    -fx-background-radius: 15px;
+    -fx-padding: 3px;
+}
+.radio-button:selected .radio .dot {
+    -fx-background-color: #000000;
+    -fx-background-insets: 0;
+}
+.button{
+    -fx-font-size: 40;
+    -fx-font-weight: bold;
+    -fx-background-color: #000000;
+    -fx-text-fill:linear-gradient(to right, #2dff00, #74ff00, #9eff00, #bfff00, #dcff00, #ebef00, #f7e000, #ffd000, #ffad00, #ff8700, #ff5b00, #ff0000);
+}
+.button:hover{
+    -fx-background-color: linear-gradient(to right, #2dff00, #74ff00, #9eff00, #bfff00, #dcff00, #ebef00, #f7e000, #ffd000, #ffad00, #ff8700, #ff5b00, #ff0000);
+    -fx-text-fill: #000000;
+}
+
+    
+
+

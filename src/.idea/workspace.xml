@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3551fa1e-5813-4fb4-aaa3-de12bb368af8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Puzzle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Puzzle.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../manifest.mf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/build-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/configs/Run_as_WebStart.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/configs/Run_in_Browser.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/configs/private/configs/Run_as_WebStart.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/configs/private/configs/Run_in_Browser.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/configs/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/configs/private/private.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/configs/private/retriever/catalog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/genfiles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/jfx-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/private/configs/Run_as_WebStart.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/private/configs/Run_in_Browser.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/private/private.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../obrazky.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../obtiznosti.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game/MainFX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/20130506_114541.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/696091_original.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/AS.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Adler.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Afric elefant.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Aitutaki_MW_siroke_komp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Akra.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Al Hamra Tower – Kuwait City, Kuwai.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Al Ula Saudi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Amman .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Antarctica.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Arizona.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Atlantic road Norge.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Australia, Kabl beach.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ayu Dag Krym.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Azor island 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Azor island.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/B zero l.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Bajkal.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Baklan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Bayazet.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Beach Dom Republic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Bear grizzly Vancouver.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Berihg sea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Big wave.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Bilbao muzeum.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Boden see.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Bora Bora.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Brasil.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Breakfast lemurs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Bridge Harbour Sidney.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Bryce_MW_Kanon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Budapest,HUN.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Buli_Storm_Orion_1500px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Bvgari.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/California .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/California sunset.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Camel Riga.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Car 9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Charles Blomfield.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Chase Dakker .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Chili.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/China.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Chow Tai Fook Finance Centre – Guangzhou, China.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Chukotka.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Cinkve Terre Italy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/City of Light,Paris.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Cloud of Luster Japan church.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Collyer, Kansas, US.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Condor.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Dakar 2018.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Darashkol lake Altaj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Desert striker.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Domin Republic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Dominica.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Dubrovnik,Crotia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Efiopia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/El Serro Kemado Mexika.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Empty Quarter Namibia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ermitazh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ferrari 330P3-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ferrari 812.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ferrari La hybrid.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Finland.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Florida.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Fox Atlantic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Frankfurt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Frost - Worthing, England.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/GB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Garden Road JAR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Golden bridge Vietnam.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Golerne,Turkey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Great Ocean Australia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Greenland.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Grenlandia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Guangzhou International Finance Center – Guangzhou, China.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Guernsey_PH_pub.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Harbin, China.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Havaje.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Hawaji .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Hawaji_photo_beautiful_aerial_view_.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Highway Florida.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Hillwind China.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Hoba_Met_Pano_1500px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Hongong.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Horse in jump.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Hudson bay.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160306-WA0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160306-WA0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160306-WA0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160306-WA0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160306-WA0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160307-WA0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160307-WA0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160307-WA0010.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160307-WA0021.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160315-WA0050.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160315-WA0051.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160315-WA0052.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160315-WA0053.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160315-WA0055.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160315-WA0057.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160315-WA0058.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160315-WA0061.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160315-WA0062.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160317-WA0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160321-WA0011.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160321-WA0014.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160321-WA0016.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160321-WA0022.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160321-WA0024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160321-WA0035.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160321-WA0037.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160325-WA0011.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160325-WA0019.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/IMG-20160325-WA0027.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ice and snow - Moscow, Russia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Im make it.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/International Commerce Centre – Hong Kong.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ireland.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Island Raja Ampat .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Island papuchove.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Island.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Isle of Skye niest point.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Isle of Skye sunset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Isle of Skye.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Israel.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Italy,Asizi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Iturup Kurily soty.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Iturup Kurily.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/J.Korea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Jabel Hafeet Mountain Abu Daby.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Jin Mao Tower – Shanghai, China.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Jump rys.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Jursk island.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/KK100 – Shenzhen, China.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Kansans.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Kastamonu, Turkey.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Kilchurn Castle on the shores of Loch Awe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Korshun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Kotor,Montenegro.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Kralova_Studna_Perseidy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Krym.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Lake Morein Canada.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Lake Shore Drive Chikago.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Lake_Baikal_2081.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Lamp desing Italy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Land,_West_Antarctica.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Luskentyre beach on the Scottish Hebridean island of Harris.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Magao.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Male kotel CR.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Miami, Florida, US.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Miami.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Montana.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Mostar,Bosnia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Mountain Altaj 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Mountain Altaj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Murmansk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/N Zeland.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/NG 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/NG 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/NG 3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/NG 4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/NG 5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/NG 6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/NG 7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Namib desert nabib.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Namibia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Nesyt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Norge road.shtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/North bird.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ocean.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Oheb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/One World Trade Center – New York City, New York, .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Orangutan ,Kalingrad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Oviedo, Spain.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Owen Humphreys.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Paranal_Residencia_Roof.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Parkur.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Pelikan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ping An Finance Centre – Shenzhen, China.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Porthcawl, Wales.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Postupka_sloz_1500px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Princess Tower – Dubai, UAE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Provence,France.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/PuzzleLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ranwu camping tibet.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Real de Catorse Mexika.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Rejnok .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ring road.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Road to Sky Romania.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Rock stone 40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Romania, sheeps.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Ruta 40 Argentina.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Rys Spain.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/S Peterbug winter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/SAE.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/S_P zaliv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Sakhalin island.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Salt lake China.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Samui_Ohnocary_1500px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Santorini.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Saudi Arabia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Scotland.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Shanghai World Financial Centre – Shanghai, China.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Shondong Vietnam.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Shri Lanka Colombo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Sichuan, China.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Sinaj sea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Sinaj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Sky Bridge in Loch Alsh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Sky Lake Korea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Snow in Greece.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Snow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Snowing landing.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Solar Skywalks Munchen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/South Wales pool.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/South Wales.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Spitzkoppe_Oblouk_Pano_.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Stonehenge,GB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Stones_Paranal_Touching.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Straus Brazil.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/TAIPEI 101 – Taipei, Taiwan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Tahiti.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Telec lake Altaj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Telstra Ballet Dancer Awards.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/The Cabot Trail Canada.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/The Petronas Twin Towers – Kuala Lumpur, Malaysia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/The watchful pelican .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Tower.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Valley of fire Nevada.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Vanuatu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Venice.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Versace Home.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Victoria Dockside trade houce Gonkong.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Vrchtepla_Tabor_Shora_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/WP_20140226_001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/WP_20140226_004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Waterfall Altaj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/White bear.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Winter fishing SP.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Yagurundi cat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Yellowstone_Nocni_Pano.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Zanzibar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Zifeng Tower – Nanjing, China.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Zline house Indonesia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/abstract body.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/american cotume west indian.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/ancridible picture.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/anterselvaied.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/architecture-bilbao-exterior-night-2009-web-resized.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/art dior lady .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/art street .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/astana building.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/auvolneni.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bajkal 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bajkal 3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bajkal 4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bajkal 5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bajkal 6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bajkal 7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bajkal_prf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bajkál 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bear on the ice.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bears white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bird at bery.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bird pero.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bird stolen bread.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bird straus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/birds.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/bobr at dance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/canada 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/canada 3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/canada 4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/canada 5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/canada 6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/canada 7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/canada.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/chameleon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/christmas tree.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/clear sea and pierce.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/colorshow China.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/cool cat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dakar12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dakar2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dakar4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dakar5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dakar6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dakar8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dakar9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/desert Atakama.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/desert Nabimie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/desert zabaykal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dessert zabaykal 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/detail_Kamchatka.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dive Nery.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/diving bear.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dog game.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/dog pudel NY.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/eagle at hunter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/earlz morning and rain .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/egs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/ekvador_galopogorsskie_ostrov.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/ekvador_galopogorsskie_ostrova-640x386.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/ekvador_galopogorsskie_ostrova.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/etna 1702 2021.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/etna.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/eye.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/fighting.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/flamingo, kipr.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/flamingo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/fly over namibia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/frog under water.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/galapagos_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/galapagosskie-ostrova.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/gemini 3105 2017.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/gepard run.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/gepard.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/good look.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/great blasket island,Irealand.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/great white shark .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/gryzun .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/guggenheimovo-muzeum-pohled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/hair .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/happy life.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/hard tag.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/hong Kong.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/island vulkan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/itogi1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/jaguar in zoo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/kalmar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/kit braida Siam.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/krestovik.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/kuban 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/kuban 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/kuban 3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/kuban 4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/lava.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/little watcher.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/meduza Piran.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/meduza abstract .gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/monkey in dance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/mountain Peru.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/mountain.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/muravej.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/nabimie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/olen England.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/owns.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/p-8_poseidon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/palm in snow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/pan american highway.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/park Snowdonia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/peanguins in arctic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/pic_bear.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/pic_scala.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/potw1505c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/preview_01 Palau.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/preview_Colorado.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/project 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/puma at hunter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/rain in desert nabimie.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/rally dakar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/rose sunset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/russian chapel.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/saltlake peru 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/saltlake peru 2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/saltlake peru.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/sark and man.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/scotland laguna.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/sea Irealand.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/see at sunset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/sensitive beast.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/shark predators.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/shark.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/sharks in deep.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/sharks.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/shimpanse at enjoj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/snake Ross Lovegrouv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/snow dance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/snow fall.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/snow in desert .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/snow roll .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/son trava baykal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/sri lanka.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/storm .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/storm at sea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/storm england .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/straus picture.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/strekoza,India.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/sunrise China.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/sunset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/surok .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/swim in cold.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/swithch mover.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/szrenica .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/the Jade Dragon Snow Mountain .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/the couple.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/the girafes.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/the hunter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/three table glass.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/tigers at snow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/tigers in sud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/tree .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/tundra.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/two berry.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/uk sea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/uncredible sea.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/under water.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/vatikan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/victoria falls in zambia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/volna.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/vulcan Punktusan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/vulcan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/vulkan Tombara.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/week1 zoo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/week1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/week9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/white bear in Arctic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/yak.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/yellow stone.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/zabaykal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Галапагосские_острова_Эквадор_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/another/Photos/Монастырь Такцанг-лакханг.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/AnotherButton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/PuzzleMenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/SettingsMenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fxml/PuzzleMenu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fxml/SettingsMenu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PuzzleLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SettingsIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/checkmark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/domecek.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/puzzle1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/puzzle2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/puzzle3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/puzzle4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/puzzleNight.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzlegame/PuzzleGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzlegame/PuzzleGameKontroler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/puzzlegame/SettingsMenuKontroler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../writer-another.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2I2wanHowqCWUBJDwePKv1XYMaj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/VS/Documents/NetBeansProjects/Puzzle/src"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3551fa1e-5813-4fb4-aaa3-de12bb368af8" name="Changes" comment="" />
+      <created>1669393051827</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669393051827</updated>
+      <workItem from="1669393053062" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

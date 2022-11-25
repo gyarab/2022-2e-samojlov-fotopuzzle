@@ -1,0 +1,20 @@
+.label{
+    -fx-text-fill: linear-gradient(to right, #b1227a 0%, #429aee 100%);
+    -fx-font-size: 80;
+    -fx-background-color: #000000;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+.button{
+    -fx-text-fill: linear-gradient(to right,#84ff3d  0%,#2eabff  100%);
+    -fx-font-size: 21;
+    -fx-background-color: linear-gradient(to bottom, #000000, #131313, #1f1f1f, #2c2c2c, #393939);
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+.button:hover{
+    -fx-background-color: linear-gradient(to right,#84ff3d  0%,#2eabff  100%);
+    -fx-text-fill: linear-gradient(to bottom, #000000, #131313, #1f1f1f, #2c2c2c, #393939);
+}
+
+
