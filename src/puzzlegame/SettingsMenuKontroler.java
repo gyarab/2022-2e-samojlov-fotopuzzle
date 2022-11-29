@@ -2,7 +2,6 @@ package puzzlegame;
 
 import java.io.*;
 import java.net.URL;
-import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -32,7 +31,6 @@ import javafx.util.Duration;
 
 
 /**
- *
  * @author VS
  */
 public class SettingsMenuKontroler implements Initializable {
@@ -109,6 +107,7 @@ public class SettingsMenuKontroler implements Initializable {
     Scanner scanner3;
     Path from;
     Path to;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -122,53 +121,53 @@ public class SettingsMenuKontroler implements Initializable {
         obtiznosti = new File("obtiznosti.txt");
         anotherTXT = new File("writer-another.txt");
 
-        for(int i = 0; i < 1; i++){
+        for (int i = 0; i < 1; i++) {
 
-        try {
+            try {
 
-            hledej1 = new FileReader(obtiznosti);
+                hledej1 = new FileReader(obtiznosti);
 
-        } catch (FileNotFoundException ex) {
+            } catch (FileNotFoundException ex) {
 
-            Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        scanner1 = new Scanner(hledej1);
+                Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            scanner1 = new Scanner(hledej1);
 
-        while (scanner1.hasNext()) {
+            while (scanner1.hasNext()) {
 
-            odpoved1 = scanner1.nextLine();
-        }
-        if (odpoved1.equals("Easy")) {
+                odpoved1 = scanner1.nextLine();
+            }
+            if (odpoved1.equals("Easy")) {
 
-            easy.setSelected(true);
-        }
-        if (odpoved1.equals("Medium")) {
+                easy.setSelected(true);
+            }
+            if (odpoved1.equals("Medium")) {
 
-            medium.setSelected(true);
-        }
-        if (odpoved1.equals("Hard")) {
+                medium.setSelected(true);
+            }
+            if (odpoved1.equals("Hard")) {
 
-            hard.setSelected(true);
-        }
-        if (odpoved1.equals("Expert")) {
+                hard.setSelected(true);
+            }
+            if (odpoved1.equals("Expert")) {
 
-            expert.setSelected(true);
-        }
+                expert.setSelected(true);
+            }
 
-        try {
+            try {
 
-            hledej2 = new FileReader(obrazky);
+                hledej2 = new FileReader(obrazky);
 
-        } catch (FileNotFoundException ex) {
+            } catch (FileNotFoundException ex) {
 
-            Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        scanner2 = new Scanner(hledej2);
+                Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            scanner2 = new Scanner(hledej2);
 
-        while (scanner2.hasNext()) {
+            while (scanner2.hasNext()) {
 
-            odpoved2 = scanner2.nextLine();
-        }
+                odpoved2 = scanner2.nextLine();
+            }
             switch (odpoved2) {
 
                 case "Mesto1":
@@ -233,27 +232,27 @@ public class SettingsMenuKontroler implements Initializable {
                         Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
 
                     }
-
             }
 
-        Image image = new Image(getClass().getResourceAsStream("/images/SettingsIcon.png"));
-        IMGview2.setImage(image);
+            Image image = new Image(getClass().getResourceAsStream("/images/SettingsIcon.png"));
+            IMGview2.setImage(image);
 
-        Image img = new Image(getClass().getResourceAsStream("/images/puzzle1.jpg"));
-        Mesto1.setImage(img);
+            Image img = new Image(getClass().getResourceAsStream("/images/puzzle1.jpg"));
+            Mesto1.setImage(img);
 
-        Image IMG = new Image(getClass().getResourceAsStream("/images/puzzle2.jpg"));
-        Tygr.setImage(IMG);
+            Image IMG = new Image(getClass().getResourceAsStream("/images/puzzle2.jpg"));
+            Tygr.setImage(IMG);
 
-        Image iMg = new Image(getClass().getResourceAsStream("/images/puzzle3.jpg"));
-        Liska.setImage(iMg);
+            Image iMg = new Image(getClass().getResourceAsStream("/images/puzzle3.jpg"));
+            Liska.setImage(iMg);
 
-        Image ImG = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
-        Mesto2.setImage(ImG);
+            Image ImG = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
+            Mesto2.setImage(ImG);
+
+        }
 
     }
 
-    }
     @FXML
     public void menuButtonClicked(ActionEvent event) throws Exception {
 
@@ -263,13 +262,19 @@ public class SettingsMenuKontroler implements Initializable {
 
         System.out.println("\n" + "Level: " + SCLevel.nextLine());
 
-        if(odpoved2.equals("AnotherPicture")){
+        BufferedReader hledejObrazky = new BufferedReader(new FileReader("obrazky.txt"));
+        String radek;
 
-            System.out.println("Selected image: " + SCAnother.nextLine() + " (AnotherPicture)" + "\n");
-        }
-        else{
+        while ((radek = hledejObrazky.readLine()) != null) {
 
-            System.out.println("Selected image: " + SCImage.nextLine() + "\n");
+            if(radek.equals("AnotherPicture")){
+
+                System.out.println("Selected image: " + SCAnother.nextLine() + " (AnotherPicture)" + "\n");
+            }
+            else{
+
+                System.out.println("Selected image: " + SCImage.nextLine() + "\n");
+            }
         }
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/PuzzleMenu.fxml"));
@@ -282,7 +287,7 @@ public class SettingsMenuKontroler implements Initializable {
     }
 
     @FXML
-    public void AnotherPictureClicked(ActionEvent event) throws IOException, InterruptedException {
+    public void AnotherPictureClicked(ActionEvent event) throws IOException {
 
         fileChooser = new FileChooser();
         fileChooser.setTitle("Select Image File");
@@ -298,18 +303,18 @@ public class SettingsMenuKontroler implements Initializable {
             Image image = new Image(imageFile);
             IMgNew.setImage(image);
 
-            try{
+            try {
 
-            aFileWriter = new FileWriter(anotherTXT);
+                aFileWriter = new FileWriter(anotherTXT);
 
-            from = Paths.get(selectedFile.toURI());
-            to = Paths.get("C:\\Users\\VS\\Documents\\NetBeansProjects\\Puzzle\\src\\another\\Photos\\" + selectedFile.getName());
+                from = Paths.get(selectedFile.toURI());
+                to = Paths.get("C:\\Users\\VS\\Documents\\NetBeansProjects\\Puzzle\\src\\another\\Photos\\" + selectedFile.getName());
 
-            aFileWriter.write(selectedFile.getName());
-            System.out.println(selectedFile.getName());
-            Files.copy(from, to);
+                aFileWriter.write(selectedFile.getName());
+                Files.copy(from, to);
 
-            } catch (FileAlreadyExistsException e) {
+
+            } catch (Exception e) {
 
                 Image Efekt = new Image(getClass().getResourceAsStream("/images/checkmark.png"));
                 CheckMark.setImage(Efekt);
@@ -324,22 +329,19 @@ public class SettingsMenuKontroler implements Initializable {
                 efektRotace.setByAngle(360);
                 efektRotace.play();
 
-            } catch (Exception e) {
+            } finally {
 
-                System.out.println("Problém byl vyřešen.");
+                try {
+                    aFileWriter.close();
 
-                } finally {
-
-                    try {
-                        aFileWriter.close();
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-
             }
+
         }
+    }
+
     public void difficultyChanged() {
 
         if (difficulties.getSelectedToggle().equals(easy)) {

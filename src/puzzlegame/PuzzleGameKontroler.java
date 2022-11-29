@@ -3,6 +3,8 @@ package puzzlegame;
 import Game.MainFX;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,13 +21,22 @@ public class PuzzleGameKontroler extends SettingsMenuKontroler implements Initia
     @FXML
     private ImageView IMGview;
 
+    private Scene scene;
+
+    private Stage stage;
+
     @FXML
     public void Play(ActionEvent event) throws Exception {
 
         MainFX newScene = new MainFX();
         Parent root = newScene.getRoot();
-        Scene scene = new Scene(root, 900, 900);
-        Stage stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        Scanner vyberUroven = new Scanner(obtiznosti);
+
+         if(obrazky.equals("Tygr"))
+
+            scene = new Scene(root, 900, 900);
+            stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+
         
         stage.setScene(scene);
         stage.show();

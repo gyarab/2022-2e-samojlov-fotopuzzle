@@ -11,16 +11,16 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 
 public class MainFX {
 
@@ -34,7 +34,7 @@ public class MainFX {
 
     public MainFX() throws FileNotFoundException {
         
-        FileInputStream input = new FileInputStream("C:\\Users\\VS\\Documents\\NetBeansProjects\\Puzzle\\src\\images\\domecek.png");
+        FileInputStream input = new FileInputStream("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\images\\domecek.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
         
