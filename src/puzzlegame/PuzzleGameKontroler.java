@@ -1,6 +1,9 @@
 package puzzlegame;
 
 import Game.MainFX;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -14,9 +17,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class PuzzleGameKontroler extends SettingsMenuKontroler implements Initializable {
+public class PuzzleGameKontroler implements Initializable {
 
     @FXML
     private ImageView IMGview;
@@ -28,16 +32,32 @@ public class PuzzleGameKontroler extends SettingsMenuKontroler implements Initia
     @FXML
     public void Play(ActionEvent event) throws Exception {
 
+        BufferedReader r = new BufferedReader(new FileReader("obtiznosti.txt"));
+
         MainFX newScene = new MainFX();
         Parent root = newScene.getRoot();
-        Scanner vyberUroven = new Scanner(obtiznosti);
+        String radek;
 
-         if(obrazky.equals("Tygr"))
+        while ((radek = r.readLine()) != null) {
 
-            scene = new Scene(root, 900, 900);
-            stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+            if (radek.equals("Easy")) {
 
-        
+                scene = new Scene(root, 450, 450);
+            }
+            else if (radek.equals("Medium")) {
+
+                scene = new Scene(root, 700, 700);
+            }
+            else if (radek.equals("Hard")) {
+
+                scene = new Scene(root, 950, 950);
+            }
+            else if (radek.equals("Expert")) {
+
+                scene = new Scene(root, 1200, 1200);
+            }
+        }
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         stage.setScene(scene);
         stage.show();
     }

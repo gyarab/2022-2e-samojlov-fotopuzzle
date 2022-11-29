@@ -17,7 +17,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import javax.swing.*;
@@ -37,12 +40,16 @@ public class MainFX {
         FileInputStream input = new FileInputStream("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\images\\domecek.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(70);
+        imageView.setFitWidth(70);
         
         obrazky = new File("obrazky.txt");
         obtiznosti = new File("obtiznosti.txt");
 
         vbox = new VBox();
-        backToMenu = new Button("Back to Home", imageView);
+        vbox.setStyle("-fx-background-color: black;");
+        backToMenu = new Button("",imageView);
+        backToMenu.setStyle("-fx-background-color: black;");
 
         vbox.getChildren().add(backToMenu);
         vbox.setAlignment(Pos.TOP_LEFT);

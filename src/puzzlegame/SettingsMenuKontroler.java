@@ -100,11 +100,16 @@ public class SettingsMenuKontroler implements Initializable {
     FileReader hledej1;
     FileReader hledej2;
     FileReader hledej3;
+    BufferedReader hledejObrazky;
+    String radek;
     FileChooser fileChooser;
     File selectedFile;
     Scanner scanner1;
     Scanner scanner2;
     Scanner scanner3;
+    Scanner SCAnother;
+    Scanner SCLevel;
+    Scanner SCImage;
     Path from;
     Path to;
 
@@ -141,15 +146,15 @@ public class SettingsMenuKontroler implements Initializable {
 
                 easy.setSelected(true);
             }
-            if (odpoved1.equals("Medium")) {
+            else if (odpoved1.equals("Medium")) {
 
                 medium.setSelected(true);
             }
-            if (odpoved1.equals("Hard")) {
+            else if (odpoved1.equals("Hard")) {
 
                 hard.setSelected(true);
             }
-            if (odpoved1.equals("Expert")) {
+            else if (odpoved1.equals("Expert")) {
 
                 expert.setSelected(true);
             }
@@ -256,14 +261,13 @@ public class SettingsMenuKontroler implements Initializable {
     @FXML
     public void menuButtonClicked(ActionEvent event) throws Exception {
 
-        Scanner SCAnother = new Scanner(anotherTXT);
-        Scanner SCLevel = new Scanner(obtiznosti);
-        Scanner SCImage = new Scanner(obrazky);
+        SCAnother = new Scanner(anotherTXT);
+        SCLevel = new Scanner(obtiznosti);
+        SCImage = new Scanner(obrazky);
 
         System.out.println("\n" + "Level: " + SCLevel.nextLine());
 
-        BufferedReader hledejObrazky = new BufferedReader(new FileReader("obrazky.txt"));
-        String radek;
+        hledejObrazky = new BufferedReader(new FileReader("obrazky.txt"));
 
         while ((radek = hledejObrazky.readLine()) != null) {
 
