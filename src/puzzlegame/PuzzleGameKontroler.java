@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -32,33 +33,23 @@ public class PuzzleGameKontroler implements Initializable {
     @FXML
     public void Play(ActionEvent event) throws Exception {
 
-        BufferedReader r = new BufferedReader(new FileReader("obtiznosti.txt"));
-
         MainFX newScene = new MainFX();
         Parent root = newScene.getRoot();
-        String radek;
 
-        while ((radek = r.readLine()) != null) {
+        scene = new Scene(root, 1200, 1200);
 
-            if (radek.equals("Easy")) {
+        scene.setOnKeyPressed(e -> {
 
-                scene = new Scene(root, 450, 450);
+            if (e.getCode() == KeyCode.ESCAPE) {
+
+                stage.setFullScreen(true);
             }
-            else if (radek.equals("Medium")) {
+        });
 
-                scene = new Scene(root, 700, 700);
-            }
-            else if (radek.equals("Hard")) {
-
-                scene = new Scene(root, 950, 950);
-            }
-            else if (radek.equals("Expert")) {
-
-                scene = new Scene(root, 1200, 1200);
-            }
-        }
         stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         stage.setScene(scene);
+        stage.setFullScreenExitHint("");
+        stage.setFullScreen(true);
         stage.show();
     }
 

@@ -17,13 +17,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
-import javax.swing.*;
 
 public class MainFX {
 
@@ -81,8 +76,6 @@ public class MainFX {
                 Scene scene = new Scene(root, 3300, 520);
 
                 stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
-                
-                
 
                 stage.setScene(scene);
                 stage.show();
@@ -90,6 +83,10 @@ public class MainFX {
             }
 
         }
+
+    }
+    public void ZvolenyObrazek(){
+
 
     }
     

@@ -57,22 +57,22 @@ public class SettingsMenuKontroler implements Initializable {
     private ImageView CheckMark;
 
     @FXML
-    RadioButton easy;
+    private RadioButton easy;
 
     @FXML
-    RadioButton medium;
+    private RadioButton medium;
 
     @FXML
-    RadioButton hard;
+    private RadioButton hard;
 
     @FXML
-    RadioButton expert;
+    private RadioButton expert;
 
     @FXML
     private BorderPane mesto1;
 
     @FXML
-    BorderPane tygr;
+    private BorderPane tygr;
 
     @FXML
     private BorderPane liska;
