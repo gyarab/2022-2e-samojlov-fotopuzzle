@@ -128,133 +128,142 @@ public class SettingsMenuKontroler implements Initializable {
 
         for (int i = 0; i < 1; i++) {
 
-            try {
-
-                hledej1 = new FileReader(obtiznosti);
-
-            } catch (FileNotFoundException ex) {
-
-                Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            scanner1 = new Scanner(hledej1);
-
-            while (scanner1.hasNext()) {
-
-                odpoved1 = scanner1.nextLine();
-            }
-            if (odpoved1.equals("Easy")) {
-
-                easy.setSelected(true);
-            }
-            else if (odpoved1.equals("Medium")) {
-
-                medium.setSelected(true);
-            }
-            else if (odpoved1.equals("Hard")) {
-
-                hard.setSelected(true);
-            }
-            else if (odpoved1.equals("Expert")) {
-
-                expert.setSelected(true);
-            }
-
-            try {
-
-                hledej2 = new FileReader(obrazky);
-
-            } catch (FileNotFoundException ex) {
-
-                Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            scanner2 = new Scanner(hledej2);
-
-            while (scanner2.hasNext()) {
-
-                odpoved2 = scanner2.nextLine();
-            }
-            switch (odpoved2) {
-
-                case "Mesto1":
-                    mesto1.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-                    mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    break;
-
-                case "Mesto2":
-                    mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    mesto2.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-                    tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    break;
-
-                case "Tygr":
-
-                    mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    tygr.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-                    liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    break;
-
-                case "Liska":
-                    mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    liska.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-                    imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    break;
-
-                default:
-                    mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                    imageNew.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-
-                    try {
-                        hledej3 = new FileReader(anotherTXT);
-                        scanner3 = new Scanner(hledej3);
-
-                        while (scanner3.hasNext()) {
-
-                            for (int cyklus = 0; cyklus < 1; cyklus++) {
-
-                                odpoved3 = scanner3.nextLine();
-
-                            }
-                        }
-
-                        String c = "/another/Photos/";
-                        Image imagefx = new Image(getClass().getResourceAsStream(c + odpoved3));
-                        IMgNew.setImage(imagefx);
-                        scanner3.close();
-
-                    } catch (FileNotFoundException ex) {
-                        Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
-
-                    }
-            }
-
-            Image image = new Image(getClass().getResourceAsStream("/images/SettingsIcon.png"));
-            IMGview2.setImage(image);
-
-            Image img = new Image(getClass().getResourceAsStream("/images/puzzle1.jpg"));
-            Mesto1.setImage(img);
-
-            Image IMG = new Image(getClass().getResourceAsStream("/images/puzzle2.jpg"));
-            Tygr.setImage(IMG);
-
-            Image iMg = new Image(getClass().getResourceAsStream("/images/puzzle3.jpg"));
-            Liska.setImage(iMg);
-
-            Image ImG = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
-            Mesto2.setImage(ImG);
-
+            Obtiznosti();
+            Obrazky();
+            Images();
         }
+    }
+    public void Obtiznosti(){
+
+        try {
+
+            hledej1 = new FileReader(obtiznosti);
+
+        } catch (FileNotFoundException ex) {
+
+            Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        scanner1 = new Scanner(hledej1);
+
+        while (scanner1.hasNext()) {
+
+            odpoved1 = scanner1.nextLine();
+        }
+        if (odpoved1.equals("Easy")) {
+
+            easy.setSelected(true);
+        }
+        else if (odpoved1.equals("Medium")) {
+
+            medium.setSelected(true);
+        }
+        else if (odpoved1.equals("Hard")) {
+
+            hard.setSelected(true);
+        }
+        else if (odpoved1.equals("Expert")) {
+
+            expert.setSelected(true);
+        }
+    }
+    public void Obrazky() {
+
+        try {
+
+            hledej2 = new FileReader(obrazky);
+
+        } catch (FileNotFoundException ex) {
+
+            Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        scanner2 = new Scanner(hledej2);
+
+        while (scanner2.hasNext()) {
+
+            odpoved2 = scanner2.nextLine();
+        }
+        switch (odpoved2) {
+
+            case "Mesto1":
+                mesto1.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
+                mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                break;
+
+            case "Mesto2":
+                mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                mesto2.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
+                tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                break;
+
+            case "Tygr":
+
+                mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                tygr.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
+                liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                break;
+
+            case "Liska":
+                mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                liska.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
+                imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                break;
+
+            default:
+                mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                imageNew.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
+
+                try {
+                    hledej3 = new FileReader(anotherTXT);
+                    scanner3 = new Scanner(hledej3);
+
+                    while (scanner3.hasNext()) {
+
+                        for (int cyklus = 0; cyklus < 1; cyklus++) {
+
+                            odpoved3 = scanner3.nextLine();
+
+                        }
+                    }
+
+                    String c = "/another/Photos/";
+                    Image imagefx = new Image(getClass().getResourceAsStream(c + odpoved3));
+                    IMgNew.setImage(imagefx);
+                    scanner3.close();
+
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(SettingsMenuKontroler.class.getName()).log(Level.SEVERE, null, ex);
+
+                }
+        }
+    }
+    public void Images() {
+
+        Image image = new Image(getClass().getResourceAsStream("/images/SettingsIcon.png"));
+        IMGview2.setImage(image);
+
+        Image img = new Image(getClass().getResourceAsStream("/images/puzzle1.jpg"));
+        Mesto1.setImage(img);
+
+        Image IMG = new Image(getClass().getResourceAsStream("/images/puzzle2.jpg"));
+        Tygr.setImage(IMG);
+
+        Image iMg = new Image(getClass().getResourceAsStream("/images/puzzle3.jpg"));
+        Liska.setImage(iMg);
+
+        Image ImG = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
+        Mesto2.setImage(ImG);
 
     }
 

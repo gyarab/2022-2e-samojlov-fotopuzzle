@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,6 +20,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class PuzzleGameKontroler implements Initializable {
@@ -35,14 +37,17 @@ public class PuzzleGameKontroler implements Initializable {
 
         MainFX newScene = new MainFX();
         Parent root = newScene.getRoot();
+        //Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        //System.out.println(screenBounds);
 
-        scene = new Scene(root, 1200, 1200);
+        scene = new Scene(root);
 
         scene.setOnKeyPressed(e -> {
 
             if (e.getCode() == KeyCode.ESCAPE) {
 
                 stage.setFullScreen(true);
+
             }
         });
 
