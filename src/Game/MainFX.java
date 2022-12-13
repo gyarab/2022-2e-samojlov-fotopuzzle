@@ -1,29 +1,23 @@
 package Game;
 
+import java.awt.*;
 import java.io.*;
-import java.nio.file.Files;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.*;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
-
-import static javafx.geometry.Pos.CENTER;
 
 public class MainFX {
     private Pane pane;
@@ -32,10 +26,22 @@ public class MainFX {
     private Stage stage;
 
     private ImageView Main;
-    private BufferedReader reader;
+    private BufferedReader readerObrazek;
+
+    private BufferedReader readerObtiznost;
+
+    private int VELIKOST;
+
+    double souraniceX;
+    double souraniceY;
+    double posunutiX;
+    double posunutiY;
+
+
     ActionEvent event;
     File obrazky;
     File obtiznosti;
+    boolean Dragged;
 
     public MainFX() throws IOException {
 
@@ -43,6 +49,15 @@ public class MainFX {
 
         Main = new ImageView();
 
+        readerObrazek = new BufferedReader(new FileReader("obrazky.txt"));
+
+        readerObtiznost = new BufferedReader(new FileReader("obtiznosti.txt"));
+
+        obrazky = new File("obrazky.txt");
+
+        obtiznosti = new File("obtiznosti.txt");
+
+        ZvolenaObtiznost();
         ZvolenyObrazek();
 
         Image domecek = new Image(getClass().getResourceAsStream("/images/domecek.png"));
@@ -51,17 +66,13 @@ public class MainFX {
         imageView.setFitWidth(50);
 
         HBox h = new HBox();
+        h.relocate(h.getLayoutX() + 75, h.getLayoutY() + 75);
         h.getChildren().add(Main);
 
-        obrazky = new File("obrazky.txt");
-        obtiznosti = new File("obtiznosti.txt");
-
-        pane.setStyle("-fx-background-color: black;");
         backToMenu = new Button("", imageView);
         backToMenu.setStyle("-fx-background-color: black;");
 
-        h.relocate(h.getLayoutX() + 75, h.getLayoutY() + 75);
-
+        pane.setStyle("-fx-background-color: black;");
         pane.getChildren().addAll(backToMenu, h);
 
         backToMenu.setOnAction((ActionEvent event) -> {
@@ -83,28 +94,30 @@ public class MainFX {
 
     public void ZvolenaObtiznost() throws IOException {
 
-        List<String> skenujRadky = Files.readAllLines(obtiznosti.toPath());
+        //ArrayList <String> obtiznosti = new ArrayList();
+        //Collections.addAll(obtiznosti, "Easy", "Medium", "Hard", "Expert");
 
-        for (String radek : skenujRadky) {
+        String obtiznost;
 
-            if (radek.equals("Easy")) {
+        while ((obtiznost = readerObtiznost.readLine()) != null) {
 
-                Scene scene = new Scene(root, 3300, 520);
+            if (obtiznost.equals("Easy")) {
 
-                stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
 
-                stage.setScene(scene);
-                stage.show();
+            } else if (obtiznost.equals("Medium")) {
+
+
+            } else if (obtiznost.equals("Hard")) {
+
+
+            } else if (obtiznost.equals("Expert")) {
 
             }
-
         }
 
     }
 
     public void ZvolenyObrazek() throws IOException {
-
-        reader = new BufferedReader(new FileReader("obrazky.txt"));
 
         Main.setFitHeight(925);
         Main.setFitWidth(1750);
@@ -112,7 +125,7 @@ public class MainFX {
         String obrazek;
         Image mesto1, tygr, liska, mesto2, another;
 
-        while ((obrazek = reader.readLine()) != null) {
+        while ((obrazek = readerObrazek.readLine()) != null) {
 
             if (obrazek.equals("Mesto1")) {
 
@@ -132,8 +145,7 @@ public class MainFX {
 
                 mesto2 = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
                 Main.setImage(mesto2);
-            }
-            else{
+            } else {
 
                 BufferedReader Another = new BufferedReader(new FileReader("writer-another.txt"));
 
@@ -143,11 +155,47 @@ public class MainFX {
                 Main.setImage(another);
             }
         }
+        pane.setCursor(Cursor.cursor("DEFAULT"));
+        Main.setCursor(Cursor.cursor("OPEN_HAND"));
+        Main.setOnMousePressed(IMGViewOnMousePressed);
+        Main.setOnMouseDragged(IMGViewOnMouseDragged);
     }
+
+    EventHandler<MouseEvent> IMGViewOnMousePressed =
+            new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent t) {
+
+                    souraniceX = t.getSceneX();
+                    souraniceY = t.getSceneY();
+                    posunutiX = ((ImageView) (t.getSource())).getTranslateX();
+                    posunutiY = ((ImageView) (t.getSource())).getTranslateY();
+
+                    Main.setCursor(Cursor.cursor("OPEN_HAND"));
+                }
+            };
+    EventHandler<MouseEvent> IMGViewOnMouseDragged =
+            new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent t) {
+
+                    double NewPosunutiX = posunutiX + (t.getSceneX() - souraniceX);
+                    double NewPosunutiY = posunutiY + (t.getSceneY() - souraniceY);
+
+                    ((ImageView) (t.getSource())).setTranslateX(NewPosunutiX);
+                    ((ImageView) (t.getSource())).setTranslateY(NewPosunutiY);
+
+                    Main.setCursor(Cursor.cursor("CLOSED_HAND"));
+                }
+            };
 
     public Parent getRoot() {
 
         return pane;
     }
-
 }
+
+
+

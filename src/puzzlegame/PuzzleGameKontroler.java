@@ -2,25 +2,19 @@ package puzzlegame;
 
 import Game.MainFX;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.paint.Color;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class PuzzleGameKontroler implements Initializable {
@@ -42,6 +36,8 @@ public class PuzzleGameKontroler implements Initializable {
 
         scene = new Scene(root);
 
+        scene.getStylesheets().add(getClass().getResource("/css/AnotherButton.css").toExternalForm());
+
         scene.setOnKeyPressed(e -> {
 
             if (e.getCode() == KeyCode.ESCAPE) {
@@ -53,8 +49,8 @@ public class PuzzleGameKontroler implements Initializable {
 
         stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         stage.setScene(scene);
-        stage.setFullScreenExitHint("");
-        stage.setFullScreen(true);
+        //stage.setFullScreenExitHint("");
+        //stage.setFullScreen(true);
         stage.show();
     }
 
