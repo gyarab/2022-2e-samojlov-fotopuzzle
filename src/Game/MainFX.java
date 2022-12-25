@@ -1,22 +1,26 @@
+
 package Game;
 
-import java.awt.*;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.*;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class MainFX {
@@ -25,27 +29,34 @@ public class MainFX {
     private Button backToMenu;
     private Stage stage;
 
+    private HBox naV;
+    private HBox main;
     private ImageView Main;
+    private ImageView showHint;
     private BufferedReader readerObrazek;
-
     private BufferedReader readerObtiznost;
-
-    private int VELIKOST;
-
     double souraniceX;
     double souraniceY;
     double posunutiX;
     double posunutiY;
+    int width;
+    int height;
 
+    int sloupec;
+    int radek;
 
     ActionEvent event;
     File obrazky;
     File obtiznosti;
-    boolean Dragged;
+    int x = 0;
 
     public MainFX() throws IOException {
 
+        naV = new HBox();
+
         pane = new Pane();
+
+        showHint = new ImageView();
 
         Main = new ImageView();
 
@@ -59,22 +70,51 @@ public class MainFX {
 
         ZvolenaObtiznost();
         ZvolenyObrazek();
+        setNaV(naV);
+        //Calendar(0,0,0);
 
+        /** Navigation Bar **/
+
+        // Label Time
+
+        Label stopky = new Label();
+        java.util.Date date = new java.util.Date();
+        stopky.setText(String.valueOf(date));
+
+        // Image Icon
+        Image IkonaObrazku = new Image(getClass().getResourceAsStream("/images/IkonaObrazku.jpg"));
+        ImageView i = new ImageView(IkonaObrazku);
+        i.setFitHeight(50);
+        i.setFitWidth(50);
+
+        Button Photo = new Button("", i);
+        Photo.setText("");
+        Photo.setStyle("-fx-background-color: white;");
+        Photo.setPrefHeight(50);
+        Photo.setPrefWidth(50);
+        showHint.setVisible(false);
+
+        Photo.setOnAction((ActionEvent event) -> {
+            x++;
+            if (x % 2 != 0) {
+                showHint.setVisible(true);
+
+            } else
+                showHint.setVisible(false);
+        });
+
+        // Button Home
         Image domecek = new Image(getClass().getResourceAsStream("/images/domecek.png"));
         ImageView imageView = new ImageView(domecek);
         imageView.setFitHeight(50);
         imageView.setFitWidth(50);
 
-        HBox h = new HBox();
-        h.relocate(h.getLayoutX() + 75, h.getLayoutY() + 75);
-        h.getChildren().add(Main);
+        main = new HBox();
+        main.relocate(main.getLayoutX() + 75, main.getLayoutY() + 100);
+        main.getChildren().addAll(Main, showHint);
 
         backToMenu = new Button("", imageView);
-        backToMenu.setStyle("-fx-background-color: black;");
-
-        pane.setStyle("-fx-background-color: black;");
-        pane.getChildren().addAll(backToMenu, h);
-
+        backToMenu.setStyle("-fx-background-color: white;");
         backToMenu.setOnAction((ActionEvent event) -> {
 
             try {
@@ -90,12 +130,16 @@ public class MainFX {
                 Logger.getLogger(MainFX.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+
+        naV.getChildren().addAll(backToMenu, Photo, stopky);
+
+        /** Main Pane **/
+
+        pane.setStyle("-fx-background-color: black;");
+        pane.getChildren().addAll(main, naV);
     }
 
     public void ZvolenaObtiznost() throws IOException {
-
-        //ArrayList <String> obtiznosti = new ArrayList();
-        //Collections.addAll(obtiznosti, "Easy", "Medium", "Hard", "Expert");
 
         String obtiznost;
 
@@ -103,17 +147,56 @@ public class MainFX {
 
             if (obtiznost.equals("Easy")) {
 
+                radek = 3;
+                sloupec = 3;
 
             } else if (obtiznost.equals("Medium")) {
+
+                radek = 5;
+                sloupec = 5;
 
 
             } else if (obtiznost.equals("Hard")) {
 
+                radek = 7;
+                sloupec = 7;
 
             } else if (obtiznost.equals("Expert")) {
 
+                radek = 10;
+                sloupec = 10;
+
             }
         }
+
+    }
+
+    public void setNaV(HBox naV) {
+        this.naV = naV;
+
+        naV.setStyle("-fx-background-color: white;");
+        naV.setLayoutX(0);
+        naV.setPadding(new Insets(10, 2000, 7, 10));
+        naV.setSpacing(770);
+
+    }
+    public void Calendar(int sekunda, int minuta, int hodina){
+
+        sekunda = 0;
+        minuta = 0;
+        hodina = 0;
+
+        int UbehnutyCas = 0;
+
+
+        sekunda++;
+
+        minuta = hodina % 60;
+
+        hodina /= 60;
+        System.out.println(sekunda);
+        System.out.println(minuta);
+        System.out.println(hodina);
 
     }
 
@@ -121,6 +204,9 @@ public class MainFX {
 
         Main.setFitHeight(925);
         Main.setFitWidth(1750);
+
+        showHint.setFitHeight(500);
+        showHint.setFitWidth(700);
 
         String obrazek;
         Image mesto1, tygr, liska, mesto2, another;
@@ -131,20 +217,26 @@ public class MainFX {
 
                 mesto1 = new Image(getClass().getResourceAsStream("/images/puzzle1.jpg"));
                 Main.setImage(mesto1);
+                showHint.setImage(mesto1);
 
             } else if (obrazek.equals("Tygr")) {
 
                 tygr = new Image(getClass().getResourceAsStream("/images/puzzle2.jpg"));
                 Main.setImage(tygr);
+                showHint.setImage(tygr);
+
             } else if (obrazek.equals("Liska")) {
 
                 liska = new Image(getClass().getResourceAsStream("/images/puzzle3.jpg"));
                 Main.setImage(liska);
+                showHint.setImage(liska);
 
             } else if (obrazek.equals("Mesto2")) {
 
                 mesto2 = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
                 Main.setImage(mesto2);
+                showHint.setImage(mesto2);
+
             } else {
 
                 BufferedReader Another = new BufferedReader(new FileReader("writer-another.txt"));
@@ -153,14 +245,18 @@ public class MainFX {
 
                 another = new Image(getClass().getResourceAsStream("/another/Photos/" + obrazek));
                 Main.setImage(another);
+                showHint.setImage(another);
             }
         }
         pane.setCursor(Cursor.cursor("DEFAULT"));
         Main.setCursor(Cursor.cursor("OPEN_HAND"));
+        showHint.setCursor(Cursor.cursor("OPEN_HAND"));
+
         Main.setOnMousePressed(IMGViewOnMousePressed);
         Main.setOnMouseDragged(IMGViewOnMouseDragged);
+        showHint.setOnMousePressed(IMGViewOnMousePressed);
+        showHint.setOnMouseDragged(IMGViewOnMouseDragged);
     }
-
     EventHandler<MouseEvent> IMGViewOnMousePressed =
             new EventHandler<MouseEvent>() {
 
@@ -173,6 +269,7 @@ public class MainFX {
                     posunutiY = ((ImageView) (t.getSource())).getTranslateY();
 
                     Main.setCursor(Cursor.cursor("OPEN_HAND"));
+                    showHint.setCursor(Cursor.cursor("OPEN_HAND"));
                 }
             };
     EventHandler<MouseEvent> IMGViewOnMouseDragged =
@@ -188,14 +285,15 @@ public class MainFX {
                     ((ImageView) (t.getSource())).setTranslateY(NewPosunutiY);
 
                     Main.setCursor(Cursor.cursor("CLOSED_HAND"));
+                    showHint.setCursor(Cursor.cursor("CLOSED_HAND"));
                 }
             };
+
+
 
     public Parent getRoot() {
 
         return pane;
     }
 }
-
-
 

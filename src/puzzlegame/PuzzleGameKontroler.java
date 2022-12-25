@@ -36,7 +36,7 @@ public class PuzzleGameKontroler implements Initializable {
 
         scene = new Scene(root);
 
-        scene.getStylesheets().add(getClass().getResource("/css/AnotherButton.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/css/MainScene.css").toExternalForm());
 
         scene.setOnKeyPressed(e -> {
 
@@ -49,8 +49,8 @@ public class PuzzleGameKontroler implements Initializable {
 
         stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         stage.setScene(scene);
-        //stage.setFullScreenExitHint("");
-        //stage.setFullScreen(true);
+        stage.setFullScreenExitHint("");
+        stage.setFullScreen(true);
         stage.show();
     }
 
@@ -64,7 +64,7 @@ public class PuzzleGameKontroler implements Initializable {
 
         stage.setScene(scene);
         stage.show();
-    }       
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
