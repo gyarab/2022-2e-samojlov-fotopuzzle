@@ -1,6 +1,7 @@
 .label{
-    -fx-font-size: 15;
+    -fx-font-size: 35;
     -fx-font-weight: bold;
     -fx-background-color: white;
     -fx-text-fill: black;
+    -fx-background-radius: 38;
 }

@@ -1,11 +1,13 @@
 
 package Game;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import javafx.collections.ObservableList;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -17,30 +19,35 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class MainFX {
     private Pane pane;
     private Parent root;
     private Button backToMenu;
     private Stage stage;
-
+    private Timeline timeline;
     private HBox naV;
     private HBox main;
     private ImageView Main;
     private ImageView showHint;
     private BufferedReader readerObrazek;
     private BufferedReader readerObtiznost;
+    private Label stopky;
     double souraniceX;
     double souraniceY;
     double posunutiX;
     double posunutiY;
     int width;
     int height;
+    private Image mesto1, tygr, liska, mesto2, another;
+
+    int sekunda = 0;
+    int minuta = 0;
+    int hodina = 0;
 
     int sloupec;
     int radek;
@@ -71,15 +78,22 @@ public class MainFX {
         ZvolenaObtiznost();
         ZvolenyObrazek();
         setNaV(naV);
-        //Calendar(0,0,0);
 
         /** Navigation Bar **/
 
         // Label Time
 
-        Label stopky = new Label();
-        java.util.Date date = new java.util.Date();
-        stopky.setText(String.valueOf(date));
+        stopky = new Label();
+        Cas cas = new Cas("00:00:00");
+        stopky.setText("00:00:00");
+        timeline = new Timeline(new KeyFrame(Duration.seconds(1), event1 -> {
+
+            cas.Calendar();
+            stopky.setText(String.valueOf(cas));
+        }
+        ));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
 
         // Image Icon
         Image IkonaObrazku = new Image(getClass().getResourceAsStream("/images/IkonaObrazku.jpg"));
@@ -155,7 +169,6 @@ public class MainFX {
                 radek = 5;
                 sloupec = 5;
 
-
             } else if (obtiznost.equals("Hard")) {
 
                 radek = 7;
@@ -165,10 +178,8 @@ public class MainFX {
 
                 radek = 10;
                 sloupec = 10;
-
             }
         }
-
     }
 
     public void setNaV(HBox naV) {
@@ -178,25 +189,6 @@ public class MainFX {
         naV.setLayoutX(0);
         naV.setPadding(new Insets(10, 2000, 7, 10));
         naV.setSpacing(770);
-
-    }
-    public void Calendar(int sekunda, int minuta, int hodina){
-
-        sekunda = 0;
-        minuta = 0;
-        hodina = 0;
-
-        int UbehnutyCas = 0;
-
-
-        sekunda++;
-
-        minuta = hodina % 60;
-
-        hodina /= 60;
-        System.out.println(sekunda);
-        System.out.println(minuta);
-        System.out.println(hodina);
 
     }
 
@@ -209,7 +201,6 @@ public class MainFX {
         showHint.setFitWidth(700);
 
         String obrazek;
-        Image mesto1, tygr, liska, mesto2, another;
 
         while ((obrazek = readerObrazek.readLine()) != null) {
 
@@ -257,6 +248,7 @@ public class MainFX {
         showHint.setOnMousePressed(IMGViewOnMousePressed);
         showHint.setOnMouseDragged(IMGViewOnMouseDragged);
     }
+
     EventHandler<MouseEvent> IMGViewOnMousePressed =
             new EventHandler<MouseEvent>() {
 
@@ -288,8 +280,38 @@ public class MainFX {
                     showHint.setCursor(Cursor.cursor("CLOSED_HAND"));
                 }
             };
+    public Image[] Main(Image img) throws IOException {
+
+        int PocetFotek = radek * sloupec;
+
+        Image images [] = new Image[PocetFotek];
+
+        /*ArrayList<Image> fotky = new ArrayList<>();
+        fotky.add(tygr);
+        fotky.add(liska);
+        fotky.add(mesto1);
+        fotky.add(mesto2);
+        fotky.add(another);*/
+
+        width = (int) img.getWidth() / sloupec;
+        height = (int) img.getHeight() / radek;
+
+        int VybranyObrazek = 0;
+        BufferedImage IMG = new BufferedImage((int) img.getWidth(), (int) img.getHeight(), BufferedImage.TYPE_CUSTOM);
+
+        for (int x = 0; x < radek; x++) {
+
+            for (int y = 0; y < sloupec; y++) {
+
+                images[VybranyObrazek] = new Image(width, height, IMG.getType());
+            }
+        }
+        for (int a = 0; a < images.length; a++) {
 
 
+        }
+        return images;
+    }
 
     public Parent getRoot() {
 
