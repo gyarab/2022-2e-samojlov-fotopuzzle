@@ -1,9 +1,10 @@
-
 package Game;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
@@ -24,6 +25,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import javax.imageio.ImageIO;
+
 public class MainFX {
     private Pane pane;
     private Parent root;
@@ -37,6 +40,8 @@ public class MainFX {
     private BufferedReader readerObrazek;
     private BufferedReader readerObtiznost;
     private Label stopky;
+    private String obrazek;
+    private String celeJmenoFotografie;
     double souraniceX;
     double souraniceY;
     double posunutiX;
@@ -44,15 +49,9 @@ public class MainFX {
     int width;
     int height;
     private Image mesto1, tygr, liska, mesto2, another;
-
-    int sekunda = 0;
-    int minuta = 0;
-    int hodina = 0;
-
     int sloupec;
     int radek;
-
-    ActionEvent event;
+    int PocetFotek;
     File obrazky;
     File obtiznosti;
     int x = 0;
@@ -77,6 +76,7 @@ public class MainFX {
 
         ZvolenaObtiznost();
         ZvolenyObrazek();
+        Images();
         setNaV(naV);
 
         /** Navigation Bar **/
@@ -163,21 +163,25 @@ public class MainFX {
 
                 radek = 3;
                 sloupec = 3;
+                PocetFotek = 9;
 
             } else if (obtiznost.equals("Medium")) {
 
                 radek = 5;
                 sloupec = 5;
+                PocetFotek = 25;
 
             } else if (obtiznost.equals("Hard")) {
 
                 radek = 7;
                 sloupec = 7;
+                PocetFotek = 49;
 
             } else if (obtiznost.equals("Expert")) {
 
                 radek = 10;
                 sloupec = 10;
+                PocetFotek = 100;
             }
         }
     }
@@ -200,31 +204,33 @@ public class MainFX {
         showHint.setFitHeight(500);
         showHint.setFitWidth(700);
 
-        String obrazek;
-
         while ((obrazek = readerObrazek.readLine()) != null) {
 
             if (obrazek.equals("Mesto1")) {
 
                 mesto1 = new Image(getClass().getResourceAsStream("/images/puzzle1.jpg"));
+                celeJmenoFotografie = "/images/puzzle1.jpg";
                 Main.setImage(mesto1);
                 showHint.setImage(mesto1);
 
             } else if (obrazek.equals("Tygr")) {
 
                 tygr = new Image(getClass().getResourceAsStream("/images/puzzle2.jpg"));
+                celeJmenoFotografie = "/images/puzzle2.jpg";
                 Main.setImage(tygr);
                 showHint.setImage(tygr);
 
             } else if (obrazek.equals("Liska")) {
 
                 liska = new Image(getClass().getResourceAsStream("/images/puzzle3.jpg"));
+                celeJmenoFotografie = "/images/puzzle3.jpg";
                 Main.setImage(liska);
                 showHint.setImage(liska);
 
             } else if (obrazek.equals("Mesto2")) {
 
                 mesto2 = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
+                celeJmenoFotografie = "/images/puzzle4.jpg";
                 Main.setImage(mesto2);
                 showHint.setImage(mesto2);
 
@@ -235,6 +241,7 @@ public class MainFX {
                 obrazek = Another.readLine();
 
                 another = new Image(getClass().getResourceAsStream("/another/Photos/" + obrazek));
+                celeJmenoFotografie = "/another/Photos/" + obrazek;
                 Main.setImage(another);
                 showHint.setImage(another);
             }
@@ -280,37 +287,38 @@ public class MainFX {
                     showHint.setCursor(Cursor.cursor("CLOSED_HAND"));
                 }
             };
-    public Image[] Main(Image img) throws IOException {
+    public void Images() throws IOException {
 
-        int PocetFotek = radek * sloupec;
+        BufferedImage br = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
 
-        Image images [] = new Image[PocetFotek];
+        PocetFotek = radek * sloupec;
 
-        /*ArrayList<Image> fotky = new ArrayList<>();
-        fotky.add(tygr);
-        fotky.add(liska);
-        fotky.add(mesto1);
-        fotky.add(mesto2);
-        fotky.add(another);*/
+        BufferedImage images [] = new BufferedImage[PocetFotek];
 
-        width = (int) img.getWidth() / sloupec;
-        height = (int) img.getHeight() / radek;
+        width  = br.getWidth() / sloupec;
+        height = br.getHeight() / radek;
 
         int VybranyObrazek = 0;
-        BufferedImage IMG = new BufferedImage((int) img.getWidth(), (int) img.getHeight(), BufferedImage.TYPE_CUSTOM);
 
-        for (int x = 0; x < radek; x++) {
+        for (int radky = 0; radky < radek; radky++) {
 
-            for (int y = 0; y < sloupec; y++) {
+            for (int sloupce = 0; sloupce < sloupec; sloupce++) {
 
-                images[VybranyObrazek] = new Image(width, height, IMG.getType());
+                images[VybranyObrazek] = (new BufferedImage(width, height, br.getType()));
+
+                Graphics2D grafika2D = images[VybranyObrazek++].createGraphics();
+                grafika2D.drawImage(br, 0, 0, width, height, width * sloupce, height * radky,
+                        width * sloupce + width, height * radky + height, null);
+                grafika2D.dispose();
+
             }
         }
-        for (int a = 0; a < images.length; a++) {
+        for (int i = 0; i < PocetFotek; i++){
 
+            File puzzle = new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces\\" + "puzzle"+ (i + 1) + ".jpg");
+            ImageIO.write(images[i], "jpg", puzzle);
 
         }
-        return images;
     }
 
     public Parent getRoot() {
@@ -318,4 +326,3 @@ public class MainFX {
         return pane;
     }
 }
-
