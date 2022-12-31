@@ -6,13 +6,6 @@ public class Cas {
     private int minuta = 0;
     private int hodina = 0;
 
-    public Cas(int sekunda, int minuta, int hodina) {
-
-        this.sekunda = sekunda;
-        this.minuta = minuta;
-        this.hodina = hodina;
-    }
-
     public Cas(String cas) {
 
         String[] CelkovyCas = cas.split(":");

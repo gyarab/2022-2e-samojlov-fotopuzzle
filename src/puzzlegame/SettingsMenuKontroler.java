@@ -2,14 +2,17 @@ package puzzlegame;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import Game.MainFX;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -269,6 +272,26 @@ public class SettingsMenuKontroler implements Initializable {
 
     @FXML
     public void menuButtonClicked(ActionEvent event) throws Exception {
+
+        File pieces = new File("PuzzlePieces.txt");
+        File slozkaFotek = new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\images");
+        FileWriter writer = new FileWriter(pieces);
+        MainFX mainFX = new MainFX();
+
+        if(pieces.length() == 0){
+
+            mainFX.getPuzzlePieces();
+            writer.write("Dilky puzle byly uspesne vytvoreny!");
+        }
+        if(pieces.length() != 0){
+
+            for (File file: Objects.requireNonNull(slozkaFotek.listFiles())) {
+                if (!file.isDirectory()) {
+                    file.delete();
+                }
+            }
+            writer.write("");
+        }
 
         SCAnother = new Scanner(anotherTXT);
         SCLevel = new Scanner(obtiznosti);

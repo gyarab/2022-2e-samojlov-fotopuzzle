@@ -3,8 +3,6 @@ package Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
@@ -39,6 +37,7 @@ public class MainFX {
     private ImageView showHint;
     private BufferedReader readerObrazek;
     private BufferedReader readerObtiznost;
+    private  BufferedImage photo;
     private Label stopky;
     private String obrazek;
     private String celeJmenoFotografie;
@@ -76,7 +75,6 @@ public class MainFX {
 
         ZvolenaObtiznost();
         ZvolenyObrazek();
-        Images();
         setNaV(naV);
 
         /** Navigation Bar **/
@@ -287,16 +285,16 @@ public class MainFX {
                     showHint.setCursor(Cursor.cursor("CLOSED_HAND"));
                 }
             };
-    public void Images() throws IOException {
+    public void getPuzzlePieces() throws IOException {
 
-        BufferedImage br = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
+        photo = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
 
         PocetFotek = radek * sloupec;
 
         BufferedImage images [] = new BufferedImage[PocetFotek];
 
-        width  = br.getWidth() / sloupec;
-        height = br.getHeight() / radek;
+        width  = photo.getWidth() / sloupec;
+        height = photo.getHeight() / radek;
 
         int VybranyObrazek = 0;
 
@@ -304,10 +302,10 @@ public class MainFX {
 
             for (int sloupce = 0; sloupce < sloupec; sloupce++) {
 
-                images[VybranyObrazek] = (new BufferedImage(width, height, br.getType()));
+                images[VybranyObrazek] = (new BufferedImage(width, height, photo.getType()));
 
                 Graphics2D grafika2D = images[VybranyObrazek++].createGraphics();
-                grafika2D.drawImage(br, 0, 0, width, height, width * sloupce, height * radky,
+                grafika2D.drawImage(photo, 0, 0, width, height, width * sloupce, height * radky,
                         width * sloupce + width, height * radky + height, null);
                 grafika2D.dispose();
 
