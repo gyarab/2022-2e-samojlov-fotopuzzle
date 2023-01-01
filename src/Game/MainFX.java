@@ -3,6 +3,7 @@ package Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
@@ -153,6 +154,9 @@ public class MainFX {
 
     public void ZvolenaObtiznost() throws IOException {
 
+        Main.setFitHeight(925);
+        Main.setFitWidth(1750);
+
         String obtiznost;
 
         while ((obtiznost = readerObtiznost.readLine()) != null) {
@@ -191,13 +195,9 @@ public class MainFX {
         naV.setLayoutX(0);
         naV.setPadding(new Insets(10, 2000, 7, 10));
         naV.setSpacing(770);
-
     }
 
     public void ZvolenyObrazek() throws IOException {
-
-        Main.setFitHeight(925);
-        Main.setFitWidth(1750);
 
         showHint.setFitHeight(500);
         showHint.setFitWidth(700);
@@ -208,28 +208,24 @@ public class MainFX {
 
                 mesto1 = new Image(getClass().getResourceAsStream("/images/puzzle1.jpg"));
                 celeJmenoFotografie = "/images/puzzle1.jpg";
-                Main.setImage(mesto1);
                 showHint.setImage(mesto1);
 
             } else if (obrazek.equals("Tygr")) {
 
                 tygr = new Image(getClass().getResourceAsStream("/images/puzzle2.jpg"));
                 celeJmenoFotografie = "/images/puzzle2.jpg";
-                Main.setImage(tygr);
                 showHint.setImage(tygr);
 
             } else if (obrazek.equals("Liska")) {
 
                 liska = new Image(getClass().getResourceAsStream("/images/puzzle3.jpg"));
                 celeJmenoFotografie = "/images/puzzle3.jpg";
-                Main.setImage(liska);
                 showHint.setImage(liska);
 
             } else if (obrazek.equals("Mesto2")) {
 
                 mesto2 = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
                 celeJmenoFotografie = "/images/puzzle4.jpg";
-                Main.setImage(mesto2);
                 showHint.setImage(mesto2);
 
             } else {
@@ -240,7 +236,6 @@ public class MainFX {
 
                 another = new Image(getClass().getResourceAsStream("/another/Photos/" + obrazek));
                 celeJmenoFotografie = "/another/Photos/" + obrazek;
-                Main.setImage(another);
                 showHint.setImage(another);
             }
         }

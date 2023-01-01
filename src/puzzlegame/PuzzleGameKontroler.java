@@ -2,6 +2,7 @@ package puzzlegame;
 
 import Game.MainFX;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -53,9 +54,24 @@ public class PuzzleGameKontroler implements Initializable {
         stage.setFullScreen(true);
         stage.show();
     }
+    public void deleteFilesFromFolder(String path){
+        File pieces = new File(path);
+        File[] list = pieces.listFiles();
 
+        for (File file : list){
+
+            boolean jeSmazany = file.delete();
+            System.out.println(file.getAbsolutePath() + " byl smazan = "
+                    + jeSmazany);
+        }
+    }
     @FXML
     public void settingsButtonClicked(ActionEvent event) throws Exception {
+
+        String path = "C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces";
+
+        PuzzleGameKontroler pieces = new PuzzleGameKontroler();
+        pieces.deleteFilesFromFolder(path);
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/SettingsMenu.fxml"));
         Scene scene = new Scene(root);
