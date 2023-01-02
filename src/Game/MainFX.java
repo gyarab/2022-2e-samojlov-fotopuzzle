@@ -6,8 +6,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +27,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
 public class MainFX {
     private Pane pane;
@@ -38,7 +41,8 @@ public class MainFX {
     private ImageView showHint;
     private BufferedReader readerObrazek;
     private BufferedReader readerObtiznost;
-    private  BufferedImage photo;
+    private BufferedImage photo;
+    private BufferedImage[] loadAllImages;
     private Label stopky;
     private String obrazek;
     private String celeJmenoFotografie;
@@ -76,6 +80,10 @@ public class MainFX {
 
         ZvolenaObtiznost();
         ZvolenyObrazek();
+
+        final SwingNode swingNode = new SwingNode();
+        Pieces(swingNode);
+
         setNaV(naV);
 
         /** Navigation Bar **/
@@ -280,15 +288,16 @@ public class MainFX {
                     showHint.setCursor(Cursor.cursor("CLOSED_HAND"));
                 }
             };
+
     public void getPuzzlePieces() throws IOException {
 
         photo = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
 
         PocetFotek = radek * sloupec;
 
-        BufferedImage images [] = new BufferedImage[PocetFotek];
+        BufferedImage images[] = new BufferedImage[PocetFotek];
 
-        width  = photo.getWidth() / sloupec;
+        width = photo.getWidth() / sloupec;
         height = photo.getHeight() / radek;
 
         int VybranyObrazek = 0;
@@ -306,11 +315,35 @@ public class MainFX {
 
             }
         }
-        for (int i = 0; i < PocetFotek; i++){
+        for (int i = 0; i < PocetFotek; i++) {
 
-            File puzzle = new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces\\" + "puzzle"+ (i + 1) + ".jpg");
+            File puzzle = new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces\\" + "puzzle" + (i + 1) + ".jpg");
             ImageIO.write(images[i], "jpg", puzzle);
 
+        }
+    }
+
+    public void Pieces(final SwingNode swingNode) throws IOException {
+
+        File pieces = new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces");
+        File[] puzzlePieces = pieces.listFiles();
+        loadAllImages = new BufferedImage[puzzlePieces.length];
+        JLabel galerieFotek[] = new JLabel[puzzlePieces.length];
+        for (int i = 0; i < loadAllImages.length; i++) {
+
+            try {
+                loadAllImages[i] = ImageIO.read(puzzlePieces[i]);
+
+                galerieFotek[i] = new JLabel();
+                ImageIcon icon = new ImageIcon(loadAllImages[i]);
+
+                galerieFotek[i].setIcon(icon);
+
+                swingNode.setContent(galerieFotek[i]);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
