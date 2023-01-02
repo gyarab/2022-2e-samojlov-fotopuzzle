@@ -80,8 +80,9 @@ public class MainFX {
 
         ZvolenaObtiznost();
         ZvolenyObrazek();
-
         final SwingNode swingNode = new SwingNode();
+        pane.getChildren().add(swingNode);
+
         Pieces(swingNode);
 
         setNaV(naV);
@@ -338,8 +339,13 @@ public class MainFX {
                 ImageIcon icon = new ImageIcon(loadAllImages[i]);
 
                 galerieFotek[i].setIcon(icon);
-
-                swingNode.setContent(galerieFotek[i]);
+                int finalI = i;
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        swingNode.setContent(galerieFotek[finalI]);
+                    }
+                });
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
