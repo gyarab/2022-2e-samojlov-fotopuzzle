@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -21,13 +20,14 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 
 public class MainFX {
     private Pane pane;
@@ -37,12 +37,10 @@ public class MainFX {
     private Timeline timeline;
     private HBox naV;
     private HBox main;
-    private ImageView Main;
     private ImageView showHint;
     private BufferedReader readerObrazek;
     private BufferedReader readerObtiznost;
     private BufferedImage photo;
-    private BufferedImage[] loadAllImages;
     private Label stopky;
     private String obrazek;
     private String celeJmenoFotografie;
@@ -53,6 +51,7 @@ public class MainFX {
     int width;
     int height;
     private Image mesto1, tygr, liska, mesto2, another;
+    private ImageView Fotky;
     int sloupec;
     int radek;
     int PocetFotek;
@@ -68,7 +67,7 @@ public class MainFX {
 
         showHint = new ImageView();
 
-        Main = new ImageView();
+        Fotky = new ImageView();
 
         readerObrazek = new BufferedReader(new FileReader("obrazky.txt"));
 
@@ -80,10 +79,7 @@ public class MainFX {
 
         ZvolenaObtiznost();
         ZvolenyObrazek();
-        final SwingNode swingNode = new SwingNode();
-        pane.getChildren().add(swingNode);
-
-        Pieces(swingNode);
+        getAllImageFilesFromFolder(new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces"));
 
         setNaV(naV);
 
@@ -133,7 +129,7 @@ public class MainFX {
 
         main = new HBox();
         main.relocate(main.getLayoutX() + 75, main.getLayoutY() + 100);
-        main.getChildren().addAll(Main, showHint);
+        main.getChildren().add(showHint);
 
         backToMenu = new Button("", imageView);
         backToMenu.setStyle("-fx-background-color: white;");
@@ -162,9 +158,6 @@ public class MainFX {
     }
 
     public void ZvolenaObtiznost() throws IOException {
-
-        Main.setFitHeight(925);
-        Main.setFitWidth(1750);
 
         String obtiznost;
 
@@ -248,48 +241,7 @@ public class MainFX {
                 showHint.setImage(another);
             }
         }
-        pane.setCursor(Cursor.cursor("DEFAULT"));
-        Main.setCursor(Cursor.cursor("OPEN_HAND"));
-        showHint.setCursor(Cursor.cursor("OPEN_HAND"));
-
-        Main.setOnMousePressed(IMGViewOnMousePressed);
-        Main.setOnMouseDragged(IMGViewOnMouseDragged);
-        showHint.setOnMousePressed(IMGViewOnMousePressed);
-        showHint.setOnMouseDragged(IMGViewOnMouseDragged);
     }
-
-    EventHandler<MouseEvent> IMGViewOnMousePressed =
-            new EventHandler<MouseEvent>() {
-
-                @Override
-                public void handle(MouseEvent t) {
-
-                    souraniceX = t.getSceneX();
-                    souraniceY = t.getSceneY();
-                    posunutiX = ((ImageView) (t.getSource())).getTranslateX();
-                    posunutiY = ((ImageView) (t.getSource())).getTranslateY();
-
-                    Main.setCursor(Cursor.cursor("OPEN_HAND"));
-                    showHint.setCursor(Cursor.cursor("OPEN_HAND"));
-                }
-            };
-    EventHandler<MouseEvent> IMGViewOnMouseDragged =
-            new EventHandler<MouseEvent>() {
-
-                @Override
-                public void handle(MouseEvent t) {
-
-                    double NewPosunutiX = posunutiX + (t.getSceneX() - souraniceX);
-                    double NewPosunutiY = posunutiY + (t.getSceneY() - souraniceY);
-
-                    ((ImageView) (t.getSource())).setTranslateX(NewPosunutiX);
-                    ((ImageView) (t.getSource())).setTranslateY(NewPosunutiY);
-
-                    Main.setCursor(Cursor.cursor("CLOSED_HAND"));
-                    showHint.setCursor(Cursor.cursor("CLOSED_HAND"));
-                }
-            };
-
     public void getPuzzlePieces() throws IOException {
 
         photo = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
@@ -324,35 +276,95 @@ public class MainFX {
         }
     }
 
-    public void Pieces(final SwingNode swingNode) throws IOException {
+    private ArrayList<File> getAllImageFilesFromFolder(File directory) throws FileNotFoundException {
 
-        File pieces = new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces");
-        File[] puzzlePieces = pieces.listFiles();
-        loadAllImages = new BufferedImage[puzzlePieces.length];
-        JLabel galerieFotek[] = new JLabel[puzzlePieces.length];
-        for (int i = 0; i < loadAllImages.length; i++) {
+        File[] slozka = directory.listFiles();
 
-            try {
-                loadAllImages[i] = ImageIO.read(puzzlePieces[i]);
-
-                galerieFotek[i] = new JLabel();
-                ImageIcon icon = new ImageIcon(loadAllImages[i]);
-
-                galerieFotek[i].setIcon(icon);
-                int finalI = i;
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        swingNode.setContent(galerieFotek[finalI]);
-                    }
-                });
-
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        if (slozka == null || slozka.length == 0) {
+            throw new RuntimeException("Složka je prázdná: " + directory.getAbsolutePath());
         }
+
+        ArrayList<File> fotky = new ArrayList<File>();
+
+        for (File file : slozka) {
+
+            fotky.add(file);
+
+        }
+        for (int j = 0; j < fotky.size(); j++) {
+
+            Image image = new Image(new FileInputStream(fotky.get(j)));
+
+            ImageView[] imageView = new ImageView[fotky.size()];
+
+            imageView[j] = new ImageView();
+            imageView[j].setImage(image);
+            Fotky = imageView[j];
+            Fotky.setFitWidth(200);
+            Fotky.setFitHeight(200);
+
+            GridPane grid = new GridPane();
+
+            grid.setHgap(50);
+            grid.setVgap(50);
+            grid.setLayoutX(750);
+            grid.setLayoutY(500);
+
+            grid.setMargin(Fotky, new Insets(2,2,2,2));
+            grid.addColumn(5);
+            grid.addRow(5);
+            grid.getChildren().add(Fotky);
+
+            Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
+            Fotky.setOnMousePressed(IMGViewOnMousePressed);
+
+            pane.getChildren().addAll(Fotky, grid);
+        }
+        pane.setCursor(Cursor.cursor("DEFAULT"));
+        Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
+        showHint.setCursor(Cursor.cursor("OPEN_HAND"));
+
+        Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
+        Fotky.setOnMousePressed(IMGViewOnMousePressed);
+
+        showHint.setOnMousePressed(IMGViewOnMousePressed);
+        showHint.setOnMouseDragged(IMGViewOnMouseDragged);
+
+        return fotky;
+
     }
 
+    EventHandler<MouseEvent> IMGViewOnMousePressed =
+            new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent t) {
+
+                    souraniceX = t.getSceneX();
+                    souraniceY = t.getSceneY();
+                    posunutiX = ((ImageView) (t.getSource())).getTranslateX();
+                    posunutiY = ((ImageView) (t.getSource())).getTranslateY();
+
+                    Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
+                    showHint.setCursor(Cursor.cursor("OPEN_HAND"));
+                }
+            };
+    EventHandler<MouseEvent> IMGViewOnMouseDragged =
+            new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent t) {
+
+                    double NewPosunutiX = posunutiX + (t.getSceneX() - souraniceX);
+                    double NewPosunutiY = posunutiY + (t.getSceneY() - souraniceY);
+
+                    ((ImageView) (t.getSource())).setTranslateX(NewPosunutiX);
+                    ((ImageView) (t.getSource())).setTranslateY(NewPosunutiY);
+
+                    Fotky.setCursor(Cursor.cursor("CLOSED_HAND"));
+                    showHint.setCursor(Cursor.cursor("CLOSED_HAND"));
+                }
+            };
     public Parent getRoot() {
 
         return pane;

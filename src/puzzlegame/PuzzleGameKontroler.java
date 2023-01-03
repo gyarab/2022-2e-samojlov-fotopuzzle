@@ -32,6 +32,7 @@ public class PuzzleGameKontroler implements Initializable {
 
         MainFX newScene = new MainFX();
         Parent root = newScene.getRoot();
+
         //Rectangle2D screenBounds = Screen.getPrimary().getBounds();
         //System.out.println(screenBounds);
 
@@ -54,24 +55,8 @@ public class PuzzleGameKontroler implements Initializable {
         stage.setFullScreen(true);
         stage.show();
     }
-    public void deleteFilesFromFolder(String path){
-        File pieces = new File(path);
-        File[] list = pieces.listFiles();
-
-        for (File file : list){
-
-            boolean jeSmazany = file.delete();
-            System.out.println(file.getAbsolutePath() + " byl smazan = "
-                    + jeSmazany);
-        }
-    }
     @FXML
     public void settingsButtonClicked(ActionEvent event) throws Exception {
-
-        String path = "C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces";
-
-        PuzzleGameKontroler pieces = new PuzzleGameKontroler();
-        pieces.deleteFilesFromFolder(path);
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/SettingsMenu.fxml"));
         Scene scene = new Scene(root);
