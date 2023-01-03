@@ -67,8 +67,6 @@ public class MainFX {
 
         showHint = new ImageView();
 
-        Fotky = new ImageView();
-
         readerObrazek = new BufferedReader(new FileReader("obrazky.txt"));
 
         readerObtiznost = new BufferedReader(new FileReader("obtiznosti.txt"));
@@ -129,7 +127,7 @@ public class MainFX {
 
         main = new HBox();
         main.relocate(main.getLayoutX() + 75, main.getLayoutY() + 100);
-        main.getChildren().add(showHint);
+        main.getChildren().addAll(showHint);
 
         backToMenu = new Button("", imageView);
         backToMenu.setStyle("-fx-background-color: white;");
@@ -290,6 +288,8 @@ public class MainFX {
         }
         for (int j = 0; j < fotky.size(); j++) {
 
+            int x = 0;
+
             Image image = new Image(new FileInputStream(fotky.get(j)));
 
             ImageView[] imageView = new ImageView[fotky.size()];
@@ -302,19 +302,35 @@ public class MainFX {
 
             grid = new GridPane();
 
-            grid.setHgap(50);
-            grid.setVgap(50);
-            grid.setLayoutX(750);
-            grid.setLayoutY(500);
-
-            grid.setPadding(new Insets(50, 50, 50, 50));
-
-            grid.getChildren().add(Fotky);
-
+            if(j == 0)
+                grid.add(Fotky, 0, 0);
             Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
             Fotky.setOnMousePressed(IMGViewOnMousePressed);
 
-            pane.getChildren().addAll(Fotky);
+            if(j == 1)
+                grid.add(Fotky, 1, 0);
+            if(j == 2)
+                grid.add(Fotky, 1, 1);
+            if(j == 3)
+                grid.add(Fotky, 0, 1);
+            if(j == 4)
+                grid.add(Fotky, 2,1);
+            if(j == 5)
+               grid.add(Fotky, 2,2);
+            if(j == 6)
+                grid.add(Fotky, 1,2);
+            if(j == 7)
+                grid.add(Fotky, 0,2);
+            if(j == 8)
+                grid.add(Fotky, 2,0);
+
+            grid.setLayoutX(600);
+            grid.setLayoutY(200);
+
+            grid.setHgap(250);
+            grid.setVgap(250);
+
+            pane.getChildren().addAll(grid);
         }
         pane.setCursor(Cursor.cursor("DEFAULT"));
         Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
@@ -324,7 +340,6 @@ public class MainFX {
         showHint.setOnMouseDragged(IMGViewOnMouseDragged);
 
         return fotky;
-
     }
     EventHandler<MouseEvent> IMGViewOnMousePressed =
             new EventHandler<MouseEvent>() {
