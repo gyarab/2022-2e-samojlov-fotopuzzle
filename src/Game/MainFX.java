@@ -20,7 +20,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -41,6 +40,7 @@ public class MainFX {
     private BufferedReader readerObrazek;
     private BufferedReader readerObtiznost;
     private BufferedImage photo;
+    private GridPane grid;
     private Label stopky;
     private String obrazek;
     private String celeJmenoFotografie;
@@ -280,9 +280,6 @@ public class MainFX {
 
         File[] slozka = directory.listFiles();
 
-        if (slozka == null || slozka.length == 0) {
-            throw new RuntimeException("Složka je prázdná: " + directory.getAbsolutePath());
-        }
 
         ArrayList<File> fotky = new ArrayList<File>();
 
@@ -298,34 +295,30 @@ public class MainFX {
             ImageView[] imageView = new ImageView[fotky.size()];
 
             imageView[j] = new ImageView();
-            imageView[j].setImage(image);
             Fotky = imageView[j];
+            Fotky.setImage(image);
             Fotky.setFitWidth(200);
             Fotky.setFitHeight(200);
 
-            GridPane grid = new GridPane();
+            grid = new GridPane();
 
             grid.setHgap(50);
             grid.setVgap(50);
             grid.setLayoutX(750);
             grid.setLayoutY(500);
 
-            grid.setMargin(Fotky, new Insets(2,2,2,2));
-            grid.addColumn(5);
-            grid.addRow(5);
+            grid.setPadding(new Insets(50, 50, 50, 50));
+
             grid.getChildren().add(Fotky);
 
             Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
             Fotky.setOnMousePressed(IMGViewOnMousePressed);
 
-            pane.getChildren().addAll(Fotky, grid);
+            pane.getChildren().addAll(Fotky);
         }
         pane.setCursor(Cursor.cursor("DEFAULT"));
         Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
         showHint.setCursor(Cursor.cursor("OPEN_HAND"));
-
-        Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
-        Fotky.setOnMousePressed(IMGViewOnMousePressed);
 
         showHint.setOnMousePressed(IMGViewOnMousePressed);
         showHint.setOnMouseDragged(IMGViewOnMouseDragged);
@@ -333,7 +326,6 @@ public class MainFX {
         return fotky;
 
     }
-
     EventHandler<MouseEvent> IMGViewOnMousePressed =
             new EventHandler<MouseEvent>() {
 

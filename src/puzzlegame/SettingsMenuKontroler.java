@@ -269,25 +269,10 @@ public class SettingsMenuKontroler implements Initializable {
         Mesto2.setImage(ImG);
 
     }
-    public void deleteFilesFromFolder(String path){
-        File pieces = new File(path);
-        File[] list = pieces.listFiles();
-
-        for (File file : list){
-
-            boolean jeSmazany = file.delete();
-            System.out.println(file.getAbsolutePath() + " byl smazan = "
-                    + jeSmazany);
-        }
-    }
-
     @FXML
     public void menuButtonClicked(ActionEvent event) throws Exception {
 
         MainFX mainFX = new MainFX();
-        SettingsMenuKontroler settingsMenuKontroler = new SettingsMenuKontroler();
-
-        settingsMenuKontroler.deleteFilesFromFolder("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces");
         mainFX.getPuzzlePieces();
 
         SCAnother = new Scanner(anotherTXT);
