@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
@@ -58,6 +61,10 @@ public class MainFX {
     File obrazky;
     File obtiznosti;
     int x = 0;
+    int y = 2;
+    boolean rozhodni;
+    int pocet = 0;
+    int StejnyPocet = 0;
 
     public MainFX() throws IOException {
 
@@ -288,8 +295,6 @@ public class MainFX {
         }
         for (int j = 0; j < fotky.size(); j++) {
 
-            int x = 0;
-
             Image image = new Image(new FileInputStream(fotky.get(j)));
 
             ImageView[] imageView = new ImageView[fotky.size()];
@@ -302,33 +307,65 @@ public class MainFX {
 
             grid = new GridPane();
 
-            if(j == 0)
-                grid.add(Fotky, 0, 0);
-            Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
-            Fotky.setOnMousePressed(IMGViewOnMousePressed);
+                /*if (j == 0)
+                    grid.add(Fotky, 0, 0);
+                if (j == 1)
+                    grid.add(Fotky, 0, 1);
+                if (j == 2)
+                    grid.add(Fotky, 0, 2);
+                if (j == 3)
+                    grid.add(Fotky, 1, 0);
+                if (j == 4)
+                    grid.add(Fotky, 1, 1);
+                if (j == 5)
+                    grid.add(Fotky, 1, 2);
+                if (j == 6)
+                    grid.add(Fotky, 2, 0);
+                if (j == 7)
+                    grid.add(Fotky, 2, 1);
+                if (j == 8)
+                    grid.add(Fotky, 2, 2);*/
 
-            if(j == 1)
-                grid.add(Fotky, 1, 0);
-            if(j == 2)
-                grid.add(Fotky, 1, 1);
-            if(j == 3)
-                grid.add(Fotky, 0, 1);
-            if(j == 4)
-                grid.add(Fotky, 2,1);
-            if(j == 5)
-               grid.add(Fotky, 2,2);
-            if(j == 6)
-                grid.add(Fotky, 1,2);
-            if(j == 7)
-                grid.add(Fotky, 0,2);
-            if(j == 8)
-                grid.add(Fotky, 2,0);
+            int minimum = -1;
+            int maximum = 2;
 
+            int CisloColumns = (int) (Math.random()*(maximum - minimum + 1) + minimum);
+            int CisloRows = (int) (Math.random()*(maximum - minimum + 1) + minimum);
+
+            rozhodni = (CisloRows != CisloColumns);
+
+            HashMap<Integer, Integer> map = new HashMap<>();
+
+            while (pocet != j + 1) {
+
+                StejnyPocet = 0;
+
+                if(CisloColumns == CisloRows) {
+
+                    System.out.println("Columns: " + CisloColumns + ", Rows: " + CisloRows);
+
+                    StejnyPocet++;
+
+                    if (StejnyPocet == 2 && CisloColumns == CisloRows) {
+
+                        System.out.println("Stejný počet: " + StejnyPocet);
+
+                        CisloColumns++;
+                        CisloRows--;
+                    }
+                }
+                map.put(CisloColumns, CisloRows);
+                System.out.println(map);
+
+                grid.add(Fotky, CisloColumns, CisloRows);
+                pocet++;
+        }
             grid.setLayoutX(600);
             grid.setLayoutY(200);
 
             grid.setHgap(250);
             grid.setVgap(250);
+            grid.setAlignment(Pos.CENTER);
 
             pane.getChildren().addAll(grid);
         }
