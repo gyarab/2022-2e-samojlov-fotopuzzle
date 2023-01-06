@@ -3,9 +3,8 @@ package Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -65,6 +64,9 @@ public class MainFX {
     boolean rozhodni;
     int pocet = 0;
     int StejnyPocet = 0;
+    String[] a;
+    String[] b;
+    ArrayList<String> arr;
 
     public MainFX() throws IOException {
 
@@ -247,6 +249,7 @@ public class MainFX {
             }
         }
     }
+
     public void getPuzzlePieces() throws IOException {
 
         photo = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
@@ -281,7 +284,7 @@ public class MainFX {
         }
     }
 
-    private ArrayList<File> getAllImageFilesFromFolder(File directory) throws FileNotFoundException {
+    private ArrayList<File> getAllImageFilesFromFolder(File directory) throws IOException {
 
         File[] slozka = directory.listFiles();
 
@@ -329,37 +332,29 @@ public class MainFX {
             int minimum = -1;
             int maximum = 2;
 
-            int CisloColumns = (int) (Math.random()*(maximum - minimum + 1) + minimum);
-            int CisloRows = (int) (Math.random()*(maximum - minimum + 1) + minimum);
+            int CisloColumns = (int) (Math.random() * (maximum - minimum + 1) + minimum);
+            int CisloRows = (int) (Math.random() * (maximum - minimum + 1) + minimum);
 
             rozhodni = (CisloRows != CisloColumns);
 
-            HashMap<Integer, Integer> map = new HashMap<>();
+            HashMap<Integer, Integer> hash = new HashMap<>();
 
             while (pocet != j + 1) {
 
-                StejnyPocet = 0;
+                hash.put(CisloColumns, CisloRows);
 
-                if(CisloColumns == CisloRows) {
-
-                    System.out.println("Columns: " + CisloColumns + ", Rows: " + CisloRows);
-
-                    StejnyPocet++;
-
-                    if (StejnyPocet == 2 && CisloColumns == CisloRows) {
-
-                        System.out.println("Stejný počet: " + StejnyPocet);
-
-                        CisloColumns++;
-                        CisloRows--;
-                    }
-                }
-                map.put(CisloColumns, CisloRows);
-                System.out.println(map);
+                String col = String.valueOf(CisloColumns);
+                String row = String.valueOf(CisloRows);
+                String soucet = col + row;
+                arr = new ArrayList<>();
+                arr.add(soucet);
+                String list = Arrays.toString(arr.toArray()).replace("[", "").replace("]", "");
+                a = new String[]{list};
+                System.out.println(a[0]);
 
                 grid.add(Fotky, CisloColumns, CisloRows);
                 pocet++;
-        }
+            }
             grid.setLayoutX(600);
             grid.setLayoutY(200);
 
@@ -378,6 +373,7 @@ public class MainFX {
 
         return fotky;
     }
+
     EventHandler<MouseEvent> IMGViewOnMousePressed =
             new EventHandler<MouseEvent>() {
 
@@ -409,6 +405,7 @@ public class MainFX {
                     showHint.setCursor(Cursor.cursor("CLOSED_HAND"));
                 }
             };
+
     public Parent getRoot() {
 
         return pane;
