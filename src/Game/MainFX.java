@@ -3,10 +3,12 @@ package Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.security.KeyStore;
 import java.util.*;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -61,12 +63,8 @@ public class MainFX {
     File obtiznosti;
     int x = 0;
     int y = 2;
-    boolean rozhodni;
     int pocet = 0;
-    int StejnyPocet = 0;
-    String[] a;
-    String[] b;
-    ArrayList<String> arr;
+    String cisla;
 
     public MainFX() throws IOException {
 
@@ -278,7 +276,7 @@ public class MainFX {
         }
         for (int i = 0; i < PocetFotek; i++) {
 
-            File puzzle = new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces\\" + "puzzle" + (i + 1) + ".jpg");
+            File puzzle = new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces\\" + "piece" + (i + 1) + ".jpg");
             ImageIO.write(images[i], "jpg", puzzle);
 
         }
@@ -288,84 +286,55 @@ public class MainFX {
 
         File[] slozka = directory.listFiles();
 
-
-        ArrayList<File> fotky = new ArrayList<File>();
+        ArrayList<File> fotky = new ArrayList<>();
 
         for (File file : slozka) {
 
             fotky.add(file);
 
         }
-        for (int j = 0; j < fotky.size(); j++) {
+        for (int i = 0; i < fotky.size(); i++) {
 
-            Image image = new Image(new FileInputStream(fotky.get(j)));
+            for (int j = 0; j < fotky.size(); j++) {
 
-            ImageView[] imageView = new ImageView[fotky.size()];
+                Image image = new Image(new FileInputStream(fotky.get(j)));
 
-            imageView[j] = new ImageView();
-            Fotky = imageView[j];
-            Fotky.setImage(image);
-            Fotky.setFitWidth(200);
-            Fotky.setFitHeight(200);
+                ImageView[] imageView = new ImageView[fotky.size()];
+                imageView[j] = new ImageView();
+                Fotky = imageView[j];
+                Fotky.setImage(image);
+                Fotky.setFitWidth(200);
+                Fotky.setFitHeight(200);
 
-            grid = new GridPane();
+                grid = new GridPane();
 
-                /*if (j == 0)
-                    grid.add(Fotky, 0, 0);
-                if (j == 1)
-                    grid.add(Fotky, 0, 1);
-                if (j == 2)
-                    grid.add(Fotky, 0, 2);
-                if (j == 3)
-                    grid.add(Fotky, 1, 0);
-                if (j == 4)
-                    grid.add(Fotky, 1, 1);
-                if (j == 5)
-                    grid.add(Fotky, 1, 2);
-                if (j == 6)
-                    grid.add(Fotky, 2, 0);
-                if (j == 7)
-                    grid.add(Fotky, 2, 1);
-                if (j == 8)
-                    grid.add(Fotky, 2, 2);*/
+                int minimum = 0;
+                int maximum = 2;
+                int CisloColumns = 0;
+                int CisloRows = 0;
 
-            int minimum = -1;
-            int maximum = 2;
+                CisloColumns = (int) (Math.random() * (maximum - minimum + 1) + minimum);
+                CisloRows = (int) (Math.random() * (maximum - minimum + 1) + minimum);
 
-            int CisloColumns = (int) (Math.random() * (maximum - minimum + 1) + minimum);
-            int CisloRows = (int) (Math.random() * (maximum - minimum + 1) + minimum);
 
-            rozhodni = (CisloRows != CisloColumns);
-
-            HashMap<Integer, Integer> hash = new HashMap<>();
-
-            while (pocet != j + 1) {
-
+                HashMap<Integer, Integer> hash = new HashMap<>();
                 hash.put(CisloColumns, CisloRows);
-
-                String col = String.valueOf(CisloColumns);
-                String row = String.valueOf(CisloRows);
-                String soucet = col + row;
-                arr = new ArrayList<>();
-                arr.add(soucet);
-                String list = Arrays.toString(arr.toArray()).replace("[", "").replace("]", "");
-                a = new String[]{list};
-                System.out.println(a[0]);
-
+                System.out.println(hash);
                 grid.add(Fotky, CisloColumns, CisloRows);
-                pocet++;
+
+                grid.setLayoutX(600);
+                grid.setLayoutY(200);
+
+                grid.setHgap(250);
+                grid.setVgap(250);
+                grid.setAlignment(Pos.CENTER);
+
+                pane.getChildren().addAll(grid);
             }
-            grid.setLayoutX(600);
-            grid.setLayoutY(200);
-
-            grid.setHgap(250);
-            grid.setVgap(250);
-            grid.setAlignment(Pos.CENTER);
-
-            pane.getChildren().addAll(grid);
         }
+
         pane.setCursor(Cursor.cursor("DEFAULT"));
-        Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
+        //Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
         showHint.setCursor(Cursor.cursor("OPEN_HAND"));
 
         showHint.setOnMousePressed(IMGViewOnMousePressed);
