@@ -17,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
+import org.apache.commons.io.FileUtils;
 
 public class PuzzleGameKontroler implements Initializable {
 
@@ -26,17 +27,6 @@ public class PuzzleGameKontroler implements Initializable {
     private Scene scene;
 
     private Stage stage;
-    public void deleteFilesFromFolder(String path){
-        File pieces = new File(path);
-        File[] list = pieces.listFiles();
-
-        for (File file : list){
-
-            boolean jeSmazany = file.delete();
-            System.out.println(file.getAbsolutePath() + " byl smazan = "
-                    + jeSmazany);
-        }
-    }
 
     @FXML
     public void Play(ActionEvent event) throws Exception {
@@ -69,9 +59,7 @@ public class PuzzleGameKontroler implements Initializable {
     @FXML
     public void settingsButtonClicked(ActionEvent event) throws Exception {
 
-        PuzzleGameKontroler puzzleGameKontroler = new PuzzleGameKontroler();
-
-        puzzleGameKontroler.deleteFilesFromFolder("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces");
+        FileUtils.cleanDirectory(new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces"));
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/SettingsMenu.fxml"));
         Scene scene = new Scene(root);

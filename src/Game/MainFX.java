@@ -64,7 +64,8 @@ public class MainFX {
     int x = 0;
     int y = 2;
     int pocet = 0;
-    String cisla;
+    int xA = 2;
+    int xB = 2;
 
     public MainFX() throws IOException {
 
@@ -281,6 +282,10 @@ public class MainFX {
 
         }
     }
+    public static boolean isEmpty(ImageView imageView) {
+        Image image = imageView.getImage();
+        return image == null || image.isError();
+    }
 
     private ArrayList<File> getAllImageFilesFromFolder(File directory) throws IOException {
 
@@ -293,46 +298,58 @@ public class MainFX {
             fotky.add(file);
 
         }
-        for (int i = 0; i < fotky.size(); i++) {
 
-            for (int j = 0; j < fotky.size(); j++) {
+        for (int j = 0; j < fotky.size(); j++) {
 
-                Image image = new Image(new FileInputStream(fotky.get(j)));
+            pocet++;
 
-                ImageView[] imageView = new ImageView[fotky.size()];
-                imageView[j] = new ImageView();
-                Fotky = imageView[j];
-                Fotky.setImage(image);
-                Fotky.setFitWidth(200);
-                Fotky.setFitHeight(200);
+            Image image = new Image(new FileInputStream(fotky.get(j)));
+            //System.out.println(fotky.get(j));
+            ImageView[] imageView = new ImageView[fotky.size()];
+            imageView[j] = new ImageView();
+            Fotky = imageView[j];
 
-                grid = new GridPane();
+            Fotky.setImage(image);
+            Fotky.setFitWidth(200);
+            Fotky.setFitHeight(200);
+            grid = new GridPane();
 
-                int minimum = 0;
-                int maximum = 2;
-                int CisloColumns = 0;
-                int CisloRows = 0;
-
-                CisloColumns = (int) (Math.random() * (maximum - minimum + 1) + minimum);
-                CisloRows = (int) (Math.random() * (maximum - minimum + 1) + minimum);
+            int minimum = 0;
+            int maximum = 2;
+            int CisloColumns = 0;
+            int CisloRows = 0;
 
 
-                HashMap<Integer, Integer> hash = new HashMap<>();
-                hash.put(CisloColumns, CisloRows);
-                System.out.println(hash);
-                grid.add(Fotky, CisloColumns, CisloRows);
+            CisloColumns = (int) (Math.random() * (maximum - minimum + 1) + minimum);
+            CisloRows = (int) (Math.random() * (maximum - minimum + 1) + minimum);
 
-                grid.setLayoutX(600);
-                grid.setLayoutY(200);
+            HashMap<Integer, Integer> hash = new HashMap<>();
+            hash.put(CisloColumns, CisloRows);
 
-                grid.setHgap(250);
-                grid.setVgap(250);
-                grid.setAlignment(Pos.CENTER);
+           first: if (CisloColumns == CisloRows) {
 
-                pane.getChildren().addAll(grid);
+                grid.add(Fotky, xA, xA);
+                System.out.println(xA + ", " + xB);
+                xA--;
+                if(xA == 0)
+                    break first;
+                System.out.println(xA + ", " + xA);
+                System.out.println("====================");
+
             }
-        }
+           else {
 
+                grid.add(Fotky, CisloColumns, CisloRows);
+                System.out.println(CisloColumns + ", " + CisloRows);
+            }
+
+            grid.setLayoutX(600);
+            grid.setLayoutY(200);
+            grid.setGridLinesVisible(true);
+            grid.setHgap(250);
+            grid.setVgap(250);
+            pane.getChildren().addAll(grid);
+        }
         pane.setCursor(Cursor.cursor("DEFAULT"));
         //Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
         showHint.setCursor(Cursor.cursor("OPEN_HAND"));
