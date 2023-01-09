@@ -3,20 +3,15 @@ package Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.security.KeyStore;
 import java.util.*;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
-
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
@@ -62,11 +57,7 @@ public class MainFX {
     File obrazky;
     File obtiznosti;
     int x = 0;
-    int y = 2;
     int pocet = 0;
-    int xA = 2;
-    int xB = 2;
-
     public MainFX() throws IOException {
 
         naV = new HBox();
@@ -282,10 +273,6 @@ public class MainFX {
 
         }
     }
-    public static boolean isEmpty(ImageView imageView) {
-        Image image = imageView.getImage();
-        return image == null || image.isError();
-    }
 
     private ArrayList<File> getAllImageFilesFromFolder(File directory) throws IOException {
 
@@ -298,57 +285,46 @@ public class MainFX {
             fotky.add(file);
 
         }
+        for (int i = 0; i < fotky.size(); i++) {
 
-        for (int j = 0; j < fotky.size(); j++) {
+            for (int j = 0; j < fotky.size(); j++) {
 
-            pocet++;
+                pocet++;
 
-            Image image = new Image(new FileInputStream(fotky.get(j)));
-            //System.out.println(fotky.get(j));
-            ImageView[] imageView = new ImageView[fotky.size()];
-            imageView[j] = new ImageView();
-            Fotky = imageView[j];
+                Image image = new Image(new FileInputStream(fotky.get(j)));
+                ImageView[] imageView = new ImageView[fotky.size()];
+                imageView[j] = new ImageView();
+                imageView[j].setImage(image);
+                Fotky = imageView[j];
+                Fotky.setImage(image);
+                Fotky.setFitWidth(200);
+                Fotky.setFitHeight(200);
 
-            Fotky.setImage(image);
-            Fotky.setFitWidth(200);
-            Fotky.setFitHeight(200);
-            grid = new GridPane();
+                grid = new GridPane();
 
-            int minimum = 0;
-            int maximum = 2;
-            int CisloColumns = 0;
-            int CisloRows = 0;
+                int minimum = 0;
+                int maximum = 2;
+                int CisloColumns = 0;
+                int CisloRows = 0;
 
+                CisloColumns = (int) (Math.random() * (maximum - minimum + 1) + minimum);
+                CisloRows = (int) (Math.random() * (maximum - minimum + 1) + minimum);
 
-            CisloColumns = (int) (Math.random() * (maximum - minimum + 1) + minimum);
-            CisloRows = (int) (Math.random() * (maximum - minimum + 1) + minimum);
+                HashMap<Integer, Integer> hash = new HashMap<>();
+                hash.put(CisloColumns, CisloRows);
 
-            HashMap<Integer, Integer> hash = new HashMap<>();
-            hash.put(CisloColumns, CisloRows);
-
-           first: if (CisloColumns == CisloRows) {
-
-                grid.add(Fotky, xA, xA);
-                System.out.println(xA + ", " + xB);
-                xA--;
-                if(xA == 0)
-                    break first;
-                System.out.println(xA + ", " + xA);
-                System.out.println("====================");
+                if(j > 8){
+                    break;
+                }
+                grid.add(Fotky,CisloColumns,CisloRows);
+                grid.setLayoutX(600);
+                grid.setLayoutY(200);
+                grid.setGridLinesVisible(true);
+                grid.setHgap(250);
+                grid.setVgap(250);
+                pane.getChildren().addAll(grid);
 
             }
-           else {
-
-                grid.add(Fotky, CisloColumns, CisloRows);
-                System.out.println(CisloColumns + ", " + CisloRows);
-            }
-
-            grid.setLayoutX(600);
-            grid.setLayoutY(200);
-            grid.setGridLinesVisible(true);
-            grid.setHgap(250);
-            grid.setVgap(250);
-            pane.getChildren().addAll(grid);
         }
         pane.setCursor(Cursor.cursor("DEFAULT"));
         //Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
@@ -356,6 +332,7 @@ public class MainFX {
 
         showHint.setOnMousePressed(IMGViewOnMousePressed);
         showHint.setOnMouseDragged(IMGViewOnMouseDragged);
+
 
         return fotky;
     }
