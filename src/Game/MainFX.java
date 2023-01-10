@@ -304,72 +304,18 @@ public class MainFX {
             imageView[j].setImage(image);
             Fotky = imageView[j];
             Fotky.setImage(image);
-            Fotky.setFitWidth(75);
-            Fotky.setFitHeight(75);
+            Fotky.setFitWidth(250);
+            Fotky.setFitHeight(250);
 
             grid = new GridPane();
-
-            while (j == pocet && col >= 0 && row >= 0 && col <= maxGrid && row <= maxGrid) {
-
-                if (p == 0) {
-
-                    if (col == row) {
-                        System.out.println("Col: " + col + " = Row: " + row);
-                        grid.add(Fotky, col, row);
-                        col++;
-
-                    } else {
-                        System.out.println("Col: " + col + " > Row: " + row);
-                        grid.add(Fotky, col, row);
-                        row++;
-                    }
-                    if (col == maxGrid && row == maxGrid) {
-
-                        p = 1;
-                        col = col - maxGrid;
-                        row = row - maxGrid;
-                    }
-
-                } else if (p == 1) {
-
-                    if (col == row) {
-                        System.out.println("Col: " + col + " = Row: " + row);
-                        grid.add(Fotky, col, row);
-                        row++;
-
-                    } else {
-                        System.out.println("Col: " + col + " < Row: " + row);
-                        grid.add(Fotky, col, row);
-                        col++;
-                    }
-                    if (col == maxGrid && row == maxGrid) {
-
-                        p = 2;
-                        col = col - maxGrid;
-                        row = row - maxGrid;
-                    }
-                }
-                else if(p == 2) {
-
-                    p = 3;
-                    grid.add(Fotky, maxGrid, maxGrid);
-                }
-                else if(p == 3) {
-
-                    p = 4;
-                    grid.add(Fotky, 0, maxGrid);
-                }
-                else {
-
-                    grid.add(Fotky, maxGrid, 0);
-                }
-                pocet++;
-            }
-            grid.setLayoutX(600);
-            grid.setLayoutY(200);
+            grid.setLayoutX(540);
+            grid.setLayoutY(150);
             grid.setGridLinesVisible(true);
-            grid.setHgap(75);
-            grid.setVgap(75);
+            grid.setHgap(300);
+            grid.setVgap(300);
+            grid.addRow(radek);
+            grid.addColumn(sloupec);
+            grid.add(Fotky, j % sloupec, j / radek);
             pane.getChildren().addAll(grid);
         }
         pane.setCursor(Cursor.cursor("DEFAULT"));
