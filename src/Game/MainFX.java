@@ -6,6 +6,7 @@ import java.io.*;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -58,6 +59,11 @@ public class MainFX {
     File obtiznosti;
     int x = 0;
     int pocet = 0;
+    int row = 0;
+    int col = 0;
+    int p = 0;
+    int maxGrid = 0;
+
     public MainFX() throws IOException {
 
         naV = new HBox();
@@ -165,24 +171,28 @@ public class MainFX {
                 radek = 3;
                 sloupec = 3;
                 PocetFotek = 9;
+                maxGrid = 2;
 
             } else if (obtiznost.equals("Medium")) {
 
                 radek = 5;
                 sloupec = 5;
                 PocetFotek = 25;
+                maxGrid = 4;
 
             } else if (obtiznost.equals("Hard")) {
 
                 radek = 7;
                 sloupec = 7;
                 PocetFotek = 49;
+                maxGrid = 6;
 
             } else if (obtiznost.equals("Expert")) {
 
                 radek = 10;
                 sloupec = 10;
                 PocetFotek = 100;
+                maxGrid = 9;
             }
         }
     }
@@ -285,46 +295,82 @@ public class MainFX {
             fotky.add(file);
 
         }
-        for (int i = 0; i < fotky.size(); i++) {
 
-            for (int j = 0; j < fotky.size(); j++) {
+        for (int j = 0; j < fotky.size(); j++) {
 
-                pocet++;
+            Image image = new Image(new FileInputStream(fotky.get(j)));
+            ImageView[] imageView = new ImageView[fotky.size()];
+            imageView[j] = new ImageView();
+            imageView[j].setImage(image);
+            Fotky = imageView[j];
+            Fotky.setImage(image);
+            Fotky.setFitWidth(75);
+            Fotky.setFitHeight(75);
 
-                Image image = new Image(new FileInputStream(fotky.get(j)));
-                ImageView[] imageView = new ImageView[fotky.size()];
-                imageView[j] = new ImageView();
-                imageView[j].setImage(image);
-                Fotky = imageView[j];
-                Fotky.setImage(image);
-                Fotky.setFitWidth(200);
-                Fotky.setFitHeight(200);
+            grid = new GridPane();
 
-                grid = new GridPane();
+            while (j == pocet && col >= 0 && row >= 0 && col <= maxGrid && row <= maxGrid) {
 
-                int minimum = 0;
-                int maximum = 2;
-                int CisloColumns = 0;
-                int CisloRows = 0;
+                if (p == 0) {
 
-                CisloColumns = (int) (Math.random() * (maximum - minimum + 1) + minimum);
-                CisloRows = (int) (Math.random() * (maximum - minimum + 1) + minimum);
+                    if (col == row) {
+                        System.out.println("Col: " + col + " = Row: " + row);
+                        grid.add(Fotky, col, row);
+                        col++;
 
-                HashMap<Integer, Integer> hash = new HashMap<>();
-                hash.put(CisloColumns, CisloRows);
+                    } else {
+                        System.out.println("Col: " + col + " > Row: " + row);
+                        grid.add(Fotky, col, row);
+                        row++;
+                    }
+                    if (col == maxGrid && row == maxGrid) {
 
-                if(j > 8){
-                    break;
+                        p = 1;
+                        col = col - maxGrid;
+                        row = row - maxGrid;
+                    }
+
+                } else if (p == 1) {
+
+                    if (col == row) {
+                        System.out.println("Col: " + col + " = Row: " + row);
+                        grid.add(Fotky, col, row);
+                        row++;
+
+                    } else {
+                        System.out.println("Col: " + col + " < Row: " + row);
+                        grid.add(Fotky, col, row);
+                        col++;
+                    }
+                    if (col == maxGrid && row == maxGrid) {
+
+                        p = 2;
+                        col = col - maxGrid;
+                        row = row - maxGrid;
+                    }
                 }
-                grid.add(Fotky,CisloColumns,CisloRows);
-                grid.setLayoutX(600);
-                grid.setLayoutY(200);
-                grid.setGridLinesVisible(true);
-                grid.setHgap(250);
-                grid.setVgap(250);
-                pane.getChildren().addAll(grid);
+                else if(p == 2) {
 
+                    p = 3;
+                    grid.add(Fotky, maxGrid, maxGrid);
+                }
+                else if(p == 3) {
+
+                    p = 4;
+                    grid.add(Fotky, 0, maxGrid);
+                }
+                else {
+
+                    grid.add(Fotky, maxGrid, 0);
+                }
+                pocet++;
             }
+            grid.setLayoutX(600);
+            grid.setLayoutY(200);
+            grid.setGridLinesVisible(true);
+            grid.setHgap(75);
+            grid.setVgap(75);
+            pane.getChildren().addAll(grid);
         }
         pane.setCursor(Cursor.cursor("DEFAULT"));
         //Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
