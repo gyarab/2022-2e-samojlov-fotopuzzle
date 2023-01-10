@@ -309,6 +309,7 @@ public class MainFX {
 
             grid = new GridPane();
             grid.setLayoutX(540);
+            //grid.setPadding(new Insets(20));
             grid.setLayoutY(150);
             grid.setGridLinesVisible(true);
             grid.setHgap(300);
