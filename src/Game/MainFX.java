@@ -44,10 +44,8 @@ public class MainFX {
     private Label stopky;
     private String obrazek;
     private String celeJmenoFotografie;
-    double souraniceX;
-    double souraniceY;
-    double posunutiX;
-    double posunutiY;
+    double souradniceX;
+    double souradniceY;
     int width;
     int height;
     private Image mesto1, tygr, liska, mesto2, another;
@@ -59,10 +57,13 @@ public class MainFX {
     File obtiznosti;
     int x = 0;
     int pocet = 0;
-    int row = 0;
-    int col = 0;
-    int p = 0;
     int maxGrid = 0;
+    double posunutiX;
+    double posunutiY;
+    int Piece;
+    int Gap;
+    int PolohaX;
+    int PolohaY;
 
     public MainFX() throws IOException {
 
@@ -172,6 +173,8 @@ public class MainFX {
                 sloupec = 3;
                 PocetFotek = 9;
                 maxGrid = 2;
+                Piece = 250;
+                Gap = 300;
 
             } else if (obtiznost.equals("Medium")) {
 
@@ -179,6 +182,8 @@ public class MainFX {
                 sloupec = 5;
                 PocetFotek = 25;
                 maxGrid = 4;
+                Piece = 170;
+                Gap = 175;
 
             } else if (obtiznost.equals("Hard")) {
 
@@ -186,6 +191,8 @@ public class MainFX {
                 sloupec = 7;
                 PocetFotek = 49;
                 maxGrid = 6;
+                Piece = 120;
+                Gap = 125;
 
             } else if (obtiznost.equals("Expert")) {
 
@@ -193,6 +200,8 @@ public class MainFX {
                 sloupec = 10;
                 PocetFotek = 100;
                 maxGrid = 9;
+                Piece = 80;
+                Gap = 85;
             }
         }
     }
@@ -249,7 +258,6 @@ public class MainFX {
             }
         }
     }
-
     public void getPuzzlePieces() throws IOException {
 
         photo = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
@@ -293,7 +301,7 @@ public class MainFX {
         for (File file : slozka) {
 
             fotky.add(file);
-
+            Collections.shuffle(fotky);
         }
 
         for (int j = 0; j < fotky.size(); j++) {
@@ -301,43 +309,40 @@ public class MainFX {
             Image image = new Image(new FileInputStream(fotky.get(j)));
             ImageView[] imageView = new ImageView[fotky.size()];
             imageView[j] = new ImageView();
-            imageView[j].setImage(image);
             Fotky = imageView[j];
             Fotky.setImage(image);
-            Fotky.setFitWidth(250);
-            Fotky.setFitHeight(250);
-
+            Fotky.setFitWidth(Piece);
+            Fotky.setFitHeight(Piece);
             grid = new GridPane();
             grid.setLayoutX(540);
-            //grid.setPadding(new Insets(20));
             grid.setLayoutY(150);
             grid.setGridLinesVisible(true);
-            grid.setHgap(300);
-            grid.setVgap(300);
+            grid.setHgap(Gap);
+            grid.setVgap(Gap);
             grid.addRow(radek);
             grid.addColumn(sloupec);
             grid.add(Fotky, j % sloupec, j / radek);
             pane.getChildren().addAll(grid);
+
+            pane.setCursor(Cursor.cursor("DEFAULT"));
+            Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
+            showHint.setCursor(Cursor.cursor("OPEN_HAND"));
+            Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
+            Fotky.setOnMousePressed(IMGViewOnMousePressed);
+            showHint.setOnMousePressed(IMGViewOnMousePressed);
+            showHint.setOnMouseDragged(IMGViewOnMouseDragged);
         }
-        pane.setCursor(Cursor.cursor("DEFAULT"));
-        //Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
-        showHint.setCursor(Cursor.cursor("OPEN_HAND"));
-
-        showHint.setOnMousePressed(IMGViewOnMousePressed);
-        showHint.setOnMouseDragged(IMGViewOnMouseDragged);
-
 
         return fotky;
     }
-
     EventHandler<MouseEvent> IMGViewOnMousePressed =
             new EventHandler<MouseEvent>() {
 
                 @Override
                 public void handle(MouseEvent t) {
 
-                    souraniceX = t.getSceneX();
-                    souraniceY = t.getSceneY();
+                    souradniceX = t.getSceneX();
+                    souradniceY = t.getSceneY();
                     posunutiX = ((ImageView) (t.getSource())).getTranslateX();
                     posunutiY = ((ImageView) (t.getSource())).getTranslateY();
 
@@ -351,8 +356,8 @@ public class MainFX {
                 @Override
                 public void handle(MouseEvent t) {
 
-                    double NewPosunutiX = posunutiX + (t.getSceneX() - souraniceX);
-                    double NewPosunutiY = posunutiY + (t.getSceneY() - souraniceY);
+                    double NewPosunutiX = posunutiX + (t.getSceneX() - souradniceX);
+                    double NewPosunutiY = posunutiY + (t.getSceneY() - souradniceY);
 
                     ((ImageView) (t.getSource())).setTranslateX(NewPosunutiX);
                     ((ImageView) (t.getSource())).setTranslateY(NewPosunutiY);
