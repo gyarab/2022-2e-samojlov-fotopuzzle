@@ -258,6 +258,7 @@ public class MainFX {
             }
         }
     }
+
     public void getPuzzlePieces() throws IOException {
 
         photo = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
@@ -317,6 +318,7 @@ public class MainFX {
             grid.setLayoutX(540);
             grid.setLayoutY(150);
             grid.setGridLinesVisible(true);
+            grid.getStyleClass().add("grid");
             grid.setHgap(Gap);
             grid.setVgap(Gap);
             grid.addRow(radek);
@@ -335,6 +337,7 @@ public class MainFX {
 
         return fotky;
     }
+
     EventHandler<MouseEvent> IMGViewOnMousePressed =
             new EventHandler<MouseEvent>() {
 
@@ -346,8 +349,6 @@ public class MainFX {
                     posunutiX = ((ImageView) (t.getSource())).getTranslateX();
                     posunutiY = ((ImageView) (t.getSource())).getTranslateY();
 
-                    Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
-                    showHint.setCursor(Cursor.cursor("OPEN_HAND"));
                 }
             };
     EventHandler<MouseEvent> IMGViewOnMouseDragged =
@@ -362,11 +363,8 @@ public class MainFX {
                     ((ImageView) (t.getSource())).setTranslateX(NewPosunutiX);
                     ((ImageView) (t.getSource())).setTranslateY(NewPosunutiY);
 
-                    Fotky.setCursor(Cursor.cursor("CLOSED_HAND"));
-                    showHint.setCursor(Cursor.cursor("CLOSED_HAND"));
                 }
             };
-
     public Parent getRoot() {
 
         return pane;

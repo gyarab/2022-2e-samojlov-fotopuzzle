@@ -5,3 +5,7 @@
     -fx-text-fill: black;
     -fx-background-radius: 38;
 }
+.grid Line {
+
+    -fx-stroke: white;
+}
