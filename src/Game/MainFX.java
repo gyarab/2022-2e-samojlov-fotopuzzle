@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
@@ -20,9 +21,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -40,10 +40,14 @@ public class MainFX {
     private BufferedReader readerObrazek;
     private BufferedReader readerObtiznost;
     private BufferedImage photo;
-    private GridPane grid;
+    private GridPane grid1;
+    private GridPane grid2;
+    private GridPane FinalGrid;
     private Label stopky;
     private String obrazek;
     private String celeJmenoFotografie;
+    private Text textGrid;
+    private HBox rozdelit;
     double souradniceX;
     double souradniceY;
     int width;
@@ -56,14 +60,11 @@ public class MainFX {
     File obrazky;
     File obtiznosti;
     int x = 0;
-    int pocet = 0;
-    int maxGrid = 0;
+    int halfGrid = 0;
     double posunutiX;
     double posunutiY;
     int Piece;
     int Gap;
-    int PolohaX;
-    int PolohaY;
 
     public MainFX() throws IOException {
 
@@ -72,6 +73,8 @@ public class MainFX {
         pane = new Pane();
 
         showHint = new ImageView();
+
+        rozdelit = new HBox();
 
         readerObrazek = new BufferedReader(new FileReader("obrazky.txt"));
 
@@ -172,16 +175,15 @@ public class MainFX {
                 radek = 3;
                 sloupec = 3;
                 PocetFotek = 9;
-                maxGrid = 2;
                 Piece = 250;
-                Gap = 300;
+                Gap = 40;
+                halfGrid = 4;
 
             } else if (obtiznost.equals("Medium")) {
 
                 radek = 5;
                 sloupec = 5;
                 PocetFotek = 25;
-                maxGrid = 4;
                 Piece = 170;
                 Gap = 175;
 
@@ -190,7 +192,6 @@ public class MainFX {
                 radek = 7;
                 sloupec = 7;
                 PocetFotek = 49;
-                maxGrid = 6;
                 Piece = 120;
                 Gap = 125;
 
@@ -199,7 +200,6 @@ public class MainFX {
                 radek = 10;
                 sloupec = 10;
                 PocetFotek = 100;
-                maxGrid = 9;
                 Piece = 80;
                 Gap = 85;
             }
@@ -304,6 +304,35 @@ public class MainFX {
             fotky.add(file);
             Collections.shuffle(fotky);
         }
+        grid1 = new GridPane();
+        grid1.setHgap(Gap);
+        grid1.setVgap(Gap);
+
+        grid2 = new GridPane();
+        grid2.setHgap(Gap);
+        grid2.setVgap(Gap);
+
+        textGrid = new Text(20, 20, "");
+
+        FinalGrid = new GridPane();
+        FinalGrid.setGridLinesVisible(true);
+        FinalGrid.getStyleClass().add("grid");
+        FinalGrid.setVgap(10);
+        FinalGrid.setHgap(10);
+        FinalGrid.setPadding(new Insets(250, 0, 0, 650));
+
+        for (int i = 0; i < radek; i++) {
+            RowConstraints row = new RowConstraints(Piece);
+            FinalGrid.getRowConstraints().add(row);
+        }
+        for (int i = 0; i < sloupec; i++) {
+            ColumnConstraints column = new ColumnConstraints(Piece);
+            FinalGrid.getColumnConstraints().add(column);
+        }
+
+        rozdelit = new HBox(grid1, grid2);
+        rozdelit.setSpacing(650);
+        rozdelit.setPadding(new Insets(150, 0, 0, 65));
 
         for (int j = 0; j < fotky.size(); j++) {
 
@@ -314,30 +343,29 @@ public class MainFX {
             Fotky.setImage(image);
             Fotky.setFitWidth(Piece);
             Fotky.setFitHeight(Piece);
-            grid = new GridPane();
-            grid.setLayoutX(540);
-            grid.setLayoutY(150);
-            grid.setGridLinesVisible(true);
-            grid.getStyleClass().add("grid");
-            grid.setHgap(Gap);
-            grid.setVgap(Gap);
-            grid.addRow(radek);
-            grid.addColumn(sloupec);
-            grid.add(Fotky, j % sloupec, j / radek);
-            pane.getChildren().addAll(grid);
-
-            pane.setCursor(Cursor.cursor("DEFAULT"));
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
-            showHint.setCursor(Cursor.cursor("OPEN_HAND"));
             Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
             Fotky.setOnMousePressed(IMGViewOnMousePressed);
-            showHint.setOnMousePressed(IMGViewOnMousePressed);
-            showHint.setOnMouseDragged(IMGViewOnMouseDragged);
+
+            // Puzzle s GridPane
+            int x = j / sloupec;
+            int y = j % radek;
+
+            if(j <= halfGrid) {
+                grid1.add(Fotky, x, y);
+            }
+            else{
+                grid2.add(Fotky, x, y);
+            }
         }
+        pane.getChildren().addAll(FinalGrid,rozdelit);
+        pane.setCursor(Cursor.cursor("DEFAULT"));
+        showHint.setCursor(Cursor.cursor("OPEN_HAND"));
+        showHint.setOnMousePressed(IMGViewOnMousePressed);
+        showHint.setOnMouseDragged(IMGViewOnMouseDragged);
 
         return fotky;
     }
-
     EventHandler<MouseEvent> IMGViewOnMousePressed =
             new EventHandler<MouseEvent>() {
 
