@@ -65,6 +65,7 @@ public class MainFX {
     double posunutiY;
     int Piece;
     int Gap;
+    int Spacing;
 
     public MainFX() throws IOException {
 
@@ -175,33 +176,40 @@ public class MainFX {
                 radek = 3;
                 sloupec = 3;
                 PocetFotek = 9;
-                Piece = 250;
+                Piece = 225;
                 Gap = 40;
                 halfGrid = 4;
+                Spacing = 800;
 
             } else if (obtiznost.equals("Medium")) {
 
                 radek = 5;
                 sloupec = 5;
                 PocetFotek = 25;
-                Piece = 170;
-                Gap = 175;
+                Piece = 140;
+                Gap = 15;
+                halfGrid = 12;
+                Spacing = 900;
 
             } else if (obtiznost.equals("Hard")) {
 
                 radek = 7;
                 sloupec = 7;
                 PocetFotek = 49;
-                Piece = 120;
-                Gap = 125;
+                Piece = 95;
+                Gap = 12;
+                halfGrid = 24;
+                Spacing = 960;
 
             } else if (obtiznost.equals("Expert")) {
 
                 radek = 10;
                 sloupec = 10;
                 PocetFotek = 100;
-                Piece = 80;
-                Gap = 85;
+                Piece = 70;
+                Gap = 10;
+                halfGrid = 50;
+                Spacing = 920;
             }
         }
     }
@@ -319,7 +327,7 @@ public class MainFX {
         FinalGrid.getStyleClass().add("grid");
         FinalGrid.setVgap(10);
         FinalGrid.setHgap(10);
-        FinalGrid.setPadding(new Insets(250, 0, 0, 650));
+        FinalGrid.setPadding(new Insets(225, 0, 0, 615));
 
         for (int i = 0; i < radek; i++) {
             RowConstraints row = new RowConstraints(Piece);
@@ -331,8 +339,8 @@ public class MainFX {
         }
 
         rozdelit = new HBox(grid1, grid2);
-        rozdelit.setSpacing(650);
-        rozdelit.setPadding(new Insets(150, 0, 0, 65));
+        rozdelit.setSpacing(Spacing);
+        rozdelit.setPadding(new Insets(200, 0, 0, 50));
 
         for (int j = 0; j < fotky.size(); j++) {
 
