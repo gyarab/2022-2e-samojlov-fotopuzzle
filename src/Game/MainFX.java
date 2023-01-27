@@ -13,15 +13,15 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -48,6 +48,7 @@ public class MainFX {
     private String celeJmenoFotografie;
     private Text textGrid;
     private HBox rozdelit;
+    private Label here;
     double souradniceX;
     double souradniceY;
     int width;
@@ -329,11 +330,11 @@ public class MainFX {
         FinalGrid.setHgap(10);
         FinalGrid.setPadding(new Insets(225, 0, 0, 615));
 
-        for (int i = 0; i < radek; i++) {
+        for (int a = 0; a < radek; a++) {
             RowConstraints row = new RowConstraints(Piece);
             FinalGrid.getRowConstraints().add(row);
         }
-        for (int i = 0; i < sloupec; i++) {
+        for (int c = 0; c < sloupec; c++) {
             ColumnConstraints column = new ColumnConstraints(Piece);
             FinalGrid.getColumnConstraints().add(column);
         }
@@ -352,21 +353,40 @@ public class MainFX {
             Fotky.setFitWidth(Piece);
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
+
+            //setOnDragDetected(Fotky);
+            //setOnDragDone(Fotky);
             Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
             Fotky.setOnMousePressed(IMGViewOnMousePressed);
+
+            ImageView b = new ImageView();
+            Image blank = new Image(getClass().getResourceAsStream("/images/blank.jpg"));
+            b.setFitWidth(Piece);
+            b.setFitHeight(Piece);
+            b.setImage(blank);
 
             // Puzzle s GridPane
             int x = j / sloupec;
             int y = j % radek;
 
-            if(j <= halfGrid) {
+            FinalGrid.add(b, x, y);
+
+            if (j <= halfGrid) {
                 grid1.add(Fotky, x, y);
-            }
-            else{
+            } else {
                 grid2.add(Fotky, x, y);
             }
+            /*setOnDragOver(FinalGrid);
+            setOnDragEntered(FinalGrid);
+            setOnDragExited(FinalGrid);
+            setOnDragDropped(FinalGrid);*/
+
+            here = new Label("");
+            here.setPadding(new Insets(55, 50, 50, 65));
+
+            FinalGrid.add(here, x, y);
         }
-        pane.getChildren().addAll(FinalGrid,rozdelit);
+        pane.getChildren().addAll(FinalGrid, rozdelit);
         pane.setCursor(Cursor.cursor("DEFAULT"));
         showHint.setCursor(Cursor.cursor("OPEN_HAND"));
         showHint.setOnMousePressed(IMGViewOnMousePressed);
@@ -374,6 +394,7 @@ public class MainFX {
 
         return fotky;
     }
+
     EventHandler<MouseEvent> IMGViewOnMousePressed =
             new EventHandler<MouseEvent>() {
 
@@ -401,6 +422,7 @@ public class MainFX {
 
                 }
             };
+
     public Parent getRoot() {
 
         return pane;
