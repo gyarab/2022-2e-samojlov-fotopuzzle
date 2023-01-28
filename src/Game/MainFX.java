@@ -22,6 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -329,17 +330,10 @@ public class MainFX {
         FinalGrid.setVgap(10);
         FinalGrid.setHgap(10);
         FinalGrid.setPadding(new Insets(225, 0, 0, 615));
+        FinalGrid.setStyle("-fx-background-color: black;");
 
-        for (int a = 0; a < radek; a++) {
-            RowConstraints row = new RowConstraints(Piece);
-            FinalGrid.getRowConstraints().add(row);
-        }
-        for (int c = 0; c < sloupec; c++) {
-            ColumnConstraints column = new ColumnConstraints(Piece);
-            FinalGrid.getColumnConstraints().add(column);
-        }
-
-        rozdelit = new HBox(grid1, grid2);
+        rozdelit = new HBox();
+        rozdelit.getChildren().addAll(grid1,grid2);
         rozdelit.setSpacing(Spacing);
         rozdelit.setPadding(new Insets(200, 0, 0, 50));
 
@@ -354,45 +348,142 @@ public class MainFX {
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
 
-            //setOnDragDetected(Fotky);
-            //setOnDragDone(Fotky);
-            Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
-            Fotky.setOnMousePressed(IMGViewOnMousePressed);
-
-            ImageView b = new ImageView();
-            Image blank = new Image(getClass().getResourceAsStream("/images/blank.jpg"));
-            b.setFitWidth(Piece);
-            b.setFitHeight(Piece);
-            b.setImage(blank);
-
             // Puzzle s GridPane
             int x = j / sloupec;
             int y = j % radek;
-
-            FinalGrid.add(b, x, y);
 
             if (j <= halfGrid) {
                 grid1.add(Fotky, x, y);
             } else {
                 grid2.add(Fotky, x, y);
             }
-            /*setOnDragOver(FinalGrid);
-            setOnDragEntered(FinalGrid);
-            setOnDragExited(FinalGrid);
-            setOnDragDropped(FinalGrid);*/
 
-            here = new Label("");
-            here.setPadding(new Insets(55, 50, 50, 65));
+            GridPane gridPane = new GridPane();
+            gridPane.setPrefSize(Piece, Piece);
+            gridPane.setStyle("-fx-background-color: yellow;");
 
-            FinalGrid.add(here, x, y);
+            //gridPane.getColumnConstraints().add(new ColumnConstraints(100));
+            //gridPane.getRowConstraints().add(new RowConstraints(100));
+
+            setOnDragDetected(Fotky);
+            setOnDragDone(Fotky);
+
+            setOnDragOver(gridPane);
+            setOnDragEntered(gridPane);
+            setOnDragExited(gridPane);
+            setOnDragDropped(gridPane);
+
+            //Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
+            //Fotky.setOnMousePressed(IMGViewOnMousePressed);
+
+            FinalGrid.add(gridPane,x,y);
         }
-        pane.getChildren().addAll(FinalGrid, rozdelit);
+        pane.getChildren().addAll(rozdelit, FinalGrid);
         pane.setCursor(Cursor.cursor("DEFAULT"));
         showHint.setCursor(Cursor.cursor("OPEN_HAND"));
         showHint.setOnMousePressed(IMGViewOnMousePressed);
         showHint.setOnMouseDragged(IMGViewOnMouseDragged);
 
         return fotky;
+    }
+
+    // Tah je detekovan
+    public void setOnDragDetected(ImageView vybranyObrazek) {
+
+        vybranyObrazek.setOnDragDetected((MouseEvent event) -> {
+
+            System.out.println("onDragDetected");
+
+            Dragboard db = vybranyObrazek.startDragAndDrop(TransferMode.ANY);
+
+            ClipboardContent obsahObrazku = new ClipboardContent();
+            obsahObrazku.putImage(vybranyObrazek.getImage());
+            db.setContent(obsahObrazku);
+
+            event.consume();
+        });
+    }
+
+    // Tah je ukoncen
+    public void setOnDragDone(ImageView vybranyObrazek) {
+
+        vybranyObrazek.setOnDragDone((DragEvent event) -> {
+
+            System.out.println("onDragDone");
+
+            if (event.getTransferMode() == TransferMode.MOVE) {
+                vybranyObrazek.setVisible(false);
+            }
+
+            event.consume();
+        });
+    }
+
+    // Tah se nachazi nad cilem objektu
+    public void setOnDragOver(GridPane gridPane) {
+
+        gridPane.setOnDragOver((DragEvent event) -> {
+
+            System.out.println("onDragOver");
+
+            if (event.getGestureSource() != gridPane
+                    && event.getDragboard().hasImage()) {
+
+                event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+            }
+
+            event.consume();
+        });
+    }
+
+    // Tah se nachazi v cilovem objektu
+    public void setOnDragEntered(GridPane gridPane) {
+
+        gridPane.setOnDragEntered((DragEvent event) -> {
+
+            System.out.println("onDragEntered");
+
+            if (event.getGestureSource() != gridPane
+                    && event.getDragboard().hasImage()) {
+                gridPane.setStyle("-fx-background-color: #00ff00;");
+            }
+
+            event.consume();
+        });
+    }
+
+    // Tah opustil cilovy objekt
+    public void setOnDragExited(GridPane gridPane) {
+
+        gridPane.setOnDragExited((DragEvent event) -> {
+
+            gridPane.setStyle("-fx-background-color: transparent;");
+
+            event.consume();
+        });
+    }
+
+    // Tah polozil castici obrazku (puzzle) do daneho objektu
+    public void setOnDragDropped(GridPane gridPane) {
+
+        gridPane.setOnDragDropped((DragEvent event) -> {
+
+            System.out.println("onDragDropped");
+
+            Dragboard db = event.getDragboard();
+            boolean puzzleJePolozena = false;
+
+            if (db.hasImage()) {
+
+                ImageView vybranyObrazek = new ImageView(db.getImage());
+                gridPane.getChildren().clear();
+                gridPane.getChildren().add(vybranyObrazek);
+                puzzleJePolozena = true;
+            }
+            event.setDropCompleted(puzzleJePolozena);
+
+            event.consume();
+        });
     }
 
     EventHandler<MouseEvent> IMGViewOnMousePressed =
