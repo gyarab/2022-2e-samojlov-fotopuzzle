@@ -329,11 +329,12 @@ public class MainFX {
         FinalGrid.getStyleClass().add("grid");
         FinalGrid.setVgap(10);
         FinalGrid.setHgap(10);
-        FinalGrid.setPadding(new Insets(225, 0, 0, 615));
+        //FinalGrid.setPadding(new Insets(225, 0, 0, 615));
         FinalGrid.setStyle("-fx-background-color: black;");
+        FinalGrid.setLayoutX(615);
+        FinalGrid.setLayoutY(225);
 
-        rozdelit = new HBox();
-        rozdelit.getChildren().addAll(grid1,grid2);
+        rozdelit = new HBox(grid1, grid2);
         rozdelit.setSpacing(Spacing);
         rozdelit.setPadding(new Insets(200, 0, 0, 50));
 
@@ -348,25 +349,23 @@ public class MainFX {
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
 
+            setOnDragDetected(Fotky);
+            setOnDragDone(Fotky);
+
             // Puzzle s GridPane
             int x = j / sloupec;
             int y = j % radek;
 
             if (j <= halfGrid) {
+
                 grid1.add(Fotky, x, y);
+
             } else {
                 grid2.add(Fotky, x, y);
             }
 
             GridPane gridPane = new GridPane();
             gridPane.setPrefSize(Piece, Piece);
-            gridPane.setStyle("-fx-background-color: yellow;");
-
-            //gridPane.getColumnConstraints().add(new ColumnConstraints(100));
-            //gridPane.getRowConstraints().add(new RowConstraints(100));
-
-            setOnDragDetected(Fotky);
-            setOnDragDone(Fotky);
 
             setOnDragOver(gridPane);
             setOnDragEntered(gridPane);
@@ -376,7 +375,7 @@ public class MainFX {
             //Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
             //Fotky.setOnMousePressed(IMGViewOnMousePressed);
 
-            FinalGrid.add(gridPane,x,y);
+            FinalGrid.add(gridPane, x, y);
         }
         pane.getChildren().addAll(rozdelit, FinalGrid);
         pane.setCursor(Cursor.cursor("DEFAULT"));
@@ -395,6 +394,9 @@ public class MainFX {
             System.out.println("onDragDetected");
 
             Dragboard db = vybranyObrazek.startDragAndDrop(TransferMode.ANY);
+
+            vybranyObrazek.setFitWidth(Piece);
+            vybranyObrazek.setFitHeight(Piece);
 
             ClipboardContent obsahObrazku = new ClipboardContent();
             obsahObrazku.putImage(vybranyObrazek.getImage());
@@ -429,6 +431,7 @@ public class MainFX {
             if (event.getGestureSource() != gridPane
                     && event.getDragboard().hasImage()) {
 
+                gridPane.setStyle("-fx-background-color: white;");
                 event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
             }
 
@@ -478,6 +481,8 @@ public class MainFX {
                 ImageView vybranyObrazek = new ImageView(db.getImage());
                 gridPane.getChildren().clear();
                 gridPane.getChildren().add(vybranyObrazek);
+                vybranyObrazek.setFitWidth(Piece);
+                vybranyObrazek.setFitHeight(Piece);
                 puzzleJePolozena = true;
             }
             event.setDropCompleted(puzzleJePolozena);
