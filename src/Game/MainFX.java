@@ -47,9 +47,7 @@ public class MainFX {
     private Label stopky;
     private String obrazek;
     private String celeJmenoFotografie;
-    private Text textGrid;
     private HBox rozdelit;
-    private Label here;
     double souradniceX;
     double souradniceY;
     int width;
@@ -314,6 +312,7 @@ public class MainFX {
             fotky.add(file);
             Collections.shuffle(fotky);
         }
+
         grid1 = new GridPane();
         grid1.setHgap(Gap);
         grid1.setVgap(Gap);
@@ -322,14 +321,11 @@ public class MainFX {
         grid2.setHgap(Gap);
         grid2.setVgap(Gap);
 
-        textGrid = new Text(20, 20, "");
-
         FinalGrid = new GridPane();
         FinalGrid.setGridLinesVisible(true);
         FinalGrid.getStyleClass().add("grid");
         FinalGrid.setVgap(10);
         FinalGrid.setHgap(10);
-        //FinalGrid.setPadding(new Insets(225, 0, 0, 615));
         FinalGrid.setStyle("-fx-background-color: black;");
         FinalGrid.setLayoutX(615);
         FinalGrid.setLayoutY(225);
@@ -348,6 +344,7 @@ public class MainFX {
             Fotky.setFitWidth(Piece);
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
+            Fotky.setId("Piece" + j);
 
             setOnDragDetected(Fotky);
             setOnDragDone(Fotky);
@@ -361,6 +358,7 @@ public class MainFX {
                 grid1.add(Fotky, x, y);
 
             } else {
+
                 grid2.add(Fotky, x, y);
             }
 
@@ -371,9 +369,6 @@ public class MainFX {
             setOnDragEntered(gridPane);
             setOnDragExited(gridPane);
             setOnDragDropped(gridPane);
-
-            //Fotky.setOnMouseDragged(IMGViewOnMouseDragged);
-            //Fotky.setOnMousePressed(IMGViewOnMousePressed);
 
             FinalGrid.add(gridPane, x, y);
         }
@@ -481,6 +476,19 @@ public class MainFX {
                 ImageView vybranyObrazek = new ImageView(db.getImage());
                 gridPane.getChildren().clear();
                 gridPane.getChildren().add(vybranyObrazek);
+                vybranyObrazek.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+
+                    @Override
+                    public void handle(MouseEvent event) {
+
+                        vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
+                        setOnDragDetected(vybranyObrazek);
+                        setOnDragDone(vybranyObrazek);
+
+                        event.consume();
+                    }
+                });
+
                 vybranyObrazek.setFitWidth(Piece);
                 vybranyObrazek.setFitHeight(Piece);
                 puzzleJePolozena = true;
