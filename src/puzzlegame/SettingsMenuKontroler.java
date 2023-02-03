@@ -272,29 +272,6 @@ public class SettingsMenuKontroler implements Initializable {
     @FXML
     public void menuButtonClicked(ActionEvent event) throws Exception {
 
-        MainFX mainFX = new MainFX();
-        mainFX.getPuzzlePieces();
-
-        SCAnother = new Scanner(anotherTXT);
-        SCLevel = new Scanner(obtiznosti);
-        SCImage = new Scanner(obrazky);
-
-        System.out.println("\n" + "Level: " + SCLevel.nextLine());
-
-        hledejObrazky = new BufferedReader(new FileReader("obrazky.txt"));
-
-        while ((radek = hledejObrazky.readLine()) != null) {
-
-            if(radek.equals("AnotherPicture")){
-
-                System.out.println("Selected image: " + SCAnother.nextLine() + " (AnotherPicture)" + "\n");
-            }
-            else{
-
-                System.out.println("Selected image: " + SCImage.nextLine() + "\n");
-            }
-        }
-
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/PuzzleMenu.fxml"));
         Scene scene = new Scene(root);
 

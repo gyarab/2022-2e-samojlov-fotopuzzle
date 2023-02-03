@@ -60,8 +60,6 @@ public class PuzzleGameKontroler implements Initializable {
     @FXML
     public void settingsButtonClicked(ActionEvent event) throws Exception {
 
-        FileUtils.cleanDirectory(new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces"));
-
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/SettingsMenu.fxml"));
         Scene scene = new Scene(root);
 

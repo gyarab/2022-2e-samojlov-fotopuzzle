@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -21,11 +22,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.paint.Color;
 
 import javax.imageio.ImageIO;
 
@@ -87,7 +87,7 @@ public class MainFX {
 
         ZvolenaObtiznost();
         ZvolenyObrazek();
-        getAllImageFilesFromFolder(new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces"));
+        getPuzzlePieces();
 
         setNaV(naV);
 
@@ -118,16 +118,16 @@ public class MainFX {
         Photo.setStyle("-fx-background-color: white;");
         Photo.setPrefHeight(50);
         Photo.setPrefWidth(50);
-        showHint.setVisible(false);
+        //showHint.setVisible(false);
 
-        Photo.setOnAction((ActionEvent event) -> {
+        /*Photo.setOnAction((ActionEvent event) -> {
             x++;
             if (x % 2 != 0) {
                 showHint.setVisible(true);
 
             } else
                 showHint.setVisible(false);
-        });
+        });*/
 
         // Button Home
         Image domecek = new Image(getClass().getResourceAsStream("/images/domecek.png"));
@@ -225,8 +225,8 @@ public class MainFX {
 
     public void ZvolenyObrazek() throws IOException {
 
-        showHint.setFitHeight(500);
-        showHint.setFitWidth(700);
+        //showHint.setFitHeight(500);
+        //showHint.setFitWidth(700);
 
         while ((obrazek = readerObrazek.readLine()) != null) {
 
@@ -234,25 +234,25 @@ public class MainFX {
 
                 mesto1 = new Image(getClass().getResourceAsStream("/images/puzzle1.jpg"));
                 celeJmenoFotografie = "/images/puzzle1.jpg";
-                showHint.setImage(mesto1);
+                //showHint.setImage(mesto1);
 
             } else if (obrazek.equals("Tygr")) {
 
                 tygr = new Image(getClass().getResourceAsStream("/images/puzzle2.jpg"));
                 celeJmenoFotografie = "/images/puzzle2.jpg";
-                showHint.setImage(tygr);
+                //showHint.setImage(tygr);
 
             } else if (obrazek.equals("Liska")) {
 
                 liska = new Image(getClass().getResourceAsStream("/images/puzzle3.jpg"));
                 celeJmenoFotografie = "/images/puzzle3.jpg";
-                showHint.setImage(liska);
+                //showHint.setImage(liska);
 
             } else if (obrazek.equals("Mesto2")) {
 
                 mesto2 = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
                 celeJmenoFotografie = "/images/puzzle4.jpg";
-                showHint.setImage(mesto2);
+                //showHint.setImage(mesto2);
 
             } else {
 
@@ -262,7 +262,7 @@ public class MainFX {
 
                 another = new Image(getClass().getResourceAsStream("/another/Photos/" + obrazek));
                 celeJmenoFotografie = "/another/Photos/" + obrazek;
-                showHint.setImage(another);
+                //showHint.setImage(another);
             }
         }
     }
@@ -278,40 +278,7 @@ public class MainFX {
         width = photo.getWidth() / sloupec;
         height = photo.getHeight() / radek;
 
-        int VybranyObrazek = 0;
-
-        for (int radky = 0; radky < radek; radky++) {
-
-            for (int sloupce = 0; sloupce < sloupec; sloupce++) {
-
-                images[VybranyObrazek] = (new BufferedImage(width, height, photo.getType()));
-
-                Graphics2D grafika2D = images[VybranyObrazek++].createGraphics();
-                grafika2D.drawImage(photo, 0, 0, width, height, width * sloupce, height * radky,
-                        width * sloupce + width, height * radky + height, null);
-                grafika2D.dispose();
-
-            }
-        }
-        for (int i = 0; i < PocetFotek; i++) {
-
-            File puzzle = new File("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\pieces\\" + "piece" + (i + 1) + ".jpg");
-            ImageIO.write(images[i], "jpg", puzzle);
-
-        }
-    }
-
-    private ArrayList<File> getAllImageFilesFromFolder(File directory) throws IOException {
-
-        File[] slozka = directory.listFiles();
-
-        ArrayList<File> fotky = new ArrayList<>();
-
-        for (File file : slozka) {
-
-            fotky.add(file);
-            Collections.shuffle(fotky);
-        }
+        ArrayList<Image> fotky = new ArrayList<>();
 
         grid1 = new GridPane();
         grid1.setHgap(Gap);
@@ -334,26 +301,49 @@ public class MainFX {
         rozdelit.setSpacing(Spacing);
         rozdelit.setPadding(new Insets(200, 0, 0, 50));
 
-        for (int j = 0; j < fotky.size(); j++) {
+        int VybranyObrazek = 0;
 
-            Image image = new Image(new FileInputStream(fotky.get(j)));
-            ImageView[] imageView = new ImageView[fotky.size()];
-            imageView[j] = new ImageView();
-            Fotky = imageView[j];
-            Fotky.setImage(image);
+        for (int radky = 0; radky < radek; radky++) {
+
+            for (int sloupce = 0; sloupce < sloupec; sloupce++) {
+
+                images[VybranyObrazek] = (new BufferedImage(width, height, photo.getType()));
+
+                Graphics2D grafika2D = images[VybranyObrazek++].createGraphics();
+
+                int vybranaFotkaX = width * sloupce;
+                int vybranaFotkaY = height * radky;
+
+                int PuzzlePieceX = width * sloupce + width;
+                int PuzzlePieceY = height * radky + height;
+
+                grafika2D.drawImage(photo, 0, 0, width, height, vybranaFotkaX, vybranaFotkaY,
+                        PuzzlePieceX, PuzzlePieceY, null);
+                grafika2D.dispose();
+
+            }
+        }
+
+        for (int i = 0; i < PocetFotek; i++) {
+
+            Image image = SwingFXUtils.toFXImage(images[i], null);
+            fotky.add(image);
+            ImageView[] imageView = new ImageView[PocetFotek];
+            imageView[i] = new ImageView();
+            Fotky = imageView[i];
+            Fotky.setImage(fotky.get(i));
             Fotky.setFitWidth(Piece);
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
-            Fotky.setId("Piece" + j);
 
             setOnDragDetected(Fotky);
             setOnDragDone(Fotky);
 
             // Puzzle s GridPane
-            int x = j / sloupec;
-            int y = j % radek;
+            int x = i / sloupec;
+            int y = i % radek;
 
-            if (j <= halfGrid) {
+            if (i <= halfGrid) {
 
                 grid1.add(Fotky, x, y);
 
@@ -372,13 +362,12 @@ public class MainFX {
 
             FinalGrid.add(gridPane, x, y);
         }
-        pane.getChildren().addAll(rozdelit, FinalGrid);
+        Collections.shuffle(fotky);
+        pane.getChildren().addAll(rozdelit,FinalGrid);
         pane.setCursor(Cursor.cursor("DEFAULT"));
         showHint.setCursor(Cursor.cursor("OPEN_HAND"));
         showHint.setOnMousePressed(IMGViewOnMousePressed);
         showHint.setOnMouseDragged(IMGViewOnMouseDragged);
-
-        return fotky;
     }
 
     // Tah je detekovan
