@@ -9,11 +9,13 @@ import java.util.logging.Logger;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
@@ -23,9 +25,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Shape;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import javafx.scene.paint.Color;
+import puzzlegame.PuzzleGameKontroler;
 
 import javax.imageio.ImageIO;
 
@@ -48,6 +54,7 @@ public class MainFX {
     private String obrazek;
     private String celeJmenoFotografie;
     private HBox rozdelit;
+    private Ellipse ceiling;
     double souradniceX;
     double souradniceY;
     int width;
@@ -118,26 +125,37 @@ public class MainFX {
         Photo.setStyle("-fx-background-color: white;");
         Photo.setPrefHeight(50);
         Photo.setPrefWidth(50);
-        //showHint.setVisible(false);
 
-        /*Photo.setOnAction((ActionEvent event) -> {
-            x++;
-            if (x % 2 != 0) {
-                showHint.setVisible(true);
+        Photo.setOnAction((ActionEvent event) -> {
 
-            } else
-                showHint.setVisible(false);
-        });*/
+            Stage newWindow = new Stage();
+            newWindow.setTitle("Helper Image");
+            newWindow.getIcons().add(new Image("/images/PuzzleLogo.png"));
+            newWindow.setResizable(false);
+            showHint.setFitHeight(450);
+            showHint.setFitWidth(550);
+            Button button = new Button("OK");
+            button.setStyle("-fx-background-color: black;-fx-text-fill: white;");
+            button.setOnAction(e -> {
+                newWindow.close();
+            });
+
+            VBox container = new VBox(showHint, button);
+
+            container.setSpacing(15);
+            container.setPadding(new Insets(25));
+            container.setAlignment(Pos.CENTER);
+            container.setStyle("-fx-background-color: linear-gradient(to top, #2c216b, #0070f8, #f58d00, #ffc200, #ebe112);");
+
+            newWindow.setScene(new Scene(container));
+            newWindow.show();
+        });
 
         // Button Home
         Image domecek = new Image(getClass().getResourceAsStream("/images/domecek.png"));
         ImageView imageView = new ImageView(domecek);
         imageView.setFitHeight(50);
         imageView.setFitWidth(50);
-
-        main = new HBox();
-        main.relocate(main.getLayoutX() + 75, main.getLayoutY() + 100);
-        main.getChildren().addAll(showHint);
 
         backToMenu = new Button("", imageView);
         backToMenu.setStyle("-fx-background-color: white;");
@@ -162,7 +180,7 @@ public class MainFX {
         /** Main Pane **/
 
         pane.setStyle("-fx-background-color: black;");
-        pane.getChildren().addAll(main, naV);
+        pane.getChildren().add(naV);
     }
 
     public void ZvolenaObtiznost() throws IOException {
@@ -225,34 +243,31 @@ public class MainFX {
 
     public void ZvolenyObrazek() throws IOException {
 
-        //showHint.setFitHeight(500);
-        //showHint.setFitWidth(700);
-
         while ((obrazek = readerObrazek.readLine()) != null) {
 
             if (obrazek.equals("Mesto1")) {
 
                 mesto1 = new Image(getClass().getResourceAsStream("/images/puzzle1.jpg"));
                 celeJmenoFotografie = "/images/puzzle1.jpg";
-                //showHint.setImage(mesto1);
+                showHint.setImage(mesto1);
 
             } else if (obrazek.equals("Tygr")) {
 
                 tygr = new Image(getClass().getResourceAsStream("/images/puzzle2.jpg"));
                 celeJmenoFotografie = "/images/puzzle2.jpg";
-                //showHint.setImage(tygr);
+                showHint.setImage(tygr);
 
             } else if (obrazek.equals("Liska")) {
 
                 liska = new Image(getClass().getResourceAsStream("/images/puzzle3.jpg"));
                 celeJmenoFotografie = "/images/puzzle3.jpg";
-                //showHint.setImage(liska);
+                showHint.setImage(liska);
 
             } else if (obrazek.equals("Mesto2")) {
 
                 mesto2 = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
                 celeJmenoFotografie = "/images/puzzle4.jpg";
-                //showHint.setImage(mesto2);
+                showHint.setImage(mesto2);
 
             } else {
 
@@ -262,7 +277,7 @@ public class MainFX {
 
                 another = new Image(getClass().getResourceAsStream("/another/Photos/" + obrazek));
                 celeJmenoFotografie = "/another/Photos/" + obrazek;
-                //showHint.setImage(another);
+                showHint.setImage(another);
             }
         }
     }
@@ -328,10 +343,21 @@ public class MainFX {
 
             Image image = SwingFXUtils.toFXImage(images[i], null);
             fotky.add(image);
+        }
+
+        Collections.shuffle(fotky, new Random());
+
+        for (int m = 0; m < PocetFotek; m++) {
+
+            //Shape clip = createPiece();
+            //clip.setFill(Color.WHITE);
+            //clip.setStroke(null);
+
             ImageView[] imageView = new ImageView[PocetFotek];
-            imageView[i] = new ImageView();
-            Fotky = imageView[i];
-            Fotky.setImage(fotky.get(i));
+            imageView[m] = new ImageView();
+            Fotky = imageView[m];
+            Fotky.setImage(fotky.get(m));
+            //Fotky.setClip(clip);
             Fotky.setFitWidth(Piece);
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
@@ -340,10 +366,10 @@ public class MainFX {
             setOnDragDone(Fotky);
 
             // Puzzle s GridPane
-            int x = i / sloupec;
-            int y = i % radek;
+            int x = m / sloupec;
+            int y = m % radek;
 
-            if (i <= halfGrid) {
+            if (m <= halfGrid) {
 
                 grid1.add(Fotky, x, y);
 
@@ -362,20 +388,15 @@ public class MainFX {
 
             FinalGrid.add(gridPane, x, y);
         }
-        Collections.shuffle(fotky);
-        pane.getChildren().addAll(rozdelit,FinalGrid);
+        pane.getChildren().addAll(rozdelit, FinalGrid);
         pane.setCursor(Cursor.cursor("DEFAULT"));
-        showHint.setCursor(Cursor.cursor("OPEN_HAND"));
-        showHint.setOnMousePressed(IMGViewOnMousePressed);
-        showHint.setOnMouseDragged(IMGViewOnMouseDragged);
     }
+
 
     // Tah je detekovan
     public void setOnDragDetected(ImageView vybranyObrazek) {
 
         vybranyObrazek.setOnDragDetected((MouseEvent event) -> {
-
-            System.out.println("onDragDetected");
 
             Dragboard db = vybranyObrazek.startDragAndDrop(TransferMode.ANY);
 
@@ -395,8 +416,6 @@ public class MainFX {
 
         vybranyObrazek.setOnDragDone((DragEvent event) -> {
 
-            System.out.println("onDragDone");
-
             if (event.getTransferMode() == TransferMode.MOVE) {
                 vybranyObrazek.setVisible(false);
             }
@@ -409,8 +428,6 @@ public class MainFX {
     public void setOnDragOver(GridPane gridPane) {
 
         gridPane.setOnDragOver((DragEvent event) -> {
-
-            System.out.println("onDragOver");
 
             if (event.getGestureSource() != gridPane
                     && event.getDragboard().hasImage()) {
@@ -427,8 +444,6 @@ public class MainFX {
     public void setOnDragEntered(GridPane gridPane) {
 
         gridPane.setOnDragEntered((DragEvent event) -> {
-
-            System.out.println("onDragEntered");
 
             if (event.getGestureSource() != gridPane
                     && event.getDragboard().hasImage()) {
@@ -455,31 +470,23 @@ public class MainFX {
 
         gridPane.setOnDragDropped((DragEvent event) -> {
 
-            System.out.println("onDragDropped");
-
             Dragboard db = event.getDragboard();
             boolean puzzleJePolozena = false;
 
             if (db.hasImage()) {
 
                 ImageView vybranyObrazek = new ImageView(db.getImage());
-                gridPane.getChildren().clear();
-                gridPane.getChildren().add(vybranyObrazek);
-                vybranyObrazek.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-
-                    @Override
-                    public void handle(MouseEvent event) {
-
-                        vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
-                        setOnDragDetected(vybranyObrazek);
-                        setOnDragDone(vybranyObrazek);
-
-                        event.consume();
-                    }
-                });
-
+                vybranyObrazek.setId(String.valueOf(System.currentTimeMillis()));
                 vybranyObrazek.setFitWidth(Piece);
                 vybranyObrazek.setFitHeight(Piece);
+                gridPane.getChildren().clear();
+                gridPane.getChildren().add(vybranyObrazek);
+                vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
+                setOnDragDetected(vybranyObrazek);
+                setOnDragDone(vybranyObrazek);
+
+                event.consume();
+
                 puzzleJePolozena = true;
             }
             event.setDropCompleted(puzzleJePolozena);
@@ -487,34 +494,6 @@ public class MainFX {
             event.consume();
         });
     }
-
-    EventHandler<MouseEvent> IMGViewOnMousePressed =
-            new EventHandler<MouseEvent>() {
-
-                @Override
-                public void handle(MouseEvent t) {
-
-                    souradniceX = t.getSceneX();
-                    souradniceY = t.getSceneY();
-                    posunutiX = ((ImageView) (t.getSource())).getTranslateX();
-                    posunutiY = ((ImageView) (t.getSource())).getTranslateY();
-
-                }
-            };
-    EventHandler<MouseEvent> IMGViewOnMouseDragged =
-            new EventHandler<MouseEvent>() {
-
-                @Override
-                public void handle(MouseEvent t) {
-
-                    double NewPosunutiX = posunutiX + (t.getSceneX() - souradniceX);
-                    double NewPosunutiY = posunutiY + (t.getSceneY() - souradniceY);
-
-                    ((ImageView) (t.getSource())).setTranslateX(NewPosunutiX);
-                    ((ImageView) (t.getSource())).setTranslateY(NewPosunutiY);
-
-                }
-            };
 
     public Parent getRoot() {
 

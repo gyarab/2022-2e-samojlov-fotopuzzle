@@ -18,8 +18,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import org.apache.commons.io.FileUtils;
-
 public class PuzzleGameKontroler implements Initializable {
 
     @FXML
@@ -34,9 +32,6 @@ public class PuzzleGameKontroler implements Initializable {
 
         MainFX newScene = new MainFX();
         Parent root = newScene.getRoot();
-
-        //Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-        //System.out.println(screenBounds);
 
         scene = new Scene(root);
 
