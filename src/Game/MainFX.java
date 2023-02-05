@@ -3,16 +3,14 @@ package Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -24,14 +22,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Ellipse;
-import javafx.scene.shape.Shape;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.paint.Color;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import puzzlegame.PuzzleGameKontroler;
 
 import javax.imageio.ImageIO;
 
@@ -42,7 +37,6 @@ public class MainFX {
     private Stage stage;
     private Timeline timeline;
     private HBox naV;
-    private HBox main;
     private ImageView showHint;
     private BufferedReader readerObrazek;
     private BufferedReader readerObtiznost;
@@ -54,9 +48,6 @@ public class MainFX {
     private String obrazek;
     private String celeJmenoFotografie;
     private HBox rozdelit;
-    private Ellipse ceiling;
-    double souradniceX;
-    double souradniceY;
     int width;
     int height;
     private Image mesto1, tygr, liska, mesto2, another;
@@ -67,12 +58,12 @@ public class MainFX {
     File obrazky;
     File obtiznosti;
     int x = 0;
+    int y = 0;
     int halfGrid = 0;
-    double posunutiX;
-    double posunutiY;
     int Piece;
     int Gap;
     int Spacing;
+    Button Photo;
 
     public MainFX() throws IOException {
 
@@ -112,7 +103,6 @@ public class MainFX {
         }
         ));
         timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
 
         // Image Icon
         Image IkonaObrazku = new Image(getClass().getResourceAsStream("/images/IkonaObrazku.jpg"));
@@ -120,7 +110,7 @@ public class MainFX {
         i.setFitHeight(50);
         i.setFitWidth(50);
 
-        Button Photo = new Button("", i);
+        Photo = new Button("", i);
         Photo.setText("");
         Photo.setStyle("-fx-background-color: white;");
         Photo.setPrefHeight(50);
@@ -349,15 +339,10 @@ public class MainFX {
 
         for (int m = 0; m < PocetFotek; m++) {
 
-            //Shape clip = createPiece();
-            //clip.setFill(Color.WHITE);
-            //clip.setStroke(null);
-
             ImageView[] imageView = new ImageView[PocetFotek];
             imageView[m] = new ImageView();
             Fotky = imageView[m];
             Fotky.setImage(fotky.get(m));
-            //Fotky.setClip(clip);
             Fotky.setFitWidth(Piece);
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
@@ -372,6 +357,7 @@ public class MainFX {
             if (m <= halfGrid) {
 
                 grid1.add(Fotky, x, y);
+
 
             } else {
 
@@ -392,13 +378,14 @@ public class MainFX {
         pane.setCursor(Cursor.cursor("DEFAULT"));
     }
 
-
     // Tah je detekovan
     public void setOnDragDetected(ImageView vybranyObrazek) {
 
         vybranyObrazek.setOnDragDetected((MouseEvent event) -> {
 
             Dragboard db = vybranyObrazek.startDragAndDrop(TransferMode.ANY);
+
+            timeline.play();
 
             vybranyObrazek.setFitWidth(Piece);
             vybranyObrazek.setFitHeight(Piece);
@@ -466,6 +453,7 @@ public class MainFX {
     }
 
     // Tah polozil castici obrazku (puzzle) do daneho objektu
+
     public void setOnDragDropped(GridPane gridPane) {
 
         gridPane.setOnDragDropped((DragEvent event) -> {
@@ -476,11 +464,36 @@ public class MainFX {
             if (db.hasImage()) {
 
                 ImageView vybranyObrazek = new ImageView(db.getImage());
-                vybranyObrazek.setId(String.valueOf(System.currentTimeMillis()));
+                vybranyObrazek.setId("Puzzle" + (x++));
                 vybranyObrazek.setFitWidth(Piece);
                 vybranyObrazek.setFitHeight(Piece);
                 gridPane.getChildren().clear();
                 gridPane.getChildren().add(vybranyObrazek);
+
+                if(gridPane.getChildren().contains(vybranyObrazek)){
+
+                    System.out.println(x);
+                }
+                if(x == PocetFotek){
+
+                    System.out.println("Vítězství");
+                    timeline.stop();
+                    pane.getChildren().removeAll(rozdelit, FinalGrid);
+                    Photo.setDisable(true);
+                    Media media = new Media(Paths.get
+                            ("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\images\\congratulations.mp4").
+                            toUri().toString());
+
+                    MediaPlayer mediaPlayer = new MediaPlayer(media);
+                    MediaView mediaView = new MediaView(mediaPlayer);
+                    mediaView.setLayoutX(615);
+                    mediaView.setLayoutY(225);
+                    new MediaPlayer(media).play();
+                    mediaPlayer.setAutoPlay(true);
+                    mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+                    pane.getChildren().add(mediaView);
+
+                }
                 vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
                 setOnDragDetected(vybranyObrazek);
                 setOnDragDone(vybranyObrazek);
