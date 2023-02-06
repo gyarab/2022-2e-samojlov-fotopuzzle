@@ -1,9 +1,21 @@
-.label{
-    -fx-font-size: 35;
+.button:focused{
+
+    -fx-border-color: linear-gradient(to right, #b1227a 0%, #429aee 100%);
+    -fx-border-width: 5;
+}
+
+.text-field{
+
+    -fx-font-size: 38;
     -fx-font-weight: bold;
     -fx-background-color: white;
     -fx-text-fill: black;
-    -fx-background-radius: 38;
+}
+.label{
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-text-fill: black;
 }
 .grid Line {
 
@@ -12,4 +24,31 @@
 .image-view{
 
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+.table-view {
+
+    -fx-control-inner-background: #000000;
+    -fx-border-color: white;
+}
+.table-view .table-column{
+
+
+    -fx-font-weight:bold;
+    -fx-alignment:center;
+    -fx-font-size: 25;
+}
+.table-row-cell:empty {
+    -fx-background-color: black;
+}
+
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
+.table-view .scroll-bar * {
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
 }

@@ -2,17 +2,14 @@ package puzzlegame;
 
 import java.io.*;
 import java.net.URL;
-import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import Game.MainFX;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -103,16 +100,11 @@ public class SettingsMenuKontroler implements Initializable {
     FileReader hledej1;
     FileReader hledej2;
     FileReader hledej3;
-    BufferedReader hledejObrazky;
-    String radek;
     FileChooser fileChooser;
     File selectedFile;
     Scanner scanner1;
     Scanner scanner2;
     Scanner scanner3;
-    Scanner SCAnother;
-    Scanner SCLevel;
-    Scanner SCImage;
     Path from;
     Path to;
 
@@ -136,6 +128,7 @@ public class SettingsMenuKontroler implements Initializable {
             Images();
         }
     }
+
     public void Obtiznosti(){
 
         try {
@@ -188,44 +181,23 @@ public class SettingsMenuKontroler implements Initializable {
         switch (odpoved2) {
 
             case "Mesto1":
-                mesto1.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-                mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                Mesto1Selected();
                 break;
 
             case "Mesto2":
-                mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                mesto2.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-                tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                Mesto2Selected();
                 break;
 
             case "Tygr":
-
-                mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                tygr.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-                liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                TygrSelected();
                 break;
 
             case "Liska":
-                mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                liska.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-                imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+                LiskaSelected();
                 break;
 
             default:
-                mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-                imageNew.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
+                AnotherSelected();
 
                 try {
                     hledej3 = new FileReader(anotherTXT);
@@ -336,185 +308,80 @@ public class SettingsMenuKontroler implements Initializable {
 
         }
     }
+    public void Zmena(FileWriter writer, File file, String text){
+
+        try {
+            writer = new FileWriter(file);
+            writer.write(text);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        } finally {
+
+            try {
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public void difficultyChanged() {
 
         if (difficulties.getSelectedToggle().equals(easy)) {
 
-            try {
-                writer1 = new FileWriter(obtiznosti);
-                writer1.write("Easy");
-
-            } catch (IOException e) {
-                e.printStackTrace();
-
-            } finally {
-
-                try {
-                    writer1.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
+            Zmena(writer1,obtiznosti,"Easy");
         }
         if (difficulties.getSelectedToggle().equals(medium)) {
 
-            try {
-                writer1 = new FileWriter(obtiznosti);
-                writer1.write("");
-                writer1.write("Medium");
-
-            } catch (IOException e) {
-                e.printStackTrace();
-
-            } finally {
-
-                try {
-                    writer1.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
+            Zmena(writer1,obtiznosti,"Medium");
         }
         if (difficulties.getSelectedToggle().equals(hard)) {
 
-            try {
-                writer1 = new FileWriter(obtiznosti);
-                writer1.write("");
-                writer1.write("Hard");
-
-            } catch (IOException e) {
-                e.printStackTrace();
-
-            } finally {
-
-                try {
-                    writer1.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
+            Zmena(writer1,obtiznosti,"Hard");
         }
         if (difficulties.getSelectedToggle().equals(expert)) {
 
-            try {
-                writer1 = new FileWriter(obtiznosti);
-                writer1.write("");
-                writer1.write("Expert");
-
-            } catch (IOException e) {
-                e.printStackTrace();
-
-            } finally {
-
-                try {
-                    writer1.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            Zmena(writer1,obtiznosti,"Expert");
         }
-
     }
 
     public void mesto1Clicked() {
 
-        mesto1.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-        mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-        tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-        liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-        imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        Mesto1Selected();
 
-        try {
-            writer2 = new FileWriter(obrazky);
-            writer2.write("Mesto1");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        } finally {
-
-            try {
-                writer2.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        Zmena(writer2,obrazky,"Mesto1");
     }
 
     public void liskaClicked() {
 
-        mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-        mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-        tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-        liska.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-        imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        LiskaSelected();
 
-        try {
-            writer2 = new FileWriter(obrazky);
-            writer2.write("");
-            writer2.write("Liska");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        } finally {
-
-            try {
-                writer2.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        Zmena(writer2,obrazky,"Liska");
     }
 
     public void mesto2Clicked() {
 
-        try {
-            writer2 = new FileWriter(obrazky);
-            writer2.write("");
-            writer2.write("Mesto2");
+        Mesto2Selected();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        } finally {
-
-            try {
-                writer2.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-        mesto2.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-        tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-        liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-        imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        Zmena(writer2,obrazky,"Mesto2");
     }
 
     public void tygrClicked() {
 
-        try {
-            writer2 = new FileWriter(obrazky);
-            writer2.write("");
-            writer2.write("Tygr");
+        TygrSelected();
+        Zmena(writer2,obrazky,"Tygr");
+    }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void NewPhotoClicked() {
 
-        } finally {
+        AnotherSelected();
 
-            try {
-                writer2.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        Zmena(writer2,obrazky,"AnotherPicture");
+
+    }
+    public void TygrSelected(){
 
         mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
         mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
@@ -523,42 +390,44 @@ public class SettingsMenuKontroler implements Initializable {
         imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
 
     }
+    public void Mesto1Selected(){
 
-    public void NewPhotoClicked() {
+        mesto1.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
+        mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+    }
+    public void LiskaSelected(){
 
-        try {
-            writer2 = new FileWriter(obrazky);
-            writer2.write("");
-            writer2.write("AnotherPicture");
+        mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        liska.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
+        imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+    }
+    public void Mesto2Selected(){
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        mesto2.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
+        tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+    }
+    public void AnotherSelected(){
 
-        } finally {
-
-            try {
-                writer2.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
         if (IMgNew.getImage() == null) {
 
             imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-            mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-            mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-            tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-            liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
 
         } else {
             imageNew.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
-            mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-            mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-            tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
-            liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
         }
+        mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        tygr.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
+        liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
     }
-
 }
 
 

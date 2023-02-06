@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.embed.swing.SwingFXUtils;
@@ -17,7 +18,10 @@ import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
@@ -44,7 +48,7 @@ public class MainFX {
     private GridPane grid1;
     private GridPane grid2;
     private GridPane FinalGrid;
-    private Label stopky;
+    private TextField stopky;
     private String obrazek;
     private String celeJmenoFotografie;
     private HBox rozdelit;
@@ -58,12 +62,15 @@ public class MainFX {
     File obrazky;
     File obtiznosti;
     int x = 0;
-    int y = 0;
     int halfGrid = 0;
     int Piece;
     int Gap;
     int Spacing;
     Button Photo;
+    String nazevObrazku;
+    String LevelFX;
+    Cas cas;
+    int showHintUsed = 0;
 
     public MainFX() throws IOException {
 
@@ -86,15 +93,15 @@ public class MainFX {
         ZvolenaObtiznost();
         ZvolenyObrazek();
         getPuzzlePieces();
-
         setNaV(naV);
 
         /** Navigation Bar **/
 
         // Label Time
 
-        stopky = new Label();
-        Cas cas = new Cas("00:00:00");
+        stopky = new TextField();
+        stopky.setEditable(false);
+        cas = new Cas("00:00:00");
         stopky.setText("00:00:00");
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event1 -> {
 
@@ -113,11 +120,12 @@ public class MainFX {
         Photo = new Button("", i);
         Photo.setText("");
         Photo.setStyle("-fx-background-color: white;");
-        Photo.setPrefHeight(50);
-        Photo.setPrefWidth(50);
+        Photo.setPrefHeight(75);
+        Photo.setPrefWidth(75);
 
         Photo.setOnAction((ActionEvent event) -> {
 
+            showHintUsed++;
             Stage newWindow = new Stage();
             newWindow.setTitle("Helper Image");
             newWindow.getIcons().add(new Image("/images/PuzzleLogo.png"));
@@ -127,6 +135,7 @@ public class MainFX {
             Button button = new Button("OK");
             button.setStyle("-fx-background-color: black;-fx-text-fill: white;");
             button.setOnAction(e -> {
+
                 newWindow.close();
             });
 
@@ -181,6 +190,7 @@ public class MainFX {
 
             if (obtiznost.equals("Easy")) {
 
+                LevelFX = "Easy";
                 radek = 3;
                 sloupec = 3;
                 PocetFotek = 9;
@@ -191,6 +201,7 @@ public class MainFX {
 
             } else if (obtiznost.equals("Medium")) {
 
+                LevelFX = "Medium";
                 radek = 5;
                 sloupec = 5;
                 PocetFotek = 25;
@@ -201,6 +212,7 @@ public class MainFX {
 
             } else if (obtiznost.equals("Hard")) {
 
+                LevelFX = "Hard";
                 radek = 7;
                 sloupec = 7;
                 PocetFotek = 49;
@@ -211,6 +223,7 @@ public class MainFX {
 
             } else if (obtiznost.equals("Expert")) {
 
+                LevelFX = "Expert";
                 radek = 10;
                 sloupec = 10;
                 PocetFotek = 100;
@@ -227,7 +240,7 @@ public class MainFX {
 
         naV.setStyle("-fx-background-color: white;");
         naV.setLayoutX(0);
-        naV.setPadding(new Insets(10, 2000, 7, 10));
+        naV.setPadding(new Insets(10, 10, 0, 10));
         naV.setSpacing(770);
     }
 
@@ -237,24 +250,28 @@ public class MainFX {
 
             if (obrazek.equals("Mesto1")) {
 
+                nazevObrazku = "Město č.1";
                 mesto1 = new Image(getClass().getResourceAsStream("/images/puzzle1.jpg"));
                 celeJmenoFotografie = "/images/puzzle1.jpg";
                 showHint.setImage(mesto1);
 
             } else if (obrazek.equals("Tygr")) {
 
+                nazevObrazku = "Tygr";
                 tygr = new Image(getClass().getResourceAsStream("/images/puzzle2.jpg"));
                 celeJmenoFotografie = "/images/puzzle2.jpg";
                 showHint.setImage(tygr);
 
             } else if (obrazek.equals("Liska")) {
 
+                nazevObrazku = "Liška";
                 liska = new Image(getClass().getResourceAsStream("/images/puzzle3.jpg"));
                 celeJmenoFotografie = "/images/puzzle3.jpg";
                 showHint.setImage(liska);
 
             } else if (obrazek.equals("Mesto2")) {
 
+                nazevObrazku = "Město č.2";
                 mesto2 = new Image(getClass().getResourceAsStream("/images/puzzle4.jpg"));
                 celeJmenoFotografie = "/images/puzzle4.jpg";
                 showHint.setImage(mesto2);
@@ -268,6 +285,13 @@ public class MainFX {
                 another = new Image(getClass().getResourceAsStream("/another/Photos/" + obrazek));
                 celeJmenoFotografie = "/another/Photos/" + obrazek;
                 showHint.setImage(another);
+
+                if (obrazek.length() <= 9) {
+
+                    nazevObrazku = "Vlastní (" + obrazek + ")";
+                } else {
+                    nazevObrazku = "Vlastní";
+                }
             }
         }
     }
@@ -358,7 +382,6 @@ public class MainFX {
 
                 grid1.add(Fotky, x, y);
 
-
             } else {
 
                 grid2.add(Fotky, x, y);
@@ -376,6 +399,99 @@ public class MainFX {
         }
         pane.getChildren().addAll(rozdelit, FinalGrid);
         pane.setCursor(Cursor.cursor("DEFAULT"));
+    }
+
+    public TableView Vysledky() {
+
+        TableView tableView = new TableView<>();
+
+        TableColumn<Vysledek, String> jmenoObrazku = new TableColumn<>("Obrázek \uD83D\uDDBC");
+        TableColumn<Vysledek, String> level = new TableColumn<>("Level \uD83D\uDCC8");
+        TableColumn<Vysledek, String> cas = new TableColumn<>("Čas ⏰");
+        TableColumn<Vysledek, Integer> napovedaUsed = new TableColumn<>("Použití nápovědy");
+        TableColumn<Vysledek, Integer> skore = new TableColumn<>("Skóre \uD83C\uDFC6");
+
+        jmenoObrazku.setCellValueFactory(
+                new PropertyValueFactory<>("JmenoObrazku"));
+
+        level.setCellValueFactory(
+                new PropertyValueFactory<>("level"));
+
+        cas.setCellValueFactory(
+                new PropertyValueFactory<>("cas"));
+
+        napovedaUsed.setCellValueFactory(
+                new PropertyValueFactory<>("napovedaUsed"));
+
+        skore.setCellValueFactory(
+                new PropertyValueFactory<>("skore"));
+
+        TableColumn[] arr = {jmenoObrazku, level, cas, napovedaUsed, skore};
+
+        getLevel(level);
+        cas.setStyle("-fx-text-fill: linear-gradient(to right, #66b3ff 0%, #cce6ff 100%);");
+
+        tableView.getItems().add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, 4));
+
+        tableView.setEditable(false);
+        tableView.setSelectionModel(null);
+        tableView.getColumns().addAll(arr);
+        jmenoObrazku.setResizable(false);
+        level.setResizable(false);
+        cas.setResizable(false);
+        napovedaUsed.setResizable(false);
+        skore.setResizable(false);
+
+        for (TableColumn x : arr) {
+
+            mezera(x, tableView, 0.2);
+            getStyleClass(x);
+        }
+
+        tableView.setPrefWidth(1250);
+        tableView.setPrefHeight(500);
+        tableView.setLayoutX(250);
+        tableView.setLayoutY(100);
+        tableView.getStyleClass().add("table-view");
+        tableView.setFixedCellSize(60.0);
+
+        pane.getChildren().add(tableView);
+
+        return tableView;
+    }
+
+    public void mezera(TableColumn tableColumn, TableView tableView, double delka) {
+
+        tableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(delka));
+    }
+
+    public void getStyleClass(TableColumn tableColumn) {
+
+        tableColumn.getStyleClass().add("table-column");
+    }
+
+    public TableColumn getLevel(TableColumn level)  {
+
+        if (LevelFX == "Easy") {
+
+            level.setStyle("-fx-text-fill: #33cc33;");
+
+        } else if (LevelFX == "Medium") {
+
+            level.setStyle("-fx-text-fill: yellow;");
+
+        } else if (LevelFX == "Hard") {
+
+            level.setStyle("-fx-text-fill: orange;");
+        } else {
+
+            level.setStyle("-fx-text-fill: red;");
+        }
+        return level;
+    }
+    public Cas getCas(){
+
+        return cas;
     }
 
     // Tah je detekovan
@@ -470,29 +586,18 @@ public class MainFX {
                 gridPane.getChildren().clear();
                 gridPane.getChildren().add(vybranyObrazek);
 
-                if(gridPane.getChildren().contains(vybranyObrazek)){
+                if (gridPane.getChildren().contains(vybranyObrazek)) {
 
                     System.out.println(x);
                 }
-                if(x == PocetFotek){
+                if (x == PocetFotek) {
 
                     System.out.println("Vítězství");
                     timeline.stop();
                     pane.getChildren().removeAll(rozdelit, FinalGrid);
                     Photo.setDisable(true);
-                    Media media = new Media(Paths.get
-                            ("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\images\\congratulations.mp4").
-                            toUri().toString());
-
-                    MediaPlayer mediaPlayer = new MediaPlayer(media);
-                    MediaView mediaView = new MediaView(mediaPlayer);
-                    mediaView.setLayoutX(615);
-                    mediaView.setLayoutY(225);
-                    new MediaPlayer(media).play();
-                    mediaPlayer.setAutoPlay(true);
-                    mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-                    pane.getChildren().add(mediaView);
-
+                    //spustVideo();
+                    Vysledky();
                 }
                 vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
                 setOnDragDetected(vybranyObrazek);
@@ -506,6 +611,24 @@ public class MainFX {
 
             event.consume();
         });
+    }
+
+    public MediaView spustVideo() {
+
+        Media media = new Media(Paths.get
+                        ("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\images\\congratulations.mp4").
+                toUri().toString());
+
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        MediaView mediaView = new MediaView(mediaPlayer);
+        mediaView.setLayoutX(615);
+        mediaView.setLayoutY(225);
+        new MediaPlayer(media).play();
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        pane.getChildren().add(mediaView);
+
+        return mediaView;
     }
 
     public Parent getRoot() {
