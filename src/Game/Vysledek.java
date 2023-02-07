@@ -1,6 +1,8 @@
 package Game;
 
-public class Vysledek {
+import java.io.Serializable;
+
+public class Vysledek implements Serializable {
 
     private String JmenoObrazku;
     private String level;
@@ -31,5 +33,16 @@ public class Vysledek {
 
     public Integer getNapovedaUsed() {
         return napovedaUsed;
+    }
+
+    @Override
+    public String toString() {
+        return "Vysledek{" +
+                "JmenoObrazku='" + JmenoObrazku + '\'' +
+                ", level='" + level + '\'' +
+                ", cas='" + cas + '\'' +
+                ", napovedaUsed=" + napovedaUsed +
+                ", skore=" + skore +
+                '}';
     }
 }

@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,6 +53,7 @@ public class MainFX {
     private String obrazek;
     private String celeJmenoFotografie;
     private HBox rozdelit;
+    private TableView tableView;
     int width;
     int height;
     private Image mesto1, tygr, liska, mesto2, another;
@@ -403,7 +405,7 @@ public class MainFX {
 
     public TableView Vysledky() {
 
-        TableView tableView = new TableView<>();
+        tableView = new TableView<>();
 
         TableColumn<Vysledek, String> jmenoObrazku = new TableColumn<>("Obrázek \uD83D\uDDBC");
         TableColumn<Vysledek, String> level = new TableColumn<>("Level \uD83D\uDCC8");
@@ -458,6 +460,66 @@ public class MainFX {
         pane.getChildren().add(tableView);
 
         return tableView;
+    }
+    public void Data() throws IOException {
+
+        File soubor = new File("data.dat");
+
+        try {
+
+            if (soubor.createNewFile()) {
+                System.out.println("Soubor je vytvoren: " + soubor.getName());
+            } else {
+                System.out.println("Soubor jiz existuje");
+            }
+
+            FileInputStream input = new FileInputStream(soubor);
+
+            ObjectInputStream i = new ObjectInputStream(input);
+
+            List<Vysledek> dataTabulky;
+
+            Object tabulka = i.readObject();
+
+            dataTabulky = (ArrayList<Vysledek>) tabulka;
+
+            dataTabulky.add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, 4));
+
+            for (Vysledek data : dataTabulky) {
+
+                System.out.println(data);
+            }
+
+            i.close();
+
+            FileOutputStream output = new FileOutputStream(soubor);
+            ObjectOutputStream o = new ObjectOutputStream(output);
+
+            o.writeObject(dataTabulky);
+            o.writeObject("\n");
+
+            o.close();
+
+        } catch (EOFException | ClassNotFoundException e) {
+
+            List<Vysledek> dataTabulky = new ArrayList<>();
+            dataTabulky.add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, 4));
+
+            for (Vysledek data : dataTabulky) {
+
+                System.out.println(data);
+            }
+
+            FileOutputStream output = new FileOutputStream(soubor);
+            ObjectOutputStream o = new ObjectOutputStream(output);
+            o.writeObject(dataTabulky);
+
+            o.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void mezera(TableColumn tableColumn, TableView tableView, double delka) {
@@ -597,7 +659,13 @@ public class MainFX {
                     pane.getChildren().removeAll(rozdelit, FinalGrid);
                     Photo.setDisable(true);
                     //spustVideo();
-                    Vysledky();
+
+                    try {
+                        Data();
+                        Vysledky();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
                 vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
                 setOnDragDetected(vybranyObrazek);
