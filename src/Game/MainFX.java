@@ -18,9 +18,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.Cursor;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -32,6 +31,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import puzzlegame.PuzzleGameKontroler;
 
 import javax.imageio.ImageIO;
 
@@ -92,6 +92,8 @@ public class MainFX {
 
         obtiznosti = new File("obtiznosti.txt");
 
+        tableView = new TableView<>();
+
         ZvolenaObtiznost();
         ZvolenyObrazek();
         getPuzzlePieces();
@@ -100,7 +102,6 @@ public class MainFX {
         /** Navigation Bar **/
 
         // Label Time
-
         stopky = new TextField();
         stopky.setEditable(false);
         cas = new Cas("00:00:00");
@@ -405,8 +406,6 @@ public class MainFX {
 
     public TableView Vysledky() {
 
-        tableView = new TableView<>();
-
         TableColumn<Vysledek, String> jmenoObrazku = new TableColumn<>("Obrázek \uD83D\uDDBC");
         TableColumn<Vysledek, String> level = new TableColumn<>("Level \uD83D\uDCC8");
         TableColumn<Vysledek, String> cas = new TableColumn<>("Čas ⏰");
@@ -430,11 +429,13 @@ public class MainFX {
 
         TableColumn[] arr = {jmenoObrazku, level, cas, napovedaUsed, skore};
 
-        getLevel(level);
+        level.setStyle("-fx-text-fill: linear-gradient(to right, #33CC33 0%, #FFFF00 33%, #FFA500 66%, #F84B00 100%);");
         cas.setStyle("-fx-text-fill: linear-gradient(to right, #66b3ff 0%, #cce6ff 100%);");
 
-        tableView.getItems().add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, 4));
+        if(tableView.getItems().isEmpty() == true) {
 
+            tableView.getItems().add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, 4));
+        }
         tableView.setEditable(false);
         tableView.setSelectionModel(null);
         tableView.getColumns().addAll(arr);
@@ -488,6 +489,7 @@ public class MainFX {
             for (Vysledek data : dataTabulky) {
 
                 System.out.println(data);
+                tableView.getItems().add(data);
             }
 
             i.close();
@@ -530,26 +532,6 @@ public class MainFX {
     public void getStyleClass(TableColumn tableColumn) {
 
         tableColumn.getStyleClass().add("table-column");
-    }
-
-    public TableColumn getLevel(TableColumn level)  {
-
-        if (LevelFX == "Easy") {
-
-            level.setStyle("-fx-text-fill: #33cc33;");
-
-        } else if (LevelFX == "Medium") {
-
-            level.setStyle("-fx-text-fill: yellow;");
-
-        } else if (LevelFX == "Hard") {
-
-            level.setStyle("-fx-text-fill: orange;");
-        } else {
-
-            level.setStyle("-fx-text-fill: red;");
-        }
-        return level;
     }
     public Cas getCas(){
 
