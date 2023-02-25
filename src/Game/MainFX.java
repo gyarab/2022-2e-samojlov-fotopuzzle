@@ -31,7 +31,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import puzzlegame.PuzzleGameKontroler;
 
 import javax.imageio.ImageIO;
 
@@ -61,9 +60,10 @@ public class MainFX {
     int sloupec;
     int radek;
     int PocetFotek;
+    ArrayList<String> plocha;
     File obrazky;
     File obtiznosti;
-    int x = 0;
+    int pocet = 0;
     int halfGrid = 0;
     int Piece;
     int Gap;
@@ -81,6 +81,8 @@ public class MainFX {
         pane = new Pane();
 
         showHint = new ImageView();
+
+        plocha = new ArrayList<>();
 
         rozdelit = new HBox();
 
@@ -360,6 +362,7 @@ public class MainFX {
 
             Image image = SwingFXUtils.toFXImage(images[i], null);
             fotky.add(image);
+            System.out.println(image);
         }
 
         Collections.shuffle(fotky, new Random());
@@ -390,15 +393,16 @@ public class MainFX {
                 grid2.add(Fotky, x, y);
             }
 
-            GridPane gridPane = new GridPane();
-            gridPane.setPrefSize(Piece, Piece);
+            // Drop place
+            Pane node = new Pane();
+            node.setPrefSize(Piece, Piece);
 
-            setOnDragOver(gridPane);
-            setOnDragEntered(gridPane);
-            setOnDragExited(gridPane);
-            setOnDragDropped(gridPane);
+            setOnDragOver(node);
+            setOnDragEntered(node);
+            setOnDragExited(node);
+            setOnDragDropped(node);
 
-            FinalGrid.add(gridPane, x, y);
+            FinalGrid.add(node, x, y);
         }
         pane.getChildren().addAll(rozdelit, FinalGrid);
         pane.setCursor(Cursor.cursor("DEFAULT"));
@@ -432,7 +436,7 @@ public class MainFX {
         level.setStyle("-fx-text-fill: linear-gradient(to right, #33CC33 0%, #FFFF00 33%, #FFA500 66%, #F84B00 100%);");
         cas.setStyle("-fx-text-fill: linear-gradient(to right, #66b3ff 0%, #cce6ff 100%);");
 
-        if(tableView.getItems().isEmpty() == true) {
+        if (tableView.getItems().isEmpty() == true) {
 
             tableView.getItems().add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, 4));
         }
@@ -462,9 +466,22 @@ public class MainFX {
 
         return tableView;
     }
+
     public void Data() throws IOException {
 
         File soubor = new File("data.dat");
+
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            public void run() {
+                try {
+                    PrintWriter writer = new PrintWriter(soubor);
+                    writer.print("");
+                    writer.close();
+                } catch (FileNotFoundException e) {
+                    System.out.println("Chyba");
+                }
+            }
+        }, "Shutdown-thread"));
 
         try {
 
@@ -533,7 +550,8 @@ public class MainFX {
 
         tableColumn.getStyleClass().add("table-column");
     }
-    public Cas getCas(){
+
+    public Cas getCas() {
 
         return cas;
     }
@@ -572,14 +590,14 @@ public class MainFX {
     }
 
     // Tah se nachazi nad cilem objektu
-    public void setOnDragOver(GridPane gridPane) {
+    public void setOnDragOver(Pane dragboard) {
 
-        gridPane.setOnDragOver((DragEvent event) -> {
+        dragboard.setOnDragOver((DragEvent event) -> {
 
-            if (event.getGestureSource() != gridPane
+            if (event.getGestureSource() != dragboard
                     && event.getDragboard().hasImage()) {
 
-                gridPane.setStyle("-fx-background-color: white;");
+                dragboard.setStyle("-fx-background-color: white;");
                 event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
             }
 
@@ -588,13 +606,13 @@ public class MainFX {
     }
 
     // Tah se nachazi v cilovem objektu
-    public void setOnDragEntered(GridPane gridPane) {
+    public void setOnDragEntered(Pane dragboard) {
 
-        gridPane.setOnDragEntered((DragEvent event) -> {
+        dragboard.setOnDragEntered((DragEvent event) -> {
 
-            if (event.getGestureSource() != gridPane
+            if (event.getGestureSource() != dragboard
                     && event.getDragboard().hasImage()) {
-                gridPane.setStyle("-fx-background-color: #00ff00;");
+                dragboard.setStyle("-fx-background-color: #00ff00;");
             }
 
             event.consume();
@@ -602,11 +620,11 @@ public class MainFX {
     }
 
     // Tah opustil cilovy objekt
-    public void setOnDragExited(GridPane gridPane) {
+    public void setOnDragExited(Pane dragboard) {
 
-        gridPane.setOnDragExited((DragEvent event) -> {
+        dragboard.setOnDragExited((DragEvent event) -> {
 
-            gridPane.setStyle("-fx-background-color: transparent;");
+            dragboard.setStyle("-fx-background-color: transparent;");
 
             event.consume();
         });
@@ -614,45 +632,50 @@ public class MainFX {
 
     // Tah polozil castici obrazku (puzzle) do daneho objektu
 
-    public void setOnDragDropped(GridPane gridPane) {
+    public void setOnDragDropped(Pane dragboard) {
 
-        gridPane.setOnDragDropped((DragEvent event) -> {
+        dragboard.setOnDragDropped((DragEvent event) -> {
 
             Dragboard db = event.getDragboard();
             boolean puzzleJePolozena = false;
+            int x = (int) (event.getSceneX() - FinalGrid.getLayoutX());
+            int y = (int) (event.getSceneY() - FinalGrid.getLayoutY());
+            int odchylka = 232;
+            int cisloX = x / odchylka;
+            int cisloY = y / odchylka;
+            String vysledne = String.valueOf(cisloX) + (cisloY);
 
             if (db.hasImage()) {
 
                 ImageView vybranyObrazek = new ImageView(db.getImage());
-                vybranyObrazek.setId("Puzzle" + (x++));
                 vybranyObrazek.setFitWidth(Piece);
                 vybranyObrazek.setFitHeight(Piece);
-                gridPane.getChildren().clear();
-                gridPane.getChildren().add(vybranyObrazek);
-
-                if (gridPane.getChildren().contains(vybranyObrazek)) {
-
-                    System.out.println(x);
-                }
-                if (x == PocetFotek) {
-
-                    System.out.println("Vítězství");
-                    timeline.stop();
-                    pane.getChildren().removeAll(rozdelit, FinalGrid);
-                    Photo.setDisable(true);
-                    //spustVideo();
-
-                    try {
-                        Data();
-                        Vysledky();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
                 vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
                 setOnDragDetected(vybranyObrazek);
                 setOnDragDone(vybranyObrazek);
+                dragboard.getChildren().add(vybranyObrazek);
 
+                if (!plocha.contains(vysledne)) {
+
+                    plocha.add(vysledne);
+                    pocet++;
+                    System.out.println(plocha);
+
+                    if (pocet == PocetFotek) {
+
+                        timeline.stop();
+                        pane.getChildren().removeAll(rozdelit, FinalGrid);
+                        Photo.setDisable(true);
+                        //spustVideo();
+
+                        try {
+                            Data();
+                            Vysledky();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                }
                 event.consume();
 
                 puzzleJePolozena = true;
