@@ -8,7 +8,6 @@ import java.util.*;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.embed.swing.SwingFXUtils;
@@ -31,7 +30,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import javax.imageio.ImageIO;
 
 public class MainFX {
@@ -57,10 +55,13 @@ public class MainFX {
     int height;
     private Image mesto1, tygr, liska, mesto2, another;
     private ImageView Fotky;
+    private ImageView Kontrola;
+    private ArrayList<String> plocha;
+    private ArrayList<Image> spravneReseni;
+    private Pane node;
     int sloupec;
     int radek;
     int PocetFotek;
-    ArrayList<String> plocha;
     File obrazky;
     File obtiznosti;
     int pocet = 0;
@@ -83,6 +84,8 @@ public class MainFX {
         showHint = new ImageView();
 
         plocha = new ArrayList<>();
+
+        spravneReseni = new ArrayList<Image>();
 
         rozdelit = new HBox();
 
@@ -362,11 +365,11 @@ public class MainFX {
 
             Image image = SwingFXUtils.toFXImage(images[i], null);
             fotky.add(image);
-            System.out.println(image);
+            spravneReseni.add(image);
         }
-
+        System.out.println(spravneReseni);
         Collections.shuffle(fotky, new Random());
-
+        System.out.println(fotky);
         for (int m = 0; m < PocetFotek; m++) {
 
             ImageView[] imageView = new ImageView[PocetFotek];
@@ -376,6 +379,11 @@ public class MainFX {
             Fotky.setFitWidth(Piece);
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
+
+            Kontrola = new ImageView();
+            Kontrola.setImage(spravneReseni.get(m));
+            Kontrola.setFitWidth(Piece);
+            Kontrola.setFitHeight(Piece);
 
             setOnDragDetected(Fotky);
             setOnDragDone(Fotky);
@@ -394,7 +402,7 @@ public class MainFX {
             }
 
             // Drop place
-            Pane node = new Pane();
+            node = new Pane();
             node.setPrefSize(Piece, Piece);
 
             setOnDragOver(node);
@@ -402,7 +410,9 @@ public class MainFX {
             setOnDragExited(node);
             setOnDragDropped(node);
 
-            FinalGrid.add(node, x, y);
+            Kontrola.setVisible(true);
+            node.getChildren().add(Kontrola);
+            FinalGrid.add(node, y, x);
         }
         pane.getChildren().addAll(rozdelit, FinalGrid);
         pane.setCursor(Cursor.cursor("DEFAULT"));
