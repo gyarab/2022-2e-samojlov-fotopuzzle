@@ -8,9 +8,9 @@ import java.util.*;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -30,6 +30,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
 import javax.imageio.ImageIO;
 
 public class MainFX {
@@ -56,8 +57,9 @@ public class MainFX {
     private Image mesto1, tygr, liska, mesto2, another;
     private ImageView Fotky;
     private ImageView Kontrola;
-    private ArrayList<String> plocha;
-    private ArrayList<Image> spravneReseni;
+    private ArrayList<Integer> plocha;
+    private HashMap<Integer, Image> pokus;
+    private HashMap<Integer, PuzzlePiece> spravneReseni;
     private Pane node;
     int sloupec;
     int radek;
@@ -83,9 +85,11 @@ public class MainFX {
 
         showHint = new ImageView();
 
-        plocha = new ArrayList<>();
+        plocha = new ArrayList<Integer>();
 
-        spravneReseni = new ArrayList<Image>();
+        pokus = new HashMap<>();
+
+        spravneReseni = new HashMap<>();
 
         rozdelit = new HBox();
 
@@ -315,7 +319,7 @@ public class MainFX {
         width = photo.getWidth() / sloupec;
         height = photo.getHeight() / radek;
 
-        ArrayList<Image> fotky = new ArrayList<>();
+        ArrayList<PuzzlePiece> fotky = new ArrayList<>();
 
         grid1 = new GridPane();
         grid1.setHgap(Gap);
@@ -363,25 +367,25 @@ public class MainFX {
 
         for (int i = 0; i < PocetFotek; i++) {
 
-            Image image = SwingFXUtils.toFXImage(images[i], null);
-            fotky.add(image);
-            spravneReseni.add(image);
+            PuzzlePiece piece = new PuzzlePiece(images[i], i);
+            fotky.add(piece);
+            spravneReseni.put(i, piece);
         }
         System.out.println(spravneReseni);
         Collections.shuffle(fotky, new Random());
-        System.out.println(fotky);
+
         for (int m = 0; m < PocetFotek; m++) {
 
             ImageView[] imageView = new ImageView[PocetFotek];
             imageView[m] = new ImageView();
             Fotky = imageView[m];
-            Fotky.setImage(fotky.get(m));
+            Fotky.setImage(fotky.get(m).image);
             Fotky.setFitWidth(Piece);
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
 
             Kontrola = new ImageView();
-            Kontrola.setImage(spravneReseni.get(m));
+            Kontrola.setImage(spravneReseni.get(m).image);
             Kontrola.setFitWidth(Piece);
             Kontrola.setFitHeight(Piece);
 
@@ -410,7 +414,7 @@ public class MainFX {
             setOnDragExited(node);
             setOnDragDropped(node);
 
-            Kontrola.setVisible(true);
+            Kontrola.setVisible(false);
             node.getChildren().add(Kontrola);
             FinalGrid.add(node, y, x);
         }
@@ -653,7 +657,20 @@ public class MainFX {
             int odchylka = 232;
             int cisloX = x / odchylka;
             int cisloY = y / odchylka;
-            String vysledne = String.valueOf(cisloX) + (cisloY);
+
+            if (cisloY > 0) {
+
+                if (cisloY == 1) {
+
+                    cisloX += sloupec - 1;
+
+                } else {
+
+                    cisloX += sloupec + 1;
+                }
+            }
+
+            int vysledne = cisloX + cisloY;
 
             if (db.hasImage()) {
 
@@ -665,27 +682,31 @@ public class MainFX {
                 setOnDragDone(vybranyObrazek);
                 dragboard.getChildren().add(vybranyObrazek);
 
-                if (!plocha.contains(vysledne)) {
+                if(!plocha.contains(vysledne)) {
 
                     plocha.add(vysledne);
                     pocet++;
-                    System.out.println(plocha);
 
-                    if (pocet == PocetFotek) {
+                    pokus.put(vysledne, db.getImage());
 
-                        timeline.stop();
-                        pane.getChildren().removeAll(rozdelit, FinalGrid);
-                        Photo.setDisable(true);
-                        //spustVideo();
+                    System.out.println(pokus);
+                }
 
-                        try {
-                            Data();
-                            Vysledky();
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
+                if (pocet == PocetFotek) {
+
+                    timeline.stop();
+                    pane.getChildren().removeAll(rozdelit, FinalGrid);
+                    Photo.setDisable(true);
+                    //spustVideo();
+
+                    try {
+                        Data();
+                        Vysledky();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
                     }
                 }
+
                 event.consume();
 
                 puzzleJePolozena = true;
