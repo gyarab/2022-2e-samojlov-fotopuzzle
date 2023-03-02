@@ -56,10 +56,9 @@ public class MainFX {
     int height;
     private Image mesto1, tygr, liska, mesto2, another;
     private ImageView Fotky;
-    private ImageView Kontrola;
     private ArrayList<Integer> plocha;
-    private HashMap<Integer, Image> pokus;
-    private HashMap<Integer, PuzzlePiece> spravneReseni;
+    private ArrayList<Integer> pokus;
+    private ArrayList<PuzzlePiece> fotky;
     private Pane node;
     int sloupec;
     int radek;
@@ -87,9 +86,7 @@ public class MainFX {
 
         plocha = new ArrayList<Integer>();
 
-        pokus = new HashMap<>();
-
-        spravneReseni = new HashMap<>();
+        pokus = new ArrayList<>();
 
         rozdelit = new HBox();
 
@@ -319,7 +316,7 @@ public class MainFX {
         width = photo.getWidth() / sloupec;
         height = photo.getHeight() / radek;
 
-        ArrayList<PuzzlePiece> fotky = new ArrayList<>();
+        fotky = new ArrayList<>();
 
         grid1 = new GridPane();
         grid1.setHgap(Gap);
@@ -369,9 +366,7 @@ public class MainFX {
 
             PuzzlePiece piece = new PuzzlePiece(images[i], i);
             fotky.add(piece);
-            spravneReseni.put(i, piece);
         }
-        System.out.println(spravneReseni);
         Collections.shuffle(fotky, new Random());
 
         for (int m = 0; m < PocetFotek; m++) {
@@ -383,11 +378,6 @@ public class MainFX {
             Fotky.setFitWidth(Piece);
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
-
-            Kontrola = new ImageView();
-            Kontrola.setImage(spravneReseni.get(m).image);
-            Kontrola.setFitWidth(Piece);
-            Kontrola.setFitHeight(Piece);
 
             setOnDragDetected(Fotky);
             setOnDragDone(Fotky);
@@ -414,9 +404,8 @@ public class MainFX {
             setOnDragExited(node);
             setOnDragDropped(node);
 
-            Kontrola.setVisible(false);
-            node.getChildren().add(Kontrola);
             FinalGrid.add(node, y, x);
+            System.out.println(fotky.get(m).cislo);
         }
         pane.getChildren().addAll(rozdelit, FinalGrid);
         pane.setCursor(Cursor.cursor("DEFAULT"));
@@ -650,50 +639,64 @@ public class MainFX {
 
         dragboard.setOnDragDropped((DragEvent event) -> {
 
-            Dragboard db = event.getDragboard();
-            boolean puzzleJePolozena = false;
-            int x = (int) (event.getSceneX() - FinalGrid.getLayoutX());
-            int y = (int) (event.getSceneY() - FinalGrid.getLayoutY());
-            int odchylka = 232;
-            int cisloX = x / odchylka;
-            int cisloY = y / odchylka;
+        Dragboard db = event.getDragboard();
+        boolean puzzleJePolozena = false;
+        int x = (int) (event.getSceneX() - FinalGrid.getLayoutX());
+        int y = (int) (event.getSceneY() - FinalGrid.getLayoutY());
+        int odchylka = 232;
+        int cisloX = x / odchylka;
+        int cisloY = y / odchylka;
 
-            if (cisloY > 0) {
+        if (cisloY > 0) {
 
-                if (cisloY == 1) {
+            if (cisloY == 1) {
 
-                    cisloX += sloupec - 1;
+                cisloX += sloupec - 1;
 
-                } else {
+            } else {
 
-                    cisloX += sloupec + 1;
-                }
+                cisloX += sloupec + 1;
+            }
+        }
+
+        int vysledne = cisloX + cisloY;
+
+        if (db.hasImage()) {
+
+            ImageView vybranyObrazek = new ImageView(db.getImage());
+            vybranyObrazek.setFitWidth(Piece);
+            vybranyObrazek.setFitHeight(Piece);
+            vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
+            setOnDragDetected(vybranyObrazek);
+            setOnDragDone(vybranyObrazek);
+            dragboard.getChildren().add(vybranyObrazek);
+
+            if (!plocha.contains(vysledne)) {
+
+                plocha.add(vysledne);
+                pocet++;
+
+                pokus.add(vysledne);
+
+                System.out.println(pokus);
             }
 
-            int vysledne = cisloX + cisloY;
+            if (PocetFotek == pocet) {
 
-            if (db.hasImage()) {
+                int[] poleFotek = new int[0];
+                int[] pokusFotek = new int[0];
+                for (int i = 0; i < PocetFotek; i++) {
 
-                ImageView vybranyObrazek = new ImageView(db.getImage());
-                vybranyObrazek.setFitWidth(Piece);
-                vybranyObrazek.setFitHeight(Piece);
-                vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
-                setOnDragDetected(vybranyObrazek);
-                setOnDragDone(vybranyObrazek);
-                dragboard.getChildren().add(vybranyObrazek);
+                    System.out.println(fotky.get(i).cislo + " = " + pokus.get(i));
 
-                if(!plocha.contains(vysledne)) {
+                    poleFotek = new int[]{fotky.get(i).cislo};
+                    pokusFotek = new int[]{pokus.get(i)};
 
-                    plocha.add(vysledne);
-                    pocet++;
-
-                    pokus.put(vysledne, db.getImage());
-
-                    System.out.println(pokus);
                 }
+                boolean vysledek = Arrays.equals(poleFotek, pokusFotek);
+                System.out.println("Array a and b equal?: " + vysledek);
 
-                if (pocet == PocetFotek) {
-
+                if (vysledek == true) {
                     timeline.stop();
                     pane.getChildren().removeAll(rozdelit, FinalGrid);
                     Photo.setDisable(true);
@@ -706,16 +709,17 @@ public class MainFX {
                         throw new RuntimeException(e);
                     }
                 }
-
-                event.consume();
-
-                puzzleJePolozena = true;
             }
-            event.setDropCompleted(puzzleJePolozena);
 
             event.consume();
-        });
-    }
+
+            puzzleJePolozena = true;
+        }
+        event.setDropCompleted(puzzleJePolozena);
+
+        event.consume();
+    });
+}
 
     public MediaView spustVideo() {
 
