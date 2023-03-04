@@ -244,7 +244,7 @@
          <center>
             <ImageView fx:id="Mesto1" fitHeight="187.0" fitWidth="309.0" onMouseClicked="#mesto1Clicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
-                  <Image url="@../../../../../Downloads/puzzle1.jpg" />
+                  <Image url="@../images/puzzle1.jpg" />
                </image>
             </ImageView>
          </center>
@@ -253,7 +253,7 @@
          <center>
             <ImageView fx:id="Tygr" fitHeight="215.0" fitWidth="286.0" onMouseClicked="#tygrClicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
-                  <Image url="@../../../../../Downloads/puzzle2.jpg" />
+                  <Image url="@../images/puzzle2.jpg" />
                </image>
             </ImageView>
          </center>
@@ -262,7 +262,7 @@
          <center>
             <ImageView fx:id="Liska" fitHeight="195.0" fitWidth="243.0" onMouseClicked="#liskaClicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
-                  <Image url="@../../../../../Downloads/puzzle3.jpg" />
+                  <Image url="@../images/puzzle3.jpg" />
                </image>
             </ImageView>
          </center>
@@ -271,7 +271,7 @@
          <center>
             <ImageView fx:id="Mesto2" fitHeight="161.0" fitWidth="267.0" onMouseClicked="#mesto2Clicked" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
-                  <Image url="@../../../../../Downloads/puzzle4.jpg" />
+                  <Image url="@../images/puzzle4.jpg" />
                </image>
             </ImageView>
          </center>

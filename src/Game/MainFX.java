@@ -19,6 +19,7 @@ import javafx.scene.*;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -52,14 +53,14 @@ public class MainFX {
     private String celeJmenoFotografie;
     private HBox rozdelit;
     private TableView tableView;
-    int width;
-    int height;
     private Image mesto1, tygr, liska, mesto2, another;
     private ImageView Fotky;
     private ArrayList<Integer> plocha;
-    private ArrayList<Integer> pokus;
     private ArrayList<PuzzlePiece> fotky;
     private Pane node;
+    private String id;
+    int width;
+    int height;
     int sloupec;
     int radek;
     int PocetFotek;
@@ -86,8 +87,6 @@ public class MainFX {
 
         plocha = new ArrayList<Integer>();
 
-        pokus = new ArrayList<>();
-
         rozdelit = new HBox();
 
         readerObrazek = new BufferedReader(new FileReader("obrazky.txt"));
@@ -110,6 +109,8 @@ public class MainFX {
         // Label Time
         stopky = new TextField();
         stopky.setEditable(false);
+        stopky.setMouseTransparent(true);
+        stopky.setFocusTraversable(false);
         cas = new Cas("00:00:00");
         stopky.setText("00:00:00");
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event1 -> {
@@ -329,8 +330,6 @@ public class MainFX {
         FinalGrid = new GridPane();
         FinalGrid.setGridLinesVisible(true);
         FinalGrid.getStyleClass().add("grid");
-        FinalGrid.setVgap(10);
-        FinalGrid.setHgap(10);
         FinalGrid.setStyle("-fx-background-color: black;");
         FinalGrid.setLayoutX(615);
         FinalGrid.setLayoutY(225);
@@ -405,7 +404,6 @@ public class MainFX {
             setOnDragDropped(node);
 
             FinalGrid.add(node, y, x);
-            System.out.println(fotky.get(m).cislo);
         }
         pane.getChildren().addAll(rozdelit, FinalGrid);
         pane.setCursor(Cursor.cursor("DEFAULT"));
@@ -459,11 +457,10 @@ public class MainFX {
         }
 
         tableView.setPrefWidth(1250);
-        tableView.setPrefHeight(500);
         tableView.setLayoutX(250);
         tableView.setLayoutY(100);
         tableView.getStyleClass().add("table-view");
-        tableView.setFixedCellSize(60.0);
+        tableView.setFixedCellSize(60);
 
         pane.getChildren().add(tableView);
 
@@ -566,10 +563,51 @@ public class MainFX {
 
             Dragboard db = vybranyObrazek.startDragAndDrop(TransferMode.ANY);
 
-            timeline.play();
+            int x = (int) (event.getSceneX());
+            int y = (int) (event.getSceneY());
+            int cisloX = x / 280;
+            int cisloY = y / 432;
 
-            vybranyObrazek.setFitWidth(Piece);
-            vybranyObrazek.setFitHeight(Piece);
+            if (y > 695) {
+
+                cisloY = 2;
+            }
+
+            if (cisloX != 0) {
+
+                cisloX += radek - 1;
+            }
+
+            if (x >= 1370) {
+
+                cisloX -= radek;
+
+            }
+            if (x < 1610 && x >= 1370) {
+
+                cisloX = radek;
+            }
+            if (cisloX == halfGrid) {
+
+                cisloY += radek - 1;
+            }
+            if (x > 1675) {
+
+                cisloX = halfGrid;
+                cisloY += radek - 1;
+            }
+
+            //System.out.println("Osa X: " + x + " OsaY " + y);
+
+            int pozice = cisloX + cisloY;
+            //System.out.println("CisloX " + cisloX + " CisloY " + cisloY);
+
+            String slovo = String.valueOf(fotky.get(pozice).cislo);
+            vybranyObrazek.setId(slovo);
+            id = vybranyObrazek.getId();
+            //System.out.println("Pozice " + cisloY + " ID: " + id);
+
+            timeline.play();
 
             ClipboardContent obsahObrazku = new ClipboardContent();
             obsahObrazku.putImage(vybranyObrazek.getImage());
@@ -639,104 +677,122 @@ public class MainFX {
 
         dragboard.setOnDragDropped((DragEvent event) -> {
 
-        Dragboard db = event.getDragboard();
-        boolean puzzleJePolozena = false;
-        int x = (int) (event.getSceneX() - FinalGrid.getLayoutX());
-        int y = (int) (event.getSceneY() - FinalGrid.getLayoutY());
-        int odchylka = 232;
-        int cisloX = x / odchylka;
-        int cisloY = y / odchylka;
+            Dragboard db = event.getDragboard();
+            boolean puzzleJePolozena = false;
+            int x = (int) (event.getSceneX() - FinalGrid.getLayoutX());
+            int y = (int) (event.getSceneY() - FinalGrid.getLayoutY());
+            int odchylka = 232;
+            int cisloX = x / odchylka;
+            int cisloY = y / odchylka;
 
-        if (cisloY > 0) {
+            if (cisloY > 0) {
 
-            if (cisloY == 1) {
+                if (cisloY == 1) {
 
-                cisloX += sloupec - 1;
+                    cisloX += radek - 1;
 
-            } else {
+                } else {
 
-                cisloX += sloupec + 1;
-            }
-        }
-
-        int vysledne = cisloX + cisloY;
-
-        if (db.hasImage()) {
-
-            ImageView vybranyObrazek = new ImageView(db.getImage());
-            vybranyObrazek.setFitWidth(Piece);
-            vybranyObrazek.setFitHeight(Piece);
-            vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
-            setOnDragDetected(vybranyObrazek);
-            setOnDragDone(vybranyObrazek);
-            dragboard.getChildren().add(vybranyObrazek);
-
-            if (!plocha.contains(vysledne)) {
-
-                plocha.add(vysledne);
-                pocet++;
-
-                pokus.add(vysledne);
-
-                System.out.println(pokus);
-            }
-
-            if (PocetFotek == pocet) {
-
-                int[] poleFotek = new int[0];
-                int[] pokusFotek = new int[0];
-                for (int i = 0; i < PocetFotek; i++) {
-
-                    System.out.println(fotky.get(i).cislo + " = " + pokus.get(i));
-
-                    poleFotek = new int[]{fotky.get(i).cislo};
-                    pokusFotek = new int[]{pokus.get(i)};
-
+                    cisloX += radek + 1;
                 }
-                boolean vysledek = Arrays.equals(poleFotek, pokusFotek);
-                System.out.println("Array a and b equal?: " + vysledek);
+            }
 
-                if (vysledek == true) {
-                    timeline.stop();
-                    pane.getChildren().removeAll(rozdelit, FinalGrid);
-                    Photo.setDisable(true);
-                    //spustVideo();
+            int lokace = cisloX + cisloY;
 
-                    try {
-                        Data();
-                        Vysledky();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+            if (db.hasImage()) {
+
+                ImageView vybranyObrazek = new ImageView(db.getImage());
+                vybranyObrazek.setFitWidth(Piece);
+                vybranyObrazek.setFitHeight(Piece);
+                System.out.println(" ID: " + id);
+                vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
+                setOnDragDetected(vybranyObrazek);
+                setOnDragDone(vybranyObrazek);
+                dragboard.getChildren().add(vybranyObrazek);
+
+                boolean vysledek = false;
+
+                if (!plocha.contains(lokace)) {
+
+                    plocha.add(lokace);
+
+                    pocet++;
+
+                    System.out.println(id + " = " + lokace);
+
+                    if (Integer.parseInt(id) == lokace) {
+
+                        vysledek = true;
                     }
                 }
+                if (PocetFotek == pocet) {
+
+                Label kontrola = new Label();
+                kontrola.setPrefSize(308, 104);
+                kontrola.setAlignment(Pos.CENTER);
+                kontrola.setLayoutX(750);
+                kontrola.setLayoutY(100);
+                pane.getChildren().add(kontrola);
+
+                if (vysledek == true) {
+
+                    FinalGrid.setStyle("-fx-border-color:" + ColorWIN() + "-fx-border-width: 10");
+
+                    kontrola.setText("You WON!");
+                    kontrola.setStyle("-fx-text-fill: " + ColorWIN() + Vzhled());
+
+                    Button showResults = new Button("Show Results");
+                    showResults.setPrefSize(208, 52);
+                    showResults.setAlignment(Pos.CENTER);
+                    showResults.setLayoutX(875);
+                    showResults.setLayoutY(1000);
+
+                    pane.getChildren().add(showResults);
+                    showResults.setOnAction((ActionEvent e) -> {
+
+                        try {
+                            pane.getChildren().removeAll(rozdelit, FinalGrid);
+                            Data();
+                            Vysledky();
+                            showResults.setDisable(true);
+
+                        } catch (IOException exception) {
+                            throw new RuntimeException(exception);
+                        }
+                    });
+                } else {
+
+                    FinalGrid.setStyle("-fx-border-color: " + ColorLOSE() + "-fx-border-width: 10");
+
+                    kontrola.setText("You LOSE!");
+                    kontrola.setStyle("-fx-text-fill: " + ColorLOSE() + Vzhled());
+                }
+                FinalGrid.setDisable(true);
+                timeline.stop();
+                Photo.setDisable(true);
+                }
+
+                event.consume();
+
+                puzzleJePolozena = true;
             }
+            event.setDropCompleted(puzzleJePolozena);
 
             event.consume();
+        });
+    }
+    public String Vzhled(){
 
-            puzzleJePolozena = true;
-        }
-        event.setDropCompleted(puzzleJePolozena);
+       return "-fx-font-size: 60;-fx-background-color: black;-fx-font-weight: bold;" +
+                "-fx-font-style: italic;";
+    }
+    public String ColorWIN(){
 
-        event.consume();
-    });
-}
+        return "linear-gradient(to right, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);";
+    }
+    public String ColorLOSE(){
 
-    public MediaView spustVideo() {
-
-        Media media = new Media(Paths.get
-                        ("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\images\\congratulations.mp4").
-                toUri().toString());
-
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        MediaView mediaView = new MediaView(mediaPlayer);
-        mediaView.setLayoutX(615);
-        mediaView.setLayoutY(225);
-        new MediaPlayer(media).play();
-        mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        pane.getChildren().add(mediaView);
-
-        return mediaView;
+        return "linear-gradient(to right, rgba(255,0,0,1) 0%, rgba(255,231,0,1) 100%);";
     }
 
     public Parent getRoot() {

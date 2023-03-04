@@ -1,6 +1,17 @@
+.button{
+
+    -fx-text-fill: #000000;
+    -fx-font-size: 25;
+    -fx-font-weight: bold;
+}
+.button:hover{
+
+    -fx-background-color: linear-gradient(to right, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);;
+}
 .button:focused{
 
     -fx-border-color: linear-gradient(to right, #b1227a 0%, #429aee 100%);
+    -fx-padding: 0;
     -fx-border-width: 5;
 }
 
@@ -31,7 +42,6 @@
     -fx-border-color: white;
 }
 .table-view .table-column{
-
 
     -fx-font-weight:bold;
     -fx-alignment:center;
