@@ -76,6 +76,7 @@ public class MainFX {
     String LevelFX;
     Cas cas;
     int showHintUsed = 0;
+    private HashMap<Integer,Integer> zakaz;
 
     public MainFX() throws IOException {
 
@@ -86,6 +87,8 @@ public class MainFX {
         showHint = new ImageView();
 
         plocha = new ArrayList<Integer>();
+
+        zakaz = new HashMap<>();
 
         rozdelit = new HBox();
 
@@ -600,12 +603,11 @@ public class MainFX {
             //System.out.println("Osa X: " + x + " OsaY " + y);
 
             int pozice = cisloX + cisloY;
-            //System.out.println("CisloX " + cisloX + " CisloY " + cisloY);
+            System.out.println("CisloX " + cisloX + " CisloY " + cisloY);
 
             String slovo = String.valueOf(fotky.get(pozice).cislo);
             vybranyObrazek.setId(slovo);
             id = vybranyObrazek.getId();
-            //System.out.println("Pozice " + cisloY + " ID: " + id);
 
             timeline.play();
 
@@ -681,40 +683,45 @@ public class MainFX {
             boolean puzzleJePolozena = false;
             int x = (int) (event.getSceneX() - FinalGrid.getLayoutX());
             int y = (int) (event.getSceneY() - FinalGrid.getLayoutY());
-            int odchylka = 232;
-            int cisloX = x / odchylka;
-            int cisloY = y / odchylka;
+            int odchylka = 226;
+            int lokaceX = x / odchylka;
+            int lokaceY = y / odchylka;
 
-            if (cisloY > 0) {
+            if (lokaceY > 0) {
 
-                if (cisloY == 1) {
+                if (lokaceY == 1) {
 
-                    cisloX += radek - 1;
+                    lokaceX += radek - 1;
 
                 } else {
 
-                    cisloX += radek + 1;
+                    lokaceX += radek + 1;
                 }
             }
+            //System.out.println("KontrolaX: " + lokaceX + " KontrolaY: " + lokaceY + " = " + (lokaceX + lokaceY));
 
-            int lokace = cisloX + cisloY;
+            int lokace = lokaceX + lokaceY;
 
             if (db.hasImage()) {
 
                 ImageView vybranyObrazek = new ImageView(db.getImage());
                 vybranyObrazek.setFitWidth(Piece);
                 vybranyObrazek.setFitHeight(Piece);
-                System.out.println(" ID: " + id);
+                System.out.println("ID: " + id);
                 vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
                 setOnDragDetected(vybranyObrazek);
                 setOnDragDone(vybranyObrazek);
-                dragboard.getChildren().add(vybranyObrazek);
+
+                zakaz.put(Integer.valueOf(id),lokace);
+                System.out.println(zakaz);
 
                 boolean vysledek = false;
 
                 if (!plocha.contains(lokace)) {
 
                     plocha.add(lokace);
+
+                    dragboard.getChildren().add(vybranyObrazek);
 
                     pocet++;
 
@@ -725,6 +732,10 @@ public class MainFX {
                         vysledek = true;
                     }
                 }
+                else{
+                    FinalGrid.setMouseTransparent(true); // zakaz vkladani objektu do gridpane
+                }
+
                 if (PocetFotek == pocet) {
 
                 Label kontrola = new Label();
