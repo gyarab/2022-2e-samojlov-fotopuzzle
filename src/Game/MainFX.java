@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -76,7 +77,13 @@ public class MainFX {
     String LevelFX;
     Cas cas;
     int showHintUsed = 0;
-    private HashMap<Integer,Integer> zakaz;
+    private HashMap<Integer, Integer> zakaz;
+    private int lokace;
+    private int odchylka;
+    private int number;
+    private int nasobek;
+    private int lokaceX;
+    private int lokaceY;
 
     public MainFX() throws IOException {
 
@@ -211,6 +218,8 @@ public class MainFX {
                 Gap = 40;
                 halfGrid = 4;
                 Spacing = 800;
+                odchylka = 226;
+                number = 1;
 
             } else if (obtiznost.equals("Medium")) {
 
@@ -222,6 +231,9 @@ public class MainFX {
                 Gap = 15;
                 halfGrid = 12;
                 Spacing = 900;
+                odchylka = 140;
+                number = 3;
+                nasobek = 4;
 
             } else if (obtiznost.equals("Hard")) {
 
@@ -233,6 +245,9 @@ public class MainFX {
                 Gap = 12;
                 halfGrid = 24;
                 Spacing = 960;
+                odchylka = 95;
+                number = 5;
+                nasobek = 6;
 
             } else if (obtiznost.equals("Expert")) {
 
@@ -244,6 +259,9 @@ public class MainFX {
                 Gap = 10;
                 halfGrid = 50;
                 Spacing = 920;
+                odchylka = 70;
+                number = 8;
+                nasobek = 9;
             }
         }
     }
@@ -568,6 +586,8 @@ public class MainFX {
 
             int x = (int) (event.getSceneX());
             int y = (int) (event.getSceneY());
+            System.out.println(x);
+            System.out.println(y);
             int cisloX = x / 280;
             int cisloY = y / 432;
 
@@ -600,15 +620,16 @@ public class MainFX {
                 cisloY += radek - 1;
             }
 
-            //System.out.println("Osa X: " + x + " OsaY " + y);
-
             int pozice = cisloX + cisloY;
             System.out.println("CisloX " + cisloX + " CisloY " + cisloY);
 
-            String slovo = String.valueOf(fotky.get(pozice).cislo);
-            vybranyObrazek.setId(slovo);
-            id = vybranyObrazek.getId();
+            id = String.valueOf(fotky.get(pozice).cislo);
 
+            if (!(x > 550 && x < 1375)) {
+
+                vybranyObrazek.setId(id);
+                id = vybranyObrazek.getId();
+            }
             timeline.play();
 
             ClipboardContent obsahObrazku = new ClipboardContent();
@@ -643,7 +664,6 @@ public class MainFX {
                 dragboard.setStyle("-fx-background-color: white;");
                 event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
             }
-
             event.consume();
         });
     }
@@ -673,8 +693,19 @@ public class MainFX {
         });
     }
 
-    // Tah polozil castici obrazku (puzzle) do daneho objektu
+    public void presazeniLimitu(String levelFX, int x, int y, int hodnota, int nastav) {
 
+        if (LevelFX == levelFX && x % hodnota == 0) {
+
+            lokaceX = nastav;
+        }
+        if (LevelFX == levelFX && y % hodnota == 0) {
+
+            lokaceY = nastav;
+        }
+    }
+
+    // Tah polozil castici obrazku (puzzle) do daneho objektu
     public void setOnDragDropped(Pane dragboard) {
 
         dragboard.setOnDragDropped((DragEvent event) -> {
@@ -682,10 +713,20 @@ public class MainFX {
             Dragboard db = event.getDragboard();
             boolean puzzleJePolozena = false;
             int x = (int) (event.getSceneX() - FinalGrid.getLayoutX());
+            System.out.println(x);
             int y = (int) (event.getSceneY() - FinalGrid.getLayoutY());
-            int odchylka = 226;
-            int lokaceX = x / odchylka;
-            int lokaceY = y / odchylka;
+            System.out.println(y);
+            lokaceX = x / odchylka;
+            lokaceY = y / odchylka;
+
+            presazeniLimitu("Medium", x, y, 700, 4);
+            presazeniLimitu("Hard", x, y, 665, 6);
+            presazeniLimitu("Expert", x, y, 700, 9);
+
+            if (x == 0) {
+
+                lokaceX = 0;
+            }
 
             if (lokaceY > 0) {
 
@@ -693,94 +734,102 @@ public class MainFX {
 
                     lokaceX += radek - 1;
 
+                } else if (lokaceY == 2) {
+
+                    lokaceX += radek + number;
                 } else {
 
-                    lokaceX += radek + 1;
+                    lokaceX += radek + number + nasobek * (lokaceY - 2);
                 }
             }
-            //System.out.println("KontrolaX: " + lokaceX + " KontrolaY: " + lokaceY + " = " + (lokaceX + lokaceY));
-
-            int lokace = lokaceX + lokaceY;
+            System.out.println("X: " + lokaceX + ", Y: " + lokaceY);
+            lokace = lokaceX + lokaceY;
+            System.out.println("LOKACE: " + lokace);
 
             if (db.hasImage()) {
 
                 ImageView vybranyObrazek = new ImageView(db.getImage());
+                dragboard.getChildren().add(vybranyObrazek);
+                dragboard.setMouseTransparent(true);
                 vybranyObrazek.setFitWidth(Piece);
                 vybranyObrazek.setFitHeight(Piece);
-                System.out.println("ID: " + id);
+                //System.out.println("ID: " + id);
                 vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
+
+                /*pane.setOnMouseClicked(e -> {
+
+                    if (e.getClickCount() == 1) {
+
+                        dragboard.setMouseTransparent(false);
+                        vybranyObrazek.setMouseTransparent(false);
+                    }
+                });*/
+
                 setOnDragDetected(vybranyObrazek);
                 setOnDragDone(vybranyObrazek);
 
-                zakaz.put(Integer.valueOf(id),lokace);
-                System.out.println(zakaz);
-
                 boolean vysledek = false;
 
-                if (!plocha.contains(lokace)) {
+                //if (!plocha.contains(lokace)) {
 
-                    plocha.add(lokace);
+                plocha.add(lokace);
 
-                    dragboard.getChildren().add(vybranyObrazek);
+                pocet++;
 
-                    pocet++;
+                //System.out.println(id + " = " + lokace);
 
-                    System.out.println(id + " = " + lokace);
+                if (Integer.parseInt(id) == lokace) {
 
-                    if (Integer.parseInt(id) == lokace) {
+                    vysledek = true;
+                }
+                //}
 
-                        vysledek = true;
+                if (pocet == PocetFotek) {
+
+                    Label kontrola = new Label();
+                    kontrola.setPrefSize(308, 104);
+                    kontrola.setAlignment(Pos.CENTER);
+                    kontrola.setLayoutX(750);
+                    kontrola.setLayoutY(100);
+                    pane.getChildren().add(kontrola);
+
+                    if (vysledek == true) {
+
+                        FinalGrid.setStyle("-fx-border-color:" + ColorWIN() + "-fx-border-width: 10");
+
+                        kontrola.setText("You WON!");
+                        kontrola.setStyle("-fx-text-fill: " + ColorWIN() + Vzhled());
+
+                        Button showResults = new Button("Show Results");
+                        showResults.setPrefSize(208, 52);
+                        showResults.setAlignment(Pos.CENTER);
+                        showResults.setLayoutX(875);
+                        showResults.setLayoutY(1000);
+
+                        pane.getChildren().add(showResults);
+                        showResults.setOnAction((ActionEvent e) -> {
+
+                            try {
+                                pane.getChildren().removeAll(rozdelit, FinalGrid);
+                                Data();
+                                Vysledky();
+                                showResults.setDisable(true);
+
+                            } catch (IOException exception) {
+                                throw new RuntimeException(exception);
+                            }
+                        });
+
+                    } else {
+
+                        FinalGrid.setStyle("-fx-border-color: " + ColorLOSE() + "-fx-border-width: 10");
+
+                        kontrola.setText("You LOSE!");
+                        kontrola.setStyle("-fx-text-fill: " + ColorLOSE() + Vzhled());
                     }
-                }
-                else{
-                    FinalGrid.setMouseTransparent(true); // zakaz vkladani objektu do gridpane
-                }
-
-                if (PocetFotek == pocet) {
-
-                Label kontrola = new Label();
-                kontrola.setPrefSize(308, 104);
-                kontrola.setAlignment(Pos.CENTER);
-                kontrola.setLayoutX(750);
-                kontrola.setLayoutY(100);
-                pane.getChildren().add(kontrola);
-
-                if (vysledek == true) {
-
-                    FinalGrid.setStyle("-fx-border-color:" + ColorWIN() + "-fx-border-width: 10");
-
-                    kontrola.setText("You WON!");
-                    kontrola.setStyle("-fx-text-fill: " + ColorWIN() + Vzhled());
-
-                    Button showResults = new Button("Show Results");
-                    showResults.setPrefSize(208, 52);
-                    showResults.setAlignment(Pos.CENTER);
-                    showResults.setLayoutX(875);
-                    showResults.setLayoutY(1000);
-
-                    pane.getChildren().add(showResults);
-                    showResults.setOnAction((ActionEvent e) -> {
-
-                        try {
-                            pane.getChildren().removeAll(rozdelit, FinalGrid);
-                            Data();
-                            Vysledky();
-                            showResults.setDisable(true);
-
-                        } catch (IOException exception) {
-                            throw new RuntimeException(exception);
-                        }
-                    });
-                } else {
-
-                    FinalGrid.setStyle("-fx-border-color: " + ColorLOSE() + "-fx-border-width: 10");
-
-                    kontrola.setText("You LOSE!");
-                    kontrola.setStyle("-fx-text-fill: " + ColorLOSE() + Vzhled());
-                }
-                FinalGrid.setDisable(true);
-                timeline.stop();
-                Photo.setDisable(true);
+                    FinalGrid.setDisable(true);
+                    timeline.stop();
+                    Photo.setDisable(true);
                 }
 
                 event.consume();
@@ -792,16 +841,19 @@ public class MainFX {
             event.consume();
         });
     }
-    public String Vzhled(){
 
-       return "-fx-font-size: 60;-fx-background-color: black;-fx-font-weight: bold;" +
+    public String Vzhled() {
+
+        return "-fx-font-size: 60;-fx-background-color: black;-fx-font-weight: bold;" +
                 "-fx-font-style: italic;";
     }
-    public String ColorWIN(){
+
+    public String ColorWIN() {
 
         return "linear-gradient(to right, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);";
     }
-    public String ColorLOSE(){
+
+    public String ColorLOSE() {
 
         return "linear-gradient(to right, rgba(255,0,0,1) 0%, rgba(255,231,0,1) 100%);";
     }
