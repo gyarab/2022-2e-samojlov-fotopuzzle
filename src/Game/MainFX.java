@@ -56,7 +56,6 @@ public class MainFX {
     private TableView tableView;
     private Image mesto1, tygr, liska, mesto2, another;
     private ImageView Fotky;
-    private ArrayList<Integer> plocha;
     private ArrayList<PuzzlePiece> fotky;
     private Pane node;
     private String id;
@@ -79,11 +78,11 @@ public class MainFX {
     int showHintUsed = 0;
     private HashMap<Integer, Integer> zakaz;
     private int lokace;
-    private int odchylka;
     private int number;
     private int nasobek;
     private int lokaceX;
     private int lokaceY;
+    private int pozice;
 
     public MainFX() throws IOException {
 
@@ -92,8 +91,6 @@ public class MainFX {
         pane = new Pane();
 
         showHint = new ImageView();
-
-        plocha = new ArrayList<Integer>();
 
         zakaz = new HashMap<>();
 
@@ -218,7 +215,6 @@ public class MainFX {
                 Gap = 40;
                 halfGrid = 4;
                 Spacing = 800;
-                odchylka = 226;
                 number = 1;
 
             } else if (obtiznost.equals("Medium")) {
@@ -231,7 +227,6 @@ public class MainFX {
                 Gap = 15;
                 halfGrid = 12;
                 Spacing = 900;
-                odchylka = 140;
                 number = 3;
                 nasobek = 4;
 
@@ -245,7 +240,6 @@ public class MainFX {
                 Gap = 12;
                 halfGrid = 24;
                 Spacing = 960;
-                odchylka = 95;
                 number = 5;
                 nasobek = 6;
 
@@ -259,7 +253,6 @@ public class MainFX {
                 Gap = 10;
                 halfGrid = 50;
                 Spacing = 920;
-                odchylka = 70;
                 number = 8;
                 nasobek = 9;
             }
@@ -325,6 +318,16 @@ public class MainFX {
                 }
             }
         }
+    }
+
+    public void dragDropped(Pane pane, int x, int y) {
+
+        pane.setOnDragDropped(event -> {
+
+            System.out.println("x: " + x + ", y: " + y);
+
+        });
+
     }
 
     public void getPuzzlePieces() throws IOException {
@@ -399,12 +402,12 @@ public class MainFX {
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
 
-            setOnDragDetected(Fotky);
-            setOnDragDone(Fotky);
-
             // Puzzle s GridPane
             int x = m / sloupec;
             int y = m % radek;
+
+            setOnDragDetected(Fotky);
+            setOnDragDone(Fotky);
 
             if (m <= halfGrid) {
 
@@ -414,6 +417,13 @@ public class MainFX {
 
                 grid2.add(Fotky, x, y);
             }
+
+            // Pozice obrazku pri tahu mysi
+            Fotky.setOnMouseDragged(event -> {
+
+                pozice = (x * radek) + y;
+
+            });
 
             // Drop place
             node = new Pane();
@@ -584,52 +594,11 @@ public class MainFX {
 
             Dragboard db = vybranyObrazek.startDragAndDrop(TransferMode.ANY);
 
-            int x = (int) (event.getSceneX());
-            int y = (int) (event.getSceneY());
-            System.out.println(x);
-            System.out.println(y);
-            int cisloX = x / 280;
-            int cisloY = y / 432;
-
-            if (y > 695) {
-
-                cisloY = 2;
-            }
-
-            if (cisloX != 0) {
-
-                cisloX += radek - 1;
-            }
-
-            if (x >= 1370) {
-
-                cisloX -= radek;
-
-            }
-            if (x < 1610 && x >= 1370) {
-
-                cisloX = radek;
-            }
-            if (cisloX == halfGrid) {
-
-                cisloY += radek - 1;
-            }
-            if (x > 1675) {
-
-                cisloX = halfGrid;
-                cisloY += radek - 1;
-            }
-
-            int pozice = cisloX + cisloY;
-            System.out.println("CisloX " + cisloX + " CisloY " + cisloY);
-
             id = String.valueOf(fotky.get(pozice).cislo);
 
-            if (!(x > 550 && x < 1375)) {
+            vybranyObrazek.setId(id);
+            id = vybranyObrazek.getId();
 
-                vybranyObrazek.setId(id);
-                id = vybranyObrazek.getId();
-            }
             timeline.play();
 
             ClipboardContent obsahObrazku = new ClipboardContent();
@@ -713,11 +682,9 @@ public class MainFX {
             Dragboard db = event.getDragboard();
             boolean puzzleJePolozena = false;
             int x = (int) (event.getSceneX() - FinalGrid.getLayoutX());
-            System.out.println(x);
             int y = (int) (event.getSceneY() - FinalGrid.getLayoutY());
-            System.out.println(y);
-            lokaceX = x / odchylka;
-            lokaceY = y / odchylka;
+            lokaceX = x / Piece;
+            lokaceY = y / Piece;
 
             presazeniLimitu("Medium", x, y, 700, 4);
             presazeniLimitu("Hard", x, y, 665, 6);
@@ -737,14 +704,14 @@ public class MainFX {
                 } else if (lokaceY == 2) {
 
                     lokaceX += radek + number;
+
                 } else {
 
                     lokaceX += radek + number + nasobek * (lokaceY - 2);
                 }
             }
-            System.out.println("X: " + lokaceX + ", Y: " + lokaceY);
+
             lokace = lokaceX + lokaceY;
-            System.out.println("LOKACE: " + lokace);
 
             if (db.hasImage()) {
 
@@ -753,36 +720,31 @@ public class MainFX {
                 dragboard.setMouseTransparent(true);
                 vybranyObrazek.setFitWidth(Piece);
                 vybranyObrazek.setFitHeight(Piece);
-                //System.out.println("ID: " + id);
+                System.out.println("ID: " + id);
                 vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
 
-                /*pane.setOnMouseClicked(e -> {
+                pane.setOnMouseClicked(e -> {
 
-                    if (e.getClickCount() == 1) {
+                    if (e.getButton() == MouseButton.SECONDARY) {
 
                         dragboard.setMouseTransparent(false);
                         vybranyObrazek.setMouseTransparent(false);
                     }
-                });*/
+                });
 
                 setOnDragDetected(vybranyObrazek);
                 setOnDragDone(vybranyObrazek);
 
                 boolean vysledek = false;
 
-                //if (!plocha.contains(lokace)) {
-
-                plocha.add(lokace);
-
-                pocet++;
-
-                //System.out.println(id + " = " + lokace);
+                System.out.println(id + " = " + lokace);
 
                 if (Integer.parseInt(id) == lokace) {
 
+                    pocet++;
+
                     vysledek = true;
                 }
-                //}
 
                 if (pocet == PocetFotek) {
 
