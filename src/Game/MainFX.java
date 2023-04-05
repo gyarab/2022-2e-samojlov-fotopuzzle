@@ -76,13 +76,14 @@ public class MainFX {
     String LevelFX;
     Cas cas;
     int showHintUsed = 0;
-    private HashMap<Integer, Integer> zakaz;
-    private int lokace;
-    private int number;
-    private int nasobek;
-    private int lokaceX;
-    private int lokaceY;
-    private int pozice;
+    private HashMap<Integer, Integer> poziceObrazku;
+    int lokace;
+    int number;
+    int nasobek;
+    int lokaceX;
+    int lokaceY;
+    int pozice;
+    int skoreFX;
 
     public MainFX() throws IOException {
 
@@ -92,7 +93,7 @@ public class MainFX {
 
         showHint = new ImageView();
 
-        zakaz = new HashMap<>();
+        poziceObrazku = new HashMap<>();
 
         rozdelit = new HBox();
 
@@ -470,10 +471,11 @@ public class MainFX {
 
         if (tableView.getItems().isEmpty() == true) {
 
-            tableView.getItems().add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, 4));
+            tableView.getItems().add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, skoreFX));
         }
         tableView.setEditable(false);
         tableView.setSelectionModel(null);
+        tableView.setMouseTransparent(true);
         tableView.getColumns().addAll(arr);
         jmenoObrazku.setResizable(false);
         level.setResizable(false);
@@ -532,7 +534,7 @@ public class MainFX {
 
             dataTabulky = (ArrayList<Vysledek>) tabulka;
 
-            dataTabulky.add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, 4));
+            dataTabulky.add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, skoreFX));
 
             for (Vysledek data : dataTabulky) {
 
@@ -686,6 +688,7 @@ public class MainFX {
             lokaceX = x / Piece;
             lokaceY = y / Piece;
 
+            presazeniLimitu("Easy",x,y,675,2);
             presazeniLimitu("Medium", x, y, 700, 4);
             presazeniLimitu("Hard", x, y, 665, 6);
             presazeniLimitu("Expert", x, y, 700, 9);
@@ -729,24 +732,43 @@ public class MainFX {
 
                         dragboard.setMouseTransparent(false);
                         vybranyObrazek.setMouseTransparent(false);
+                        setOnDragDetected(vybranyObrazek);
+                        setOnDragDone(vybranyObrazek);
+                        skoreFX -= 25;
                     }
                 });
 
-                setOnDragDetected(vybranyObrazek);
-                setOnDragDone(vybranyObrazek);
+                poziceObrazku.put(Integer.valueOf(id),lokace);
+                System.out.println(poziceObrazku);
 
-                boolean vysledek = false;
+                Label aktualniSkore = new Label(String.valueOf(skoreFX));
+                aktualniSkore.setPrefSize(1000,50);
+                aktualniSkore.setAlignment(Pos.CENTER);
+                aktualniSkore.setStyle("-fx-text-fill: white;" + Vzhled());
+                aktualniSkore.setLayoutX(450);
+                aktualniSkore.setLayoutY(100);
+                pane.getChildren().add(aktualniSkore);
+
+                int vysledek = 0;
+
+                for(Map.Entry<Integer, Integer> entry: poziceObrazku.entrySet()) {
+
+                    // Poloha obrázku není správná
+                    if(!entry.getKey().equals(entry.getValue())) {
+
+                        vysledek++;
+                        System.out.println("CHYBA: " + vysledek);
+
+                    // Poloha obrázku je správná
+                    } else {
+
+                        skoreFX += 50;
+                    }
+                }
 
                 System.out.println(id + " = " + lokace);
 
-                if (Integer.parseInt(id) == lokace) {
-
-                    pocet++;
-
-                    vysledek = true;
-                }
-
-                if (pocet == PocetFotek) {
+                if (poziceObrazku.size() == PocetFotek) {
 
                     Label kontrola = new Label();
                     kontrola.setPrefSize(308, 104);
@@ -755,7 +777,7 @@ public class MainFX {
                     kontrola.setLayoutY(100);
                     pane.getChildren().add(kontrola);
 
-                    if (vysledek == true) {
+                    if (vysledek == 0) {
 
                         FinalGrid.setStyle("-fx-border-color:" + ColorWIN() + "-fx-border-width: 10");
 

@@ -35,6 +35,11 @@ public class Vysledek implements Serializable {
         return napovedaUsed;
     }
 
+    public Integer getSkore() {
+        return skore;
+    }
+
+
     @Override
     public String toString() {
         return "Vysledek{" +
