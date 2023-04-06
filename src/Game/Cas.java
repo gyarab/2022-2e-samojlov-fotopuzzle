@@ -2,9 +2,10 @@ package Game;
 
 public class Cas {
 
-    private int sekunda = 0;
-    private int minuta = 0;
-    private int hodina = 0;
+    private int sekunda;
+    private int minuta;
+    private int hodina;
+    int celkovyCas;
 
     public Cas(String cas) {
 
@@ -17,6 +18,7 @@ public class Cas {
     public void Calendar() {
 
         sekunda++;
+        celkovyCas++;
 
         if (sekunda == 60) {
 
@@ -33,39 +35,11 @@ public class Cas {
 
     public String toString() {
 
-        if (hodina < 10 && minuta < 10 && sekunda < 10)
+        String vyslednaHodina = String.format("%02d", hodina);
+        String vyslednaMinuta = String.format("%02d", minuta);
+        String vyslednaSekunda = String.format("%02d", sekunda);
 
-            return "0" + hodina + ":0" + minuta + ":0" + sekunda;
-
-        if (hodina < 10 && minuta < 10 && sekunda >= 10)
-
-            return "0" + hodina + ":0" + minuta + ":" + sekunda;
-
-        if (hodina < 10 && minuta >= 10 && sekunda < 10)
-
-            return "0" + hodina + ":" + minuta + ":0" + sekunda;
-
-        if (hodina < 10 && minuta >= 10 && sekunda >= 10)
-
-            return "0" + hodina + ":" + minuta + ":" + sekunda;
-
-        if (hodina >= 10 && minuta < 10 && sekunda < 10)
-
-            return hodina + ":0" + minuta + ":0" + sekunda;
-
-        if (hodina >= 10 && minuta < 10 && sekunda >= 10)
-
-            return hodina + ":0" + minuta + ":" + sekunda;
-
-        if (hodina >= 10 && minuta >= 10 && sekunda < 10)
-
-            return hodina + ":" + minuta + ":0" + sekunda;
-
-        if (hodina >= 10 && minuta >= 10 && sekunda >= 10)
-
-            return hodina + ":" + minuta + ":" + sekunda;
-
-        return null;
+        return vyslednaHodina + ":" + vyslednaMinuta + ":" + vyslednaSekunda;
     }
 }
 

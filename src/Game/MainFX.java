@@ -3,7 +3,6 @@ package Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
 import java.util.logging.Level;
@@ -12,7 +11,6 @@ import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -27,15 +25,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import javax.imageio.ImageIO;
 
 public class MainFX {
+    private Button napoveda;
     private Pane pane;
     private Parent root;
     private Button backToMenu;
@@ -84,6 +80,7 @@ public class MainFX {
     int lokaceY;
     int pozice;
     int skoreFX;
+    int minus = 0;
 
     public MainFX() throws IOException {
 
@@ -144,28 +141,22 @@ public class MainFX {
         Photo.setOnAction((ActionEvent event) -> {
 
             showHintUsed++;
-            Stage newWindow = new Stage();
-            newWindow.setTitle("Helper Image");
-            newWindow.getIcons().add(new Image("/images/PuzzleLogo.png"));
-            newWindow.setResizable(false);
+            minus += 2;
+
             showHint.setFitHeight(450);
             showHint.setFitWidth(550);
-            Button button = new Button("OK");
-            button.setStyle("-fx-background-color: black;-fx-text-fill: white;");
-            button.setOnAction(e -> {
+            showHint.setLayoutX(675);
+            showHint.setLayoutY(330);
 
-                newWindow.close();
-            });
+            pocet++;
 
-            VBox container = new VBox(showHint, button);
+            if (pocet % 2 == 0) {
 
-            container.setSpacing(15);
-            container.setPadding(new Insets(25));
-            container.setAlignment(Pos.CENTER);
-            container.setStyle("-fx-background-color: linear-gradient(to top, #2c216b, #0070f8, #f58d00, #ffc200, #ebe112);");
+                pane.getChildren().remove(showHint);
+            } else {
+                pane.getChildren().add(showHint);
+            }
 
-            newWindow.setScene(new Scene(container));
-            newWindow.show();
         });
 
         // Button Home
@@ -192,12 +183,50 @@ public class MainFX {
             }
         });
 
-        naV.getChildren().addAll(backToMenu, Photo, stopky);
+        // Napoveda
+        ImageView help = new ImageView(new Image(getClass().getResourceAsStream("/images/help.png")));
+        help.setFitHeight(50);
+        help.setFitWidth(50);
+
+        napoveda = new Button("", help);
+        napoveda.setStyle("-fx-background-color: black;");
+        napoveda.setFocusTraversable(false);
+        napoveda.setLayoutX(890);
+        napoveda.setLayoutY(1000);
+
+        // Pravidla
+        Label pravidla = new Label();
+        pravidla.setAlignment(Pos.TOP_CENTER);
+        pravidla.setPrefWidth(450);
+        pravidla.setPrefHeight(500);
+
+        VBox zaklad = new VBox(pravidla);
+        zaklad.setLayoutX(730);
+        zaklad.setLayoutY(400);
+
+        napoveda.setOnAction(event -> {
+
+            zaklad.setAlignment(Pos.CENTER);
+            pravidla.setText("How to play?");
+            pravidla.setStyle("-fx-background-color: white;-fx-text-fill: black");
+            pane.getChildren().addAll(zaklad);
+
+        });
+        pane.getChildren().addAll(napoveda);
 
         /** Main Pane **/
-
+        naV.getChildren().addAll(backToMenu, Photo, stopky);
         pane.setStyle("-fx-background-color: black;");
         pane.getChildren().add(naV);
+    }
+
+    public int MinusSkoreFX(int vybranaHodnota) {
+
+        if (skoreFX >= vybranaHodnota) {
+
+            skoreFX -= vybranaHodnota;
+        }
+        return vybranaHodnota;
     }
 
     public void ZvolenaObtiznost() throws IOException {
@@ -321,16 +350,6 @@ public class MainFX {
         }
     }
 
-    public void dragDropped(Pane pane, int x, int y) {
-
-        pane.setOnDragDropped(event -> {
-
-            System.out.println("x: " + x + ", y: " + y);
-
-        });
-
-    }
-
     public void getPuzzlePieces() throws IOException {
 
         photo = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
@@ -391,6 +410,7 @@ public class MainFX {
             PuzzlePiece piece = new PuzzlePiece(images[i], i);
             fotky.add(piece);
         }
+
         Collections.shuffle(fotky, new Random());
 
         for (int m = 0; m < PocetFotek; m++) {
@@ -555,7 +575,7 @@ public class MainFX {
         } catch (EOFException | ClassNotFoundException e) {
 
             List<Vysledek> dataTabulky = new ArrayList<>();
-            dataTabulky.add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, 4));
+            dataTabulky.add(new Vysledek(nazevObrazku, LevelFX, getCas().toString(), showHintUsed, skoreFX));
 
             for (Vysledek data : dataTabulky) {
 
@@ -595,6 +615,10 @@ public class MainFX {
         vybranyObrazek.setOnDragDetected((MouseEvent event) -> {
 
             Dragboard db = vybranyObrazek.startDragAndDrop(TransferMode.ANY);
+
+            if (showHint != null) {
+                pane.getChildren().remove(showHint);
+            }
 
             id = String.valueOf(fotky.get(pozice).cislo);
 
@@ -688,7 +712,7 @@ public class MainFX {
             lokaceX = x / Piece;
             lokaceY = y / Piece;
 
-            presazeniLimitu("Easy",x,y,675,2);
+            presazeniLimitu("Easy", x, y, 675, 2);
             presazeniLimitu("Medium", x, y, 700, 4);
             presazeniLimitu("Hard", x, y, 665, 6);
             presazeniLimitu("Expert", x, y, 700, 9);
@@ -726,44 +750,32 @@ public class MainFX {
                 System.out.println("ID: " + id);
                 vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
 
-                pane.setOnMouseClicked(e -> {
-
-                    if (e.getButton() == MouseButton.SECONDARY) {
-
-                        dragboard.setMouseTransparent(false);
-                        vybranyObrazek.setMouseTransparent(false);
-                        setOnDragDetected(vybranyObrazek);
-                        setOnDragDone(vybranyObrazek);
-                        skoreFX -= 25;
-                    }
-                });
-
-                poziceObrazku.put(Integer.valueOf(id),lokace);
+                poziceObrazku.put(Integer.valueOf(id), lokace);
                 System.out.println(poziceObrazku);
-
-                Label aktualniSkore = new Label(String.valueOf(skoreFX));
-                aktualniSkore.setPrefSize(1000,50);
-                aktualniSkore.setAlignment(Pos.CENTER);
-                aktualniSkore.setStyle("-fx-text-fill: white;" + Vzhled());
-                aktualniSkore.setLayoutX(450);
-                aktualniSkore.setLayoutY(100);
-                pane.getChildren().add(aktualniSkore);
 
                 int vysledek = 0;
 
-                for(Map.Entry<Integer, Integer> entry: poziceObrazku.entrySet()) {
+                for (Map.Entry<Integer, Integer> entry : poziceObrazku.entrySet()) {
 
                     // Poloha obrázku není správná
-                    if(!entry.getKey().equals(entry.getValue())) {
+                    if (!entry.getKey().equals(entry.getValue())) {
 
                         vysledek++;
                         System.out.println("CHYBA: " + vysledek);
 
-                    // Poloha obrázku je správná
-                    } else {
-
-                        skoreFX += 50;
                     }
+                    pane.setOnMouseClicked(e -> {
+
+                        if (e.getButton() == MouseButton.SECONDARY) {
+
+                            System.out.println("Výběr: " + entry.getKey() + ", : " + entry.getValue());
+                            dragboard.setMouseTransparent(false);
+                            vybranyObrazek.setMouseTransparent(false);
+                            setOnDragDetected(vybranyObrazek);
+                            setOnDragDone(vybranyObrazek);
+                            minus++;
+                        }
+                    });
                 }
 
                 System.out.println(id + " = " + lokace);
@@ -789,7 +801,7 @@ public class MainFX {
                         showResults.setAlignment(Pos.CENTER);
                         showResults.setLayoutX(875);
                         showResults.setLayoutY(1000);
-
+                        pane.getChildren().remove(napoveda);
                         pane.getChildren().add(showResults);
                         showResults.setOnAction((ActionEvent e) -> {
 
@@ -813,6 +825,7 @@ public class MainFX {
                     }
                     FinalGrid.setDisable(true);
                     timeline.stop();
+                    skoreFX = Math.round((((1000 - cas.celkovyCas) / 10) * 10) - (minus * MinusSkoreFX(10)));
                     Photo.setDisable(true);
                 }
 
