@@ -184,34 +184,82 @@ public class MainFX {
         });
 
         // Napoveda
-        ImageView help = new ImageView(new Image(getClass().getResourceAsStream("/images/help.png")));
-        help.setFitHeight(50);
-        help.setFitWidth(50);
+        ImageView help = new ImageView(new Image(getClass().getResourceAsStream("/images/help-black.jpg")));
+        help.setFitHeight(85);
+        help.setFitWidth(85);
 
         napoveda = new Button("", help);
         napoveda.setStyle("-fx-background-color: black;");
         napoveda.setFocusTraversable(false);
         napoveda.setLayoutX(890);
-        napoveda.setLayoutY(1000);
+        napoveda.setLayoutY(970);
 
         // Pravidla
+        Label nadpis = new Label();
+        nadpis.setAlignment(Pos.TOP_CENTER);
+        nadpis.setStyle("-fx-padding: 5 3 3 10;-fx-background-radius: 15 15 0 0;-fx-font-size: 50; " +
+                "-fx-font-weight: bold;-fx-font-style: italic;-fx-text-fill: black;" +
+                "-fx-background-color: radial-gradient(center 50% 50%, radius 50%, #ff945d 0%, #F7FF00 100%);");
+
         Label pravidla = new Label();
-        pravidla.setAlignment(Pos.TOP_CENTER);
-        pravidla.setPrefWidth(450);
+        pravidla.setAlignment(Pos.TOP_LEFT);
+        pravidla.setPrefWidth(650);
         pravidla.setPrefHeight(500);
+        pravidla.setStyle("-fx-background-color: white;-fx-text-fill: black;-fx-font-size: 20;" +
+                "-fx-padding: 60 10 10 50;-fx-background-radius: 45;-fx-line-spacing: 15;" +
+                "-fx-background-color: radial-gradient(center 50% 50%, radius 50%, #F7FF00FF 0%, #FF945DFF 100%);");
 
-        VBox zaklad = new VBox(pravidla);
-        zaklad.setLayoutX(730);
-        zaklad.setLayoutY(400);
+        ImageView rightClick = new ImageView(new Image(getClass().getResourceAsStream("/images/right-click.png")));
+        rightClick.setFitHeight(75);
+        rightClick.setFitWidth(75);
+        rightClick.setLayoutX(900);
+        rightClick.setLayoutY(750);
 
-        napoveda.setOnAction(event -> {
+        VBox zaklad = new VBox(nadpis, pravidla);
+        zaklad.setLayoutX(627);
+        zaklad.setLayoutY(375);
+        zaklad.setMouseTransparent(true);
 
-            zaklad.setAlignment(Pos.CENTER);
-            pravidla.setText("How to play?");
-            pravidla.setStyle("-fx-background-color: white;-fx-text-fill: black");
-            pane.getChildren().addAll(zaklad);
+        napoveda.setOnMouseEntered(e1 -> {
 
+            pocet++;
+
+            if (pocet % 2 == 0) {
+
+                help.setImage(new Image(getClass().getResourceAsStream("/images/help-black.jpg")));
+
+            } else {
+                help.setImage(new Image(getClass().getResourceAsStream("/images/help-white.jpg")));
+                napoveda.setCursor(Cursor.HAND);
+                zaklad.setAlignment(Pos.CENTER);
+                nadpis.setText("How to play?");
+                pravidla.setText("– Drag and drop the puzzles on the game board" + "\n"
+                        + "– Use the right mouse button to move the puzzle in the board" + "\n" +
+                        "– During the game you can use a hint" + "\n" +
+                        "– Correct solutions are awarded a total score \uD83C\uDFC6");
+
+
+                if (!(pane.getChildren().contains(zaklad))) {
+
+                    pane.getChildren().addAll(zaklad, rightClick);
+                }
+            }
         });
+        napoveda.setOnMouseExited(e1 -> {
+
+            pocet++;
+
+            if (pocet % 2 == 0) {
+
+                help.setImage(new Image(getClass().getResourceAsStream("/images/help-black.jpg")));
+                pane.getChildren().removeAll(zaklad, rightClick);
+
+            } else {
+                help.setImage(new Image(getClass().getResourceAsStream("/images/help-white.jpg")));
+
+            }
+        });
+
         pane.getChildren().addAll(napoveda);
 
         /** Main Pane **/
