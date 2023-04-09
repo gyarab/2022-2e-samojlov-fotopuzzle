@@ -765,28 +765,7 @@ public class MainFX {
             presazeniLimitu("Hard", x, y, 665, 6);
             presazeniLimitu("Expert", x, y, 700, 9);
 
-            if (x == 0) {
-
-                lokaceX = 0;
-            }
-
-            if (lokaceY > 0) {
-
-                if (lokaceY == 1) {
-
-                    lokaceX += radek - 1;
-
-                } else if (lokaceY == 2) {
-
-                    lokaceX += radek + number;
-
-                } else {
-
-                    lokaceX += radek + number + nasobek * (lokaceY - 2);
-                }
-            }
-
-            lokace = lokaceX + lokaceY;
+            NapisLokaci(x);
 
             if (db.hasImage()) {
 
@@ -812,19 +791,41 @@ public class MainFX {
                         System.out.println("CHYBA: " + vysledek);
 
                     }
-                    pane.setOnMouseClicked(e -> {
-
-                        if (e.getButton() == MouseButton.SECONDARY) {
-
-                            System.out.println("Výběr: " + entry.getKey() + ", : " + entry.getValue());
-                            dragboard.setMouseTransparent(false);
-                            vybranyObrazek.setMouseTransparent(false);
-                            setOnDragDetected(vybranyObrazek);
-                            setOnDragDone(vybranyObrazek);
-                            minus++;
-                        }
-                    });
                 }
+
+                pane.setOnMouseClicked(e -> {
+
+                    if (e.getButton() == MouseButton.SECONDARY) {
+
+                        int a = (int) (e.getSceneX() - FinalGrid.getLayoutX());
+                        int b = (int) (e.getSceneY() - FinalGrid.getLayoutY());
+                        lokaceX = a / Piece;
+                        lokaceY = b / Piece;
+
+                        NapisLokaci(a);
+
+                        poziceObrazku.replace(Integer.valueOf(id), lokace);
+
+                        dragboard.setMouseTransparent(false);
+                        vybranyObrazek.setMouseTransparent(false);
+                        setOnDragDetected(vybranyObrazek);
+                        setOnDragDone(vybranyObrazek);
+                        minus++;
+
+                        for (Map.Entry<Integer, Integer> entry : poziceObrazku.entrySet()) {
+
+                            System.out.println("LOKACE: " + lokace);
+                            System.out.println("GET VALUE: " + entry.getValue());
+
+                            if (entry.getValue() == lokace) {
+
+                                System.out.println("KEY: " + entry.getKey());
+                                id = String.valueOf(entry.getKey());
+                                break;
+                            }
+                        }
+                    }
+                });
 
                 System.out.println(id + " = " + lokace);
 
@@ -885,6 +886,32 @@ public class MainFX {
 
             event.consume();
         });
+    }
+
+    private void NapisLokaci(int a) {
+
+        if (a == 0) {
+
+            lokaceX = 0;
+        }
+
+        if (lokaceY > 0) {
+
+            if (lokaceY == 1) {
+
+                lokaceX += radek - 1;
+
+            } else if (lokaceY == 2) {
+
+                lokaceX += radek + number;
+
+            } else {
+
+                lokaceX += radek + number + nasobek * (lokaceY - 2);
+            }
+        }
+
+        lokace = lokaceX + lokaceY;
     }
 
     public String Vzhled() {
