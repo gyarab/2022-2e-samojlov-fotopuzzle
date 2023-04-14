@@ -701,12 +701,30 @@ public class MainFX {
 
         dragboard.setOnDragOver((DragEvent event) -> {
 
+            Dragboard db = event.getDragboard();
+            ImageView obrazek = new ImageView(db.getImage());
+
             if (event.getGestureSource() != dragboard
                     && event.getDragboard().hasImage()) {
 
                 dragboard.setStyle("-fx-background-color: white;");
                 event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+
             }
+
+            /*for (Map.Entry<Integer, Integer> entry : poziceObrazku.entrySet()) {
+
+                System.out.println("V: " + entry.getValue());
+                if (!poziceObrazku.containsValue(entry.getValue())) {
+
+                    System.out.println("Cislo: " + entry.getValue());
+                    obrazek.setMouseTransparent(false);
+                }
+                else{
+                    obrazek.setMouseTransparent(true);
+                }
+            }*/
+
             event.consume();
         });
     }
@@ -770,8 +788,8 @@ public class MainFX {
             if (db.hasImage()) {
 
                 ImageView vybranyObrazek = new ImageView(db.getImage());
-                dragboard.getChildren().add(vybranyObrazek);
                 dragboard.setMouseTransparent(true);
+                dragboard.getChildren().add(vybranyObrazek);
                 vybranyObrazek.setFitWidth(Piece);
                 vybranyObrazek.setFitHeight(Piece);
                 System.out.println("ID: " + id);
@@ -792,7 +810,6 @@ public class MainFX {
 
                     }
                 }
-
                 pane.setOnMouseClicked(e -> {
 
                     if (e.getButton() == MouseButton.SECONDARY) {
@@ -826,6 +843,10 @@ public class MainFX {
                         }
                     }
                 });
+
+                setOnDragDetected(vybranyObrazek);
+                setOnDragDone(vybranyObrazek);
+                minus++;
 
                 System.out.println(id + " = " + lokace);
 

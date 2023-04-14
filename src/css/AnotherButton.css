@@ -8,11 +8,6 @@
     -fx-background-color: radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 50.0% 50.0%, radius 50.0%, #ff0000 0.0%, #4900ff 0.6711%, #db5cff 42.6072%, #ff0061 88.255%, #ff0000 97.3154%, #ff0000 100.0%);
     -fx-text-fill: #000000;
 }
-.label{
-    -fx-font-size: 40; 
-    -fx-font-weight: bold; 
-    -fx-background-color: #000000;
-    -fx-text-fill: greenyellow;
-}
+
 
 
