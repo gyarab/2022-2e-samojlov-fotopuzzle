@@ -81,6 +81,7 @@ public class MainFX {
     int pozice;
     int skoreFX;
     int minus = 0;
+    int detect;
 
     public MainFX() throws IOException {
 
@@ -461,6 +462,7 @@ public class MainFX {
 
         Collections.shuffle(fotky, new Random());
 
+        // Generování jednotlivých obrázků z vybrané fotografie
         for (int m = 0; m < PocetFotek; m++) {
 
             ImageView[] imageView = new ImageView[PocetFotek];
@@ -471,13 +473,15 @@ public class MainFX {
             Fotky.setFitHeight(Piece);
             Fotky.setCursor(Cursor.cursor("OPEN_HAND"));
 
-            // Puzzle s GridPane
+            // Získávání souřadnic pro jednotlivé částice do rozvržení GridPane
             int x = m / sloupec;
             int y = m % radek;
 
+            // Funkce pro přetahování částic puzzle
             setOnDragDetected(Fotky);
             setOnDragDone(Fotky);
 
+            // Rozdělení částic do dvou skupin
             if (m <= halfGrid) {
 
                 grid1.add(Fotky, x, y);
@@ -668,6 +672,8 @@ public class MainFX {
                 pane.getChildren().remove(showHint);
             }
 
+            detect = (int) (event.getX() - FinalGrid.getLayoutX());
+
             id = String.valueOf(fotky.get(pozice).cislo);
 
             vybranyObrazek.setId(id);
@@ -711,19 +717,6 @@ public class MainFX {
                 event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
 
             }
-
-            /*for (Map.Entry<Integer, Integer> entry : poziceObrazku.entrySet()) {
-
-                System.out.println("V: " + entry.getValue());
-                if (!poziceObrazku.containsValue(entry.getValue())) {
-
-                    System.out.println("Cislo: " + entry.getValue());
-                    obrazek.setMouseTransparent(false);
-                }
-                else{
-                    obrazek.setMouseTransparent(true);
-                }
-            }*/
 
             event.consume();
         });
@@ -788,14 +781,14 @@ public class MainFX {
             if (db.hasImage()) {
 
                 ImageView vybranyObrazek = new ImageView(db.getImage());
-                dragboard.setMouseTransparent(true);
+                //dragboard.setMouseTransparent(true);
                 dragboard.getChildren().add(vybranyObrazek);
                 vybranyObrazek.setFitWidth(Piece);
                 vybranyObrazek.setFitHeight(Piece);
-                System.out.println("ID: " + id);
                 vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
 
                 poziceObrazku.put(Integer.valueOf(id), lokace);
+                System.out.println(id + " = " + lokace);
                 System.out.println(poziceObrazku);
 
                 int vysledek = 0;
@@ -810,7 +803,36 @@ public class MainFX {
 
                     }
                 }
-                pane.setOnMouseClicked(e -> {
+
+                setOnDragDetected(vybranyObrazek);
+                setOnDragDone(vybranyObrazek);
+
+                dragboard.setMouseTransparent(false);
+                vybranyObrazek.setMouseTransparent(false);
+                minus++;
+
+                vybranyObrazek.setOnDragEntered(e -> {
+
+                    int a = (int) (e.getSceneX() - FinalGrid.getLayoutX());
+                    int b = (int) (e.getSceneY() - FinalGrid.getLayoutY());
+                    lokaceX = a / Piece;
+                    lokaceY = b / Piece;
+                    NapisLokaci(a);
+
+                    System.out.println("ID: " + id + ", Lokace: " + lokace);
+
+                    for (Map.Entry<Integer, Integer> entry : poziceObrazku.entrySet()) {
+
+                        if (entry.getValue().equals(lokace)) {
+
+                            System.out.println("PREPIS id na: " + entry.getKey());
+
+                            break;
+                        }
+                    }
+                });
+
+                /*pane.setOnMouseClicked(e -> {
 
                     if (e.getButton() == MouseButton.SECONDARY) {
 
@@ -843,12 +865,8 @@ public class MainFX {
                         }
                     }
                 });
+*/
 
-                setOnDragDetected(vybranyObrazek);
-                setOnDragDone(vybranyObrazek);
-                minus++;
-
-                System.out.println(id + " = " + lokace);
 
                 if (poziceObrazku.size() == PocetFotek) {
 
