@@ -2,7 +2,9 @@ package puzzlegame;
 
 import Game.MainFX;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,20 +18,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import org.apache.commons.io.FileUtils;
 
 public class PuzzleGameKontroler implements Initializable {
 
     @FXML
     private ImageView IMGview;
-
     private Scene scene;
-
     private Stage stage;
     private Parent root;
 
@@ -46,30 +43,11 @@ public class PuzzleGameKontroler implements Initializable {
         stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         stage.setScene(scene);
         stage.setFullScreenExitHint("");
-        //stage.setFullScreen(true);
+        stage.setFullScreen(true);
         stage.show();
-
-        scene.setOnKeyPressed(e -> {
-
-            if (e.getCode() == KeyCode.ESCAPE) {
-
-                try {
-                    Parent root = FXMLLoader.load(getClass().getResource("/fxml/PuzzleMenu.fxml"));
-                    stage.setScene(new Scene(root));
-                    stage.show();
-
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
-        });
     }
     @FXML
     public void settingsButtonClicked(ActionEvent event) throws Exception {
-
-        File source = new File("C:\\Users\\VS\\Pictures\\");
-        File dest = new File("C:\\Users\\VS\\Pictures\\Photos");
-        //FileUtils.copyDirectory(source,dest);
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/SettingsMenu.fxml"));
         Scene scene = new Scene(root);

@@ -41,7 +41,7 @@ public class MainFX {
     private ImageView showHint;
     private BufferedReader readerObrazek;
     private BufferedReader readerObtiznost;
-    private BufferedImage photo;
+    private BufferedImage fotografie;
     private GridPane grid1;
     private GridPane grid2;
     private GridPane FinalGrid;
@@ -55,10 +55,11 @@ public class MainFX {
     private ArrayList<PuzzlePiece> fotky;
     private Pane node;
     private String id;
-    int width;
-    int height;
+    int sirka;
+    int vyska;
     int sloupec;
     int radek;
+    int newId;
     int PocetFotek;
     File obrazky;
     File obtiznosti;
@@ -82,6 +83,7 @@ public class MainFX {
     int skoreFX;
     int minus = 0;
     int detect;
+    private int iD;
 
     public MainFX() throws IOException {
 
@@ -381,12 +383,12 @@ public class MainFX {
 
             } else {
 
-                BufferedReader Another = new BufferedReader(new FileReader("writer-another.txt"));
+                BufferedReader reader = new BufferedReader(new FileReader("writer-another.txt"));
 
-                obrazek = Another.readLine();
+                obrazek = reader.readLine();
 
-                another = new Image(getClass().getResourceAsStream("/another/Photos/" + obrazek));
-                celeJmenoFotografie = "/another/Photos/" + obrazek;
+                celeJmenoFotografie = "C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\another\\" + obrazek;
+                another = new Image(new FileInputStream(celeJmenoFotografie));
                 showHint.setImage(another);
 
                 if (obrazek.length() <= 9) {
@@ -401,14 +403,7 @@ public class MainFX {
 
     public void getPuzzlePieces() throws IOException {
 
-        photo = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
-
         PocetFotek = radek * sloupec;
-
-        BufferedImage images[] = new BufferedImage[PocetFotek];
-
-        width = photo.getWidth() / sloupec;
-        height = photo.getHeight() / radek;
 
         fotky = new ArrayList<>();
 
@@ -431,23 +426,38 @@ public class MainFX {
         rozdelit.setSpacing(Spacing);
         rozdelit.setPadding(new Insets(200, 0, 0, 50));
 
+        // Počet fotek dle obtížnosti
+        BufferedImage images[] = new BufferedImage[PocetFotek];
+
+        // Počáteční fotografie vybraná uživatelem
+        if (celeJmenoFotografie.length() > 30) {
+
+            fotografie = ImageIO.read(new File(celeJmenoFotografie));
+        } else {
+            fotografie = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
+        }
+        sirka = fotografie.getWidth() / sloupec;
+        vyska = fotografie.getHeight() / radek;
+
         int VybranyObrazek = 0;
 
+        // Algoritmus pro generování obrázků z fotografie
         for (int radky = 0; radky < radek; radky++) {
 
             for (int sloupce = 0; sloupce < sloupec; sloupce++) {
 
-                images[VybranyObrazek] = (new BufferedImage(width, height, photo.getType()));
+                images[VybranyObrazek] = (new BufferedImage(sirka, vyska, fotografie.getType()));
 
                 Graphics2D grafika2D = images[VybranyObrazek++].createGraphics();
 
-                int vybranaFotkaX = width * sloupce;
-                int vybranaFotkaY = height * radky;
+                int vybranaFotkaX = sirka * sloupce;
+                int vybranaFotkaY = vyska * radky;
 
-                int PuzzlePieceX = width * sloupce + width;
-                int PuzzlePieceY = height * radky + height;
+                int PuzzlePieceX = sirka * sloupce + sirka;
+                int PuzzlePieceY = vyska * radky + vyska;
 
-                grafika2D.drawImage(photo, 0, 0, width, height, vybranaFotkaX, vybranaFotkaY,
+                // Vykreslení jednotlivých obrázků (částic puzzle)
+                grafika2D.drawImage(fotografie, 0, 0, sirka, vyska, vybranaFotkaX, vybranaFotkaY,
                         PuzzlePieceX, PuzzlePieceY, null);
                 grafika2D.dispose();
 
@@ -462,7 +472,7 @@ public class MainFX {
 
         Collections.shuffle(fotky, new Random());
 
-        // Generování jednotlivých obrázků z vybrané fotografie
+        // Zobrazení jednotlivých obrázků z vybrané fotografie
         for (int m = 0; m < PocetFotek; m++) {
 
             ImageView[] imageView = new ImageView[PocetFotek];
@@ -491,16 +501,38 @@ public class MainFX {
                 grid2.add(Fotky, x, y);
             }
 
+            // Drop place
+            node = new Pane();
+            node.setPrefSize(Piece, Piece);
+
             // Pozice obrazku pri tahu mysi
             Fotky.setOnMouseDragged(event -> {
 
                 pozice = (x * radek) + y;
+                iD = fotky.get(pozice).cislo;
+
+                System.out.println(poziceObrazku);
+                System.out.println("Pozice: " + pozice + ", id: " + iD);
 
             });
 
-            // Drop place
-            node = new Pane();
-            node.setPrefSize(Piece, Piece);
+            node.setOnMouseDragged(event -> {
+
+                pozice = (x * radek) + y;
+
+                for (Map.Entry<Integer, Integer> entry : poziceObrazku.entrySet()) {
+
+                    if (entry.getValue().equals(pozice)) {
+
+                        iD = entry.getKey();
+                        System.out.println(poziceObrazku);
+
+                        break;
+                    }
+                }
+                System.out.println("Pozice: " + pozice + ", id: " + iD);
+
+            });
 
             setOnDragOver(node);
             setOnDragEntered(node);
@@ -672,13 +704,6 @@ public class MainFX {
                 pane.getChildren().remove(showHint);
             }
 
-            detect = (int) (event.getX() - FinalGrid.getLayoutX());
-
-            id = String.valueOf(fotky.get(pozice).cislo);
-
-            vybranyObrazek.setId(id);
-            id = vybranyObrazek.getId();
-
             timeline.play();
 
             ClipboardContent obsahObrazku = new ClipboardContent();
@@ -706,9 +731,6 @@ public class MainFX {
     public void setOnDragOver(Pane dragboard) {
 
         dragboard.setOnDragOver((DragEvent event) -> {
-
-            Dragboard db = event.getDragboard();
-            ImageView obrazek = new ImageView(db.getImage());
 
             if (event.getGestureSource() != dragboard
                     && event.getDragboard().hasImage()) {
@@ -781,14 +803,13 @@ public class MainFX {
             if (db.hasImage()) {
 
                 ImageView vybranyObrazek = new ImageView(db.getImage());
-                //dragboard.setMouseTransparent(true);
                 dragboard.getChildren().add(vybranyObrazek);
                 vybranyObrazek.setFitWidth(Piece);
                 vybranyObrazek.setFitHeight(Piece);
                 vybranyObrazek.setCursor(Cursor.cursor("OPEN_HAND"));
 
-                poziceObrazku.put(Integer.valueOf(id), lokace);
-                System.out.println(id + " = " + lokace);
+                poziceObrazku.put(iD, lokace);
+
                 System.out.println(poziceObrazku);
 
                 int vysledek = 0;
@@ -810,63 +831,6 @@ public class MainFX {
                 dragboard.setMouseTransparent(false);
                 vybranyObrazek.setMouseTransparent(false);
                 minus++;
-
-                vybranyObrazek.setOnDragEntered(e -> {
-
-                    int a = (int) (e.getSceneX() - FinalGrid.getLayoutX());
-                    int b = (int) (e.getSceneY() - FinalGrid.getLayoutY());
-                    lokaceX = a / Piece;
-                    lokaceY = b / Piece;
-                    NapisLokaci(a);
-
-                    System.out.println("ID: " + id + ", Lokace: " + lokace);
-
-                    for (Map.Entry<Integer, Integer> entry : poziceObrazku.entrySet()) {
-
-                        if (entry.getValue().equals(lokace)) {
-
-                            System.out.println("PREPIS id na: " + entry.getKey());
-
-                            break;
-                        }
-                    }
-                });
-
-                /*pane.setOnMouseClicked(e -> {
-
-                    if (e.getButton() == MouseButton.SECONDARY) {
-
-                        int a = (int) (e.getSceneX() - FinalGrid.getLayoutX());
-                        int b = (int) (e.getSceneY() - FinalGrid.getLayoutY());
-                        lokaceX = a / Piece;
-                        lokaceY = b / Piece;
-
-                        NapisLokaci(a);
-
-                        poziceObrazku.replace(Integer.valueOf(id), lokace);
-
-                        dragboard.setMouseTransparent(false);
-                        vybranyObrazek.setMouseTransparent(false);
-                        setOnDragDetected(vybranyObrazek);
-                        setOnDragDone(vybranyObrazek);
-                        minus++;
-
-                        for (Map.Entry<Integer, Integer> entry : poziceObrazku.entrySet()) {
-
-                            System.out.println("LOKACE: " + lokace);
-                            System.out.println("GET VALUE: " + entry.getValue());
-
-                            if (entry.getValue() == lokace) {
-
-                                System.out.println("KEY: " + entry.getKey());
-                                id = String.valueOf(entry.getKey());
-                                break;
-                            }
-                        }
-                    }
-                });
-*/
-
 
                 if (poziceObrazku.size() == PocetFotek) {
 

@@ -28,6 +28,7 @@ import javafx.scene.transform.Rotate;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.apache.commons.io.FileUtils;
 
 
 /**
@@ -105,8 +106,6 @@ public class SettingsMenuKontroler implements Initializable {
     Scanner scanner1;
     Scanner scanner2;
     Scanner scanner3;
-    Path from;
-    Path to;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -129,7 +128,7 @@ public class SettingsMenuKontroler implements Initializable {
         }
     }
 
-    public void Obtiznosti(){
+    public void Obtiznosti() {
 
         try {
 
@@ -148,20 +147,18 @@ public class SettingsMenuKontroler implements Initializable {
         if (odpoved1.equals("Easy")) {
 
             easy.setSelected(true);
-        }
-        else if (odpoved1.equals("Medium")) {
+        } else if (odpoved1.equals("Medium")) {
 
             medium.setSelected(true);
-        }
-        else if (odpoved1.equals("Hard")) {
+        } else if (odpoved1.equals("Hard")) {
 
             hard.setSelected(true);
-        }
-        else if (odpoved1.equals("Expert")) {
+        } else if (odpoved1.equals("Expert")) {
 
             expert.setSelected(true);
         }
     }
+
     public void Obrazky() {
 
         try {
@@ -212,7 +209,7 @@ public class SettingsMenuKontroler implements Initializable {
                         }
                     }
 
-                    String c = "/another/Photos/";
+                    String c = "/another/";
                     Image imagefx = new Image(getClass().getResourceAsStream(c + odpoved3));
                     IMgNew.setImage(imagefx);
                     scanner3.close();
@@ -223,6 +220,7 @@ public class SettingsMenuKontroler implements Initializable {
                 }
         }
     }
+
     public void Images() {
 
         Image image = new Image(getClass().getResourceAsStream("/images/SettingsIcon.png"));
@@ -241,6 +239,7 @@ public class SettingsMenuKontroler implements Initializable {
         Mesto2.setImage(ImG);
 
     }
+
     @FXML
     public void menuButtonClicked(ActionEvent event) throws Exception {
 
@@ -273,15 +272,11 @@ public class SettingsMenuKontroler implements Initializable {
             try {
 
                 aFileWriter = new FileWriter(anotherTXT);
-
-                from = Paths.get(selectedFile.toURI());
-                to = Paths.get("C:\\Users\\VS\\Documents\\NetBeansProjects\\Puzzle\\src\\another\\Photos\\" + selectedFile.getName());
-
                 aFileWriter.write(selectedFile.getName());
-                Files.copy(from, to);
 
-
-            } catch (Exception e) {
+                Path source = Paths.get(selectedFile.toURI());
+                Path dest = Paths.get("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\another\\" + selectedFile.getName());
+                Files.copy(source, dest);
 
                 Image Efekt = new Image(getClass().getResourceAsStream("/images/checkmark.png"));
                 CheckMark.setImage(Efekt);
@@ -308,7 +303,8 @@ public class SettingsMenuKontroler implements Initializable {
 
         }
     }
-    public void Zmena(FileWriter writer, File file, String text){
+
+    public void Zmena(FileWriter writer, File file, String text) {
 
         try {
             writer = new FileWriter(file);
@@ -331,19 +327,19 @@ public class SettingsMenuKontroler implements Initializable {
 
         if (difficulties.getSelectedToggle().equals(easy)) {
 
-            Zmena(writer1,obtiznosti,"Easy");
+            Zmena(writer1, obtiznosti, "Easy");
         }
         if (difficulties.getSelectedToggle().equals(medium)) {
 
-            Zmena(writer1,obtiznosti,"Medium");
+            Zmena(writer1, obtiznosti, "Medium");
         }
         if (difficulties.getSelectedToggle().equals(hard)) {
 
-            Zmena(writer1,obtiznosti,"Hard");
+            Zmena(writer1, obtiznosti, "Hard");
         }
         if (difficulties.getSelectedToggle().equals(expert)) {
 
-            Zmena(writer1,obtiznosti,"Expert");
+            Zmena(writer1, obtiznosti, "Expert");
         }
     }
 
@@ -351,37 +347,38 @@ public class SettingsMenuKontroler implements Initializable {
 
         Mesto1Selected();
 
-        Zmena(writer2,obrazky,"Mesto1");
+        Zmena(writer2, obrazky, "Mesto1");
     }
 
     public void liskaClicked() {
 
         LiskaSelected();
 
-        Zmena(writer2,obrazky,"Liska");
+        Zmena(writer2, obrazky, "Liska");
     }
 
     public void mesto2Clicked() {
 
         Mesto2Selected();
 
-        Zmena(writer2,obrazky,"Mesto2");
+        Zmena(writer2, obrazky, "Mesto2");
     }
 
     public void tygrClicked() {
 
         TygrSelected();
-        Zmena(writer2,obrazky,"Tygr");
+        Zmena(writer2, obrazky, "Tygr");
     }
 
     public void NewPhotoClicked() {
 
         AnotherSelected();
 
-        Zmena(writer2,obrazky,"AnotherPicture");
+        Zmena(writer2, obrazky, "AnotherPicture");
 
     }
-    public void TygrSelected(){
+
+    public void TygrSelected() {
 
         mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
         mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
@@ -390,7 +387,8 @@ public class SettingsMenuKontroler implements Initializable {
         imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
 
     }
-    public void Mesto1Selected(){
+
+    public void Mesto1Selected() {
 
         mesto1.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
         mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
@@ -398,7 +396,8 @@ public class SettingsMenuKontroler implements Initializable {
         liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
         imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
     }
-    public void LiskaSelected(){
+
+    public void LiskaSelected() {
 
         mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
         mesto2.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
@@ -406,7 +405,8 @@ public class SettingsMenuKontroler implements Initializable {
         liska.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
         imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
     }
-    public void Mesto2Selected(){
+
+    public void Mesto2Selected() {
 
         mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
         mesto2.setStyle("-fx-border-color: yellow; -fx-border-style: solid; -fx-border-width: 5;");
@@ -414,7 +414,8 @@ public class SettingsMenuKontroler implements Initializable {
         liska.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
         imageNew.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");
     }
-    public void AnotherSelected(){
+
+    public void AnotherSelected() {
 
         if (IMgNew.getImage() == null) {
 
