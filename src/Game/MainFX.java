@@ -82,7 +82,7 @@ public class MainFX {
     int pozice;
     int skoreFX;
     int minus = 0;
-    int detect;
+    int pocitadlo = 0;
     private int iD;
 
     public MainFX() throws IOException {
@@ -156,8 +156,11 @@ public class MainFX {
             if (pocet % 2 == 0) {
 
                 pane.getChildren().remove(showHint);
+                napoveda.setDisable(false);
+
             } else {
                 pane.getChildren().add(showHint);
+                napoveda.setDisable(true);
             }
 
         });
@@ -225,9 +228,9 @@ public class MainFX {
 
         napoveda.setOnMouseEntered(e1 -> {
 
-            pocet++;
+            pocitadlo++;
 
-            if (pocet % 2 == 0) {
+            if (pocitadlo % 2 == 0) {
 
                 help.setImage(new Image(getClass().getResourceAsStream("/images/help-black.jpg")));
 
@@ -250,9 +253,9 @@ public class MainFX {
         });
         napoveda.setOnMouseExited(e1 -> {
 
-            pocet++;
+            pocitadlo++;
 
-            if (pocet % 2 == 0) {
+            if (pocitadlo % 2 == 0) {
 
                 help.setImage(new Image(getClass().getResourceAsStream("/images/help-black.jpg")));
                 pane.getChildren().removeAll(zaklad, rightClick);
@@ -433,6 +436,7 @@ public class MainFX {
         if (celeJmenoFotografie.length() > 30) {
 
             fotografie = ImageIO.read(new File(celeJmenoFotografie));
+
         } else {
             fotografie = ImageIO.read(getClass().getResourceAsStream(celeJmenoFotografie));
         }
@@ -702,6 +706,7 @@ public class MainFX {
 
             if (showHint != null) {
                 pane.getChildren().remove(showHint);
+                napoveda.setDisable(false);
             }
 
             timeline.play();
@@ -738,8 +743,14 @@ public class MainFX {
                 dragboard.setStyle("-fx-background-color: white;");
                 event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
 
-            }
+                for (Node node : dragboard.getChildren()) {
 
+                    node.setOnDragOver(onDragOver -> {
+                        onDragOver.consume();
+
+                    });
+                }
+            }
             event.consume();
         });
     }

@@ -209,8 +209,7 @@ public class SettingsMenuKontroler implements Initializable {
                         }
                     }
 
-                    String c = "/another/";
-                    Image imagefx = new Image(getClass().getResourceAsStream(c + odpoved3));
+                    Image imagefx = new Image(new FileInputStream("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\another\\" + odpoved3));
                     IMgNew.setImage(imagefx);
                     scanner3.close();
 
