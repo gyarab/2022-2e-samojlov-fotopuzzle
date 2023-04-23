@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 public class PuzzleGameKontroler implements Initializable {
@@ -45,6 +46,21 @@ public class PuzzleGameKontroler implements Initializable {
         stage.setFullScreenExitHint("");
         stage.setFullScreen(true);
         stage.show();
+
+        scene.setOnKeyPressed(e -> {
+
+            if (e.getCode() == KeyCode.ESCAPE) {
+
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("/fxml/PuzzleMenu.fxml"));
+                    stage.setScene(new Scene(root));
+                    stage.show();
+
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
     }
     @FXML
     public void settingsButtonClicked(ActionEvent event) throws Exception {
