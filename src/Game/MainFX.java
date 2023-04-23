@@ -34,8 +34,10 @@ public class MainFX {
     private Button napoveda;
     private Pane pane;
     private Parent root;
+    private Parent newRoot;
     private Button backToMenu;
     private Stage stage;
+    private Stage newStage;
     private Timeline timeline;
     private HBox naV;
     private ImageView showHint;
@@ -81,7 +83,6 @@ public class MainFX {
     int lokaceY;
     int pozice;
     int skoreFX;
-    int minus = 0;
     int pocitadlo = 0;
     private int iD;
 
@@ -119,8 +120,8 @@ public class MainFX {
         stopky.setEditable(false);
         stopky.setMouseTransparent(true);
         stopky.setFocusTraversable(false);
-        cas = new Cas("00:00:00");
-        stopky.setText("00:00:00");
+        cas = new Cas("00:01:00");
+        stopky.setText("00:01:00");
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event1 -> {
 
             cas.Calendar();
@@ -144,7 +145,6 @@ public class MainFX {
         Photo.setOnAction((ActionEvent event) -> {
 
             showHintUsed++;
-            minus += 2;
 
             showHint.setFitHeight(450);
             showHint.setFitWidth(550);
@@ -170,6 +170,10 @@ public class MainFX {
         ImageView imageView = new ImageView(domecek);
         imageView.setFitHeight(50);
         imageView.setFitWidth(50);
+
+        // Odstin
+        setShadowStyle(imageView);
+        setShadowStyle(i);
 
         backToMenu = new Button("", imageView);
         backToMenu.setStyle("-fx-background-color: white;");
@@ -270,17 +274,14 @@ public class MainFX {
 
         /** Main Pane **/
         naV.getChildren().addAll(backToMenu, Photo, stopky);
+
         pane.setStyle("-fx-background-color: black;");
         pane.getChildren().add(naV);
     }
 
-    public int MinusSkoreFX(int vybranaHodnota) {
+    public void setShadowStyle(ImageView style) {
 
-        if (skoreFX >= vybranaHodnota) {
-
-            skoreFX -= vybranaHodnota;
-        }
-        return vybranaHodnota;
+        style.setStyle("-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 30, 0, 0, 0);");
     }
 
     public void ZvolenaObtiznost() throws IOException {
@@ -841,7 +842,6 @@ public class MainFX {
 
                 dragboard.setMouseTransparent(false);
                 vybranyObrazek.setMouseTransparent(false);
-                minus++;
 
                 if (poziceObrazku.size() == PocetFotek) {
 
@@ -864,8 +864,10 @@ public class MainFX {
                         showResults.setAlignment(Pos.CENTER);
                         showResults.setLayoutX(875);
                         showResults.setLayoutY(1000);
+
                         pane.getChildren().remove(napoveda);
                         pane.getChildren().add(showResults);
+
                         showResults.setOnAction((ActionEvent e) -> {
 
                             try {
@@ -883,13 +885,27 @@ public class MainFX {
 
                         FinalGrid.setStyle("-fx-border-color: " + ColorLOSE() + "-fx-border-width: 10");
 
-                        kontrola.setText("You LOSE!");
+                        kontrola.setText("You LOST!");
+
                         kontrola.setStyle("-fx-text-fill: " + ColorLOSE() + Vzhled());
                     }
+
                     FinalGrid.setDisable(true);
                     timeline.stop();
-                    skoreFX = Math.round((((1000 - cas.celkovyCas) / 10) * 10) - (minus * MinusSkoreFX(10)));
+                    skoreFX = (int) Math.round(1 / (0.0000398 * Math.sqrt(2 * Math.PI) * Math.pow(Math.E, (Math.pow(-cas.celkovyCas, 2) / 10000000))));
                     Photo.setDisable(true);
+                    pane.getChildren().remove(napoveda);
+
+                    Button playAgain = new Button("PLAY AGAIN");
+                    playAgain.setLayoutX(1200);
+                    playAgain.setLayoutY(970);
+
+                    playAgain.setOnAction(event1 -> {
+
+                        tryAgain(event1);
+                    });
+
+                    pane.getChildren().add(playAgain);
                 }
 
                 event.consume();
@@ -947,5 +963,22 @@ public class MainFX {
     public Parent getRoot() {
 
         return pane;
+    }
+
+    public void tryAgain(ActionEvent event) {
+
+        try {
+            MainFX mainFX = new MainFX();
+            Scene scene = new Scene(mainFX.getRoot());
+            scene.getStylesheets().add(getClass().getResource("/css/MainScene.css").toExternalForm());
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setFullScreenExitHint("");
+            stage.setFullScreen(true);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

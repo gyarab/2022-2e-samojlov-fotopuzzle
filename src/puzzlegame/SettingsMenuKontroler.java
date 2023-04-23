@@ -2,6 +2,7 @@ package puzzlegame;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -275,7 +276,12 @@ public class SettingsMenuKontroler implements Initializable {
 
                 Path source = Paths.get(selectedFile.toURI());
                 Path dest = Paths.get("C:\\Users\\VS\\IdeaProjects\\PuzzleGameFX\\src\\another\\" + selectedFile.getName());
-                Files.copy(source, dest);
+                try {
+                    Files.copy(source, dest);
+
+                } catch (FileAlreadyExistsException e) {
+                    System.out.println("Soubor již byl nahrán.");
+                }
 
                 Image Efekt = new Image(getClass().getResourceAsStream("/images/checkmark.png"));
                 CheckMark.setImage(Efekt);

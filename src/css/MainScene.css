@@ -32,10 +32,6 @@
 
     -fx-stroke: white;
 }
-.image-view{
-
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 30, 0, 0, 0);
-}
 .table-view {
 
     -fx-control-inner-background: #000000;
