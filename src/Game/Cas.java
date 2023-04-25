@@ -1,5 +1,13 @@
 package Game;
 
+/**
+ * @author "Vladimír Samojlov"
+ * @class "2.E"
+ */
+
+/**
+ * Třída sloužící k odpočítávání času, má stejnou funkci jako stopky
+ */
 public class Cas {
 
     private int sekunda;
@@ -7,6 +15,9 @@ public class Cas {
     private int hodina;
     int celkovyCas;
 
+    /**
+     * Konstruktor zahrnující časové jednotky - sekundy, minuty a hodiny
+     */
     public Cas(String cas) {
 
         String[] CelkovyCas = cas.split(":");
@@ -15,6 +26,9 @@ public class Cas {
         sekunda = Integer.parseInt(CelkovyCas[2]);
     }
 
+    /**
+     * Změna časových jednotek.
+     */
     public void Calendar() {
 
         sekunda++;
@@ -33,6 +47,9 @@ public class Cas {
         }
     }
 
+    /**
+     * Zformatování času
+     */
     public String toString() {
 
         String vyslednaHodina = String.format("%02d", hodina);

@@ -2,14 +2,9 @@ package puzzlegame;
 
 import Game.MainFX;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +18,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
+/**
+ * @author "Vladimír Samojlov"
+ * @class "2.E"
+ */
+
+/**
+ * Kontroler souboru PuzzleMenu.fxml
+ */
 public class PuzzleGameKontroler implements Initializable {
 
     @FXML
@@ -31,6 +34,9 @@ public class PuzzleGameKontroler implements Initializable {
     private Stage stage;
     private Parent root;
 
+    /**
+     * Stisknutí tlačítka Play
+     */
     @FXML
     public void Play(ActionEvent event) throws Exception {
 
@@ -62,6 +68,10 @@ public class PuzzleGameKontroler implements Initializable {
             }
         });
     }
+
+    /**
+     * Stisknutí tlačítka Settings
+     */
     @FXML
     public void settingsButtonClicked(ActionEvent event) throws Exception {
 
@@ -74,6 +84,9 @@ public class PuzzleGameKontroler implements Initializable {
         stage.show();
     }
 
+    /**
+     * Úvodní obrázek hry
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 

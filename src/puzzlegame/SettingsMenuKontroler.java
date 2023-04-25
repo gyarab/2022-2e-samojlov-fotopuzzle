@@ -29,11 +29,14 @@ import javafx.scene.transform.Rotate;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import org.apache.commons.io.FileUtils;
-
 
 /**
- * @author VS
+ * @author "Vladimír Samojlov"
+ * @class "2.E"
+ */
+
+/**
+ * Kontroler souboru SettingsMenu.fxml
  */
 public class SettingsMenuKontroler implements Initializable {
 
@@ -108,6 +111,9 @@ public class SettingsMenuKontroler implements Initializable {
     Scanner scanner2;
     Scanner scanner3;
 
+    /**
+     * Hlavní metoda initialize
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -129,6 +135,9 @@ public class SettingsMenuKontroler implements Initializable {
         }
     }
 
+    /**
+     * Obtížnosti hry
+     */
     public void Obtiznosti() {
 
         try {
@@ -160,6 +169,9 @@ public class SettingsMenuKontroler implements Initializable {
         }
     }
 
+    /**
+     * Výběr obrázků z nabídky
+     */
     public void Obrazky() {
 
         try {
@@ -221,6 +233,9 @@ public class SettingsMenuKontroler implements Initializable {
         }
     }
 
+    /**
+     * Zobrazení obrázků
+     */
     public void Images() {
 
         Image image = new Image(getClass().getResourceAsStream("/images/SettingsIcon.png"));
@@ -240,6 +255,9 @@ public class SettingsMenuKontroler implements Initializable {
 
     }
 
+    /**
+     * Stisknutí tlačítka MENU
+     */
     @FXML
     public void menuButtonClicked(ActionEvent event) throws Exception {
 
@@ -252,8 +270,11 @@ public class SettingsMenuKontroler implements Initializable {
         stage.show();
     }
 
+    /**
+     * Stisknutí tlačítka Another Picture, vybrání vlastního obrázku z počítače
+     */
     @FXML
-    public void AnotherPictureClicked(ActionEvent event) throws IOException {
+    public void AnotherPictureClicked() throws IOException {
 
         fileChooser = new FileChooser();
         fileChooser.setTitle("Select Image File");
@@ -309,6 +330,9 @@ public class SettingsMenuKontroler implements Initializable {
         }
     }
 
+    /**
+     * Ukládání dat do souboru .txt
+     */
     public void Zmena(FileWriter writer, File file, String text) {
 
         try {
@@ -328,6 +352,9 @@ public class SettingsMenuKontroler implements Initializable {
         }
     }
 
+    /**
+     * Zapisování obtížnosti do souboru
+     */
     public void difficultyChanged() {
 
         if (difficulties.getSelectedToggle().equals(easy)) {
@@ -348,6 +375,10 @@ public class SettingsMenuKontroler implements Initializable {
         }
     }
 
+
+    /**
+     * Stisknutí obrázků, jedná se o metody s příponou Clicked()
+     */
     public void mesto1Clicked() {
 
         Mesto1Selected();
@@ -383,6 +414,9 @@ public class SettingsMenuKontroler implements Initializable {
 
     }
 
+    /**
+     * Stanovení stylů pro jednotlivé obrázky
+     */
     public void TygrSelected() {
 
         mesto1.setStyle("-fx-border-color: black; -fx-border-style: solid; -fx-border-width: 5;");

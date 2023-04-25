@@ -31,6 +31,14 @@ import javafx.util.Duration;
 
 import javax.imageio.ImageIO;
 
+/**
+ * @author "Vladimír Samojlov"
+ * @class "2.E"
+ */
+
+/**
+ * V této třídě probíhá celá hra Fotopuzzle
+ */
 public class MainFX {
     private Button napoveda;
     private Pane pane;
@@ -113,7 +121,7 @@ public class MainFX {
         getPuzzlePieces();
         setNaV(naV);
 
-        /** Navigation Bar **/
+        /** Navigation Bar */
 
         // Průběžný čas ve hře
         stopky = new TextField();
@@ -229,6 +237,7 @@ public class MainFX {
         zaklad.setLayoutY(375);
         zaklad.setMouseTransparent(true);
 
+        // Kurzor myši se nachází nad tlačítkem
         napoveda.setOnMouseEntered(e1 -> {
 
             pocitadlo++;
@@ -254,6 +263,8 @@ public class MainFX {
                 }
             }
         });
+
+        // Kurzor myši opouští tlačítko
         napoveda.setOnMouseExited(e1 -> {
 
             pocitadlo++;
@@ -268,21 +279,26 @@ public class MainFX {
 
             }
         });
+        pane.getChildren().add(napoveda);
 
-        pane.getChildren().addAll(napoveda);
-
-        /** Main Pane **/
+        /** Main Pane */
         naV.getChildren().addAll(backToMenu, Photo, stopky);
 
         pane.setStyle("-fx-background-color: black;");
         pane.getChildren().add(naV);
     }
 
+    /**
+     * Stín obrázku
+     */
     public void setShadowStyle(ImageView style) {
 
         style.setStyle("-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 30, 0, 0, 0);");
     }
 
+    /**
+     * Výběr obtížnosti
+     */
     public void ZvolenaObtiznost() throws IOException {
 
         String obtiznost;
@@ -343,6 +359,9 @@ public class MainFX {
         }
     }
 
+    /**
+     * Navigační panel
+     */
     public void setNaV(HBox naV) {
         this.naV = naV;
 
@@ -352,6 +371,9 @@ public class MainFX {
         naV.setSpacing(770);
     }
 
+    /**
+     * Zvolený obrázek
+     */
     public void ZvolenyObrazek() throws IOException {
 
         while ((obrazek = readerObrazek.readLine()) != null) {
@@ -404,6 +426,9 @@ public class MainFX {
         }
     }
 
+    /**
+     * Generování obrázků z vybrané fotografie
+     */
     public void getPuzzlePieces() throws IOException {
 
         PocetFotek = radek * sloupec;
@@ -509,7 +534,8 @@ public class MainFX {
             node = new Pane();
             node.setPrefSize(Piece, Piece);
 
-            // Pozice obrazku pri tahu mysi
+            /** Pozice obrázků při tahu myši */
+
             Fotky.setOnMouseDragged(event -> {
 
                 pozice = (x * radek) + y;
@@ -538,6 +564,7 @@ public class MainFX {
 
             });
 
+            // Funkce pro pokládání částic puzzle
             setOnDragOver(node);
             setOnDragEntered(node);
             setOnDragExited(node);
@@ -549,6 +576,9 @@ public class MainFX {
         pane.setCursor(Cursor.cursor("DEFAULT"));
     }
 
+    /**
+     * Vytvoření tabulky
+     */
     public TableView Vysledky() {
 
         TableColumn<Vysledek, String> jmenoObrazku = new TableColumn<>("Obrázek \uD83D\uDDBC");
@@ -608,6 +638,9 @@ public class MainFX {
         return tableView;
     }
 
+    /**
+     * Ukládání dat do souboru
+     */
     public void Data() throws IOException {
 
         File soubor = new File("data.dat");
@@ -682,22 +715,33 @@ public class MainFX {
         }
     }
 
+    /**
+     * Mezera mezi sloupci
+     */
     public void mezera(TableColumn tableColumn, TableView tableView, double delka) {
 
         tableColumn.prefWidthProperty().bind(tableView.widthProperty().multiply(delka));
     }
 
+    /**
+     * Styl pro tabulku
+     */
     public void getStyleClass(TableColumn tableColumn) {
 
         tableColumn.getStyleClass().add("table-column");
     }
 
+    /**
+     * Aktuální čas
+     */
     public Cas getCas() {
 
         return cas;
     }
 
-    // Tah je detekovan
+    /**
+     * Tah je detekován
+     */
     public void setOnDragDetected(ImageView vybranyObrazek) {
 
         vybranyObrazek.setOnDragDetected((MouseEvent event) -> {
@@ -719,7 +763,9 @@ public class MainFX {
         });
     }
 
-    // Tah je ukoncen
+    /**
+     * Tah je ukončen
+     */
     public void setOnDragDone(ImageView vybranyObrazek) {
 
         vybranyObrazek.setOnDragDone((DragEvent event) -> {
@@ -732,7 +778,9 @@ public class MainFX {
         });
     }
 
-    // Tah se nachazi nad cilem objektu
+    /**
+     * Tah se nachazí nad cilem objektu
+     */
     public void setOnDragOver(Pane dragboard) {
 
         dragboard.setOnDragOver((DragEvent event) -> {
@@ -760,7 +808,9 @@ public class MainFX {
         });
     }
 
-    // Tah se nachazi v cilovem objektu
+    /**
+     * Tah se nachazi v cilovem objektu
+     */
     public void setOnDragEntered(Pane dragboard) {
 
         dragboard.setOnDragEntered((DragEvent event) -> {
@@ -774,7 +824,9 @@ public class MainFX {
         });
     }
 
-    // Tah opustil cilovy objekt
+    /**
+     * Tah opustil cilovy objekt
+     */
     public void setOnDragExited(Pane dragboard) {
 
         dragboard.setOnDragExited((DragEvent event) -> {
@@ -785,6 +837,9 @@ public class MainFX {
         });
     }
 
+    /**
+     * Chycení vyjímek v rozvržení GridPane
+     */
     public void presazeniLimitu(String levelFX, int x, int y, int hodnota, int nastav) {
 
         if (LevelFX == levelFX && x % hodnota == 0) {
@@ -797,7 +852,9 @@ public class MainFX {
         }
     }
 
-    // Tah polozil castici obrazku (puzzle) do daneho objektu
+    /**
+     * Tah polozil částici obrázku (puzzle) do Gridpane
+     */
     public void setOnDragDropped(Pane dragboard) {
 
         dragboard.setOnDragDropped((DragEvent event) -> {
@@ -881,6 +938,7 @@ public class MainFX {
                         showResults.setOnAction((ActionEvent e) -> {
 
                             try {
+
                                 pane.getChildren().removeAll(rozdelit, FinalGrid);
                                 Data();
                                 Vysledky();
@@ -904,7 +962,7 @@ public class MainFX {
 
                     FinalGrid.setDisable(true);
                     timeline.stop();
-                    skoreFX = (int) Math.round(1 / (0.0000398 * Math.sqrt(2 * Math.PI) * Math.pow(Math.E, (Math.pow(-cas.celkovyCas, 2) / 10000000))));
+                    skoreFX = getSkore();
                     Photo.setDisable(true);
                     pane.getChildren().remove(napoveda);
 
@@ -932,7 +990,44 @@ public class MainFX {
         });
     }
 
-    private void NapisLokaci(int a) {
+    /**
+     * Úprava skóre dle jednotlivých obtížností
+     */
+    public int getSkore() {
+
+        int cislo;
+
+        if (LevelFX == "Easy") {
+
+            cislo = getVzorec(100000);
+
+        } else if (LevelFX == "Medium") {
+
+            cislo = getVzorec(1000000);
+
+        } else if (LevelFX == "Hard") {
+
+            cislo = getVzorec(10000000);
+
+        } else {
+
+            cislo = getVzorec(100000000);
+        }
+        return cislo;
+    }
+
+    /**
+     * Získání skóre pomocí Gaussovy funkce
+     */
+    public int getVzorec(int koeficient) {
+
+        return (int) Math.round(1 / (0.0000398 * Math.sqrt(2 * Math.PI) * Math.pow(Math.E, (Math.pow(-cas.celkovyCas, 2) / koeficient))));
+    }
+
+    /**
+     * Určení lokace obrázku
+     */
+    public void NapisLokaci(int a) {
 
         if (a == 0) {
 
@@ -958,6 +1053,9 @@ public class MainFX {
         lokace = lokaceX + lokaceY;
     }
 
+    /**
+     * Styly
+     */
     public String Vzhled() {
 
         return "-fx-font-size: 60;-fx-background-color: black;-fx-font-weight: bold;" +
@@ -974,14 +1072,20 @@ public class MainFX {
         return "linear-gradient(to right, rgba(255,0,0,1) 0%, rgba(255,231,0,1) 100%);";
     }
 
+    /**
+     * Hlavní scéna hry
+     */
     public Parent getRoot() {
 
         return pane;
     }
 
+    /**
+     * Použité barvy pro animace
+     */
     public Color[] Barvy() {
 
-        if(kontrola.getText() == "You WON!") {
+        if (kontrola.getText() == "You WON!") {
 
             return new Color[]{
 
@@ -990,19 +1094,21 @@ public class MainFX {
                     Color.rgb(182, 253, 45, 1),
                     Color.rgb(0, 255, 166, 1),
                     Color.rgb(0, 255, 239, 1)};
-        }
-        else{
+        } else {
 
             return new Color[]{
 
                     Color.rgb(255, 231, 0, 1),
                     Color.rgb(255, 154, 0, 1),
-                    Color.rgb(255,98,0,1),
+                    Color.rgb(255, 98, 0, 1),
                     Color.rgb(255, 0, 0, 1),
-                    Color.rgb(228,1,1,1)};
+                    Color.rgb(228, 1, 1, 1)};
         }
     }
 
+    /**
+     * Animace
+     */
     public void showEffect(Pane plocha) {
 
         Color[] barvy = Barvy();
@@ -1038,9 +1144,9 @@ public class MainFX {
                         Duration.seconds(10 + Math.random() * 10),
                         new KeyValue(kruh.radiusProperty(), 0),
                         new KeyValue(kruh.centerXProperty(), Math.random() * pane.getWidth()),
-                        new KeyValue(kruh.centerYProperty(),Math.random() * pane.getHeight())),
+                        new KeyValue(kruh.centerYProperty(), Math.random() * pane.getHeight())),
 
-                new KeyFrame(sec,event -> {
+                new KeyFrame(sec, event -> {
 
                     FadeTransition fade = new FadeTransition(Duration.seconds(1), kruh);
                     fade.setToValue(0);
@@ -1049,10 +1155,14 @@ public class MainFX {
                 })
         );
 
+
         animace.setCycleCount(1);
         animace.play();
     }
 
+    /**
+     * Nový pokus hry
+     */
     public void tryAgain(ActionEvent event) {
 
         try {

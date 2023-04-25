@@ -2,6 +2,14 @@ package Game;
 
 import java.io.Serializable;
 
+/**
+ * @author "Vladimír Samojlov"
+ * @class "2.E"
+ */
+
+/**
+ * Třída zapisující jednotlivá data do tabulky po skončení hry
+ */
 public class Vysledek implements Serializable {
 
     private String JmenoObrazku;
@@ -38,7 +46,6 @@ public class Vysledek implements Serializable {
     public Integer getSkore() {
         return skore;
     }
-
 
     @Override
     public String toString() {
