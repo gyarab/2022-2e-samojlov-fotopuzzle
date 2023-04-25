@@ -8,8 +8,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -25,6 +24,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -34,10 +35,8 @@ public class MainFX {
     private Button napoveda;
     private Pane pane;
     private Parent root;
-    private Parent newRoot;
     private Button backToMenu;
     private Stage stage;
-    private Stage newStage;
     private Timeline timeline;
     private HBox naV;
     private ImageView showHint;
@@ -56,12 +55,12 @@ public class MainFX {
     private ImageView Fotky;
     private ArrayList<PuzzlePiece> fotky;
     private Pane node;
-    private String id;
+    private Label kontrola;
+    private Button playAgain;
     int sirka;
     int vyska;
     int sloupec;
     int radek;
-    int newId;
     int PocetFotek;
     File obrazky;
     File obtiznosti;
@@ -75,7 +74,7 @@ public class MainFX {
     String LevelFX;
     Cas cas;
     int showHintUsed = 0;
-    private HashMap<Integer, Integer> poziceObrazku;
+    HashMap<Integer, Integer> poziceObrazku;
     int lokace;
     int number;
     int nasobek;
@@ -84,7 +83,7 @@ public class MainFX {
     int pozice;
     int skoreFX;
     int pocitadlo = 0;
-    private int iD;
+    int iD;
 
     public MainFX() throws IOException {
 
@@ -108,6 +107,7 @@ public class MainFX {
 
         tableView = new TableView<>();
 
+        // Zavolání jednotlivých metod
         ZvolenaObtiznost();
         ZvolenyObrazek();
         getPuzzlePieces();
@@ -115,13 +115,13 @@ public class MainFX {
 
         /** Navigation Bar **/
 
-        // Label Time
+        // Průběžný čas ve hře
         stopky = new TextField();
         stopky.setEditable(false);
         stopky.setMouseTransparent(true);
         stopky.setFocusTraversable(false);
-        cas = new Cas("00:01:00");
-        stopky.setText("00:01:00");
+        cas = new Cas("00:00:00");
+        stopky.setText("00:00:00");
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), event1 -> {
 
             cas.Calendar();
@@ -130,18 +130,20 @@ public class MainFX {
         ));
         timeline.setCycleCount(Timeline.INDEFINITE);
 
-        // Image Icon
+        // Ikona obrázku
         Image IkonaObrazku = new Image(getClass().getResourceAsStream("/images/IkonaObrazku.jpg"));
         ImageView i = new ImageView(IkonaObrazku);
         i.setFitHeight(50);
         i.setFitWidth(50);
 
+        // Nápověda (zobrazí vybranou fotografii uživateli)
         Photo = new Button("", i);
         Photo.setText("");
         Photo.setStyle("-fx-background-color: white;");
         Photo.setPrefHeight(75);
         Photo.setPrefWidth(75);
 
+        // Stanovení akce po stisknutí tlačítka myši
         Photo.setOnAction((ActionEvent event) -> {
 
             showHintUsed++;
@@ -165,18 +167,21 @@ public class MainFX {
 
         });
 
-        // Button Home
+        // Obrázek ikony Home
         Image domecek = new Image(getClass().getResourceAsStream("/images/domecek.png"));
         ImageView imageView = new ImageView(domecek);
         imageView.setFitHeight(50);
         imageView.setFitWidth(50);
 
-        // Odstin
+        // Přidání stylů (odstíny pro dílčí elementy)
         setShadowStyle(imageView);
         setShadowStyle(i);
 
+        // Tlačítko sloužící jako návrat do počáteční scény
         backToMenu = new Button("", imageView);
         backToMenu.setStyle("-fx-background-color: white;");
+
+        // Návrat do počáteční scény aplikace
         backToMenu.setOnAction((ActionEvent event) -> {
 
             try {
@@ -193,7 +198,7 @@ public class MainFX {
             }
         });
 
-        // Napoveda
+        // Vysvětlení hry pro uživatele
         ImageView help = new ImageView(new Image(getClass().getResourceAsStream("/images/help-black.jpg")));
         help.setFitHeight(85);
         help.setFitWidth(85);
@@ -204,7 +209,7 @@ public class MainFX {
         napoveda.setLayoutX(890);
         napoveda.setLayoutY(970);
 
-        // Pravidla
+        // Pravidla ve hře
         Label nadpis = new Label();
         nadpis.setAlignment(Pos.TOP_CENTER);
         nadpis.setStyle("-fx-padding: 5 3 3 10;-fx-background-radius: 15 15 0 0;-fx-font-size: 50; " +
@@ -218,12 +223,6 @@ public class MainFX {
         pravidla.setStyle("-fx-background-color: white;-fx-text-fill: black;-fx-font-size: 20;" +
                 "-fx-padding: 60 10 10 50;-fx-background-radius: 45;-fx-line-spacing: 15;" +
                 "-fx-background-color: radial-gradient(center 50% 50%, radius 50%, #F7FF00FF 0%, #FF945DFF 100%);");
-
-        ImageView rightClick = new ImageView(new Image(getClass().getResourceAsStream("/images/right-click.png")));
-        rightClick.setFitHeight(75);
-        rightClick.setFitWidth(75);
-        rightClick.setLayoutX(900);
-        rightClick.setLayoutY(750);
 
         VBox zaklad = new VBox(nadpis, pravidla);
         zaklad.setLayoutX(627);
@@ -243,15 +242,15 @@ public class MainFX {
                 napoveda.setCursor(Cursor.HAND);
                 zaklad.setAlignment(Pos.CENTER);
                 nadpis.setText("How to play?");
-                pravidla.setText("– Drag and drop the puzzles on the game board" + "\n"
-                        + "– Use the right mouse button to move the puzzle in the board" + "\n" +
-                        "– During the game you can use a hint" + "\n" +
-                        "– Correct solutions are awarded a total score \uD83C\uDFC6");
+                pravidla.setText("—  Drag and drop the puzzles on the game board" + "\n" +
+                        "—  During the game you can use a hint" + "\n" +
+                        "—  To select a different level or image, go to the settings" + "\n" +
+                        "—  Faster you solve, greater results! \uD83C\uDFC6");
 
 
                 if (!(pane.getChildren().contains(zaklad))) {
 
-                    pane.getChildren().addAll(zaklad, rightClick);
+                    pane.getChildren().add(zaklad);
                 }
             }
         });
@@ -262,7 +261,7 @@ public class MainFX {
             if (pocitadlo % 2 == 0) {
 
                 help.setImage(new Image(getClass().getResourceAsStream("/images/help-black.jpg")));
-                pane.getChildren().removeAll(zaklad, rightClick);
+                pane.getChildren().remove(zaklad);
 
             } else {
                 help.setImage(new Image(getClass().getResourceAsStream("/images/help-white.jpg")));
@@ -748,7 +747,12 @@ public class MainFX {
 
                     node.setOnDragOver(onDragOver -> {
                         onDragOver.consume();
+                    });
 
+                    node.setOnDragDropped(onDragDropped -> {
+
+                        onDragDropped.consume();
+                        onDragDropped.setDropCompleted(false);
                     });
                 }
             }
@@ -845,12 +849,16 @@ public class MainFX {
 
                 if (poziceObrazku.size() == PocetFotek) {
 
-                    Label kontrola = new Label();
+                    kontrola = new Label();
                     kontrola.setPrefSize(308, 104);
                     kontrola.setAlignment(Pos.CENTER);
                     kontrola.setLayoutX(750);
                     kontrola.setLayoutY(100);
                     pane.getChildren().add(kontrola);
+
+                    playAgain = new Button("PLAY AGAIN");
+                    playAgain.setLayoutX(1200);
+                    playAgain.setLayoutY(970);
 
                     if (vysledek == 0) {
 
@@ -858,6 +866,8 @@ public class MainFX {
 
                         kontrola.setText("You WON!");
                         kontrola.setStyle("-fx-text-fill: " + ColorWIN() + Vzhled());
+
+                        playAgain.setStyle("-fx-background-color:" + ColorWIN());
 
                         Button showResults = new Button("Show Results");
                         showResults.setPrefSize(208, 52);
@@ -888,6 +898,8 @@ public class MainFX {
                         kontrola.setText("You LOST!");
 
                         kontrola.setStyle("-fx-text-fill: " + ColorLOSE() + Vzhled());
+
+                        playAgain.setStyle("-fx-background-color:" + ColorLOSE());
                     }
 
                     FinalGrid.setDisable(true);
@@ -896,16 +908,18 @@ public class MainFX {
                     Photo.setDisable(true);
                     pane.getChildren().remove(napoveda);
 
-                    Button playAgain = new Button("PLAY AGAIN");
-                    playAgain.setLayoutX(1200);
-                    playAgain.setLayoutY(970);
-
                     playAgain.setOnAction(event1 -> {
 
                         tryAgain(event1);
                     });
 
                     pane.getChildren().add(playAgain);
+
+                    // Vygenerování koleček - animace
+                    for (int i = 0; i < 500; i++) {
+
+                        showEffect(pane);
+                    }
                 }
 
                 event.consume();
@@ -963,6 +977,80 @@ public class MainFX {
     public Parent getRoot() {
 
         return pane;
+    }
+
+    public Color[] Barvy() {
+
+        if(kontrola.getText() == "You WON!") {
+
+            return new Color[]{
+
+                    Color.rgb(253, 247, 45, 1),
+                    Color.rgb(224, 255, 0, 1),
+                    Color.rgb(182, 253, 45, 1),
+                    Color.rgb(0, 255, 166, 1),
+                    Color.rgb(0, 255, 239, 1)};
+        }
+        else{
+
+            return new Color[]{
+
+                    Color.rgb(255, 231, 0, 1),
+                    Color.rgb(255, 154, 0, 1),
+                    Color.rgb(255,98,0,1),
+                    Color.rgb(255, 0, 0, 1),
+                    Color.rgb(228,1,1,1)};
+        }
+    }
+
+    public void showEffect(Pane plocha) {
+
+        Color[] barvy = Barvy();
+
+        Duration sec = Duration.seconds(8);
+
+        Circle kruh = new Circle();
+        kruh.setMouseTransparent(true);
+        kruh.setFill(barvy[(int) (Math.random() * barvy.length)]);
+
+        kruh.setCenterX(Math.random() * FinalGrid.getLayoutX() + 600);
+        kruh.setCenterY(Math.random() * FinalGrid.getLayoutY() + 1000);
+
+        plocha.getChildren().add(kruh);
+
+        Timeline animace = new Timeline(
+
+                new KeyFrame(
+
+                        Duration.ZERO, new KeyValue(kruh.radiusProperty(), 0),
+                        new KeyValue(kruh.centerXProperty(), kruh.getCenterX()),
+                        new KeyValue(kruh.centerYProperty(), kruh.getCenterY()),
+                        new KeyValue(kruh.opacityProperty(), 0)),
+
+                new KeyFrame(
+
+                        Duration.seconds(2 + Math.random() * 20),
+                        new KeyValue(kruh.opacityProperty(), Math.random()),
+                        new KeyValue(kruh.radiusProperty(), Math.random() * 20)),
+
+                new KeyFrame(
+
+                        Duration.seconds(10 + Math.random() * 10),
+                        new KeyValue(kruh.radiusProperty(), 0),
+                        new KeyValue(kruh.centerXProperty(), Math.random() * pane.getWidth()),
+                        new KeyValue(kruh.centerYProperty(),Math.random() * pane.getHeight())),
+
+                new KeyFrame(sec,event -> {
+
+                    FadeTransition fade = new FadeTransition(Duration.seconds(1), kruh);
+                    fade.setToValue(0);
+                    fade.setOnFinished(e -> plocha.getChildren().remove(kruh));
+                    fade.play();
+                })
+        );
+
+        animace.setCycleCount(1);
+        animace.play();
     }
 
     public void tryAgain(ActionEvent event) {

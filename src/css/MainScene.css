@@ -6,7 +6,8 @@
 }
 .button:hover{
 
-    -fx-background-color: linear-gradient(to right, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);;
+    -fx-background-color: linear-gradient(to right, rgba(131,58,180,1) 10%, rgba(253,29,29,1) 60%, rgba(228,1,1,1) 80%, #ffcd00 100%);
+    -fx-text-fill: #000000;
 }
 .button:focused{
 
