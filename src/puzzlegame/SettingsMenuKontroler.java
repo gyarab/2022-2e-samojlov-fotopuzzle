@@ -377,7 +377,7 @@ public class SettingsMenuKontroler implements Initializable {
 
 
     /**
-     * Stisknutí obrázků, jedná se o metody s příponou Clicked()
+     * Stisknutí obrázků, jedná se o metody s příponou Clicked
      */
     public void mesto1Clicked() {
 
@@ -415,7 +415,7 @@ public class SettingsMenuKontroler implements Initializable {
     }
 
     /**
-     * Stanovení stylů pro jednotlivé obrázky
+     * Stanovení stylů pro jednotlivé obrázky, jedná se o metody s příponou Selected
      */
     public void TygrSelected() {
 

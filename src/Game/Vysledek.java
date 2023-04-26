@@ -18,6 +18,9 @@ public class Vysledek implements Serializable {
     private Integer napovedaUsed;
     private Integer skore;
 
+    /**
+     * Konstruktor třídy Vysledek
+     */
     public Vysledek(String JmenoObrazku, String level, String cas, Integer napovedaUsed, Integer skore) {
 
         this.JmenoObrazku = JmenoObrazku;
@@ -27,6 +30,9 @@ public class Vysledek implements Serializable {
         this.skore = skore;
     }
 
+    /**
+     * Metody pro zapisování informací do tabulky
+     */
     public String getJmenoObrazku() {
         return JmenoObrazku;
     }
@@ -47,6 +53,9 @@ public class Vysledek implements Serializable {
         return skore;
     }
 
+    /**
+     * Metoda pro vypsání jednotlivých informací
+     */
     @Override
     public String toString() {
         return "Vysledek{" +

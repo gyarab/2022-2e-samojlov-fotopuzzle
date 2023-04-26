@@ -41,28 +41,28 @@ import javax.imageio.ImageIO;
  */
 public class MainFX {
     private Button napoveda;
-    private Pane pane;
+    private final Pane pane;
     private Parent root;
-    private Button backToMenu;
+    final Button backToMenu;
     private Stage stage;
-    private Timeline timeline;
+    private final Timeline timeline;
     private HBox naV;
-    private ImageView showHint;
-    private BufferedReader readerObrazek;
-    private BufferedReader readerObtiznost;
-    private BufferedImage fotografie;
-    private GridPane grid1;
-    private GridPane grid2;
+    private final ImageView showHint;
+    private final BufferedReader readerObrazek;
+    private final BufferedReader readerObtiznost;
+    BufferedImage fotografie;
+    GridPane grid1;
+    GridPane grid2;
     private GridPane FinalGrid;
-    private TextField stopky;
-    private String obrazek;
+    private final TextField stopky;
+    String obrazek;
     private String celeJmenoFotografie;
     private HBox rozdelit;
-    private TableView tableView;
-    private Image mesto1, tygr, liska, mesto2, another;
-    private ImageView Fotky;
+    private final TableView tableView;
+    Image mesto1, tygr, liska, mesto2, another;
+    ImageView Fotky;
     private ArrayList<PuzzlePiece> fotky;
-    private Pane node;
+    Pane node;
     private Label kontrola;
     private Button playAgain;
     int sirka;
@@ -93,6 +93,9 @@ public class MainFX {
     int pocitadlo = 0;
     int iD;
 
+    /**
+     * Konstruktor třídy MainFX
+     */
     public MainFX() throws IOException {
 
         naV = new HBox();
@@ -120,8 +123,6 @@ public class MainFX {
         ZvolenyObrazek();
         getPuzzlePieces();
         setNaV(naV);
-
-        /** Navigation Bar */
 
         // Průběžný čas ve hře
         stopky = new TextField();
@@ -281,7 +282,7 @@ public class MainFX {
         });
         pane.getChildren().add(napoveda);
 
-        /** Main Pane */
+        // Přidání prvků do navigačního panelu
         naV.getChildren().addAll(backToMenu, Photo, stopky);
 
         pane.setStyle("-fx-background-color: black;");
@@ -534,8 +535,7 @@ public class MainFX {
             node = new Pane();
             node.setPrefSize(Piece, Piece);
 
-            /** Pozice obrázků při tahu myši */
-
+            //Pozice obrázků při tahu myši
             Fotky.setOnMouseDragged(event -> {
 
                 pozice = (x * radek) + y;
@@ -842,11 +842,11 @@ public class MainFX {
      */
     public void presazeniLimitu(String levelFX, int x, int y, int hodnota, int nastav) {
 
-        if (LevelFX == levelFX && x % hodnota == 0) {
+        if (LevelFX.equals(levelFX) && x % hodnota == 0) {
 
             lokaceX = nastav;
         }
-        if (LevelFX == levelFX && y % hodnota == 0) {
+        if (LevelFX.equals(levelFX) && y % hodnota == 0) {
 
             lokaceY = nastav;
         }
@@ -935,10 +935,11 @@ public class MainFX {
                         pane.getChildren().remove(napoveda);
                         pane.getChildren().add(showResults);
 
+                        spustAnimaci();
+
                         showResults.setOnAction((ActionEvent e) -> {
 
                             try {
-
                                 pane.getChildren().removeAll(rozdelit, FinalGrid);
                                 Data();
                                 Vysledky();
@@ -972,12 +973,6 @@ public class MainFX {
                     });
 
                     pane.getChildren().add(playAgain);
-
-                    // Vygenerování koleček - animace
-                    for (int i = 0; i < 500; i++) {
-
-                        showEffect(pane);
-                    }
                 }
 
                 event.consume();
@@ -997,21 +992,23 @@ public class MainFX {
 
         int cislo;
 
-        if (LevelFX == "Easy") {
+        switch (LevelFX) {
 
-            cislo = getVzorec(100000);
+            case "Easy":
+                cislo = getVzorec(100000);
+                break;
 
-        } else if (LevelFX == "Medium") {
+            case "Medium":
+                cislo = getVzorec(1000000);
+                break;
 
-            cislo = getVzorec(1000000);
+            case "Hard":
+                cislo = getVzorec(10000000);
+                break;
 
-        } else if (LevelFX == "Hard") {
-
-            cislo = getVzorec(10000000);
-
-        } else {
-
-            cislo = getVzorec(100000000);
+            default:
+                cislo = getVzorec(100000000);
+                break;
         }
         return cislo;
     }
@@ -1085,7 +1082,7 @@ public class MainFX {
      */
     public Color[] Barvy() {
 
-        if (kontrola.getText() == "You WON!") {
+        if (kontrola.getText().equals("You WON!")) {
 
             return new Color[]{
 
@@ -1155,9 +1152,19 @@ public class MainFX {
                 })
         );
 
-
         animace.setCycleCount(1);
         animace.play();
+    }
+
+    /**
+     * Spuštění animace
+     */
+    public void spustAnimaci() {
+
+        for (int i = 0; i < 500; i++) {
+
+            showEffect(pane);
+        }
     }
 
     /**

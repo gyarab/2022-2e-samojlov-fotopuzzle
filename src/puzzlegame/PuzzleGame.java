@@ -13,10 +13,13 @@ import javafx.stage.Stage;
  */
 
 /**
- * Spuštění hlavní aplikace JavaFX
+ * Spuštění celé aplikace JavaFX
  */
 public class PuzzleGame extends Application {
 
+    /**
+     * Hlavní metoda pro spuštění celé aplikace
+     */
     @Override
     public void start(Stage stage) throws Exception {
 
