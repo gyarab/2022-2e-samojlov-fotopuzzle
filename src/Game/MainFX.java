@@ -935,8 +935,6 @@ public class MainFX {
                         pane.getChildren().remove(napoveda);
                         pane.getChildren().add(showResults);
 
-                        spustAnimaci();
-
                         showResults.setOnAction((ActionEvent e) -> {
 
                             try {
@@ -973,6 +971,8 @@ public class MainFX {
                     });
 
                     pane.getChildren().add(playAgain);
+
+                    spustAnimaci();
                 }
 
                 event.consume();
